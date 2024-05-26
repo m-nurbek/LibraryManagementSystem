@@ -28,6 +28,9 @@ This project involves the development of a web application for library managemen
 ## UML Diagram
 ![image](https://github.com/m-nurbek/LibraryManagementSystem/assets/65078035/477f69cf-3d45-4786-a16a-512e2502dd88)
 
+## ER Diagram
+![image](https://github.com/m-nurbek/LibraryManagementSystem/assets/65078035/a551700c-8c2d-4cb5-bc08-074c8e86fdec)
+
 ## Interface Design
 https://www.figma.com/design/KlVV8mZH1lXUlx9r7Il89l/Library-Management-System-Design-EPAM?node-id=0-1&t=EsGNGrl2Wh2LkDpF-1
 
