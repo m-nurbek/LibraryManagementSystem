@@ -4,20 +4,33 @@ This project involves the development of a web application for library managemen
 
 ## Functional Requirements
 
-1. Users should be able to search for books by title, author, or ISBN.
-2. The system should allow users to reserve books and be notified when they become available.
-3. Users should be able to check out and return books using the system.
-4. Librarians should be able to add new books, remove outdated ones, and manage user accounts.
-5. The system should keep track of due dates, and send automated reminders to users. (scheduled jobs)
-6. Librarians should be able to archive books. Archived books can be deleted after 30 days.
+1. Users, Anonymous Users, and Librarians should be able to search for books by title, author, or ISBN.
+2. The system should allow Users to reserve books.
+3. Librarians can search Users by surname, name, or email and see the list of reserved books by a specific User.
+4. Librarians can mark books as returned for a specific User, or extend the due date/report User if the books is overdue.
+5. Librarians should be able to add new books, update book information, remove (archived and then automatically removed after some time), unmark as archived.
+6. System have to support authentication by email and password/JWT(Optional)
+7. System must be able to display a list of books in the library.
+8. API must support sort books by title, publish date, author.
+9. API must support pagination.
+10. The system must keep track of due dates, and send automated reminders to users. (scheduled jobs)
 
 ## Non-Functional Requirements
 
 1. The system should be user-friendly, with an intuitive interface.
-2. The system should be secure, reliable, with user authentication and data encryption.
-3. The system should be able to generate reports on user activity and book circulation.
-4. Users should be able to authenticate with Github.
-5. API Should support sort books by title, publish date; and pagination.
-6. Test coverage ~70%.
-7. The system should be availability, with minimal downtime.
-8. The system should be scalable, capable of handling a growing number of users and books.
+2. The system should be secure, with user authentication and authorization.
+3. The system should be able to generate reports/notifications on user/librarian activity and book circulation.
+4. Test coverage ~60-70%.
+
+## Use Case Diagram
+![image](https://github.com/m-nurbek/LibraryManagementSystem/assets/65078035/4bb52340-84f9-4ab4-84fc-dce8a9d0c8a8)
+
+## UML Diagram
+![image](https://github.com/m-nurbek/LibraryManagementSystem/assets/65078035/afc692b4-f971-4aea-abba-42ef9dfece3c)
+
+## ER Diagram
+![image](https://github.com/m-nurbek/LibraryManagementSystem/assets/65078035/cb81d075-f90e-4554-a49f-5f925f9a7135)
+
+## Interface Design
+https://www.figma.com/design/KlVV8mZH1lXUlx9r7Il89l/Library-Management-System-Design-EPAM?node-id=0-1&t=EsGNGrl2Wh2LkDpF-1
+
