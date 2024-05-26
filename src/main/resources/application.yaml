@@ -1,6 +1,0 @@
-spring:
-  sql:
-    init:
-      data-locations:
-        - account-data.sql
-        - book-data.sql

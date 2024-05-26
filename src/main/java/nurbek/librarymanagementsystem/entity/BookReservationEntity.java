@@ -23,7 +23,8 @@ public class BookReservationEntity {
 
     @ManyToOne
     private BookEntity book;
-    @ManyToOne AccountEntity account;
+    @ManyToOne
+    AccountEntity account;
 
     public enum ReservationStatus {
         RESERVED, OVERDUE, NULL

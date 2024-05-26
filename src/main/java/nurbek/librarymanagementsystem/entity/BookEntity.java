@@ -4,8 +4,6 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 import java.util.Date;
-import java.util.Set;
-
 
 @Data
 @Entity
@@ -19,18 +17,18 @@ public class BookEntity {
     private String ISBN;
     @Column(name = "TITLE", nullable = false)
     private String title;
-    @Column(name = "LANGUAGE")
+    @Column(name = "LANGUAGE", nullable = false)
     private String language;
-    @Column(name = "NUMBER_OF_PAGES")
+    @Column(name = "NUMBER_OF_PAGES", nullable = false)
     private String numberOfPages;
     @Column(name = "STATUS")
     @Enumerated(EnumType.STRING)
-    private BookStatus status;
+    private BookStatus status = BookStatus.ACTIVE;
     @Column(name = "PUBLISH_DATE")
     private Date publishDate = new Date();
     @Column(name = "ARCHIVE_DATE")
     private Date archiveDate;
-    @Column(name = "NUMBER_OF_COPIES")
+    @Column(name = "NUMBER_OF_COPIES", nullable = false)
     private int numberOfCopies;
 
     @ManyToOne

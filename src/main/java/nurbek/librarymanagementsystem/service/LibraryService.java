@@ -13,6 +13,6 @@ public class LibraryService {
     private BookRepository bookRepository;
 
     public List<BookEntity> getBookList() {
-        return bookRepository.findAll();
+        return (List<BookEntity>) bookRepository.findAll();
     }
 }

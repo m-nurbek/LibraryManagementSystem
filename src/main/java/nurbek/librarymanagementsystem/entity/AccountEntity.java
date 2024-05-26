@@ -16,7 +16,7 @@ import java.util.List;
 @Table(name = "ACCOUNT")
 public class AccountEntity implements UserDetails {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "FIRST_NAME", nullable = false)
@@ -27,9 +27,9 @@ public class AccountEntity implements UserDetails {
     private String email;
     @Column(name = "PASSWORD", nullable = false)
     private String password;
-    @Column(name = "ROLE", nullable = false)
+    @Column(name = "ROLE")
     @Enumerated(EnumType.STRING)
-    private Role role;
+    private Role role = Role.NULL;
 
     public enum Role {
         LIBRARIAN, USER, NULL
