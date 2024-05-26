@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Library</title>
+</head>
+<body>
+<h1>Books:</h1>
+<div th:each="book: ${books}">
+    <h3 th:text="${book.title}">Book Title</h3>
+    <p th:text="${book.subject}">Book subject</p>
+</div>
+</body>
+</html>
