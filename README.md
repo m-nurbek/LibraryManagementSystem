@@ -22,5 +22,12 @@ This project involves the development of a web application for library managemen
 3. The system should be able to generate reports/notifications on user/librarian activity and book circulation.
 4. Test coverage ~60-70%.
 
-UML Diagram
+## Use Case Diagram
+![image](https://github.com/m-nurbek/LibraryManagementSystem/assets/65078035/4bb52340-84f9-4ab4-84fc-dce8a9d0c8a8)
+
+## UML Diagram
 ![image](https://github.com/m-nurbek/LibraryManagementSystem/assets/65078035/477f69cf-3d45-4786-a16a-512e2502dd88)
+
+## Interface Design
+https://www.figma.com/design/KlVV8mZH1lXUlx9r7Il89l/Library-Management-System-Design-EPAM?node-id=0-1&t=EsGNGrl2Wh2LkDpF-1
+
