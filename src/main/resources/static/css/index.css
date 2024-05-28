@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Khand:wght@300;400;500;600;700&display=swap');
+
+*, ::before, ::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    min-height: 100vh;
+    height: 100vh;
+}
+
+
+
+.page {
+    margin-top: 5rem;
+    height: calc(100% - 5rem);
+}
+
+main {
+    height: 100%;
+}
+
+.login-page {
+    form {
+        position: absolute;
+        width: 50%;
+        top: 50%;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+}
+
+.logo-span {
+    font-family: "Khand", sans-serif;
+    display: block;
+    font-size: 2rem;
+    font-weight: 500;
+    letter-spacing: -1px;
+    margin-top: -4px !important;
+    margin-left: 2px !important;
+}

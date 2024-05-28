@@ -1,13 +1,18 @@
 package nurbek.librarymanagementsystem.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 
 import java.util.Date;
 
 @Data
 @Entity
 @Table(name = "BOOK")
+@AllArgsConstructor
+@NoArgsConstructor
 public class BookEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
