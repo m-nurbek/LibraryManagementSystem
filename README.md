@@ -29,6 +29,7 @@ This project involves the development of a web application for library managemen
 ![image](https://github.com/m-nurbek/LibraryManagementSystem/assets/65078035/afc692b4-f971-4aea-abba-42ef9dfece3c)
 
 ## ER Diagram
+![image](https://github.com/m-nurbek/LibraryManagementSystem/assets/65078035/ae2210fd-0f3f-471a-8cc5-bc7742fec40f)
 ![image](https://github.com/m-nurbek/LibraryManagementSystem/assets/65078035/cb81d075-f90e-4554-a49f-5f925f9a7135)
 
 ## Interface Design
