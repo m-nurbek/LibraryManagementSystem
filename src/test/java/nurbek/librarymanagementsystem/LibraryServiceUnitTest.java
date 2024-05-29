@@ -30,7 +30,6 @@ public class LibraryServiceUnitTest {
     private BookRepository bookRepository;
 
     private Page<BookEntity> bookPage;
-    private PageRequest pageRequest;
     private PageRequest pageRequestWithSorting;
 
     @BeforeEach

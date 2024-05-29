@@ -27,4 +27,16 @@ public class LibraryService {
     public List<BookEntity> getBookList() {
         return bookRepository.findAll();
     }
+
+    public BookEntity getBookById(long id) {
+        return bookRepository.findById(id).orElse(null);
+    }
+
+    public Page<BookEntity> searchBooksByKeyword(String keyword, Pageable pageable) {
+        return bookRepository.searchByKeyword(keyword, PageRequest.of(
+                pageable.getPageNumber(),
+                pageable.getPageSize(),
+                pageable.getSortOr(Sort.by(Sort.Direction.ASC, "title"))
+        ));
+    }
 }

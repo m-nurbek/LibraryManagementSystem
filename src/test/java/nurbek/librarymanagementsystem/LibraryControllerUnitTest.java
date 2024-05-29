@@ -9,16 +9,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageImpl;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.*;
 import org.springframework.test.web.servlet.MockMvc;
 
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.model;
@@ -54,12 +52,34 @@ public class LibraryControllerUnitTest {
     }
 
     @Test
-    public void shouldReturnBooksPage() throws Exception {
+    void shouldReturnBooksPageWithSorting() throws Exception {
         when(libraryService.getBookList(pageRequestWithSorting)).thenReturn(bookPage);
 
         mockMvc.perform(get("/library/books?page=" + PAGE_NUMBER + "&size=" + PAGE_SIZE + "&sort=" + SORT_BY + ",desc"))
                 .andExpect(status().isOk())
                 .andExpect(model().attributeExists("books"))
                 .andExpect(model().attribute("books", bookPage));
+    }
+
+    @Test
+    void shouldReturnBookDetailView() throws Exception {
+        var book =  new BookEntity(1L, "0001", "Book 1", "RU", "50", BookEntity.BookStatus.ACTIVE, new Date(), new Date(), 23, new AuthorEntity());
+
+        when(libraryService.getBookById(any(long.class))).thenReturn(book);
+
+        mockMvc.perform(get("/library/books/1"))
+                .andExpect(status().isOk())
+                .andExpect(model().attributeExists("book"))
+                .andExpect(model().attribute("book", book));
+    }
+
+    @Test
+    void shouldAbleToSearchBooks() throws Exception {
+        when(libraryService.searchBooksByKeyword(any(String.class), any(Pageable.class))).thenReturn(bookPage);
+
+        mockMvc.perform(get("/library/books").param("keyword", "test"))
+                .andExpect(status().isOk())
+                .andExpect(model().attributeExists("books"))
+                .andExpect(model().attribute("totalItems", 4L));
     }
 }
