@@ -1,6 +1,8 @@
 # TODO
-- [ ] Add book detail view + template
-- [ ] Write tests for the book detail view
+- [x] Add book detail view + template
+- [x] Write tests for the book detail view
+- [x] Add search functionality
+- [ ] Add sort books functionality
 - [ ] Fix user authentication and authorization (User, Librarian)
 - [ ] Add reserve book functionality to the user
 - [ ] Test reserve book functionality
