@@ -1,6 +1,8 @@
 package nurbek.librarymanagementsystem;
 
 import nurbek.librarymanagementsystem.controller.LibraryController;
+import nurbek.librarymanagementsystem.dto.Book;
+import nurbek.librarymanagementsystem.dto.BookStatus;
 import nurbek.librarymanagementsystem.entity.BookEntity;
 import nurbek.librarymanagementsystem.repository.BookRepository;
 import nurbek.librarymanagementsystem.service.LibraryService;
@@ -38,7 +40,7 @@ public class LibraryIntegrationTests {
 
     @Test
     void shouldUpdateBook() throws Exception {
-        BookEntity book = new BookEntity(1L, "0001", "Updated Book 1", "RU", 50, BookEntity.BookStatus.ACTIVE, null, null, 23, null);
+        Book book = new Book(1L, "0000-0000-0000-0001", "Updated Book 1", "RU", 50, BookStatus.ACTIVE, null, null, 23, null);
 
         mockMvc.perform(put("/library/books/1")
                         .flashAttr("book", book))
@@ -51,7 +53,7 @@ public class LibraryIntegrationTests {
 
     @Test
     void shouldNotUpdateBook() throws Exception {
-        BookEntity book = new BookEntity("0001", "Updated Book 1", "RU", 50, 23);
+        Book book = new Book(1L, "0000-0000-0000-0001", "Updated Book 1", "RU", 50, BookStatus.ACTIVE, null, null, 23, null);
 
         // Book id 10 does not exist
         mockMvc.perform(put("/library/books/10")
@@ -65,7 +67,7 @@ public class LibraryIntegrationTests {
 
     @Test
     void shouldNotUpdateBookWithEmptyTitle() throws Exception {
-        BookEntity book = new BookEntity("0001", "", "RU", 50, 23);
+        Book book = new Book(1L, "0000-0000-0000-0001", "", "RU", 50, BookStatus.ACTIVE, null, null, 23, null);
 
         mockMvc.perform(put("/library/books/1")
                         .flashAttr("book", book))

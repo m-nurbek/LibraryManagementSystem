@@ -45,10 +45,14 @@ public class BookEntity {
     private AuthorEntity author;
 
     public Book toDto() {
-        return new Book(id, ISBN, title, language, numberOfPages, status, publishDate, archiveDate, numberOfCopies, author.toDto());
+        var authorDto = author == null ? null : author.toDto();
+        return new Book(id, ISBN, title, language, numberOfPages, status, publishDate, archiveDate, numberOfCopies, authorDto);
     }
 
     public static BookEntity fromDto(Book book) {
+        if (book == null) {
+            return null;
+        }
         return new BookEntity(book.getId(),
                 book.getISBN(),
                 book.getTitle(),

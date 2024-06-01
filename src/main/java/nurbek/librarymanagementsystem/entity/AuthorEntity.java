@@ -3,13 +3,13 @@ package nurbek.librarymanagementsystem.entity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import nurbek.librarymanagementsystem.dto.Author;
-
-import java.util.Set;
 
 @Data
 @Entity
 @AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "AUTHOR")
 public class AuthorEntity {
     @Id
@@ -24,6 +24,9 @@ public class AuthorEntity {
     }
 
     public static AuthorEntity fromDto(Author author) {
+        if (author == null) {
+            return null;
+        }
         return new AuthorEntity(author.getId(), author.getName());
     }
 }

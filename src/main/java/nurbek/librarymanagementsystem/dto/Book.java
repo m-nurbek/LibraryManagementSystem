@@ -6,9 +6,7 @@ import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
-import jakarta.validation.constraints.Digits;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.*;
 import lombok.Data;
 
 import java.io.IOException;
@@ -27,12 +25,15 @@ public class Book {
     @NotBlank(message = "Language is required")
     @Size(max = 2, message = "Language must be no longer than 2 characters")
     private final String language;
-    @NotBlank(message = "Number of pages is required")
+    @Min(value = 1, message = "Number of pages must be a number between 1 and 9999")
+    @Max(value = 9999, message = "Number of pages must be a number between 1 and 9999")
+    @Digits(integer = 4, fraction = 0, message = "Number of pages must be a number between 0 and 9999")
     private final Integer numberOfPages;
     private final BookStatus status;
     private final Date publishDate;
     private final Date archiveDate;
-    @NotBlank(message = "Number of copies is required")
+    @Min(value = 1, message = "Number of copies must be a number between 1 and 999")
+    @Max(value = 999, message = "Number of copies must be a number between 1 and 999")
     @Digits(integer = 3, fraction = 0, message = "Number of copies must be a number between 0 and 999")
     private final Integer numberOfCopies;
     private final Author author;

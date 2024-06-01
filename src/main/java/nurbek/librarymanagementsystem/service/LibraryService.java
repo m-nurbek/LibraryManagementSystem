@@ -11,6 +11,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -131,6 +132,20 @@ public class LibraryService {
         if (bookRepository.existsById(id)) {
             BookEntity bookInDb = bookRepository.getReferenceById(id);
             bookInDb.setStatus(BookStatus.ARCHIVED);
+            bookInDb.setArchiveDate(new Date());
+
+            bookRepository.save(bookInDb);
+            return Optional.of(bookInDb.toDto());
+        }
+        return Optional.empty();
+    }
+
+    public Optional<Book> restoreBook(long id) {
+        if (bookRepository.existsById(id)) {
+            BookEntity bookInDb = bookRepository.getReferenceById(id);
+            bookInDb.setStatus(BookStatus.ACTIVE);
+            bookInDb.setArchiveDate(null);
+
             bookRepository.save(bookInDb);
             return Optional.of(bookInDb.toDto());
         }
@@ -141,6 +156,7 @@ public class LibraryService {
         if (bookRepository.existsById(id)) {
             BookEntity bookInDb = bookRepository.getReferenceById(id);
             bookInDb.setStatus(BookStatus.DELETED);
+
             bookRepository.save(bookInDb);
             return Optional.of(bookInDb.toDto());
         }

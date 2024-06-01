@@ -1,5 +1,6 @@
 package nurbek.librarymanagementsystem;
 
+import nurbek.librarymanagementsystem.dto.BookStatus;
 import nurbek.librarymanagementsystem.entity.BookEntity;
 import nurbek.librarymanagementsystem.repository.BookRepository;
 import org.junit.jupiter.api.BeforeEach;
@@ -26,10 +27,10 @@ public class LibraryRepositoryTest {
 
     // Sample book entities for testing
     private final List<BookEntity> bookList = Arrays.asList(
-            new BookEntity(1L, "0001", "Book 1", "RU", 50, BookEntity.BookStatus.ACTIVE, new Date(), new Date(), 23, null),
-            new BookEntity(2L, "0002", "Book 2", "KZ", 100, BookEntity.BookStatus.ACTIVE, new Date(2004, Calendar.JANUARY, 1), new Date(), 23, null),
-            new BookEntity(3L, "0003", "Book 3", "EN", 200, BookEntity.BookStatus.ACTIVE, new Date(2004, Calendar.MARCH, 2), new Date(), 23, null),
-            new BookEntity(4L, "0004", "Book 4", "EN", 300, BookEntity.BookStatus.ACTIVE, new Date(2004, Calendar.JULY, 3), new Date(), 23, null)
+            new BookEntity(1L, "0000-0000-0000-0001", "Book 1", "RU", 50, BookStatus.ACTIVE, new Date(), null, 23, null),
+            new BookEntity(2L, "0000-0000-0000-0002", "Book 2", "KZ", 100, BookStatus.ACTIVE, new Date(2004, Calendar.JANUARY, 1), null, 23, null),
+            new BookEntity(3L, "0000-0000-0000-0003", "Book 3", "EN", 200, BookStatus.ACTIVE, new Date(2004, Calendar.MARCH, 2), null, 23, null),
+            new BookEntity(4L, "0000-0000-0000-0004", "Book 4", "EN", 300, BookStatus.ACTIVE, new Date(2004, Calendar.JULY, 3), null, 23, null)
     );
 
     private final PageRequest pageRequest = PageRequest.of(0, 10);

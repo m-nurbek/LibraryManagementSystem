@@ -28,14 +28,3 @@ insert into BOOK (ISBN, TITLE, LANGUAGE, NUMBER_OF_PAGES, NUMBER_OF_COPIES) valu
 insert into BOOK (ISBN, TITLE, LANGUAGE, NUMBER_OF_PAGES, NUMBER_OF_COPIES) values ('600976932-9', 'Sirens', 'Bosnian', 323, 1);
 insert into BOOK (ISBN, TITLE, LANGUAGE, NUMBER_OF_PAGES, NUMBER_OF_COPIES) values ('826131857-5', 'Trumpet of the Swan, The', 'Haitian Creole', 118, 1);
 insert into BOOK (ISBN, TITLE, LANGUAGE, NUMBER_OF_PAGES, NUMBER_OF_COPIES) values ('334025664-0', 'Carless Love', 'Hungarian', 197, 4);
-
-insert into ACCOUNT (FIRST_NAME, LAST_NAME, EMAIL, PASSWORD) values ('Ralf', 'Muehler', 'rmuehler0@forbes.com', 'lS1.0n0)*');
-insert into ACCOUNT (FIRST_NAME, LAST_NAME, EMAIL, PASSWORD) values ('Eve', 'Chesnut', 'echesnut1@google.ru', 'mS2%}D3HR+/<');
-insert into ACCOUNT (FIRST_NAME, LAST_NAME, EMAIL, PASSWORD) values ('Lynnett', 'Leuren', 'lleuren2@hostgator.com', 'oQ8@?8kW2dCR');
-insert into ACCOUNT (FIRST_NAME, LAST_NAME, EMAIL, PASSWORD) values ('Cazzie', 'Batterbee', 'cbatterbee3@flickr.com', 'yD5`Mm$c"m4');
-insert into ACCOUNT (FIRST_NAME, LAST_NAME, EMAIL, PASSWORD) values ('Uriel', 'Robertsson', 'urobertsson4@earthlink.net', 'hS8,{W=L+qEY');
-insert into ACCOUNT (FIRST_NAME, LAST_NAME, EMAIL, PASSWORD) values ('Roana', 'Freak', 'rfreak5@dropbox.com', 'kE1'',!PI&7.');
-insert into ACCOUNT (FIRST_NAME, LAST_NAME, EMAIL, PASSWORD) values ('Linea', 'Bristowe', 'lbristowe6@youku.com', 'uL0"x3c}d=8');
-insert into ACCOUNT (FIRST_NAME, LAST_NAME, EMAIL, PASSWORD) values ('Otto', 'Darridon', 'odarridon7@mac.com', 'cZ0(R|cJ9i+~g<3,');
-insert into ACCOUNT (FIRST_NAME, LAST_NAME, EMAIL, PASSWORD) values ('Johnnie', 'Rossin', 'jrossin8@zimbio.com', 'jF9<Apo>b');
-insert into ACCOUNT (FIRST_NAME, LAST_NAME, EMAIL, PASSWORD) values ('Denyse', 'Mayo', 'dmayo9@telegraph.co.uk', 'eI8}S*Wj6');

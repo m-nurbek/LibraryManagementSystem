@@ -9,6 +9,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
@@ -56,13 +57,19 @@ public class LibraryController {
     }
 
     @PostMapping("/books")
-    public String libraryBookAdd(Model model, @Valid @ModelAttribute Book book) {
+    public String libraryBookAdd(Model model, @Valid @ModelAttribute Book book, Errors errors) {
+        if (errors.hasErrors()) {
+            model.addAttribute("error", "Invalid input");
+        }
         libraryService.addBook(book);
         return "redirect:/library/books";
     }
 
     @PutMapping("books/{id}")
-    public String libraryBookUpdate(@Valid @ModelAttribute("book") Book book, @PathVariable long id) {
+    public String libraryBookUpdate(@Valid @ModelAttribute("book") Book book, @PathVariable long id, Errors errors) {
+        if (errors.hasErrors()) {
+            return "error";
+        }
         Optional<Book> bookEntity = libraryService.updateBook(id, book);
         if (bookEntity.isPresent()) {
             return "redirect:/library/books";
