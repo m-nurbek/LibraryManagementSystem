@@ -2,10 +2,11 @@
 - [x] Add book detail view + template
 - [x] Write tests for the book detail view
 - [x] Add search functionality
-- [ ] Add sort books functionality
-- [ ] Fix user authentication and authorization (User, Librarian)
-- [ ] Add reserve book functionality to the user
-- [ ] Test reserve book functionality
+- [ ] Add sort books functionality (Optional)
+- [ ] Add crud for books
 - [ ] Add user lists view for the librarian
 - [ ] Add user detail view for the librarian
+- [ ] Add reserve book functionality to the user
+- [ ] Test reserve book functionality
 - [ ] Write tests for this views
+- [ ] Fix user authentication and authorization (User, Librarian)

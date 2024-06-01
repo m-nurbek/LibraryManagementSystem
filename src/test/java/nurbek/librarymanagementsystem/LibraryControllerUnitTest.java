@@ -15,12 +15,15 @@ import org.springframework.test.web.servlet.MockMvc;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.model;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.patch;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @SpringBootTest
 @AutoConfigureMockMvc
@@ -42,10 +45,10 @@ public class LibraryControllerUnitTest {
     @BeforeEach
     void setUp() {
         var bookList = List.of(new BookEntity[]{
-                new BookEntity(1L, "0001", "Book 1", "RU", "50", BookEntity.BookStatus.ACTIVE, new Date(), new Date(), 23, new AuthorEntity()),
-                new BookEntity(2L, "0002", "Book 2", "KZ", "100", BookEntity.BookStatus.ACTIVE, new Date(2004, Calendar.JANUARY, 1), new Date(), 23, new AuthorEntity()),
-                new BookEntity(3L, "0003", "Book 3", "EN", "200", BookEntity.BookStatus.ACTIVE, new Date(2004, Calendar.MARCH, 2), new Date(), 23, new AuthorEntity()),
-                new BookEntity(4L, "0004", "Book 4", "EN", "300", BookEntity.BookStatus.ACTIVE, new Date(2004, Calendar.JULY, 3), new Date(), 23, new AuthorEntity())
+                new BookEntity(1L, "0001", "Book 1", "RU", 50, BookEntity.BookStatus.ACTIVE, new Date(), new Date(), 23, null),
+                new BookEntity(2L, "0002", "Book 2", "KZ", 100, BookEntity.BookStatus.ACTIVE, new Date(2004, Calendar.JANUARY, 1), new Date(), 23, null),
+                new BookEntity(3L, "0003", "Book 3", "EN", 200, BookEntity.BookStatus.ACTIVE, new Date(2004, Calendar.MARCH, 2), new Date(), 23, null),
+                new BookEntity(4L, "0004", "Book 4", "EN", 300, BookEntity.BookStatus.ACTIVE, new Date(2004, Calendar.JULY, 3), new Date(), 23, null)
         });
         bookPage = new PageImpl<>(bookList);
         pageRequestWithSorting = PageRequest.of(PAGE_NUMBER, PAGE_SIZE, Sort.by(Sort.Direction.DESC, SORT_BY));
@@ -63,7 +66,7 @@ public class LibraryControllerUnitTest {
 
     @Test
     void shouldReturnBookDetailView() throws Exception {
-        var book =  new BookEntity(1L, "0001", "Book 1", "RU", "50", BookEntity.BookStatus.ACTIVE, new Date(), new Date(), 23, new AuthorEntity());
+        var book =  new BookEntity(1L, "0001", "Book 1", "RU", 50, BookEntity.BookStatus.ACTIVE, new Date(), new Date(), 23, new AuthorEntity());
 
         when(libraryService.getBookById(any(long.class))).thenReturn(book);
 
@@ -81,5 +84,24 @@ public class LibraryControllerUnitTest {
                 .andExpect(status().isOk())
                 .andExpect(model().attributeExists("books"))
                 .andExpect(model().attribute("totalItems", 4L));
+    }
+
+    @Test
+    void shouldUpdateBook() throws Exception {
+        BookEntity book = new BookEntity(2L, "0002", "Book 2", "KZ", 100, BookEntity.BookStatus.ACTIVE, new Date(2004, Calendar.JANUARY, 1), new Date(), 23, null);
+        when(libraryService.updateBook(any(BookEntity.class))).thenReturn(Optional.of(book));
+
+        mockMvc.perform(put("/library/books/2"))
+                .andExpect(status().is3xxRedirection())
+                .andExpect(view().name("redirect:/library/books"));
+    }
+
+    @Test
+    void shouldNotUpdateBookBecauseDoesNotExist() throws Exception {
+        when(libraryService.updateBook(any(BookEntity.class))).thenReturn(Optional.empty());
+
+        mockMvc.perform(put("/library/books/1"))
+                .andExpect(status().isOk())
+                .andExpect(view().name("error"));
     }
 }

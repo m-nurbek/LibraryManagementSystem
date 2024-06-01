@@ -1,6 +1,5 @@
 package nurbek.librarymanagementsystem;
 
-import nurbek.librarymanagementsystem.entity.AuthorEntity;
 import nurbek.librarymanagementsystem.entity.BookEntity;
 import nurbek.librarymanagementsystem.repository.BookRepository;
 import nurbek.librarymanagementsystem.service.LibraryService;
@@ -35,17 +34,17 @@ public class LibraryServiceUnitTest {
     @BeforeEach
     void setUp() {
         var bookList = List.of(new BookEntity[]{
-                new BookEntity(1L, "0001", "Book 1", "RU", "50", BookEntity.BookStatus.ACTIVE, new Date(), new Date(), 23, new AuthorEntity()),
-                new BookEntity(2L, "0002", "Book 2", "KZ", "100", BookEntity.BookStatus.ACTIVE, new Date(2004, Calendar.JANUARY, 1), new Date(), 23, new AuthorEntity()),
-                new BookEntity(3L, "0003", "Book 3", "EN", "200", BookEntity.BookStatus.ACTIVE, new Date(2004, Calendar.MARCH, 2), new Date(), 23, new AuthorEntity()),
-                new BookEntity(4L, "0004", "Book 4", "EN", "300", BookEntity.BookStatus.ACTIVE, new Date(2004, Calendar.JULY, 3), new Date(), 23, new AuthorEntity())
+                new BookEntity(1L, "0001", "Book 1", "RU", 50, BookEntity.BookStatus.ACTIVE, new Date(), new Date(), 23, null),
+                new BookEntity(2L, "0002", "Book 2", "KZ", 100, BookEntity.BookStatus.ACTIVE, new Date(2004, Calendar.JANUARY, 1), new Date(), 23, null),
+                new BookEntity(3L, "0003", "Book 3", "EN", 200, BookEntity.BookStatus.ACTIVE, new Date(2004, Calendar.MARCH, 2), new Date(), 23, null),
+                new BookEntity(4L, "0004", "Book 4", "EN", 300, BookEntity.BookStatus.ACTIVE, new Date(2004, Calendar.JULY, 3), new Date(), 23, null)
         });
         bookPage = new PageImpl<>(bookList);
         pageRequestWithSorting = PageRequest.of(0, 3, Sort.by(Sort.Direction.DESC, "title"));
     }
 
     @Test
-    void shouldBeAbleToReturnListOfBooks() throws Exception {
+    void shouldBeAbleToReturnListOfBooks() {
         when(bookRepository.findAll(pageRequestWithSorting)).thenReturn(bookPage);
 
         Page<BookEntity> actual = libraryService.getBookList(pageRequestWithSorting);
@@ -55,4 +54,16 @@ public class LibraryServiceUnitTest {
 
         verify(bookRepository, times(1)).findAll(pageRequestWithSorting);
     }
+
+    @Test
+    void shouldNotBeAbleToReturnListOfBooks() {
+        when(bookRepository.findAll(pageRequestWithSorting)).thenReturn(new PageImpl<>(List.of(new BookEntity[] {})));
+
+        Page<BookEntity> actual = libraryService.getBookList(pageRequestWithSorting);
+        assertThat(actual).isEmpty();
+        assertThat(actual.getTotalElements()).isEqualTo(0);
+
+        verify(bookRepository, times(1)).findAll(pageRequestWithSorting);
+    }
+
 }

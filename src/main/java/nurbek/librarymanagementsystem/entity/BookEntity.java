@@ -1,10 +1,9 @@
 package nurbek.librarymanagementsystem.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
+import lombok.*;
+import nurbek.librarymanagementsystem.dto.Book;
+import nurbek.librarymanagementsystem.dto.BookStatus;
 
 import java.util.Date;
 
@@ -13,19 +12,24 @@ import java.util.Date;
 @Table(name = "BOOK")
 @AllArgsConstructor
 @NoArgsConstructor
+@RequiredArgsConstructor
 public class BookEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
     private Long id;
     @Column(name = "ISBN", unique = true, nullable = false)
+    @NonNull
     private String ISBN;
     @Column(name = "TITLE", nullable = false)
+    @NonNull
     private String title;
     @Column(name = "LANGUAGE", nullable = false)
+    @NonNull
     private String language;
     @Column(name = "NUMBER_OF_PAGES", nullable = false)
-    private String numberOfPages;
+    @NonNull
+    private Integer numberOfPages;
     @Column(name = "STATUS")
     @Enumerated(EnumType.STRING)
     private BookStatus status = BookStatus.ACTIVE;
@@ -34,12 +38,27 @@ public class BookEntity {
     @Column(name = "ARCHIVE_DATE")
     private Date archiveDate;
     @Column(name = "NUMBER_OF_COPIES", nullable = false)
-    private int numberOfCopies;
+    @NonNull
+    private Integer numberOfCopies = 1;
 
     @ManyToOne
     private AuthorEntity author;
 
-    public enum BookStatus {
-        ARCHIVED, DELETED, ACTIVE
+    public Book toDto() {
+        return new Book(id, ISBN, title, language, numberOfPages, status, publishDate, archiveDate, numberOfCopies, author.toDto());
+    }
+
+    public static BookEntity fromDto(Book book) {
+        return new BookEntity(book.getId(),
+                book.getISBN(),
+                book.getTitle(),
+                book.getLanguage(),
+                book.getNumberOfPages(),
+                book.getStatus(),
+                book.getPublishDate(),
+                book.getArchiveDate(),
+                book.getNumberOfCopies(),
+                AuthorEntity.fromDto(book.getAuthor())
+        );
     }
 }

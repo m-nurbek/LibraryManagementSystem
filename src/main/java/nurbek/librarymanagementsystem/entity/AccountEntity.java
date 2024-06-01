@@ -3,6 +3,7 @@ package nurbek.librarymanagementsystem.entity;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
+import nurbek.librarymanagementsystem.dto.Role;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -30,10 +31,6 @@ public class AccountEntity implements UserDetails {
     @Column(name = "ROLE")
     @Enumerated(EnumType.STRING)
     private Role role = Role.NULL;
-
-    public enum Role {
-        LIBRARIAN, USER, NULL
-    }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

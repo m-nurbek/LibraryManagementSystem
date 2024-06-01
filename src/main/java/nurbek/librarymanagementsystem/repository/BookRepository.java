@@ -1,8 +1,10 @@
 package nurbek.librarymanagementsystem.repository;
 
+import nurbek.librarymanagementsystem.dto.BookStatus;
 import nurbek.librarymanagementsystem.entity.BookEntity;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.PagingAndSortingRepository;
@@ -17,4 +19,6 @@ public interface BookRepository extends JpaRepository<BookEntity, Long>, PagingA
     Page<BookEntity> searchByKeyword(@Param("keyword") String keyword, PageRequest pageRequest);
 
     Optional<BookEntity> findByISBN(String ISBN);
+
+    Page<BookEntity> getBookEntitiesByStatusEqualsIgnoreCase(BookStatus status, Pageable pageable);
 }
