@@ -3,8 +3,10 @@ package nurbek.librarymanagementsystem.controller;
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import nurbek.librarymanagementsystem.dto.Book;
+import nurbek.librarymanagementsystem.property.ConfigurationProperty;
 import nurbek.librarymanagementsystem.service.LibraryService;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
@@ -20,17 +22,21 @@ import java.util.Optional;
 @RequestMapping("/library")
 public class LibraryController {
     private final LibraryService libraryService;
+    private final int pageSize;
 
-    public LibraryController(LibraryService libraryService) {
+    public LibraryController(LibraryService libraryService, ConfigurationProperty props) {
         this.libraryService = libraryService;
+        pageSize = props.getPageSize();
     }
 
     @GetMapping(path = {"/books"})
-    public String libraryBooks(Model model, @PageableDefault(sort = {"title"}, value = 10) Pageable pageable,
+    public String libraryBooks(Model model, @PageableDefault(sort = {"title"}) Pageable pageable,
                                @RequestParam(value = "keyword", required = false) String keyword) {
+        Pageable pageProps = PageRequest.of(pageable.getPageNumber(), pageSize, pageable.getSort());
+
         Page<Book> bookList;
         if (keyword != null && !keyword.isEmpty()) {
-            bookList = libraryService.searchBooksByKeyword(keyword, pageable);
+            bookList = libraryService.searchBooksByKeyword(keyword, pageProps);
             model.addAttribute("books", bookList);
         } else {
             bookList = libraryService.getBookList(pageable);

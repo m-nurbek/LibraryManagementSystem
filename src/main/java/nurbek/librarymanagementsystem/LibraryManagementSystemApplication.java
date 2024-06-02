@@ -1,9 +1,11 @@
 package nurbek.librarymanagementsystem;
 
 import lombok.extern.slf4j.Slf4j;
+import nurbek.librarymanagementsystem.service.common.GreetingService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.scheduling.TaskScheduler;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler;
@@ -13,7 +15,9 @@ import org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler;
 public class LibraryManagementSystemApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(LibraryManagementSystemApplication.class, args);
+        ApplicationContext context = SpringApplication.run(LibraryManagementSystemApplication.class, args);
+        var greetingService = context.getBean(GreetingService.class);
+        greetingService.logGreeting();
     }
 
     @Bean

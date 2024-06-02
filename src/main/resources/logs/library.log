@@ -1,74 +1,659 @@
-2024-06-02T17:05:11.490+05:00  INFO 7940 --- [LibraryManagementSystem] [restartedMain] n.l.LibraryManagementSystemApplication   : Starting LibraryManagementSystemApplication using Java 21.0.1 with PID 7940 (D:\EpamLearning\LibraryManagementSystem\target\classes started by Nurbek in D:\EpamLearning\LibraryManagementSystem)
-2024-06-02T17:05:11.494+05:00  INFO 7940 --- [LibraryManagementSystem] [restartedMain] n.l.LibraryManagementSystemApplication   : No active profile set, falling back to 1 default profile: "default"
-2024-06-02T17:05:11.564+05:00  INFO 7940 --- [LibraryManagementSystem] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2024-06-02T17:05:11.564+05:00  INFO 7940 --- [LibraryManagementSystem] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2024-06-02T17:05:12.537+05:00  INFO 7940 --- [LibraryManagementSystem] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-06-02T17:05:12.610+05:00  INFO 7940 --- [LibraryManagementSystem] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 65 ms. Found 4 JPA repository interfaces.
-2024-06-02T17:05:13.636+05:00  INFO 7940 --- [LibraryManagementSystem] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8888 (http)
-2024-06-02T17:05:13.655+05:00  INFO 7940 --- [LibraryManagementSystem] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-06-02T17:05:13.655+05:00  INFO 7940 --- [LibraryManagementSystem] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
-2024-06-02T17:05:13.712+05:00  INFO 7940 --- [LibraryManagementSystem] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-06-02T17:05:13.713+05:00  INFO 7940 --- [LibraryManagementSystem] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2148 ms
-2024-06-02T17:05:13.781+05:00  INFO 7940 --- [LibraryManagementSystem] [restartedMain] com.zaxxer.hikari.HikariDataSource       : library - Starting...
-2024-06-02T17:05:14.060+05:00  INFO 7940 --- [LibraryManagementSystem] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : library - Added connection conn0: url=jdbc:h2:mem:library user=ADMIN
-2024-06-02T17:05:14.062+05:00  INFO 7940 --- [LibraryManagementSystem] [restartedMain] com.zaxxer.hikari.HikariDataSource       : library - Start completed.
-2024-06-02T17:05:14.076+05:00  INFO 7940 --- [LibraryManagementSystem] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2'. Database available at 'jdbc:h2:mem:library'
-2024-06-02T17:05:14.276+05:00  INFO 7940 --- [LibraryManagementSystem] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-06-02T17:05:14.338+05:00  INFO 7940 --- [LibraryManagementSystem] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
-2024-06-02T17:05:14.376+05:00  INFO 7940 --- [LibraryManagementSystem] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-06-02T17:05:14.615+05:00  INFO 7940 --- [LibraryManagementSystem] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-06-02T17:05:14.659+05:00  WARN 7940 --- [LibraryManagementSystem] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-06-02T17:05:16.151+05:00  INFO 7940 --- [LibraryManagementSystem] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-06-02T17:05:16.235+05:00  INFO 7940 --- [LibraryManagementSystem] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-06-02T17:05:16.968+05:00  INFO 7940 --- [LibraryManagementSystem] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2024-06-02T17:05:17.376+05:00  WARN 7940 --- [LibraryManagementSystem] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-06-02T17:05:18.478+05:00  INFO 7940 --- [LibraryManagementSystem] [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6acb983b, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@628b7c3, org.springframework.security.web.context.SecurityContextHolderFilter@6e1ee70b, org.springframework.security.web.header.HeaderWriterFilter@7d1a5f34, org.springframework.web.filter.CorsFilter@16bf43d3, org.springframework.security.web.authentication.logout.LogoutFilter@7be2df34, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@313728d2, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4293e159, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@728fe3d6, org.springframework.security.web.access.ExceptionTranslationFilter@3d7e0423, org.springframework.security.web.access.intercept.AuthorizationFilter@461ad3b6]
-2024-06-02T17:05:19.559+05:00  INFO 7940 --- [LibraryManagementSystem] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2024-06-02T17:05:19.611+05:00  INFO 7940 --- [LibraryManagementSystem] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8888 (http) with context path ''
-2024-06-02T17:05:19.619+05:00  INFO 7940 --- [LibraryManagementSystem] [restartedMain] n.l.LibraryManagementSystemApplication   : Started LibraryManagementSystemApplication in 8.758 seconds (process running for 9.797)
-2024-06-02T17:05:19.627+05:00  INFO 7940 --- [LibraryManagementSystem] [taskScheduler-1] n.l.LibraryManagementSystemApplication   : Hello World!
-2024-06-02T17:05:20.636+05:00  INFO 7940 --- [LibraryManagementSystem] [taskScheduler-1] n.l.LibraryManagementSystemApplication   : Hello World!
-2024-06-02T17:05:21.631+05:00  INFO 7940 --- [LibraryManagementSystem] [taskScheduler-1] n.l.LibraryManagementSystemApplication   : Hello World!
-2024-06-02T17:05:22.628+05:00  INFO 7940 --- [LibraryManagementSystem] [taskScheduler-1] n.l.LibraryManagementSystemApplication   : Hello World!
-2024-06-02T17:05:23.627+05:00  INFO 7940 --- [LibraryManagementSystem] [taskScheduler-1] n.l.LibraryManagementSystemApplication   : Hello World!
-2024-06-02T17:05:32.268+05:00  INFO 7940 --- [LibraryManagementSystem] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
-2024-06-02T17:05:32.282+05:00  INFO 7940 --- [LibraryManagementSystem] [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-06-02T17:05:32.297+05:00  WARN 7940 --- [LibraryManagementSystem] [Thread-5] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: База данных уже закрыта (чтобы отключить автоматическое закрытие базы данных при останове JVM, добавьте ";DB_CLOSE_ON_EXIT=FALSE" в URL)
+2024-06-02T21:08:49.792+05:00  INFO 11864 --- [LibraryManagementSystem] [restartedMain] n.l.LibraryManagementSystemApplication   : Starting LibraryManagementSystemApplication using Java 21.0.1 with PID 11864 (D:\EpamLearning\LibraryManagementSystem\target\classes started by Nurbek in D:\EpamLearning\LibraryManagementSystem)
+2024-06-02T21:08:49.795+05:00  INFO 11864 --- [LibraryManagementSystem] [restartedMain] n.l.LibraryManagementSystemApplication   : No active profile set, falling back to 1 default profile: "default"
+2024-06-02T21:08:52.539+05:00  INFO 11864 --- [LibraryManagementSystem] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-02T21:08:52.539+05:00  INFO 11864 --- [LibraryManagementSystem] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-06-02T21:08:52.610+05:00  INFO 11864 --- [LibraryManagementSystem] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-02T21:08:52.936+05:00  INFO 11864 --- [LibraryManagementSystem] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-02T21:08:53.035+05:00  INFO 11864 --- [LibraryManagementSystem] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-06-02T21:08:53.081+05:00  INFO 11864 --- [LibraryManagementSystem] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-06-02T21:08:53.528+05:00  INFO 11864 --- [LibraryManagementSystem] [restartedMain] com.zaxxer.hikari.HikariDataSource       : library - Starting...
+2024-06-02T21:08:53.874+05:00  INFO 11864 --- [LibraryManagementSystem] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : library - Added connection conn0: url=jdbc:h2:mem:library user=ADMIN
+2024-06-02T21:08:53.875+05:00  INFO 11864 --- [LibraryManagementSystem] [restartedMain] com.zaxxer.hikari.HikariDataSource       : library - Start completed.
+2024-06-02T21:08:53.914+05:00  WARN 11864 --- [LibraryManagementSystem] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-02T21:08:55.363+05:00  INFO 11864 --- [LibraryManagementSystem] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-02T21:08:56.421+05:00  WARN 11864 --- [LibraryManagementSystem] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-02T21:08:58.503+05:00  INFO 11864 --- [LibraryManagementSystem] [restartedMain] n.l.LibraryManagementSystemApplication   : Started LibraryManagementSystemApplication in 9.229 seconds (process running for 10.169)
+2024-06-02T21:08:58.508+05:00  INFO 11864 --- [LibraryManagementSystem] [taskScheduler-1] n.l.LibraryManagementSystemApplication   : Hello World!
+2024-06-02T21:08:59.509+05:00  INFO 11864 --- [LibraryManagementSystem] [taskScheduler-1] n.l.LibraryManagementSystemApplication   : Hello World!
+2024-06-02T21:09:00.021+05:00  INFO 11864 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T21:09:00.511+05:00  INFO 11864 --- [LibraryManagementSystem] [taskScheduler-1] n.l.LibraryManagementSystemApplication   : Hello World!
+2024-06-02T21:09:01.514+05:00  INFO 11864 --- [LibraryManagementSystem] [taskScheduler-1] n.l.LibraryManagementSystemApplication   : Hello World!
+2024-06-02T21:09:02.520+05:00  INFO 11864 --- [LibraryManagementSystem] [taskScheduler-1] n.l.LibraryManagementSystemApplication   : Hello World!
+2024-06-02T21:09:03.009+05:00  INFO 11864 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T21:09:04.976+05:00  WARN 11864 --- [LibraryManagementSystem] [SpringApplicationShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: База данных уже закрыта (чтобы отключить автоматическое закрытие базы данных при останове JVM, добавьте ";DB_CLOSE_ON_EXIT=FALSE" в URL)
 Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-224]
-2024-06-02T17:05:32.298+05:00  INFO 7940 --- [LibraryManagementSystem] [Thread-5] com.zaxxer.hikari.HikariDataSource       : library - Shutdown initiated...
-2024-06-02T17:05:32.300+05:00  INFO 7940 --- [LibraryManagementSystem] [Thread-5] com.zaxxer.hikari.HikariDataSource       : library - Shutdown completed.
-2024-06-02T17:05:32.401+05:00  INFO 7940 --- [LibraryManagementSystem] [restartedMain] n.l.LibraryManagementSystemApplication   : Starting LibraryManagementSystemApplication using Java 21.0.1 with PID 7940 (D:\EpamLearning\LibraryManagementSystem\target\classes started by Nurbek in D:\EpamLearning\LibraryManagementSystem)
-2024-06-02T17:05:32.401+05:00  INFO 7940 --- [LibraryManagementSystem] [restartedMain] n.l.LibraryManagementSystemApplication   : No active profile set, falling back to 1 default profile: "default"
-2024-06-02T17:05:32.704+05:00  INFO 7940 --- [LibraryManagementSystem] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-06-02T17:05:32.728+05:00  INFO 7940 --- [LibraryManagementSystem] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 23 ms. Found 4 JPA repository interfaces.
-2024-06-02T17:05:33.019+05:00  INFO 7940 --- [LibraryManagementSystem] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8888 (http)
-2024-06-02T17:05:33.020+05:00  INFO 7940 --- [LibraryManagementSystem] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-06-02T17:05:33.021+05:00  INFO 7940 --- [LibraryManagementSystem] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
-2024-06-02T17:05:33.042+05:00  INFO 7940 --- [LibraryManagementSystem] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-06-02T17:05:33.042+05:00  INFO 7940 --- [LibraryManagementSystem] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 637 ms
-2024-06-02T17:05:33.079+05:00  INFO 7940 --- [LibraryManagementSystem] [restartedMain] com.zaxxer.hikari.HikariDataSource       : library - Starting...
-2024-06-02T17:05:33.081+05:00  INFO 7940 --- [LibraryManagementSystem] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : library - Added connection conn10: url=jdbc:h2:mem:library user=ADMIN
-2024-06-02T17:05:33.082+05:00  INFO 7940 --- [LibraryManagementSystem] [restartedMain] com.zaxxer.hikari.HikariDataSource       : library - Start completed.
-2024-06-02T17:05:33.082+05:00  INFO 7940 --- [LibraryManagementSystem] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2'. Database available at 'jdbc:h2:mem:library'
-2024-06-02T17:05:33.154+05:00  INFO 7940 --- [LibraryManagementSystem] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-06-02T17:05:33.157+05:00  INFO 7940 --- [LibraryManagementSystem] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-06-02T17:05:33.162+05:00  INFO 7940 --- [LibraryManagementSystem] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-06-02T17:05:33.164+05:00  WARN 7940 --- [LibraryManagementSystem] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-06-02T17:05:33.297+05:00  INFO 7940 --- [LibraryManagementSystem] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-06-02T17:05:33.311+05:00  INFO 7940 --- [LibraryManagementSystem] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-06-02T17:05:33.786+05:00  WARN 7940 --- [LibraryManagementSystem] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-06-02T17:05:34.160+05:00  INFO 7940 --- [LibraryManagementSystem] [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@24ad05b7, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7b4b3a55, org.springframework.security.web.context.SecurityContextHolderFilter@3cd1d89, org.springframework.security.web.header.HeaderWriterFilter@35874ff6, org.springframework.web.filter.CorsFilter@305c211e, org.springframework.security.web.authentication.logout.LogoutFilter@2a6ebae5, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@10553329, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4ed3c8ce, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@28f1935, org.springframework.security.web.access.ExceptionTranslationFilter@4cd2515c, org.springframework.security.web.access.intercept.AuthorizationFilter@43de27ff]
-2024-06-02T17:05:34.795+05:00  INFO 7940 --- [LibraryManagementSystem] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2024-06-02T17:05:34.812+05:00  INFO 7940 --- [LibraryManagementSystem] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8888 (http) with context path ''
-2024-06-02T17:05:34.815+05:00  INFO 7940 --- [LibraryManagementSystem] [restartedMain] n.l.LibraryManagementSystemApplication   : Started LibraryManagementSystemApplication in 2.457 seconds (process running for 24.994)
-2024-06-02T17:05:34.817+05:00  INFO 7940 --- [LibraryManagementSystem] [taskScheduler-1] n.l.LibraryManagementSystemApplication   : Hello World!
-2024-06-02T17:05:35.825+05:00  INFO 7940 --- [LibraryManagementSystem] [taskScheduler-1] n.l.LibraryManagementSystemApplication   : Hello World!
-2024-06-02T17:05:36.832+05:00  INFO 7940 --- [LibraryManagementSystem] [taskScheduler-1] n.l.LibraryManagementSystemApplication   : Hello World!
-2024-06-02T17:05:37.829+05:00  INFO 7940 --- [LibraryManagementSystem] [taskScheduler-1] n.l.LibraryManagementSystemApplication   : Hello World!
-2024-06-02T17:05:38.819+05:00  INFO 7940 --- [LibraryManagementSystem] [taskScheduler-1] n.l.LibraryManagementSystemApplication   : Hello World!
-2024-06-02T17:05:39.825+05:00  INFO 7940 --- [LibraryManagementSystem] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
-2024-06-02T17:07:32.314+05:00  INFO 7940 --- [LibraryManagementSystem] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-06-02T17:07:32.317+05:00  WARN 7940 --- [LibraryManagementSystem] [SpringApplicationShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: База данных уже закрыта (чтобы отключить автоматическое закрытие базы данных при останове JVM, добавьте ";DB_CLOSE_ON_EXIT=FALSE" в URL)
+2024-06-02T21:09:04.977+05:00  INFO 11864 --- [LibraryManagementSystem] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : library - Shutdown initiated...
+2024-06-02T21:09:04.978+05:00  INFO 11864 --- [LibraryManagementSystem] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : library - Shutdown completed.
+2024-06-02T21:13:00.409+05:00  INFO 3196 --- [LibraryManagementSystem] [restartedMain] n.l.LibraryManagementSystemApplication   : Starting LibraryManagementSystemApplication using Java 21.0.1 with PID 3196 (D:\EpamLearning\LibraryManagementSystem\target\classes started by Nurbek in D:\EpamLearning\LibraryManagementSystem)
+2024-06-02T21:13:00.412+05:00  INFO 3196 --- [LibraryManagementSystem] [restartedMain] n.l.LibraryManagementSystemApplication   : No active profile set, falling back to 1 default profile: "default"
+2024-06-02T21:13:03.363+05:00  INFO 3196 --- [LibraryManagementSystem] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-02T21:13:03.363+05:00  INFO 3196 --- [LibraryManagementSystem] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-06-02T21:13:03.449+05:00  INFO 3196 --- [LibraryManagementSystem] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-02T21:13:03.908+05:00  INFO 3196 --- [LibraryManagementSystem] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-02T21:13:04.028+05:00  INFO 3196 --- [LibraryManagementSystem] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-06-02T21:13:04.120+05:00  INFO 3196 --- [LibraryManagementSystem] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-06-02T21:13:04.737+05:00  INFO 3196 --- [LibraryManagementSystem] [restartedMain] com.zaxxer.hikari.HikariDataSource       : library - Starting...
+2024-06-02T21:13:05.202+05:00  INFO 3196 --- [LibraryManagementSystem] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : library - Added connection conn0: url=jdbc:h2:mem:library user=ADMIN
+2024-06-02T21:13:05.207+05:00  INFO 3196 --- [LibraryManagementSystem] [restartedMain] com.zaxxer.hikari.HikariDataSource       : library - Start completed.
+2024-06-02T21:13:05.284+05:00  WARN 3196 --- [LibraryManagementSystem] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-02T21:13:07.163+05:00  INFO 3196 --- [LibraryManagementSystem] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-02T21:13:08.918+05:00  WARN 3196 --- [LibraryManagementSystem] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-02T21:13:11.539+05:00  INFO 3196 --- [LibraryManagementSystem] [restartedMain] n.l.LibraryManagementSystemApplication   : Started LibraryManagementSystemApplication in 11.704 seconds (process running for 12.89)
+2024-06-02T21:13:11.546+05:00  INFO 3196 --- [LibraryManagementSystem] [taskScheduler-1] n.l.LibraryManagementSystemApplication   : Hello World!
+2024-06-02T21:13:12.019+05:00  INFO 3196 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T21:13:12.554+05:00  INFO 3196 --- [LibraryManagementSystem] [taskScheduler-1] n.l.LibraryManagementSystemApplication   : Hello World!
+2024-06-02T21:13:13.554+05:00  INFO 3196 --- [LibraryManagementSystem] [taskScheduler-1] n.l.LibraryManagementSystemApplication   : Hello World!
+2024-06-02T21:13:14.558+05:00  INFO 3196 --- [LibraryManagementSystem] [taskScheduler-1] n.l.LibraryManagementSystemApplication   : Hello World!
+2024-06-02T21:13:15.001+05:00  INFO 3196 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T21:13:15.549+05:00  INFO 3196 --- [LibraryManagementSystem] [taskScheduler-1] n.l.LibraryManagementSystemApplication   : Hello World!
+2024-06-02T21:13:18.005+05:00  INFO 3196 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T21:13:21.002+05:00  INFO 3196 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T21:13:24.002+05:00  INFO 3196 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T21:13:27.013+05:00  INFO 3196 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T21:13:30.002+05:00  INFO 3196 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T21:13:33.006+05:00  INFO 3196 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T21:13:34.802+05:00  INFO 3196 --- [LibraryManagementSystem] [http-nio-8888-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-02T21:13:34.897+05:00 DEBUG 3196 --- [LibraryManagementSystem] [http-nio-8888-exec-1] n.l.aop.LoggingAspect                    : >> CALLED METHOD: libraryBooks() with args: [{}, Page request [number: 0, size 5, sort: title: ASC], null]
+2024-06-02T21:13:35.127+05:00 DEBUG 3196 --- [LibraryManagementSystem] [http-nio-8888-exec-1] n.l.aop.LoggingAspect                    : << METHOD RETURNED: libraryBooks() result: books
+2024-06-02T21:13:36.014+05:00  INFO 3196 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T21:13:39.005+05:00  INFO 3196 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T21:13:41.053+05:00 DEBUG 3196 --- [LibraryManagementSystem] [http-nio-8888-exec-6] n.l.aop.LoggingAspect                    : >> CALLED METHOD: libraryBooks() with args: [{}, Page request [number: 0, size 10, sort: title: ASC], null]
+2024-06-02T21:13:41.065+05:00 DEBUG 3196 --- [LibraryManagementSystem] [http-nio-8888-exec-6] n.l.aop.LoggingAspect                    : << METHOD RETURNED: libraryBooks() result: books
+2024-06-02T21:13:42.001+05:00  INFO 3196 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T21:13:45.035+05:00  INFO 3196 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T21:13:48.016+05:00  INFO 3196 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T21:13:51.008+05:00  INFO 3196 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T21:13:54.014+05:00  INFO 3196 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T21:13:57.008+05:00  INFO 3196 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T21:14:00.004+05:00  INFO 3196 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T21:14:03.004+05:00  INFO 3196 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T21:14:06.015+05:00  INFO 3196 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T21:14:08.912+05:00  WARN 3196 --- [LibraryManagementSystem] [Thread-5] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: База данных уже закрыта (чтобы отключить автоматическое закрытие базы данных при останове JVM, добавьте ";DB_CLOSE_ON_EXIT=FALSE" в URL)
 Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-224]
-2024-06-02T17:07:32.318+05:00  INFO 7940 --- [LibraryManagementSystem] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : library - Shutdown initiated...
-2024-06-02T17:07:32.318+05:00  INFO 7940 --- [LibraryManagementSystem] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : library - Shutdown completed.
+2024-06-02T21:14:08.914+05:00  INFO 3196 --- [LibraryManagementSystem] [Thread-5] com.zaxxer.hikari.HikariDataSource       : library - Shutdown initiated...
+2024-06-02T21:14:08.917+05:00  INFO 3196 --- [LibraryManagementSystem] [Thread-5] com.zaxxer.hikari.HikariDataSource       : library - Shutdown completed.
+2024-06-02T21:14:09.117+05:00  INFO 3196 --- [LibraryManagementSystem] [restartedMain] n.l.LibraryManagementSystemApplication   : Starting LibraryManagementSystemApplication using Java 21.0.1 with PID 3196 (D:\EpamLearning\LibraryManagementSystem\target\classes started by Nurbek in D:\EpamLearning\LibraryManagementSystem)
+2024-06-02T21:14:09.118+05:00  INFO 3196 --- [LibraryManagementSystem] [restartedMain] n.l.LibraryManagementSystemApplication   : No active profile set, falling back to 1 default profile: "default"
+2024-06-02T21:14:10.655+05:00  INFO 3196 --- [LibraryManagementSystem] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-02T21:14:10.656+05:00  INFO 3196 --- [LibraryManagementSystem] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-06-02T21:14:10.738+05:00  INFO 3196 --- [LibraryManagementSystem] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-02T21:14:11.173+05:00  INFO 3196 --- [LibraryManagementSystem] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-02T21:14:11.183+05:00  INFO 3196 --- [LibraryManagementSystem] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-06-02T21:14:11.203+05:00  INFO 3196 --- [LibraryManagementSystem] [restartedMain] com.zaxxer.hikari.HikariDataSource       : library - Starting...
+2024-06-02T21:14:11.209+05:00  INFO 3196 --- [LibraryManagementSystem] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : library - Added connection conn10: url=jdbc:h2:mem:library user=ADMIN
+2024-06-02T21:14:11.210+05:00  INFO 3196 --- [LibraryManagementSystem] [restartedMain] com.zaxxer.hikari.HikariDataSource       : library - Start completed.
+2024-06-02T21:14:11.212+05:00  WARN 3196 --- [LibraryManagementSystem] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-02T21:14:11.662+05:00  INFO 3196 --- [LibraryManagementSystem] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-02T21:14:13.266+05:00  WARN 3196 --- [LibraryManagementSystem] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-02T21:14:16.522+05:00  INFO 3196 --- [LibraryManagementSystem] [restartedMain] n.l.LibraryManagementSystemApplication   : Started LibraryManagementSystemApplication in 7.475 seconds (process running for 77.873)
+2024-06-02T21:14:16.525+05:00  INFO 3196 --- [LibraryManagementSystem] [taskScheduler-1] n.l.LibraryManagementSystemApplication   : Hello World!
+2024-06-02T21:14:17.527+05:00  INFO 3196 --- [LibraryManagementSystem] [taskScheduler-1] n.l.LibraryManagementSystemApplication   : Hello World!
+2024-06-02T21:14:18.009+05:00  INFO 3196 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T21:14:18.539+05:00  INFO 3196 --- [LibraryManagementSystem] [taskScheduler-1] n.l.LibraryManagementSystemApplication   : Hello World!
+2024-06-02T21:14:19.535+05:00  INFO 3196 --- [LibraryManagementSystem] [taskScheduler-1] n.l.LibraryManagementSystemApplication   : Hello World!
+2024-06-02T21:14:20.527+05:00  INFO 3196 --- [LibraryManagementSystem] [taskScheduler-1] n.l.LibraryManagementSystemApplication   : Hello World!
+2024-06-02T21:14:21.010+05:00  INFO 3196 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T21:14:21.526+05:00  INFO 3196 --- [LibraryManagementSystem] [taskScheduler-1] n.l.LibraryManagementSystemApplication   : Hello World!
+2024-06-02T21:14:24.015+05:00  INFO 3196 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T21:14:24.349+05:00  WARN 3196 --- [LibraryManagementSystem] [Thread-7] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: База данных уже закрыта (чтобы отключить автоматическое закрытие базы данных при останове JVM, добавьте ";DB_CLOSE_ON_EXIT=FALSE" в URL)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-224]
+2024-06-02T21:14:24.349+05:00  INFO 3196 --- [LibraryManagementSystem] [Thread-7] com.zaxxer.hikari.HikariDataSource       : library - Shutdown initiated...
+2024-06-02T21:14:24.350+05:00  INFO 3196 --- [LibraryManagementSystem] [Thread-7] com.zaxxer.hikari.HikariDataSource       : library - Shutdown completed.
+2024-06-02T21:14:24.525+05:00  INFO 3196 --- [LibraryManagementSystem] [restartedMain] n.l.LibraryManagementSystemApplication   : Starting LibraryManagementSystemApplication using Java 21.0.1 with PID 3196 (D:\EpamLearning\LibraryManagementSystem\target\classes started by Nurbek in D:\EpamLearning\LibraryManagementSystem)
+2024-06-02T21:14:24.525+05:00  INFO 3196 --- [LibraryManagementSystem] [restartedMain] n.l.LibraryManagementSystemApplication   : No active profile set, falling back to 1 default profile: "default"
+2024-06-02T21:14:26.075+05:00  INFO 3196 --- [LibraryManagementSystem] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-02T21:14:26.076+05:00  INFO 3196 --- [LibraryManagementSystem] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-06-02T21:14:26.147+05:00  INFO 3196 --- [LibraryManagementSystem] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-02T21:14:26.518+05:00  INFO 3196 --- [LibraryManagementSystem] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-02T21:14:26.526+05:00  INFO 3196 --- [LibraryManagementSystem] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-06-02T21:14:26.542+05:00  INFO 3196 --- [LibraryManagementSystem] [restartedMain] com.zaxxer.hikari.HikariDataSource       : library - Starting...
+2024-06-02T21:14:26.547+05:00  INFO 3196 --- [LibraryManagementSystem] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : library - Added connection conn20: url=jdbc:h2:mem:library user=ADMIN
+2024-06-02T21:14:26.548+05:00  INFO 3196 --- [LibraryManagementSystem] [restartedMain] com.zaxxer.hikari.HikariDataSource       : library - Start completed.
+2024-06-02T21:14:26.550+05:00  WARN 3196 --- [LibraryManagementSystem] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-02T21:14:26.844+05:00  INFO 3196 --- [LibraryManagementSystem] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-02T21:14:28.312+05:00  WARN 3196 --- [LibraryManagementSystem] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-02T21:14:31.495+05:00  INFO 3196 --- [LibraryManagementSystem] [restartedMain] n.l.LibraryManagementSystemApplication   : Started LibraryManagementSystemApplication in 7.043 seconds (process running for 92.846)
+2024-06-02T21:14:31.497+05:00  INFO 3196 --- [LibraryManagementSystem] [taskScheduler-1] n.l.LibraryManagementSystemApplication   : Hello World!
+2024-06-02T21:14:32.500+05:00  INFO 3196 --- [LibraryManagementSystem] [taskScheduler-1] n.l.LibraryManagementSystemApplication   : Hello World!
+2024-06-02T21:14:33.009+05:00  INFO 3196 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T21:14:33.512+05:00  INFO 3196 --- [LibraryManagementSystem] [taskScheduler-1] n.l.LibraryManagementSystemApplication   : Hello World!
+2024-06-02T21:14:34.506+05:00  INFO 3196 --- [LibraryManagementSystem] [taskScheduler-1] n.l.LibraryManagementSystemApplication   : Hello World!
+2024-06-02T21:14:35.505+05:00  INFO 3196 --- [LibraryManagementSystem] [taskScheduler-1] n.l.LibraryManagementSystemApplication   : Hello World!
+2024-06-02T21:14:36.007+05:00  INFO 3196 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T21:14:39.012+05:00  INFO 3196 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T21:14:39.298+05:00  WARN 3196 --- [LibraryManagementSystem] [Thread-12] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: База данных уже закрыта (чтобы отключить автоматическое закрытие базы данных при останове JVM, добавьте ";DB_CLOSE_ON_EXIT=FALSE" в URL)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-224]
+2024-06-02T21:14:39.299+05:00  INFO 3196 --- [LibraryManagementSystem] [Thread-12] com.zaxxer.hikari.HikariDataSource       : library - Shutdown initiated...
+2024-06-02T21:14:39.300+05:00  INFO 3196 --- [LibraryManagementSystem] [Thread-12] com.zaxxer.hikari.HikariDataSource       : library - Shutdown completed.
+2024-06-02T21:14:39.468+05:00  INFO 3196 --- [LibraryManagementSystem] [restartedMain] n.l.LibraryManagementSystemApplication   : Starting LibraryManagementSystemApplication using Java 21.0.1 with PID 3196 (D:\EpamLearning\LibraryManagementSystem\target\classes started by Nurbek in D:\EpamLearning\LibraryManagementSystem)
+2024-06-02T21:14:39.470+05:00  INFO 3196 --- [LibraryManagementSystem] [restartedMain] n.l.LibraryManagementSystemApplication   : No active profile set, falling back to 1 default profile: "default"
+2024-06-02T21:14:40.794+05:00  INFO 3196 --- [LibraryManagementSystem] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-02T21:14:40.795+05:00  INFO 3196 --- [LibraryManagementSystem] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-06-02T21:14:40.845+05:00  INFO 3196 --- [LibraryManagementSystem] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-02T21:14:41.181+05:00  INFO 3196 --- [LibraryManagementSystem] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-02T21:14:41.188+05:00  INFO 3196 --- [LibraryManagementSystem] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-06-02T21:14:41.205+05:00  INFO 3196 --- [LibraryManagementSystem] [restartedMain] com.zaxxer.hikari.HikariDataSource       : library - Starting...
+2024-06-02T21:14:41.211+05:00  INFO 3196 --- [LibraryManagementSystem] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : library - Added connection conn30: url=jdbc:h2:mem:library user=ADMIN
+2024-06-02T21:14:41.212+05:00  INFO 3196 --- [LibraryManagementSystem] [restartedMain] com.zaxxer.hikari.HikariDataSource       : library - Start completed.
+2024-06-02T21:14:41.214+05:00  WARN 3196 --- [LibraryManagementSystem] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-02T21:14:41.477+05:00  INFO 3196 --- [LibraryManagementSystem] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-02T21:14:42.878+05:00  WARN 3196 --- [LibraryManagementSystem] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-02T21:14:46.199+05:00  INFO 3196 --- [LibraryManagementSystem] [restartedMain] n.l.LibraryManagementSystemApplication   : Started LibraryManagementSystemApplication in 6.802 seconds (process running for 107.55)
+2024-06-02T21:14:46.202+05:00  INFO 3196 --- [LibraryManagementSystem] [taskScheduler-1] n.l.LibraryManagementSystemApplication   : Hello World!
+2024-06-02T21:14:47.204+05:00  INFO 3196 --- [LibraryManagementSystem] [taskScheduler-1] n.l.LibraryManagementSystemApplication   : Hello World!
+2024-06-02T21:14:48.005+05:00  INFO 3196 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T21:14:48.207+05:00  INFO 3196 --- [LibraryManagementSystem] [taskScheduler-1] n.l.LibraryManagementSystemApplication   : Hello World!
+2024-06-02T21:14:49.206+05:00  INFO 3196 --- [LibraryManagementSystem] [taskScheduler-1] n.l.LibraryManagementSystemApplication   : Hello World!
+2024-06-02T21:14:50.207+05:00  INFO 3196 --- [LibraryManagementSystem] [taskScheduler-1] n.l.LibraryManagementSystemApplication   : Hello World!
+2024-06-02T21:14:51.010+05:00  INFO 3196 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T21:14:54.014+05:00  INFO 3196 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T21:14:55.069+05:00  WARN 3196 --- [LibraryManagementSystem] [Thread-16] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: База данных уже закрыта (чтобы отключить автоматическое закрытие базы данных при останове JVM, добавьте ";DB_CLOSE_ON_EXIT=FALSE" в URL)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-224]
+2024-06-02T21:14:55.070+05:00  INFO 3196 --- [LibraryManagementSystem] [Thread-16] com.zaxxer.hikari.HikariDataSource       : library - Shutdown initiated...
+2024-06-02T21:14:55.071+05:00  INFO 3196 --- [LibraryManagementSystem] [Thread-16] com.zaxxer.hikari.HikariDataSource       : library - Shutdown completed.
+2024-06-02T21:14:55.230+05:00  INFO 3196 --- [LibraryManagementSystem] [restartedMain] n.l.LibraryManagementSystemApplication   : Starting LibraryManagementSystemApplication using Java 21.0.1 with PID 3196 (D:\EpamLearning\LibraryManagementSystem\target\classes started by Nurbek in D:\EpamLearning\LibraryManagementSystem)
+2024-06-02T21:14:55.232+05:00  INFO 3196 --- [LibraryManagementSystem] [restartedMain] n.l.LibraryManagementSystemApplication   : No active profile set, falling back to 1 default profile: "default"
+2024-06-02T21:14:56.489+05:00  INFO 3196 --- [LibraryManagementSystem] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-02T21:14:56.490+05:00  INFO 3196 --- [LibraryManagementSystem] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-06-02T21:14:56.831+05:00  INFO 3196 --- [LibraryManagementSystem] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-02T21:14:57.190+05:00  INFO 3196 --- [LibraryManagementSystem] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-02T21:14:57.197+05:00  INFO 3196 --- [LibraryManagementSystem] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-06-02T21:14:57.216+05:00  INFO 3196 --- [LibraryManagementSystem] [restartedMain] com.zaxxer.hikari.HikariDataSource       : library - Starting...
+2024-06-02T21:14:57.220+05:00  INFO 3196 --- [LibraryManagementSystem] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : library - Added connection conn40: url=jdbc:h2:mem:library user=ADMIN
+2024-06-02T21:14:57.221+05:00  INFO 3196 --- [LibraryManagementSystem] [restartedMain] com.zaxxer.hikari.HikariDataSource       : library - Start completed.
+2024-06-02T21:14:57.222+05:00  WARN 3196 --- [LibraryManagementSystem] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-02T21:14:57.474+05:00  INFO 3196 --- [LibraryManagementSystem] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-02T21:14:58.832+05:00  WARN 3196 --- [LibraryManagementSystem] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-02T21:15:02.025+05:00  INFO 3196 --- [LibraryManagementSystem] [restartedMain] n.l.LibraryManagementSystemApplication   : Started LibraryManagementSystemApplication in 6.855 seconds (process running for 123.376)
+2024-06-02T21:15:02.029+05:00  INFO 3196 --- [LibraryManagementSystem] [taskScheduler-1] n.l.LibraryManagementSystemApplication   : Hello World!
+2024-06-02T21:15:03.001+05:00  INFO 3196 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T21:15:03.031+05:00  INFO 3196 --- [LibraryManagementSystem] [taskScheduler-1] n.l.LibraryManagementSystemApplication   : Hello World!
+2024-06-02T21:15:04.033+05:00  INFO 3196 --- [LibraryManagementSystem] [taskScheduler-1] n.l.LibraryManagementSystemApplication   : Hello World!
+2024-06-02T21:15:05.040+05:00  INFO 3196 --- [LibraryManagementSystem] [taskScheduler-1] n.l.LibraryManagementSystemApplication   : Hello World!
+2024-06-02T21:15:06.005+05:00  INFO 3196 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T21:15:06.035+05:00  INFO 3196 --- [LibraryManagementSystem] [taskScheduler-1] n.l.LibraryManagementSystemApplication   : Hello World!
+2024-06-02T21:15:07.033+05:00  INFO 3196 --- [LibraryManagementSystem] [taskScheduler-1] n.l.LibraryManagementSystemApplication   : Hello World!
+2024-06-02T21:15:08.853+05:00  WARN 3196 --- [LibraryManagementSystem] [Thread-20] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: База данных уже закрыта (чтобы отключить автоматическое закрытие базы данных при останове JVM, добавьте ";DB_CLOSE_ON_EXIT=FALSE" в URL)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-224]
+2024-06-02T21:15:08.853+05:00  INFO 3196 --- [LibraryManagementSystem] [Thread-20] com.zaxxer.hikari.HikariDataSource       : library - Shutdown initiated...
+2024-06-02T21:15:08.854+05:00  INFO 3196 --- [LibraryManagementSystem] [Thread-20] com.zaxxer.hikari.HikariDataSource       : library - Shutdown completed.
+2024-06-02T21:15:09.017+05:00  INFO 3196 --- [LibraryManagementSystem] [restartedMain] n.l.LibraryManagementSystemApplication   : Starting LibraryManagementSystemApplication using Java 21.0.1 with PID 3196 (D:\EpamLearning\LibraryManagementSystem\target\classes started by Nurbek in D:\EpamLearning\LibraryManagementSystem)
+2024-06-02T21:15:09.018+05:00  INFO 3196 --- [LibraryManagementSystem] [restartedMain] n.l.LibraryManagementSystemApplication   : No active profile set, falling back to 1 default profile: "default"
+2024-06-02T21:15:10.185+05:00  INFO 3196 --- [LibraryManagementSystem] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-02T21:15:10.186+05:00  INFO 3196 --- [LibraryManagementSystem] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-06-02T21:15:10.238+05:00  INFO 3196 --- [LibraryManagementSystem] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-02T21:15:10.577+05:00  INFO 3196 --- [LibraryManagementSystem] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-02T21:15:10.585+05:00  INFO 3196 --- [LibraryManagementSystem] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-06-02T21:15:10.598+05:00  INFO 3196 --- [LibraryManagementSystem] [restartedMain] com.zaxxer.hikari.HikariDataSource       : library - Starting...
+2024-06-02T21:15:10.602+05:00  INFO 3196 --- [LibraryManagementSystem] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : library - Added connection conn50: url=jdbc:h2:mem:library user=ADMIN
+2024-06-02T21:15:10.604+05:00  INFO 3196 --- [LibraryManagementSystem] [restartedMain] com.zaxxer.hikari.HikariDataSource       : library - Start completed.
+2024-06-02T21:15:10.605+05:00  WARN 3196 --- [LibraryManagementSystem] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-02T21:15:10.834+05:00  INFO 3196 --- [LibraryManagementSystem] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-02T21:15:12.241+05:00  WARN 3196 --- [LibraryManagementSystem] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-02T21:15:15.366+05:00  INFO 3196 --- [LibraryManagementSystem] [restartedMain] n.l.LibraryManagementSystemApplication   : Started LibraryManagementSystemApplication in 6.411 seconds (process running for 136.717)
+2024-06-02T21:15:15.368+05:00  INFO 3196 --- [LibraryManagementSystem] [taskScheduler-1] n.l.LibraryManagementSystemApplication   : Hello World!
+2024-06-02T21:15:16.372+05:00  INFO 3196 --- [LibraryManagementSystem] [taskScheduler-1] n.l.LibraryManagementSystemApplication   : Hello World!
+2024-06-02T21:15:17.385+05:00  INFO 3196 --- [LibraryManagementSystem] [taskScheduler-1] n.l.LibraryManagementSystemApplication   : Hello World!
+2024-06-02T21:15:18.006+05:00  INFO 3196 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T21:15:18.383+05:00  INFO 3196 --- [LibraryManagementSystem] [taskScheduler-1] n.l.LibraryManagementSystemApplication   : Hello World!
+2024-06-02T21:15:19.370+05:00  INFO 3196 --- [LibraryManagementSystem] [taskScheduler-1] n.l.LibraryManagementSystemApplication   : Hello World!
+2024-06-02T21:15:20.372+05:00  INFO 3196 --- [LibraryManagementSystem] [taskScheduler-1] n.l.LibraryManagementSystemApplication   : Hello World!
+2024-06-02T21:15:21.012+05:00  INFO 3196 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T21:15:24.004+05:00  INFO 3196 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T21:15:24.321+05:00  WARN 3196 --- [LibraryManagementSystem] [Thread-24] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: База данных уже закрыта (чтобы отключить автоматическое закрытие базы данных при останове JVM, добавьте ";DB_CLOSE_ON_EXIT=FALSE" в URL)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-224]
+2024-06-02T21:15:24.322+05:00  INFO 3196 --- [LibraryManagementSystem] [Thread-24] com.zaxxer.hikari.HikariDataSource       : library - Shutdown initiated...
+2024-06-02T21:15:24.322+05:00  INFO 3196 --- [LibraryManagementSystem] [Thread-24] com.zaxxer.hikari.HikariDataSource       : library - Shutdown completed.
+2024-06-02T21:15:24.509+05:00  INFO 3196 --- [LibraryManagementSystem] [restartedMain] n.l.LibraryManagementSystemApplication   : Starting LibraryManagementSystemApplication using Java 21.0.1 with PID 3196 (D:\EpamLearning\LibraryManagementSystem\target\classes started by Nurbek in D:\EpamLearning\LibraryManagementSystem)
+2024-06-02T21:15:24.510+05:00  INFO 3196 --- [LibraryManagementSystem] [restartedMain] n.l.LibraryManagementSystemApplication   : No active profile set, falling back to 1 default profile: "default"
+2024-06-02T21:15:25.773+05:00  INFO 3196 --- [LibraryManagementSystem] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-02T21:15:25.773+05:00  INFO 3196 --- [LibraryManagementSystem] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-06-02T21:15:25.823+05:00  INFO 3196 --- [LibraryManagementSystem] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-02T21:15:26.199+05:00  INFO 3196 --- [LibraryManagementSystem] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-02T21:15:26.202+05:00  INFO 3196 --- [LibraryManagementSystem] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-06-02T21:15:26.208+05:00  INFO 3196 --- [LibraryManagementSystem] [restartedMain] com.zaxxer.hikari.HikariDataSource       : library - Starting...
+2024-06-02T21:15:26.211+05:00  INFO 3196 --- [LibraryManagementSystem] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : library - Added connection conn60: url=jdbc:h2:mem:library user=ADMIN
+2024-06-02T21:15:26.211+05:00  INFO 3196 --- [LibraryManagementSystem] [restartedMain] com.zaxxer.hikari.HikariDataSource       : library - Start completed.
+2024-06-02T21:15:26.212+05:00  WARN 3196 --- [LibraryManagementSystem] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-02T21:15:26.374+05:00  INFO 3196 --- [LibraryManagementSystem] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-02T21:15:27.558+05:00  WARN 3196 --- [LibraryManagementSystem] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-02T21:15:30.802+05:00  INFO 3196 --- [LibraryManagementSystem] [restartedMain] n.l.LibraryManagementSystemApplication   : Started LibraryManagementSystemApplication in 6.362 seconds (process running for 152.153)
+2024-06-02T21:15:30.803+05:00  INFO 3196 --- [LibraryManagementSystem] [taskScheduler-1] n.l.LibraryManagementSystemApplication   : Hello World!
+2024-06-02T21:15:31.815+05:00  INFO 3196 --- [LibraryManagementSystem] [taskScheduler-1] n.l.LibraryManagementSystemApplication   : Hello World!
+2024-06-02T21:15:32.817+05:00  INFO 3196 --- [LibraryManagementSystem] [taskScheduler-1] n.l.LibraryManagementSystemApplication   : Hello World!
+2024-06-02T21:15:33.010+05:00  INFO 3196 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T21:15:33.808+05:00  INFO 3196 --- [LibraryManagementSystem] [taskScheduler-1] n.l.LibraryManagementSystemApplication   : Hello World!
+2024-06-02T21:15:34.816+05:00  INFO 3196 --- [LibraryManagementSystem] [taskScheduler-1] n.l.LibraryManagementSystemApplication   : Hello World!
+2024-06-02T21:15:35.052+05:00  WARN 3196 --- [LibraryManagementSystem] [SpringApplicationShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: База данных уже закрыта (чтобы отключить автоматическое закрытие базы данных при останове JVM, добавьте ";DB_CLOSE_ON_EXIT=FALSE" в URL)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-224]
+2024-06-02T21:15:35.052+05:00  INFO 3196 --- [LibraryManagementSystem] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : library - Shutdown initiated...
+2024-06-02T21:15:35.054+05:00  INFO 3196 --- [LibraryManagementSystem] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : library - Shutdown completed.
+2024-06-02T22:15:13.635+05:00  INFO 26396 --- [LibraryManagementSystem] [restartedMain] n.l.LibraryManagementSystemApplication   : Starting LibraryManagementSystemApplication using Java 21.0.1 with PID 26396 (D:\EpamLearning\LibraryManagementSystem\target\classes started by Nurbek in D:\EpamLearning\LibraryManagementSystem)
+2024-06-02T22:15:13.638+05:00  INFO 26396 --- [LibraryManagementSystem] [restartedMain] n.l.LibraryManagementSystemApplication   : No active profile set, falling back to 1 default profile: "default"
+2024-06-02T22:15:16.266+05:00  INFO 26396 --- [LibraryManagementSystem] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-02T22:15:16.267+05:00  INFO 26396 --- [LibraryManagementSystem] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-06-02T22:15:16.360+05:00  INFO 26396 --- [LibraryManagementSystem] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-02T22:15:16.839+05:00  INFO 26396 --- [LibraryManagementSystem] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-02T22:15:16.942+05:00  INFO 26396 --- [LibraryManagementSystem] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-06-02T22:15:16.996+05:00  INFO 26396 --- [LibraryManagementSystem] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-06-02T22:15:17.544+05:00  INFO 26396 --- [LibraryManagementSystem] [restartedMain] com.zaxxer.hikari.HikariDataSource       : library - Starting...
+2024-06-02T22:15:18.075+05:00  INFO 26396 --- [LibraryManagementSystem] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : library - Added connection conn0: url=jdbc:h2:mem:library user=ADMIN
+2024-06-02T22:15:18.077+05:00  INFO 26396 --- [LibraryManagementSystem] [restartedMain] com.zaxxer.hikari.HikariDataSource       : library - Start completed.
+2024-06-02T22:15:18.116+05:00  WARN 26396 --- [LibraryManagementSystem] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-02T22:15:19.909+05:00  INFO 26396 --- [LibraryManagementSystem] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-02T22:15:21.530+05:00  WARN 26396 --- [LibraryManagementSystem] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-02T22:15:23.940+05:00  INFO 26396 --- [LibraryManagementSystem] [restartedMain] n.l.LibraryManagementSystemApplication   : Started LibraryManagementSystemApplication in 10.84 seconds (process running for 11.988)
+2024-06-02T22:15:23.945+05:00  INFO 26396 --- [LibraryManagementSystem] [taskScheduler-1] n.l.LibraryManagementSystemApplication   : Hello World!
+2024-06-02T22:15:24.026+05:00  INFO 26396 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:15:24.955+05:00  INFO 26396 --- [LibraryManagementSystem] [taskScheduler-1] n.l.LibraryManagementSystemApplication   : Hello World!
+2024-06-02T22:15:25.955+05:00  INFO 26396 --- [LibraryManagementSystem] [taskScheduler-1] n.l.LibraryManagementSystemApplication   : Hello World!
+2024-06-02T22:15:26.960+05:00  INFO 26396 --- [LibraryManagementSystem] [taskScheduler-1] n.l.LibraryManagementSystemApplication   : Hello World!
+2024-06-02T22:15:27.007+05:00  INFO 26396 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:15:27.955+05:00  INFO 26396 --- [LibraryManagementSystem] [taskScheduler-1] n.l.LibraryManagementSystemApplication   : Hello World!
+2024-06-02T22:15:28.987+05:00  INFO 26396 --- [LibraryManagementSystem] [restartedMain] n.l.LibraryManagementSystemApplication   : Starting LibraryManagementSystemApplication using Java 21.0.1 with PID 26396 (D:\EpamLearning\LibraryManagementSystem\target\classes started by Nurbek in D:\EpamLearning\LibraryManagementSystem)
+2024-06-02T22:15:28.987+05:00  INFO 26396 --- [LibraryManagementSystem] [restartedMain] n.l.LibraryManagementSystemApplication   : No active profile set, falling back to 1 default profile: "default"
+2024-06-02T22:15:29.592+05:00  INFO 26396 --- [LibraryManagementSystem] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-02T22:15:29.593+05:00  INFO 26396 --- [LibraryManagementSystem] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-06-02T22:15:29.622+05:00  INFO 26396 --- [LibraryManagementSystem] [restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2024-06-02T22:15:29.832+05:00  INFO 26396 --- [LibraryManagementSystem] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-02T22:15:29.841+05:00  INFO 26396 --- [LibraryManagementSystem] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-06-02T22:15:29.857+05:00  INFO 26396 --- [LibraryManagementSystem] [restartedMain] com.zaxxer.hikari.HikariDataSource       : library - Starting...
+2024-06-02T22:15:29.859+05:00  INFO 26396 --- [LibraryManagementSystem] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : library - Added connection conn10: url=jdbc:h2:mem:library user=ADMIN
+2024-06-02T22:15:29.859+05:00  INFO 26396 --- [LibraryManagementSystem] [restartedMain] com.zaxxer.hikari.HikariDataSource       : library - Start completed.
+2024-06-02T22:15:29.861+05:00  WARN 26396 --- [LibraryManagementSystem] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-02T22:15:30.014+05:00  INFO 26396 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:15:30.014+05:00  INFO 26396 --- [LibraryManagementSystem] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-02T22:15:30.446+05:00  WARN 26396 --- [LibraryManagementSystem] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-02T22:15:31.507+05:00  WARN 26396 --- [LibraryManagementSystem] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'springApplicationAdminRegistrar' defined in class path resource [org/springframework/boot/autoconfigure/admin/SpringApplicationAdminJmxAutoConfiguration.class]: org.springframework.boot:type=Admin,name=SpringApplication
+2024-06-02T22:15:31.525+05:00  WARN 26396 --- [LibraryManagementSystem] [restartedMain] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: База данных уже закрыта (чтобы отключить автоматическое закрытие базы данных при останове JVM, добавьте ";DB_CLOSE_ON_EXIT=FALSE" в URL)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-224]
+2024-06-02T22:15:31.525+05:00  INFO 26396 --- [LibraryManagementSystem] [restartedMain] com.zaxxer.hikari.HikariDataSource       : library - Shutdown initiated...
+2024-06-02T22:15:31.528+05:00  INFO 26396 --- [LibraryManagementSystem] [restartedMain] com.zaxxer.hikari.HikariDataSource       : library - Shutdown completed.
+2024-06-02T22:15:31.530+05:00  INFO 26396 --- [LibraryManagementSystem] [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2024-06-02T22:15:31.579+05:00 ERROR 26396 --- [LibraryManagementSystem] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'springApplicationAdminRegistrar' defined in class path resource [org/springframework/boot/autoconfigure/admin/SpringApplicationAdminJmxAutoConfiguration.class]: org.springframework.boot:type=Admin,name=SpringApplication
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1786) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:962) ~[spring-context-6.1.6.jar:6.1.6]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624) ~[spring-context-6.1.6.jar:6.1.6]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343) ~[spring-boot-3.2.5.jar:3.2.5]
+	at nurbek.librarymanagementsystem.LibraryManagementSystemApplication.main(LibraryManagementSystemApplication.java:20) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.2.5.jar:3.2.5]
+Caused by: javax.management.InstanceAlreadyExistsException: org.springframework.boot:type=Admin,name=SpringApplication
+	at java.management/com.sun.jmx.mbeanserver.Repository.addMBean(Repository.java:322) ~[na:na]
+	at java.management/com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerWithRepository(DefaultMBeanServerInterceptor.java:1848) ~[na:na]
+	at java.management/com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerDynamicMBean(DefaultMBeanServerInterceptor.java:945) ~[na:na]
+	at java.management/com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerObject(DefaultMBeanServerInterceptor.java:880) ~[na:na]
+	at java.management/com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerMBean(DefaultMBeanServerInterceptor.java:315) ~[na:na]
+	at java.management/com.sun.jmx.mbeanserver.JmxMBeanServer.registerMBean(JmxMBeanServer.java:523) ~[na:na]
+	at org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar.afterPropertiesSet(SpringApplicationAdminMXBeanRegistrar.java:129) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1833) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782) ~[spring-beans-6.1.6.jar:6.1.6]
+	... 19 common frames omitted
+
+2024-06-02T22:15:33.003+05:00  INFO 26396 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:15:36.001+05:00  INFO 26396 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:15:39.008+05:00  INFO 26396 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:15:42.005+05:00  INFO 26396 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:15:45.013+05:00  INFO 26396 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:15:48.005+05:00  INFO 26396 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:15:49.211+05:00  WARN 26396 --- [LibraryManagementSystem] [SpringApplicationShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: База данных уже закрыта (чтобы отключить автоматическое закрытие базы данных при останове JVM, добавьте ";DB_CLOSE_ON_EXIT=FALSE" в URL)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-224]
+2024-06-02T22:15:49.212+05:00  INFO 26396 --- [LibraryManagementSystem] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : library - Shutdown initiated...
+2024-06-02T22:15:49.233+05:00  INFO 26396 --- [LibraryManagementSystem] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : library - Shutdown completed.
+2024-06-02T22:16:17.495+05:00  INFO 32288 --- [LibraryManagementSystem] [restartedMain] n.l.LibraryManagementSystemApplication   : Starting LibraryManagementSystemApplication using Java 21.0.1 with PID 32288 (D:\EpamLearning\LibraryManagementSystem\target\classes started by Nurbek in D:\EpamLearning\LibraryManagementSystem)
+2024-06-02T22:16:17.498+05:00  INFO 32288 --- [LibraryManagementSystem] [restartedMain] n.l.LibraryManagementSystemApplication   : No active profile set, falling back to 1 default profile: "default"
+2024-06-02T22:16:20.360+05:00  INFO 32288 --- [LibraryManagementSystem] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-02T22:16:20.360+05:00  INFO 32288 --- [LibraryManagementSystem] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-06-02T22:16:20.416+05:00  INFO 32288 --- [LibraryManagementSystem] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-02T22:16:20.734+05:00  INFO 32288 --- [LibraryManagementSystem] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-02T22:16:20.820+05:00  INFO 32288 --- [LibraryManagementSystem] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-06-02T22:16:20.861+05:00  INFO 32288 --- [LibraryManagementSystem] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-06-02T22:16:21.237+05:00  INFO 32288 --- [LibraryManagementSystem] [restartedMain] com.zaxxer.hikari.HikariDataSource       : library - Starting...
+2024-06-02T22:16:21.565+05:00  INFO 32288 --- [LibraryManagementSystem] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : library - Added connection conn0: url=jdbc:h2:mem:library user=ADMIN
+2024-06-02T22:16:21.567+05:00  INFO 32288 --- [LibraryManagementSystem] [restartedMain] com.zaxxer.hikari.HikariDataSource       : library - Start completed.
+2024-06-02T22:16:21.608+05:00  WARN 32288 --- [LibraryManagementSystem] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-02T22:16:23.159+05:00  INFO 32288 --- [LibraryManagementSystem] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-02T22:16:24.277+05:00  WARN 32288 --- [LibraryManagementSystem] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-02T22:16:26.323+05:00  INFO 32288 --- [LibraryManagementSystem] [restartedMain] n.l.LibraryManagementSystemApplication   : Started LibraryManagementSystemApplication in 9.312 seconds (process running for 10.179)
+2024-06-02T22:16:26.327+05:00  INFO 32288 --- [LibraryManagementSystem] [taskScheduler-1] n.l.LibraryManagementSystemApplication   : Hello World!
+2024-06-02T22:16:27.013+05:00  INFO 32288 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:16:27.338+05:00  INFO 32288 --- [LibraryManagementSystem] [taskScheduler-1] n.l.LibraryManagementSystemApplication   : Hello World!
+2024-06-02T22:16:28.342+05:00  INFO 32288 --- [LibraryManagementSystem] [taskScheduler-1] n.l.LibraryManagementSystemApplication   : Hello World!
+2024-06-02T22:16:29.335+05:00  INFO 32288 --- [LibraryManagementSystem] [taskScheduler-1] n.l.LibraryManagementSystemApplication   : Hello World!
+2024-06-02T22:16:30.007+05:00  INFO 32288 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:16:30.339+05:00  INFO 32288 --- [LibraryManagementSystem] [taskScheduler-1] n.l.LibraryManagementSystemApplication   : Hello World!
+2024-06-02T22:16:31.328+05:00  INFO 32288 --- [LibraryManagementSystem] [taskScheduler-1] n.l.LibraryManagementSystemApplication   : Hello World!
+2024-06-02T22:16:31.412+05:00  INFO 32288 --- [LibraryManagementSystem] [restartedMain] n.l.LibraryManagementSystemApplication   : Starting LibraryManagementSystemApplication using Java 21.0.1 with PID 32288 (D:\EpamLearning\LibraryManagementSystem\target\classes started by Nurbek in D:\EpamLearning\LibraryManagementSystem)
+2024-06-02T22:16:31.412+05:00  INFO 32288 --- [LibraryManagementSystem] [restartedMain] n.l.LibraryManagementSystemApplication   : No active profile set, falling back to 1 default profile: "default"
+2024-06-02T22:16:32.007+05:00  INFO 32288 --- [LibraryManagementSystem] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-02T22:16:32.008+05:00  INFO 32288 --- [LibraryManagementSystem] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-06-02T22:16:32.033+05:00  INFO 32288 --- [LibraryManagementSystem] [restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2024-06-02T22:16:32.168+05:00  INFO 32288 --- [LibraryManagementSystem] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-02T22:16:32.173+05:00  INFO 32288 --- [LibraryManagementSystem] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-06-02T22:16:32.181+05:00  INFO 32288 --- [LibraryManagementSystem] [restartedMain] com.zaxxer.hikari.HikariDataSource       : library - Starting...
+2024-06-02T22:16:32.182+05:00  INFO 32288 --- [LibraryManagementSystem] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : library - Added connection conn10: url=jdbc:h2:mem:library user=ADMIN
+2024-06-02T22:16:32.183+05:00  INFO 32288 --- [LibraryManagementSystem] [restartedMain] com.zaxxer.hikari.HikariDataSource       : library - Start completed.
+2024-06-02T22:16:32.184+05:00  WARN 32288 --- [LibraryManagementSystem] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-02T22:16:32.294+05:00  INFO 32288 --- [LibraryManagementSystem] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-02T22:16:32.780+05:00  WARN 32288 --- [LibraryManagementSystem] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-02T22:16:33.009+05:00  INFO 32288 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:16:33.575+05:00  WARN 32288 --- [LibraryManagementSystem] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'springApplicationAdminRegistrar' defined in class path resource [org/springframework/boot/autoconfigure/admin/SpringApplicationAdminJmxAutoConfiguration.class]: org.springframework.boot:type=Admin,name=SpringApplication
+2024-06-02T22:16:33.587+05:00  WARN 32288 --- [LibraryManagementSystem] [restartedMain] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: База данных уже закрыта (чтобы отключить автоматическое закрытие базы данных при останове JVM, добавьте ";DB_CLOSE_ON_EXIT=FALSE" в URL)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-224]
+2024-06-02T22:16:33.588+05:00  INFO 32288 --- [LibraryManagementSystem] [restartedMain] com.zaxxer.hikari.HikariDataSource       : library - Shutdown initiated...
+2024-06-02T22:16:33.590+05:00  INFO 32288 --- [LibraryManagementSystem] [restartedMain] com.zaxxer.hikari.HikariDataSource       : library - Shutdown completed.
+2024-06-02T22:16:33.591+05:00  INFO 32288 --- [LibraryManagementSystem] [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2024-06-02T22:16:33.622+05:00 ERROR 32288 --- [LibraryManagementSystem] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'springApplicationAdminRegistrar' defined in class path resource [org/springframework/boot/autoconfigure/admin/SpringApplicationAdminJmxAutoConfiguration.class]: org.springframework.boot:type=Admin,name=SpringApplication
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1786) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:962) ~[spring-context-6.1.6.jar:6.1.6]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624) ~[spring-context-6.1.6.jar:6.1.6]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343) ~[spring-boot-3.2.5.jar:3.2.5]
+	at nurbek.librarymanagementsystem.LibraryManagementSystemApplication.main(LibraryManagementSystemApplication.java:20) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.2.5.jar:3.2.5]
+Caused by: javax.management.InstanceAlreadyExistsException: org.springframework.boot:type=Admin,name=SpringApplication
+	at java.management/com.sun.jmx.mbeanserver.Repository.addMBean(Repository.java:322) ~[na:na]
+	at java.management/com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerWithRepository(DefaultMBeanServerInterceptor.java:1848) ~[na:na]
+	at java.management/com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerDynamicMBean(DefaultMBeanServerInterceptor.java:945) ~[na:na]
+	at java.management/com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerObject(DefaultMBeanServerInterceptor.java:880) ~[na:na]
+	at java.management/com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerMBean(DefaultMBeanServerInterceptor.java:315) ~[na:na]
+	at java.management/com.sun.jmx.mbeanserver.JmxMBeanServer.registerMBean(JmxMBeanServer.java:523) ~[na:na]
+	at org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar.afterPropertiesSet(SpringApplicationAdminMXBeanRegistrar.java:129) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1833) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782) ~[spring-beans-6.1.6.jar:6.1.6]
+	... 19 common frames omitted
+
+2024-06-02T22:16:36.006+05:00  INFO 32288 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:16:39.015+05:00  INFO 32288 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:16:42.015+05:00  INFO 32288 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:16:42.138+05:00  WARN 32288 --- [LibraryManagementSystem] [SpringApplicationShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: База данных уже закрыта (чтобы отключить автоматическое закрытие базы данных при останове JVM, добавьте ";DB_CLOSE_ON_EXIT=FALSE" в URL)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-224]
+2024-06-02T22:16:42.138+05:00  INFO 32288 --- [LibraryManagementSystem] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : library - Shutdown initiated...
+2024-06-02T22:16:42.157+05:00  INFO 32288 --- [LibraryManagementSystem] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : library - Shutdown completed.
+2024-06-02T22:17:29.467+05:00  INFO 9720 --- [LibraryManagementSystem] [restartedMain] n.l.LibraryManagementSystemApplication   : Starting LibraryManagementSystemApplication using Java 21.0.1 with PID 9720 (D:\EpamLearning\LibraryManagementSystem\target\classes started by Nurbek in D:\EpamLearning\LibraryManagementSystem)
+2024-06-02T22:17:29.469+05:00  INFO 9720 --- [LibraryManagementSystem] [restartedMain] n.l.LibraryManagementSystemApplication   : No active profile set, falling back to 1 default profile: "default"
+2024-06-02T22:17:31.952+05:00  INFO 9720 --- [LibraryManagementSystem] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-02T22:17:31.953+05:00  INFO 9720 --- [LibraryManagementSystem] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-06-02T22:17:32.052+05:00  INFO 9720 --- [LibraryManagementSystem] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-02T22:17:32.518+05:00  INFO 9720 --- [LibraryManagementSystem] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-02T22:17:32.591+05:00  INFO 9720 --- [LibraryManagementSystem] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-06-02T22:17:32.647+05:00  INFO 9720 --- [LibraryManagementSystem] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-06-02T22:17:33.233+05:00  INFO 9720 --- [LibraryManagementSystem] [restartedMain] com.zaxxer.hikari.HikariDataSource       : library - Starting...
+2024-06-02T22:17:33.629+05:00  INFO 9720 --- [LibraryManagementSystem] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : library - Added connection conn0: url=jdbc:h2:mem:library user=ADMIN
+2024-06-02T22:17:33.633+05:00  INFO 9720 --- [LibraryManagementSystem] [restartedMain] com.zaxxer.hikari.HikariDataSource       : library - Start completed.
+2024-06-02T22:17:33.696+05:00  WARN 9720 --- [LibraryManagementSystem] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-02T22:17:35.550+05:00  INFO 9720 --- [LibraryManagementSystem] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-02T22:17:37.078+05:00  WARN 9720 --- [LibraryManagementSystem] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-02T22:17:38.934+05:00  INFO 9720 --- [LibraryManagementSystem] [restartedMain] n.l.LibraryManagementSystemApplication   : Started LibraryManagementSystemApplication in 9.98 seconds (process running for 10.75)
+2024-06-02T22:17:38.939+05:00  INFO 9720 --- [LibraryManagementSystem] [taskScheduler-1] n.l.LibraryManagementSystemApplication   : Hello World!
+2024-06-02T22:17:39.012+05:00  INFO 9720 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:17:39.945+05:00  INFO 9720 --- [LibraryManagementSystem] [taskScheduler-1] n.l.LibraryManagementSystemApplication   : Hello World!
+2024-06-02T22:17:40.953+05:00  INFO 9720 --- [LibraryManagementSystem] [taskScheduler-1] n.l.LibraryManagementSystemApplication   : Hello World!
+2024-06-02T22:17:41.946+05:00  INFO 9720 --- [LibraryManagementSystem] [taskScheduler-1] n.l.LibraryManagementSystemApplication   : Hello World!
+2024-06-02T22:17:42.010+05:00  INFO 9720 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:17:42.952+05:00  INFO 9720 --- [LibraryManagementSystem] [taskScheduler-1] n.l.LibraryManagementSystemApplication   : Hello World!
+2024-06-02T22:17:43.947+05:00  INFO 9720 --- [LibraryManagementSystem] [taskScheduler-1] n.l.LibraryManagementSystemApplication   : Hello World!
+2024-06-02T22:17:43.949+05:00  INFO 9720 --- [LibraryManagementSystem] [restartedMain] n.l.service.common.GreetingService       : Welcome to Library Management System
+2024-06-02T22:17:45.015+05:00  INFO 9720 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:17:48.015+05:00  INFO 9720 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:17:51.006+05:00  INFO 9720 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:17:54.007+05:00  INFO 9720 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:17:57.015+05:00  INFO 9720 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:18:00.000+05:00  INFO 9720 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:18:03.011+05:00  INFO 9720 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:18:06.013+05:00  INFO 9720 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:18:09.013+05:00  INFO 9720 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:18:12.013+05:00  INFO 9720 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:18:15.009+05:00  INFO 9720 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:18:16.547+05:00  WARN 9720 --- [LibraryManagementSystem] [SpringApplicationShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: База данных уже закрыта (чтобы отключить автоматическое закрытие базы данных при останове JVM, добавьте ";DB_CLOSE_ON_EXIT=FALSE" в URL)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-224]
+2024-06-02T22:18:16.548+05:00  INFO 9720 --- [LibraryManagementSystem] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : library - Shutdown initiated...
+2024-06-02T22:18:16.549+05:00  INFO 9720 --- [LibraryManagementSystem] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : library - Shutdown completed.
+2024-06-02T22:23:40.733+05:00  INFO 15340 --- [LibraryManagementSystem] [restartedMain] n.l.LibraryManagementSystemApplication   : Starting LibraryManagementSystemApplication using Java 21.0.1 with PID 15340 (D:\EpamLearning\LibraryManagementSystem\target\classes started by Nurbek in D:\EpamLearning\LibraryManagementSystem)
+2024-06-02T22:23:40.736+05:00  INFO 15340 --- [LibraryManagementSystem] [restartedMain] n.l.LibraryManagementSystemApplication   : The following 1 profile is active: "dev"
+2024-06-02T22:23:43.484+05:00  INFO 15340 --- [LibraryManagementSystem] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-02T22:23:43.484+05:00  INFO 15340 --- [LibraryManagementSystem] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-06-02T22:23:43.545+05:00  INFO 15340 --- [LibraryManagementSystem] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-02T22:23:44.053+05:00  INFO 15340 --- [LibraryManagementSystem] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-02T22:23:44.172+05:00  INFO 15340 --- [LibraryManagementSystem] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-06-02T22:23:44.215+05:00  INFO 15340 --- [LibraryManagementSystem] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-06-02T22:23:44.963+05:00  INFO 15340 --- [LibraryManagementSystem] [restartedMain] com.zaxxer.hikari.HikariDataSource       : library - Starting...
+2024-06-02T22:23:45.464+05:00  INFO 15340 --- [LibraryManagementSystem] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : library - Added connection conn0: url=jdbc:h2:mem:library user=ADMIN
+2024-06-02T22:23:45.466+05:00  INFO 15340 --- [LibraryManagementSystem] [restartedMain] com.zaxxer.hikari.HikariDataSource       : library - Start completed.
+2024-06-02T22:23:45.511+05:00  WARN 15340 --- [LibraryManagementSystem] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-02T22:23:47.844+05:00  INFO 15340 --- [LibraryManagementSystem] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-02T22:23:49.247+05:00  WARN 15340 --- [LibraryManagementSystem] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-02T22:23:52.136+05:00  INFO 15340 --- [LibraryManagementSystem] [restartedMain] n.l.LibraryManagementSystemApplication   : Started LibraryManagementSystemApplication in 12.029 seconds (process running for 13.05)
+2024-06-02T22:23:52.145+05:00  INFO 15340 --- [LibraryManagementSystem] [taskScheduler-1] n.l.LibraryManagementSystemApplication   : Hello World!
+2024-06-02T22:23:53.152+05:00  INFO 15340 --- [LibraryManagementSystem] [taskScheduler-1] n.l.LibraryManagementSystemApplication   : Hello World!
+2024-06-02T22:23:54.020+05:00  INFO 15340 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:23:54.152+05:00  INFO 15340 --- [LibraryManagementSystem] [taskScheduler-1] n.l.LibraryManagementSystemApplication   : Hello World!
+2024-06-02T22:23:55.151+05:00  INFO 15340 --- [LibraryManagementSystem] [taskScheduler-1] n.l.LibraryManagementSystemApplication   : Hello World!
+2024-06-02T22:23:56.156+05:00  INFO 15340 --- [LibraryManagementSystem] [taskScheduler-1] n.l.LibraryManagementSystemApplication   : Hello World!
+2024-06-02T22:23:57.005+05:00  INFO 15340 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:23:57.160+05:00  INFO 15340 --- [LibraryManagementSystem] [taskScheduler-1] n.l.LibraryManagementSystemApplication   : Hello World!
+2024-06-02T22:23:57.162+05:00  INFO 15340 --- [LibraryManagementSystem] [restartedMain] n.l.service.common.GreetingService       : DEV PROFILE: Welcome to Library Management System
+2024-06-02T22:24:00.013+05:00  INFO 15340 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:24:03.001+05:00  INFO 15340 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:24:06.016+05:00  INFO 15340 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:24:09.015+05:00  INFO 15340 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:24:09.718+05:00  INFO 32716 --- [LibraryManagementSystem] [restartedMain] n.l.LibraryManagementSystemApplication   : Starting LibraryManagementSystemApplication using Java 21.0.1 with PID 32716 (D:\EpamLearning\LibraryManagementSystem\target\classes started by Nurbek in D:\EpamLearning\LibraryManagementSystem)
+2024-06-02T22:24:09.721+05:00  INFO 32716 --- [LibraryManagementSystem] [restartedMain] n.l.LibraryManagementSystemApplication   : The following 1 profile is active: "prod"
+2024-06-02T22:24:12.005+05:00  INFO 15340 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:24:12.754+05:00  INFO 32716 --- [LibraryManagementSystem] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-02T22:24:12.754+05:00  INFO 32716 --- [LibraryManagementSystem] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-06-02T22:24:12.822+05:00  INFO 32716 --- [LibraryManagementSystem] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-02T22:24:13.161+05:00  INFO 32716 --- [LibraryManagementSystem] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-02T22:24:13.251+05:00  INFO 32716 --- [LibraryManagementSystem] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-06-02T22:24:13.298+05:00  INFO 32716 --- [LibraryManagementSystem] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-06-02T22:24:13.759+05:00  INFO 32716 --- [LibraryManagementSystem] [restartedMain] com.zaxxer.hikari.HikariDataSource       : library - Starting...
+2024-06-02T22:24:14.087+05:00  INFO 32716 --- [LibraryManagementSystem] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : library - Added connection conn0: url=jdbc:h2:mem:library user=ADMIN
+2024-06-02T22:24:14.088+05:00  INFO 32716 --- [LibraryManagementSystem] [restartedMain] com.zaxxer.hikari.HikariDataSource       : library - Start completed.
+2024-06-02T22:24:14.134+05:00  WARN 32716 --- [LibraryManagementSystem] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-02T22:24:15.006+05:00  INFO 15340 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:24:16.003+05:00  INFO 32716 --- [LibraryManagementSystem] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-02T22:24:17.180+05:00  WARN 32716 --- [LibraryManagementSystem] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-02T22:24:18.006+05:00  INFO 15340 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:24:19.150+05:00  INFO 6956 --- [LibraryManagementSystem] [restartedMain] n.l.LibraryManagementSystemApplication   : Starting LibraryManagementSystemApplication using Java 21.0.1 with PID 6956 (D:\EpamLearning\LibraryManagementSystem\target\classes started by Nurbek in D:\EpamLearning\LibraryManagementSystem)
+2024-06-02T22:24:19.153+05:00  INFO 6956 --- [LibraryManagementSystem] [restartedMain] n.l.LibraryManagementSystemApplication   : The following 1 profile is active: "dev2"
+2024-06-02T22:24:19.439+05:00  WARN 32716 --- [LibraryManagementSystem] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2024-06-02T22:24:19.514+05:00  INFO 32716 --- [LibraryManagementSystem] [restartedMain] n.l.LibraryManagementSystemApplication   : Started LibraryManagementSystemApplication in 10.36 seconds (process running for 11.338)
+2024-06-02T22:24:19.520+05:00  INFO 32716 --- [LibraryManagementSystem] [taskScheduler-1] n.l.LibraryManagementSystemApplication   : Hello World!
+2024-06-02T22:24:20.527+05:00  INFO 32716 --- [LibraryManagementSystem] [taskScheduler-1] n.l.LibraryManagementSystemApplication   : Hello World!
+2024-06-02T22:24:21.015+05:00  INFO 15340 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:24:21.030+05:00  INFO 32716 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:24:21.532+05:00  INFO 32716 --- [LibraryManagementSystem] [taskScheduler-1] n.l.LibraryManagementSystemApplication   : Hello World!
+2024-06-02T22:24:21.732+05:00  INFO 6956 --- [LibraryManagementSystem] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-02T22:24:21.732+05:00  INFO 6956 --- [LibraryManagementSystem] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-06-02T22:24:21.792+05:00  INFO 6956 --- [LibraryManagementSystem] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-02T22:24:22.169+05:00  INFO 6956 --- [LibraryManagementSystem] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-02T22:24:22.242+05:00  INFO 6956 --- [LibraryManagementSystem] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-06-02T22:24:22.282+05:00  INFO 6956 --- [LibraryManagementSystem] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-06-02T22:24:22.533+05:00  INFO 32716 --- [LibraryManagementSystem] [taskScheduler-1] n.l.LibraryManagementSystemApplication   : Hello World!
+2024-06-02T22:24:22.592+05:00  INFO 6956 --- [LibraryManagementSystem] [restartedMain] com.zaxxer.hikari.HikariDataSource       : library - Starting...
+2024-06-02T22:24:22.887+05:00  INFO 6956 --- [LibraryManagementSystem] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : library - Added connection conn0: url=jdbc:h2:mem:library user=ADMIN
+2024-06-02T22:24:22.889+05:00  INFO 6956 --- [LibraryManagementSystem] [restartedMain] com.zaxxer.hikari.HikariDataSource       : library - Start completed.
+2024-06-02T22:24:22.919+05:00  WARN 6956 --- [LibraryManagementSystem] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-02T22:24:23.535+05:00  INFO 32716 --- [LibraryManagementSystem] [taskScheduler-1] n.l.LibraryManagementSystemApplication   : Hello World!
+2024-06-02T22:24:24.007+05:00  INFO 32716 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:24:24.007+05:00  INFO 15340 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:24:24.289+05:00  INFO 6956 --- [LibraryManagementSystem] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-02T22:24:24.526+05:00  INFO 32716 --- [LibraryManagementSystem] [taskScheduler-1] n.l.LibraryManagementSystemApplication   : Hello World!
+2024-06-02T22:24:24.528+05:00  INFO 32716 --- [LibraryManagementSystem] [restartedMain] n.l.service.common.GreetingService       : PROD PROFILE: Welcome to Library Management System
+2024-06-02T22:24:25.368+05:00  WARN 6956 --- [LibraryManagementSystem] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-02T22:24:27.013+05:00  INFO 32716 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:24:27.013+05:00  INFO 15340 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:24:27.361+05:00  WARN 6956 --- [LibraryManagementSystem] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2024-06-02T22:24:27.433+05:00  INFO 6956 --- [LibraryManagementSystem] [restartedMain] n.l.LibraryManagementSystemApplication   : Started LibraryManagementSystemApplication in 8.858 seconds (process running for 9.773)
+2024-06-02T22:24:27.439+05:00  INFO 6956 --- [LibraryManagementSystem] [taskScheduler-1] n.l.LibraryManagementSystemApplication   : Hello World!
+2024-06-02T22:24:28.450+05:00  INFO 6956 --- [LibraryManagementSystem] [taskScheduler-1] n.l.LibraryManagementSystemApplication   : Hello World!
+2024-06-02T22:24:29.448+05:00  INFO 6956 --- [LibraryManagementSystem] [taskScheduler-1] n.l.LibraryManagementSystemApplication   : Hello World!
+2024-06-02T22:24:30.009+05:00  INFO 15340 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:24:30.009+05:00  INFO 32716 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:24:30.017+05:00  INFO 6956 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:24:30.446+05:00  INFO 6956 --- [LibraryManagementSystem] [taskScheduler-1] n.l.LibraryManagementSystemApplication   : Hello World!
+2024-06-02T22:24:31.442+05:00  INFO 6956 --- [LibraryManagementSystem] [taskScheduler-1] n.l.LibraryManagementSystemApplication   : Hello World!
+2024-06-02T22:24:32.442+05:00  INFO 6956 --- [LibraryManagementSystem] [restartedMain] n.l.service.common.GreetingService       : DEV2 PROFILE: Welcome to Library Management System
+2024-06-02T22:24:33.004+05:00  INFO 15340 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:24:33.004+05:00  INFO 32716 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:24:33.004+05:00  INFO 6956 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:24:36.005+05:00  INFO 15340 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:24:36.005+05:00  INFO 6956 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:24:36.005+05:00  INFO 32716 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:24:39.010+05:00  INFO 15340 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:24:39.010+05:00  INFO 32716 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:24:39.010+05:00  INFO 6956 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:24:42.005+05:00  INFO 32716 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:24:42.005+05:00  INFO 6956 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:24:42.005+05:00  INFO 15340 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:24:45.003+05:00  INFO 15340 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:24:45.003+05:00  INFO 6956 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:24:45.003+05:00  INFO 32716 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:24:48.000+05:00  INFO 15340 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:24:48.000+05:00  INFO 6956 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:24:48.000+05:00  INFO 32716 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:24:51.014+05:00  INFO 6956 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:24:51.014+05:00  INFO 15340 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:24:51.015+05:00  INFO 32716 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:24:54.006+05:00  INFO 15340 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:24:54.006+05:00  INFO 32716 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:24:54.006+05:00  INFO 6956 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:24:57.005+05:00  INFO 6956 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:24:57.005+05:00  INFO 32716 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:24:57.005+05:00  INFO 15340 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:25:00.002+05:00  INFO 6956 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:25:00.002+05:00  INFO 32716 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:25:00.002+05:00  INFO 15340 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:25:03.001+05:00  INFO 15340 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:25:03.001+05:00  INFO 6956 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:25:03.001+05:00  INFO 32716 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:25:06.001+05:00  INFO 6956 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:25:06.001+05:00  INFO 32716 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:25:06.001+05:00  INFO 15340 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:25:09.014+05:00  INFO 6956 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:25:09.014+05:00  INFO 32716 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:25:09.014+05:00  INFO 15340 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:25:12.011+05:00  INFO 6956 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:25:12.011+05:00  INFO 32716 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:25:12.012+05:00  INFO 15340 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:25:15.012+05:00  INFO 6956 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:25:15.012+05:00  INFO 32716 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:25:15.012+05:00  INFO 15340 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:25:18.001+05:00  INFO 32716 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:25:18.001+05:00  INFO 15340 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:25:18.001+05:00  INFO 6956 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:25:21.015+05:00  INFO 32716 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:25:21.015+05:00  INFO 15340 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:25:21.015+05:00  INFO 6956 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:25:24.007+05:00  INFO 32716 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:25:24.007+05:00  INFO 6956 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:25:24.007+05:00  INFO 15340 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:25:27.008+05:00  INFO 6956 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:25:27.008+05:00  INFO 32716 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:25:27.008+05:00  INFO 15340 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:25:30.003+05:00  INFO 32716 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:25:30.003+05:00  INFO 6956 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:25:30.003+05:00  INFO 15340 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:25:33.005+05:00  INFO 32716 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:25:33.005+05:00  INFO 15340 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:25:33.005+05:00  INFO 6956 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:25:36.014+05:00  INFO 32716 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:25:36.014+05:00  INFO 6956 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:25:36.014+05:00  INFO 15340 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:25:39.002+05:00  INFO 32716 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:25:39.002+05:00  INFO 6956 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:25:39.002+05:00  INFO 15340 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:25:42.015+05:00  INFO 6956 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:25:42.013+05:00  INFO 15340 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:25:42.065+05:00  INFO 32716 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:25:45.008+05:00  INFO 6956 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:25:45.008+05:00  INFO 32716 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:25:45.008+05:00  INFO 15340 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:25:48.002+05:00  INFO 15340 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:25:48.002+05:00  INFO 6956 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:25:48.002+05:00  INFO 32716 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:25:50.580+05:00  WARN 6956 --- [LibraryManagementSystem] [SpringApplicationShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: База данных уже закрыта (чтобы отключить автоматическое закрытие базы данных при останове JVM, добавьте ";DB_CLOSE_ON_EXIT=FALSE" в URL)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-224]
+2024-06-02T22:25:50.581+05:00  INFO 6956 --- [LibraryManagementSystem] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : library - Shutdown initiated...
+2024-06-02T22:25:50.583+05:00  INFO 6956 --- [LibraryManagementSystem] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : library - Shutdown completed.
+2024-06-02T22:25:50.666+05:00  WARN 32716 --- [LibraryManagementSystem] [SpringApplicationShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: База данных уже закрыта (чтобы отключить автоматическое закрытие базы данных при останове JVM, добавьте ";DB_CLOSE_ON_EXIT=FALSE" в URL)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-224]
+2024-06-02T22:25:50.667+05:00  INFO 32716 --- [LibraryManagementSystem] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : library - Shutdown initiated...
+2024-06-02T22:25:50.673+05:00  INFO 32716 --- [LibraryManagementSystem] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : library - Shutdown completed.
+2024-06-02T22:25:50.888+05:00  WARN 15340 --- [LibraryManagementSystem] [SpringApplicationShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: База данных уже закрыта (чтобы отключить автоматическое закрытие базы данных при останове JVM, добавьте ";DB_CLOSE_ON_EXIT=FALSE" в URL)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-224]
+2024-06-02T22:25:50.889+05:00  INFO 15340 --- [LibraryManagementSystem] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : library - Shutdown initiated...
+2024-06-02T22:25:50.898+05:00  INFO 15340 --- [LibraryManagementSystem] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : library - Shutdown completed.
+2024-06-02T22:25:55.999+05:00  INFO 22544 --- [LibraryManagementSystem] [restartedMain] n.l.LibraryManagementSystemApplication   : Starting LibraryManagementSystemApplication using Java 21.0.1 with PID 22544 (D:\EpamLearning\LibraryManagementSystem\target\classes started by Nurbek in D:\EpamLearning\LibraryManagementSystem)
+2024-06-02T22:25:56.002+05:00  INFO 22544 --- [LibraryManagementSystem] [restartedMain] n.l.LibraryManagementSystemApplication   : The following 1 profile is active: "dev2"
+2024-06-02T22:25:56.059+05:00  INFO 22544 --- [LibraryManagementSystem] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-06-02T22:25:56.060+05:00  INFO 22544 --- [LibraryManagementSystem] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-06-02T22:25:57.018+05:00  INFO 22544 --- [LibraryManagementSystem] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-02T22:25:57.109+05:00  INFO 22544 --- [LibraryManagementSystem] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 82 ms. Found 4 JPA repository interfaces.
+2024-06-02T22:25:58.629+05:00  INFO 22544 --- [LibraryManagementSystem] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8002 (http)
+2024-06-02T22:25:58.649+05:00  INFO 22544 --- [LibraryManagementSystem] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-02T22:25:58.649+05:00  INFO 22544 --- [LibraryManagementSystem] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-06-02T22:25:58.720+05:00  INFO 22544 --- [LibraryManagementSystem] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-02T22:25:58.720+05:00  INFO 22544 --- [LibraryManagementSystem] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2660 ms
+2024-06-02T22:25:58.804+05:00  INFO 22544 --- [LibraryManagementSystem] [restartedMain] com.zaxxer.hikari.HikariDataSource       : library - Starting...
+2024-06-02T22:25:59.082+05:00  INFO 22544 --- [LibraryManagementSystem] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : library - Added connection conn0: url=jdbc:h2:mem:library user=ADMIN
+2024-06-02T22:25:59.085+05:00  INFO 22544 --- [LibraryManagementSystem] [restartedMain] com.zaxxer.hikari.HikariDataSource       : library - Start completed.
+2024-06-02T22:25:59.097+05:00  INFO 22544 --- [LibraryManagementSystem] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2'. Database available at 'jdbc:h2:mem:library'
+2024-06-02T22:25:59.346+05:00  INFO 22544 --- [LibraryManagementSystem] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-02T22:25:59.445+05:00  INFO 22544 --- [LibraryManagementSystem] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-06-02T22:25:59.496+05:00  INFO 22544 --- [LibraryManagementSystem] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-06-02T22:25:59.831+05:00  INFO 22544 --- [LibraryManagementSystem] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-02T22:25:59.921+05:00  WARN 22544 --- [LibraryManagementSystem] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-02T22:26:01.349+05:00  INFO 22544 --- [LibraryManagementSystem] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-02T22:26:01.421+05:00  INFO 22544 --- [LibraryManagementSystem] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-02T22:26:02.116+05:00  INFO 22544 --- [LibraryManagementSystem] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-06-02T22:26:02.435+05:00  WARN 22544 --- [LibraryManagementSystem] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-02T22:26:03.309+05:00  INFO 22544 --- [LibraryManagementSystem] [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@44d40bb3, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3da01200, org.springframework.security.web.context.SecurityContextHolderFilter@2adaac1b, org.springframework.security.web.header.HeaderWriterFilter@2e75a8bd, org.springframework.web.filter.CorsFilter@6f1971b2, org.springframework.security.web.authentication.logout.LogoutFilter@2877e2f8, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@35ca6d07, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@59b79f6c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1fe11468, org.springframework.security.web.access.ExceptionTranslationFilter@3e3ad597, org.springframework.security.web.access.intercept.AuthorizationFilter@6cd7c789]
+2024-06-02T22:26:04.431+05:00  INFO 22544 --- [LibraryManagementSystem] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-06-02T22:26:04.484+05:00  INFO 22544 --- [LibraryManagementSystem] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8002 (http) with context path ''
+2024-06-02T22:26:04.499+05:00  INFO 22544 --- [LibraryManagementSystem] [restartedMain] n.l.LibraryManagementSystemApplication   : Started LibraryManagementSystemApplication in 9.035 seconds (process running for 9.973)
+2024-06-02T22:26:04.503+05:00  INFO 22544 --- [LibraryManagementSystem] [taskScheduler-1] n.l.LibraryManagementSystemApplication   : Hello World!
+2024-06-02T22:26:05.505+05:00  INFO 22544 --- [LibraryManagementSystem] [taskScheduler-1] n.l.LibraryManagementSystemApplication   : Hello World!
+2024-06-02T22:26:06.018+05:00  INFO 22544 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:26:06.514+05:00  INFO 22544 --- [LibraryManagementSystem] [taskScheduler-1] n.l.LibraryManagementSystemApplication   : Hello World!
+2024-06-02T22:26:07.509+05:00  INFO 22544 --- [LibraryManagementSystem] [taskScheduler-1] n.l.LibraryManagementSystemApplication   : Hello World!
+2024-06-02T22:26:08.504+05:00  INFO 22544 --- [LibraryManagementSystem] [taskScheduler-1] n.l.LibraryManagementSystemApplication   : Hello World!
+2024-06-02T22:26:09.001+05:00  INFO 22544 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:26:09.518+05:00  INFO 22544 --- [LibraryManagementSystem] [taskScheduler-1] n.l.LibraryManagementSystemApplication   : Hello World!
+2024-06-02T22:26:09.521+05:00  INFO 22544 --- [LibraryManagementSystem] [restartedMain] n.l.service.common.GreetingService       : DEV2 PROFILE: Welcome to Library Management System
+2024-06-02T22:26:12.004+05:00  INFO 22544 --- [LibraryManagementSystem] [taskScheduler-1] n.l.job.DeleteBookJob                    : Deleting book...
+2024-06-02T22:26:13.335+05:00  INFO 22544 --- [LibraryManagementSystem] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-02T22:26:13.348+05:00  WARN 22544 --- [LibraryManagementSystem] [SpringApplicationShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: База данных уже закрыта (чтобы отключить автоматическое закрытие базы данных при останове JVM, добавьте ";DB_CLOSE_ON_EXIT=FALSE" в URL)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-224]
+2024-06-02T22:26:13.348+05:00  INFO 22544 --- [LibraryManagementSystem] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : library - Shutdown initiated...
+2024-06-02T22:26:13.350+05:00  INFO 22544 --- [LibraryManagementSystem] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : library - Shutdown completed.
