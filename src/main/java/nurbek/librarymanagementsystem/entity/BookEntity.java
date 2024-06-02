@@ -42,6 +42,7 @@ public class BookEntity {
     private Integer numberOfCopies = 1;
 
     @ManyToOne
+    @JoinColumn(name = "AUTHOR_ID")
     private AuthorEntity author;
 
     public Book toDto() {

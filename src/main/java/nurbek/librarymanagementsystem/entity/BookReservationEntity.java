@@ -17,14 +17,16 @@ public class BookReservationEntity {
     private Date reservationDate = new Date();
     @Column(name = "DUE_DATE", nullable = false)
     private Date dueDate;
-    @Column(name = "STATUS", nullable = false)
+    @Column(name = "STATUS")
     @Enumerated(EnumType.STRING)
-    private ReservationStatus status;
+    private ReservationStatus status = ReservationStatus.RESERVED;
 
     @ManyToOne
+    @JoinColumn(name = "BOOK_ID")
     private BookEntity book;
     @ManyToOne
-    AccountEntity account;
+    @JoinColumn(name = "ACCOUNT_ID")
+    private AccountEntity account;
 
     public enum ReservationStatus {
         RESERVED, OVERDUE, NULL

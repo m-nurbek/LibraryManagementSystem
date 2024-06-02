@@ -39,10 +39,10 @@ public class LibraryController {
             bookList = libraryService.searchBooksByKeyword(keyword, pageProps);
             model.addAttribute("books", bookList);
         } else {
-            bookList = libraryService.getBookList(pageable);
+            bookList = libraryService.getBookList(pageProps);
             model.addAttribute("books", bookList);
         }
-        model.addAttribute("currentPage", pageable.getPageNumber());
+        model.addAttribute("currentPage", pageProps.getPageNumber());
         model.addAttribute("totalPages", bookList.getTotalPages());
         model.addAttribute("totalItems", bookList.getTotalElements());
 

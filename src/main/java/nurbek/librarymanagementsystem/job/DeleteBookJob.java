@@ -11,8 +11,8 @@ import org.springframework.stereotype.Component;
 public class DeleteBookJob {
 
 
-    @Scheduled(cron = "*/3 * * * * *")
-    public void deleteBook() {
-        log.info("Deleting book...");
-    }
+//    @Scheduled(cron = "*/3 * * * * *")
+//    public void deleteBook() {
+//        log.info("Deleting book...");
+//    }
 }

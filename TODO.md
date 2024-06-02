@@ -2,6 +2,10 @@
 - [x] Add book detail view + template
 - [x] Write tests for the book detail view
 - [x] Add search functionality
+- [x] Add logging to the project
+- [x] AOP for logging
+- [x] Add validation to dto
+- [x] Add profiles for dev and prod
 - [ ] Add sort books functionality (Optional)
 - [ ] Add crud for books
 - [ ] Add user lists view for the librarian
