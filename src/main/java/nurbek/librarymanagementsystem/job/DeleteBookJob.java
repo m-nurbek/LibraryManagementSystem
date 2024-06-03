@@ -1,18 +1,16 @@
 package nurbek.librarymanagementsystem.job;
 
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.scheduling.annotation.EnableScheduling;
-import org.springframework.scheduling.annotation.Scheduled;
-import org.springframework.stereotype.Component;
+import org.quartz.Job;
+import org.quartz.JobDataMap;
+import org.quartz.JobExecutionContext;
+import org.quartz.JobExecutionException;
 
-@Component
-@Slf4j
-@EnableScheduling
-public class DeleteBookJob {
+public class DeleteBookJob implements Job {
+    @Override
+    public void execute(JobExecutionContext jobExecutionContext) throws JobExecutionException {
+        JobDataMap dataMap = jobExecutionContext.getJobDetail().getJobDataMap();
 
-
-//    @Scheduled(cron = "*/3 * * * * *")
-//    public void deleteBook() {
-//        log.info("Deleting book...");
-//    }
+        long id = dataMap.getLong("id");
+        System.out.println("Deleting book with id: " + id);
+    }
 }

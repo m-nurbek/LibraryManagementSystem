@@ -20,14 +20,14 @@ public class LibraryManagementSystemApplication {
         greetingService.logGreeting();
     }
 
-    @Bean
-    public CommandLineRunner runner(TaskScheduler taskScheduler) {
-        return args -> {
-            var task = taskScheduler.scheduleAtFixedRate(() -> log.info("Hello World!"), 1000);
-            Thread.sleep(5000);
-            task.cancel(true);
-        };
-    }
+//    @Bean
+//    public CommandLineRunner runner(TaskScheduler taskScheduler) {
+//        return args -> {
+//            var task = taskScheduler.scheduleAtFixedRate(() -> log.info("Hello World!"), 1000);
+//            Thread.sleep(5000);
+//            task.cancel(true);
+//        };
+//    }
 
     @Bean
     public TaskScheduler taskScheduler() {
