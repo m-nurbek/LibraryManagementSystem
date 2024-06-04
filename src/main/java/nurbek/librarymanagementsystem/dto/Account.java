@@ -6,7 +6,10 @@ import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+import jakarta.validation.constraints.Email;
+import lombok.AccessLevel;
 import lombok.Data;
+import lombok.Getter;
 
 import java.io.IOException;
 import java.io.StringWriter;
@@ -16,7 +19,9 @@ public class Account {
     private final Long id;
     private final String firstName;
     private final String lastName;
+    @Email(message = "Email should be valid")
     private final String email;
+    @Getter(value = AccessLevel.NONE)
     private final String password;
     private final Role role;
 
