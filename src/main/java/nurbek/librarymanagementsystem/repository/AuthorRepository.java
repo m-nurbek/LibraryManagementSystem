@@ -1,7 +1,7 @@
 package nurbek.librarymanagementsystem.repository;
 
 import nurbek.librarymanagementsystem.entity.AuthorEntity;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface AuthorRepository extends CrudRepository<AuthorEntity, Long> {
+public interface AuthorRepository extends JpaRepository<AuthorEntity, Long> {
 }

@@ -1,9 +1,9 @@
 package nurbek.librarymanagementsystem.repository;
 
 import nurbek.librarymanagementsystem.entity.AccountEntity;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface AccountRepository extends CrudRepository<AccountEntity, Long> {
+public interface AccountRepository extends JpaRepository<AccountEntity, Long> {
 
-    public AccountEntity findByEmail(String email);
+    AccountEntity findByEmail(String email);
 }
