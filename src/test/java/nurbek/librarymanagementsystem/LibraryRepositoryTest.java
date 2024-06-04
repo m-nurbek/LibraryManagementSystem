@@ -1,49 +1,36 @@
 package nurbek.librarymanagementsystem;
 
+import lombok.extern.slf4j.Slf4j;
 import nurbek.librarymanagementsystem.dto.BookStatus;
 import nurbek.librarymanagementsystem.entity.BookEntity;
 import nurbek.librarymanagementsystem.repository.BookRepository;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.TestPropertySource;
 
-import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+@Slf4j
 @DataJpaTest
 @TestPropertySource(locations = "classpath:application-test.properties")
+@DirtiesContext
 public class LibraryRepositoryTest {
-
     @Autowired
     private BookRepository bookRepository;
 
-    // Sample book entities for testing
-    private final List<BookEntity> bookList = Arrays.asList(
-            new BookEntity(1L, "0000-0000-0000-0001", "Book 1", "RU", 50, BookStatus.ACTIVE, new Date(), null, 23, null),
-            new BookEntity(2L, "0000-0000-0000-0002", "Book 2", "KZ", 100, BookStatus.ACTIVE, new Date(2004, Calendar.JANUARY, 1), null, 23, null),
-            new BookEntity(3L, "0000-0000-0000-0003", "Book 3", "EN", 200, BookStatus.ACTIVE, new Date(2004, Calendar.MARCH, 2), null, 23, null),
-            new BookEntity(4L, "0000-0000-0000-0004", "Book 4", "EN", 300, BookStatus.ACTIVE, new Date(2004, Calendar.JULY, 3), null, 23, null)
-    );
-
     private final PageRequest pageRequest = PageRequest.of(0, 10);
-
-    @BeforeEach
-    void setUp() {
-        bookRepository.deleteAll();
-        bookRepository.saveAll(bookList);
-    }
 
     @Test
     public void shouldFindBooksByTitle() {
-        String keyword = "book";
+        String keyword = "Dea";
 
         Page<BookEntity> searchResults = bookRepository.searchByKeyword(keyword, pageRequest);
 
@@ -55,7 +42,7 @@ public class LibraryRepositoryTest {
 
     @Test
     public void shouldFindExactBookByTitle() {
-        String keyword = "book 3";
+        String keyword = "Dead Space: Aftermath";
 
         Page<BookEntity> searchResults = bookRepository.searchByKeyword(keyword, pageRequest);
 
@@ -67,7 +54,7 @@ public class LibraryRepositoryTest {
 
     @Test
     public void shouldFindBooksByISBN() {
-        String keyword = "000";
+        String keyword = "-4";
 
         Page<BookEntity> searchResults = bookRepository.searchByKeyword(keyword, pageRequest);
 
@@ -79,7 +66,7 @@ public class LibraryRepositoryTest {
 
     @Test
     public void shouldFindExactBookByISBN() {
-        String keyword = "0004";
+        String keyword = "108357909-6";
 
         Page<BookEntity> searchResults = bookRepository.searchByKeyword(keyword, pageRequest);
 
@@ -114,5 +101,74 @@ public class LibraryRepositoryTest {
         Page<BookEntity> searchResults = bookRepository.searchByKeyword(keyword, pageRequest);
 
         assertThat(searchResults.getContent()).isEmpty();
+    }
+
+    @Test
+    public void shouldFindBooksByStatus() {
+        BookEntity book1 = bookRepository.findById(1L).orElse(null);
+        BookEntity book2 = bookRepository.findById(2L).orElse(null);
+        assert book1 != null;
+        assert book2 != null;
+
+        Calendar calendar = Calendar.getInstance();
+        Date date = calendar.getTime();
+
+        // Set the book status to ARCHIVED and save it
+        book1.setStatus(BookStatus.ARCHIVED);
+        book2.setStatus(BookStatus.ARCHIVED);
+        book1.setArchiveDate(date);
+        book2.setArchiveDate(date);
+
+        bookRepository.save(book1);
+        bookRepository.save(book2);
+
+        Page<BookEntity> searchResults = bookRepository.getBookEntitiesByStatusIgnoreCase(BookStatus.ARCHIVED.name(), pageRequest);
+
+        log.info("searchResults: {}", searchResults.getContent());
+        assertThat(searchResults.getContent()).isNotEmpty();
+        assertThat(searchResults.getContent().size()).isEqualTo(2);
+
+        checkFoundByStatus(BookStatus.ARCHIVED, searchResults.getContent());
+    }
+
+    @Test
+    public void shouldFindBooksByStatusAndArchiveDateBefore() {
+        BookEntity book1 = bookRepository.findById(1L).orElse(null);
+        BookEntity book2 = bookRepository.findById(2L).orElse(null);
+        assert book1 != null;
+        assert book2 != null;
+
+        Calendar calendar = Calendar.getInstance();
+        calendar.add(Calendar.DATE, -1);
+        Date date = calendar.getTime();
+
+        // Set the book status to ARCHIVED and save it
+        book1.setStatus(BookStatus.ARCHIVED);
+        book2.setStatus(BookStatus.ARCHIVED);
+        book1.setArchiveDate(date);
+        book2.setArchiveDate(date);
+
+        bookRepository.save(book1);
+        bookRepository.save(book2);
+
+        Date currentDate = new Date();
+
+        List<BookEntity> searchResults = bookRepository.getBookEntitiesByStatusIgnoreCaseAndArchiveDateBefore(BookStatus.ARCHIVED.name(), currentDate);
+
+        log.info("searchResults: {}", searchResults);
+        assertThat(searchResults).isNotEmpty();
+        assertThat(searchResults.size()).isEqualTo(2);
+
+        checkFoundByStatus(BookStatus.ARCHIVED, searchResults);
+    }
+
+    private void checkFoundByStatus(BookStatus status, Iterable<BookEntity> searchResults) {
+        boolean foundByStatus = false;
+        for (BookEntity book : searchResults) {
+            if (book.getStatus().equals(status)) {
+                foundByStatus = true;
+            }
+        }
+        assertThat(foundByStatus).isTrue();
     }
 }

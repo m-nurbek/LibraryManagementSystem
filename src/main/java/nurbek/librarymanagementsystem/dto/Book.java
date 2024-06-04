@@ -7,6 +7,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import jakarta.validation.constraints.*;
+import lombok.Builder;
 import lombok.Data;
 
 import java.io.IOException;
@@ -14,13 +15,14 @@ import java.io.StringWriter;
 import java.util.Date;
 
 @Data
+@Builder
 public class Book {
     private final Long id;
     @NotBlank(message = "ISBN is required")
     @Size(min = 10, max = 20, message = "ISBN must be between 10 and 20 characters")
     private final String ISBN;
     @NotBlank(message = "Title is required")
-    @Size(max = 100, message = "Title must be no longer than 100 characters")
+    @Size(min = 1, max = 100, message = "Title must be no longer than 100 characters")
     private final String title;
     @NotBlank(message = "Language is required")
     @Size(max = 2, message = "Language must be no longer than 2 characters")

@@ -10,15 +10,27 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.repository.query.Param;
 
+import java.util.Date;
+import java.util.List;
 import java.util.Optional;
 
 public interface BookRepository extends JpaRepository<BookEntity, Long>, PagingAndSortingRepository<BookEntity, Long> {
 
-    @Query(value = "SELECT * FROM BOOK b " +
-            "WHERE LOWER(b.TITLE) LIKE LOWER('%' || :keyword || '%') OR b.ISBN LIKE '%' || :keyword || '%'", nativeQuery = true)
+    @Query(value = """
+            SELECT * FROM BOOK b
+                WHERE LOWER(b.TITLE) LIKE LOWER('%' || :keyword || '%') OR b.ISBN LIKE '%' || :keyword || '%'
+            """, nativeQuery = true)
     Page<BookEntity> searchByKeyword(@Param("keyword") String keyword, PageRequest pageRequest);
 
-    Optional<BookEntity> findByISBN(String ISBN);
+    @Query(value = """
+            SELECT * FROM BOOK b
+                WHERE LOWER(b.status) = LOWER(:status)
+            """, nativeQuery = true)
+    Page<BookEntity> getBookEntitiesByStatusIgnoreCase(@Param("status") String status, Pageable pageable);
 
-    Page<BookEntity> getBookEntitiesByStatusEqualsIgnoreCase(BookStatus status, Pageable pageable);
+    @Query(value = """
+            SELECT * FROM BOOK b
+                WHERE LOWER(b.status) = LOWER(:status) AND b.ARCHIVE_DATE < :date
+            """, nativeQuery = true)
+    List<BookEntity> getBookEntitiesByStatusIgnoreCaseAndArchiveDateBefore(@Param("status") String status, @Param("date") Date date);
 }

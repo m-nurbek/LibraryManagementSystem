@@ -6,6 +6,8 @@
 - [x] AOP for logging
 - [x] Add validation to dto
 - [x] Add profiles for dev and prod
+- [x] Add delete books functionality [scheduled work] (Optional)
+- [x] Write tests for the delete books functionality
 - [ ] Add sort books functionality (Optional)
 - [ ] Add crud for books
 - [ ] Add user lists view for the librarian

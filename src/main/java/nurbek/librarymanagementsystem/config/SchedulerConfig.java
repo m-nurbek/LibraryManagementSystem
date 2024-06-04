@@ -27,7 +27,6 @@ public class SchedulerConfig {
         return JobBuilder
                 .newJob(DeleteBookJob.class)
                 .withIdentity("deleteBookJob")
-                .usingJobData("id", 1L)
                 .storeDurably()
                 .requestRecovery(true)
                 .build();

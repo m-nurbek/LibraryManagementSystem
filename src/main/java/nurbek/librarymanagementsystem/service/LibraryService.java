@@ -4,12 +4,14 @@ import nurbek.librarymanagementsystem.dto.Book;
 import nurbek.librarymanagementsystem.dto.BookStatus;
 import nurbek.librarymanagementsystem.entity.BookEntity;
 import nurbek.librarymanagementsystem.repository.BookRepository;
+import nurbek.librarymanagementsystem.repository.BookReservationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Date;
 import java.util.List;
@@ -19,6 +21,8 @@ import java.util.Optional;
 public class LibraryService {
     @Autowired
     private BookRepository bookRepository;
+    @Autowired
+    private BookReservationRepository reservationRepository;
 
     public Page<Book> getBookList(Pageable pageable) {
         Page<BookEntity> bookEntities = bookRepository.findAll(PageRequest.of(
@@ -37,7 +41,7 @@ public class LibraryService {
      * @return
      */
     public Page<Book> getBookListByStatus(BookStatus bookStatus, Pageable pageable) {
-        Page<BookEntity> bookEntities = bookRepository.getBookEntitiesByStatusEqualsIgnoreCase(bookStatus, PageRequest.of(
+        Page<BookEntity> bookEntities = bookRepository.getBookEntitiesByStatusIgnoreCase(bookStatus.name(), PageRequest.of(
                 pageable.getPageNumber(),
                 pageable.getPageSize(),
                 pageable.getSortOr(Sort.by(Sort.Direction.ASC, "title"))
@@ -152,14 +156,9 @@ public class LibraryService {
         return Optional.empty();
     }
 
-    public Optional<Book> deleteBook(long id) {
-        if (bookRepository.existsById(id)) {
-            BookEntity bookInDb = bookRepository.getReferenceById(id);
-            bookInDb.setStatus(BookStatus.DELETED);
-
-            bookRepository.save(bookInDb);
-            return Optional.of(bookInDb.toDto());
-        }
-        return Optional.empty();
+    @Transactional
+    public void deleteBook(long id) {
+        reservationRepository.deleteByBookId(id);
+        bookRepository.deleteById(id);
     }
 }

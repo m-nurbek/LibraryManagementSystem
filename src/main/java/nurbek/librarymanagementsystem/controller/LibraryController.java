@@ -50,7 +50,7 @@ public class LibraryController {
     }
 
     @GetMapping("/books/{id}")
-    public String libraryBook(Model model, @PathVariable long id) {
+    public String libraryBook(Model model, @PathVariable("id") long id) {
         Book book = libraryService.getBookById(id);
 
         if (book == null) {
@@ -71,8 +71,8 @@ public class LibraryController {
         return "redirect:/library/books";
     }
 
-    @PutMapping("books/{id}")
-    public String libraryBookUpdate(@Valid @ModelAttribute("book") Book book, @PathVariable long id, Errors errors) {
+    @PutMapping("/books/{id}")
+    public String libraryBookUpdate(@PathVariable("id") long id, @Valid @ModelAttribute("book") Book book, Errors errors) {
         if (errors.hasErrors()) {
             return "error";
         }
