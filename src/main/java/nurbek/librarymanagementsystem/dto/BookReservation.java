@@ -6,35 +6,45 @@ import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
-import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import lombok.Builder;
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.io.IOException;
 import java.io.StringWriter;
+import java.util.Date;
 
 @Data
-public class Account {
+@Builder
+public class BookReservation {
     private final Long id;
-    private final String firstName;
-    private final String lastName;
-    @Email(message = "Email should be valid")
-    private final String email;
-    private final String password;
-    private final Role role;
+
+    @NotBlank(message = "Reservation date is required")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private final Date reservationDate;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private final Date dueDate;
+    private final ReservationStatus status;
+
+    private final Book book;
+    private final Account account;
 
     @JsonCreator
-    public Account(@JsonProperty("id") Long id,
-                   @JsonProperty("firstName") String firstName,
-                   @JsonProperty("lastName") String lastName,
-                   @JsonProperty("email") String email,
-                   @JsonProperty("password") String password,
-                   @JsonProperty("role") Role role) {
+    public BookReservation(
+            @JsonProperty("id") Long id,
+            @JsonProperty("reservationDate") Date reservationDate,
+            @JsonProperty("dueDate") Date dueDate,
+            @JsonProperty("status") ReservationStatus status,
+            @JsonProperty("book") Book book,
+            @JsonProperty("account") Account account
+    ) {
         this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-        this.password = password;
-        this.role = role;
+        this.reservationDate = reservationDate;
+        this.dueDate = dueDate;
+        this.status = status;
+        this.book = book;
+        this.account = account;
     }
 
     public static class Parser {
@@ -47,19 +57,19 @@ public class Account {
             mapper.configure(DeserializationFeature.FAIL_ON_MISSING_CREATOR_PROPERTIES, false);
         }
 
-        public static String toJson(Account account) {
+        public static String toJson(BookReservation reservation) {
             try {
                 final StringWriter writer = new StringWriter();
-                mapper.writeValue(writer, account);
+                mapper.writeValue(writer, reservation);
                 return writer.toString();
             } catch (IOException exc) {
                 throw new RuntimeException(exc);
             }
         }
 
-        public static Account parseJson(String json) {
+        public static BookReservation parseJson(String json) {
             try {
-                return mapper.readValue(json, Account.class);
+                return mapper.readValue(json, BookReservation.class);
             } catch (IOException exc) {
                 throw new RuntimeException(exc);
             }

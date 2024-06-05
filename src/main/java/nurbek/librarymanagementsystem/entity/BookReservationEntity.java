@@ -1,13 +1,19 @@
 package nurbek.librarymanagementsystem.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.RequiredArgsConstructor;
+import nurbek.librarymanagementsystem.dto.BookReservation;
+import nurbek.librarymanagementsystem.dto.ReservationStatus;
 
 import java.util.Date;
 
 @Entity
 @Data
 @Table(name = "BOOK_RESERVATION")
+@AllArgsConstructor
+@RequiredArgsConstructor
 public class BookReservationEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -28,7 +34,25 @@ public class BookReservationEntity {
     @JoinColumn(name = "ACCOUNT_ID")
     private AccountEntity account;
 
-    public enum ReservationStatus {
-        RESERVED, OVERDUE, NULL
+    public BookReservation toDto() {
+        return new BookReservation(
+                id,
+                reservationDate,
+                dueDate,
+                status,
+                book.toDto(),
+                account.toDto()
+        );
+    }
+
+    public static BookReservationEntity fromDto(BookReservation reservation) {
+        BookReservationEntity entity = new BookReservationEntity();
+        entity.setId(reservation.getId());
+        entity.setReservationDate(reservation.getReservationDate());
+        entity.setDueDate(reservation.getDueDate());
+        entity.setStatus(reservation.getStatus());
+        entity.setBook(BookEntity.fromDto(reservation.getBook()));
+        entity.setAccount(AccountEntity.fromDto(reservation.getAccount()));
+        return entity;
     }
 }

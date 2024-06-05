@@ -9,6 +9,7 @@ import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import jakarta.validation.constraints.*;
 import lombok.Builder;
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.io.IOException;
 import java.io.StringWriter;
@@ -32,7 +33,9 @@ public class Book {
     @Digits(integer = 4, fraction = 0, message = "Number of pages must be a number between 0 and 9999")
     private final Integer numberOfPages;
     private final BookStatus status;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private final Date publishDate;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private final Date archiveDate;
     @Min(value = 1, message = "Number of copies must be a number between 1 and 999")
     @Max(value = 999, message = "Number of copies must be a number between 1 and 999")

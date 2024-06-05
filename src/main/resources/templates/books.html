@@ -40,7 +40,7 @@
                     </a>
                 </li>
                 <li>
-                    <a th:href="@{/library/books?page=0&size=5}"
+                    <a th:href="@{/library/books?page=0}"
                        class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
                         Search
                     </a>
@@ -52,10 +52,9 @@
 <div class="page">
     <main class="max-w-screen-xl mx-auto p-4">
 
-        <form method="GET" th:action="@{/library/books?page=0&size=5}" class="max-w-xl mx-auto">
+        <form method="GET" th:action="@{/library/books?page=0}" class="max-w-xl mx-auto">
             <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
             <input type="hidden" name="page" value="0" />
-            <input type="hidden" name="size" value="5" />
             <div class="relative">
                 <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
                     <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
@@ -73,7 +72,7 @@
         <ul th:if="${totalPages > 0}" style="margin: 1rem auto 1rem; display:flex; width:fit-content;"
             class="inline-flex -space-x-px text-base h-10">
             <li>
-                <a th:if="${currentPage > 0}" th:href="@{'?page=' + ${currentPage - 1} + '&size=5'}"
+                <a th:if="${currentPage > 0}" th:href="@{'?page=' + ${currentPage - 1}}"
                    class="flex items-center justify-center px-4 h-10 ms-0 leading-tight text-gray-500 bg-white border border-e-0 border-gray-300 rounded-s-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
                     Previous
                 </a>
@@ -83,7 +82,7 @@
                 >Previous</span>
             </li>
             <li th:each="i: ${#numbers.sequence(0, totalPages - 1)}">
-                <a th:if="${currentPage != i}" th:href="@{'?page=' + ${i} + '&size=5'}"
+                <a th:if="${currentPage != i}" th:href="@{'?page=' + ${i}}"
                    class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
                     [[${i + 1}]]
                 </a>

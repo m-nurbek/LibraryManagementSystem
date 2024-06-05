@@ -9,7 +9,7 @@
 - [x] Add delete books functionality [scheduled work] (Optional)
 - [x] Write tests for the delete books functionality
 - [ ] Add sort books functionality (Optional)
-- [ ] Add crud for books
+- [x] Add crud for books
 - [ ] Add user lists view for the librarian
 - [ ] Add user detail view for the librarian
 - [ ] Add reserve book functionality to the user

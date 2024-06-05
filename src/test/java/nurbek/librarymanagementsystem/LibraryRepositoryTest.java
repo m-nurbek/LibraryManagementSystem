@@ -153,7 +153,7 @@ public class LibraryRepositoryTest {
 
         Date currentDate = new Date();
 
-        List<BookEntity> searchResults = bookRepository.getBookEntitiesByStatusIgnoreCaseAndArchiveDateBefore(BookStatus.ARCHIVED.name(), currentDate);
+        List<BookEntity> searchResults = bookRepository.getBooksByStatusAndArchiveDateBefore(BookStatus.ARCHIVED.name(), currentDate);
 
         log.info("searchResults: {}", searchResults);
         assertThat(searchResults).isNotEmpty();

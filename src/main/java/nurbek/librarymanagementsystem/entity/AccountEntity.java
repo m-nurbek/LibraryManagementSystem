@@ -1,8 +1,10 @@
 package nurbek.librarymanagementsystem.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
+import nurbek.librarymanagementsystem.dto.Account;
 import nurbek.librarymanagementsystem.dto.Role;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -13,6 +15,7 @@ import java.util.List;
 
 @Entity
 @Data
+@AllArgsConstructor
 @RequiredArgsConstructor
 @Table(name = "ACCOUNT")
 public class AccountEntity implements UserDetails {
@@ -31,6 +34,23 @@ public class AccountEntity implements UserDetails {
     @Column(name = "ROLE")
     @Enumerated(EnumType.STRING)
     private Role role = null;
+
+    public Account toDto() {
+        return new Account(id, firstName, lastName, email, password, role);
+    }
+
+    public static AccountEntity fromDto(Account account) {
+        if (account == null) {
+            return null;
+        }
+        return new AccountEntity(
+                account.getId(),
+                account.getFirstName(),
+                account.getLastName(),
+                account.getEmail(),
+                account.getPassword(),
+                account.getRole());
+    }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

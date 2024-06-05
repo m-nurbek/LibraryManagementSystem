@@ -9,4 +9,6 @@ import org.springframework.stereotype.Component;
 @Data
 public class ConfigurationProperty {
     private int pageSize = 10;
+
+    private int maxDaysToReturnBook = 7;
 }

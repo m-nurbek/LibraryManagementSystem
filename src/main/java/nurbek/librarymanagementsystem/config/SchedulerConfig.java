@@ -6,6 +6,7 @@ import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import nurbek.librarymanagementsystem.job.DeleteBookJob;
+import nurbek.librarymanagementsystem.job.OverdueReservationJob;
 import nurbek.librarymanagementsystem.property.SchedulerProperty;
 import org.quartz.*;
 import org.quartz.impl.matchers.GroupMatcher;
@@ -21,6 +22,26 @@ import java.util.List;
 public class SchedulerConfig {
     @NonNull
     private SchedulerProperty schedulerProperties;
+
+    @Bean
+    public JobDetail overdueReservationJobDetail() {
+        return JobBuilder
+                .newJob(OverdueReservationJob.class)
+                .withIdentity("overdueReservationJob")
+                .storeDurably()
+                .requestRecovery(true)
+                .build();
+    }
+
+    @Bean
+    public Trigger overdueReservationJobTrigger() {
+        return TriggerBuilder
+                .newTrigger()
+                .forJob(overdueReservationJobDetail())
+                .withIdentity("overdueReservationJobTrigger")
+                .withSchedule(CronScheduleBuilder.cronSchedule(schedulerProperties.getShowTimeJobCron()))
+                .build();
+    }
 
     @Bean
     public JobDetail deleteBookJobDetail() {

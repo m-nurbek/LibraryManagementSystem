@@ -13,6 +13,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
@@ -33,13 +34,15 @@ public class LibraryService {
         return bookEntities.map(BookEntity::toDto);
     }
 
-    /**
-     * Returns a list of books corresponding to the book status that is given as a parameter.
-     *
-     * @param bookStatus
-     * @param pageable
-     * @return
-     */
+    public List<Book> getBooksToDelete() {
+        Calendar calendar = Calendar.getInstance();
+        calendar.add(Calendar.DATE, -30);
+        Date date = calendar.getTime();
+
+        List<BookEntity> booksToDelete = bookRepository.getBooksByStatusAndArchiveDateBefore(BookStatus.ARCHIVED.name(), date);
+        return booksToDelete.stream().map(BookEntity::toDto).toList();
+    }
+
     public Page<Book> getBookListByStatus(BookStatus bookStatus, Pageable pageable) {
         Page<BookEntity> bookEntities = bookRepository.getBookEntitiesByStatusIgnoreCase(bookStatus.name(), PageRequest.of(
                 pageable.getPageNumber(),
@@ -54,12 +57,12 @@ public class LibraryService {
         return bookEntities.stream().map(BookEntity::toDto).toList();
     }
 
-    public Book getBookById(long id) {
+    public Optional<Book> getBookById(long id) {
         BookEntity book = bookRepository.findById(id).orElse(null);
         if (book != null) {
-            return book.toDto();
+            return Optional.of(book.toDto());
         }
-        return null;
+        return Optional.empty();
     }
 
     public Page<Book> searchBooksByKeyword(String keyword, Pageable pageable) {
@@ -71,25 +74,34 @@ public class LibraryService {
         return bookEntities.map(BookEntity::toDto);
     }
 
-    public Book addBook(Book book) {
+    public Optional<Book> addBook(Book book) {
         if (bookRepository.existsById(book.getId())) {
             BookEntity bookInDb = bookRepository.getReferenceById(book.getId());
+
             int copies = bookInDb.getNumberOfCopies();
             copies += book.getNumberOfCopies();
             bookInDb.setNumberOfCopies(copies);
+
             bookRepository.save(bookInDb);
-        } else {
-            bookRepository.save(BookEntity.fromDto(book));
+            return Optional.of(bookInDb.toDto());
         }
-        return book;
+        bookRepository.save(BookEntity.fromDto(book));
+        return Optional.of(book);
     }
 
+    /**
+     * If the book exists, then returns Book with updated information. Otherwise, returns Optional.empty()
+     *
+     * @param id   of the book to be updated
+     * @param book with updated information
+     * @return an optional instance of a book that is updated, otherwise an empty optional instance
+     */
     public Optional<Book> updateBook(Long id, Book book) {
         if (bookRepository.existsById(id)) {
             BookEntity bookEntity = BookEntity.fromDto(book);
             bookEntity.setId(id);
             bookRepository.save(bookEntity);
-            return Optional.of(book);
+            return Optional.of(bookEntity.toDto());
         }
         return Optional.empty();
     }
@@ -109,7 +121,7 @@ public class LibraryService {
             bookInDb.setNumberOfCopies(book.getNumberOfCopies());
             bookInDb.setLanguage(book.getLanguage());
             bookRepository.save(bookInDb);
-            return Optional.of(book);
+            return Optional.of(bookInDb.toDto());
         }
         return Optional.empty();
     }
@@ -130,7 +142,7 @@ public class LibraryService {
      * Otherwise, returns an empty optional instance.
      *
      * @param id of the book that is to be archived
-     * @return Optional instace of an archived book, otherwise an empty optional instance
+     * @return Optional instance of an archived book, otherwise an empty optional instance
      */
     public Optional<Book> archiveBook(long id) {
         if (bookRepository.existsById(id)) {

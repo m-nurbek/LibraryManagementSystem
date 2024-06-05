@@ -3,6 +3,7 @@ package nurbek.librarymanagementsystem.controller;
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import nurbek.librarymanagementsystem.dto.Book;
+import nurbek.librarymanagementsystem.dto.BookStatus;
 import nurbek.librarymanagementsystem.property.ConfigurationProperty;
 import nurbek.librarymanagementsystem.service.LibraryService;
 import org.springframework.data.domain.Page;
@@ -14,6 +15,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Arrays;
 import java.util.Optional;
 
 
@@ -30,9 +32,12 @@ public class LibraryController {
     }
 
     @GetMapping(path = {"/books"})
-    public String libraryBooks(Model model, @PageableDefault(sort = {"title"}) Pageable pageable,
+    public String libraryBooks(Model model, @PageableDefault(sort = {"title"}, size = 5) Pageable pageable,
                                @RequestParam(value = "keyword", required = false) String keyword) {
-        Pageable pageProps = PageRequest.of(pageable.getPageNumber(), pageSize, pageable.getSort());
+        Pageable pageProps = pageable;
+        if (pageProps.getPageSize() <= 5) {
+            pageProps = PageRequest.of(pageable.getPageNumber(), pageSize, pageable.getSort());
+        }
 
         Page<Book> bookList;
         if (keyword != null && !keyword.isEmpty()) {
@@ -51,7 +56,7 @@ public class LibraryController {
 
     @GetMapping("/books/{id}")
     public String libraryBook(Model model, @PathVariable("id") long id) {
-        Book book = libraryService.getBookById(id);
+        Book book = libraryService.getBookById(id).orElse(null);
 
         if (book == null) {
             model.addAttribute("error", "Book not found");
@@ -59,6 +64,7 @@ public class LibraryController {
         }
 
         model.addAttribute("book", book);
+        model.addAttribute("statusList", Arrays.stream(BookStatus.values()).map(BookStatus::name).toList());
         return "book";
     }
 
@@ -81,5 +87,25 @@ public class LibraryController {
             return "redirect:/library/books";
         }
         return "error";
+    }
+
+    // TODO: test libraryBookRestore controller
+    @PutMapping("/books/restore/{id}")
+    public String libraryBookRestore(@PathVariable("id") long id) {
+        Optional<Book> book = libraryService.restoreBook(id);
+        if (book.isEmpty()) {
+            return "error";
+        }
+        return "redirect:/library/books";
+    }
+
+    // TODO: test libraryBookArchive controller
+    @DeleteMapping("/books/archive/{id}")
+    public String libraryBookArchive(@PathVariable("id") long id) {
+        Optional<Book> book = libraryService.archiveBook(id);
+        if (book.isEmpty()) {
+            return "error";
+        }
+        return "redirect:/library/books";
     }
 }

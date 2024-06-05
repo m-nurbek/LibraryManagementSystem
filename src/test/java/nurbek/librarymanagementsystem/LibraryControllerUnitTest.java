@@ -69,7 +69,7 @@ public class LibraryControllerUnitTest {
     void shouldReturnBookDetailView() throws Exception {
         var book = new Book(1L, "0000-0000-0000-0001", "Book 1", "RU", 50, BookStatus.ACTIVE, new Date(), null, 23, null);
 
-        when(libraryService.getBookById(any(long.class))).thenReturn(book);
+        when(libraryService.getBookById(any(long.class))).thenReturn(Optional.of(book));
 
         mockMvc.perform(get("/library/books/1"))
                 .andExpect(status().isOk())
