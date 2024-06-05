@@ -120,4 +120,30 @@ public class ReservationService {
         return reservationRepository.getOverdueBookReservations(calendar.getTime())
                 .stream().map(BookReservationEntity::toDto).toList();
     }
+
+    // TODO: Test this method
+    /**
+     * Renew a book reservation.
+     * The due date is extended by the number of days specified in the configuration property.
+     * If the reservation is not found, an empty optional is returned.
+     *
+     * @param reservationId the reservation ID
+     * @return an optional of the renewed reservation, otherwise an empty optional
+     */
+    public Optional<BookReservation> renewReservation(long reservationId) {
+        BookReservationEntity reservation = reservationRepository.findById(reservationId).orElse(null);
+
+        if (reservation == null) {
+            return Optional.empty();
+        }
+
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(reservation.getDueDate());
+        calendar.add(Calendar.DATE, props.getMaxDaysToReturnBook());
+        reservation.setDueDate(calendar.getTime());
+
+        reservationRepository.save(reservation);
+
+        return Optional.of(reservation.toDto());
+    }
 }
