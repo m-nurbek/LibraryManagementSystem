@@ -11,6 +11,7 @@ import org.springframework.data.repository.query.Param;
 import java.util.Optional;
 
 public interface AccountRepository extends JpaRepository<AccountEntity, Long>, PagingAndSortingRepository<AccountEntity, Long> {
+    @Query(value = "SELECT * FROM account", nativeQuery = true)
     Page<AccountEntity> findAll(PageRequest pageRequest);
 
     @Query(value = "SELECT * FROM account WHERE role = :role", nativeQuery = true)

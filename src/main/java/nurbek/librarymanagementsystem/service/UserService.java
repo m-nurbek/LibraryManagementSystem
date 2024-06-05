@@ -1,5 +1,6 @@
 package nurbek.librarymanagementsystem.service;
 
+import lombok.AllArgsConstructor;
 import nurbek.librarymanagementsystem.dto.Account;
 import nurbek.librarymanagementsystem.entity.AccountEntity;
 import nurbek.librarymanagementsystem.repository.AccountRepository;
@@ -13,8 +14,8 @@ import org.springframework.stereotype.Service;
 import java.util.Optional;
 
 @Service
+@AllArgsConstructor
 public class UserService {
-    @Autowired
     private AccountRepository accountRepository;
 
     // TODO: Test this method
