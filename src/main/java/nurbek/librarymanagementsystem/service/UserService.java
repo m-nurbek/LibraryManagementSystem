@@ -92,4 +92,21 @@ public class UserService {
         }
         return Optional.empty();
     }
+
+    // TODO: Test this method
+
+    /**
+     * Deletes an account by id.
+     * if the account is not found, returns false.
+     * if the account is found and deleted, returns true.
+     * @param id account id
+     * @return true if the account is found and deleted, false if the account is not found
+     */
+    public boolean deleteAccount(long id) {
+        if (accountRepository.existsById(id)) {
+            accountRepository.deleteById(id);
+            return true;
+        }
+        return false;
+    }
 }
