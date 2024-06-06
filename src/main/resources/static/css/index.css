@@ -10,8 +10,6 @@ body {
     height: 100vh;
 }
 
-
-
 .page {
     margin-top: 5rem;
     height: calc(100% - 5rem);
@@ -40,4 +38,14 @@ main {
     letter-spacing: -1px;
     margin-top: -4px !important;
     margin-left: 2px !important;
+}
+
+.card-item {
+    margin: 1rem 0;
+    width: 100%;
+    display: flex;
+    border: #e8e8e8 solid 1px;
+    box-shadow: 1px 1px;
+    border-radius: 20px;
+
 }

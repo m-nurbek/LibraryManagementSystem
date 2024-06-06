@@ -2,10 +2,12 @@ package nurbek.librarymanagementsystem.controller;
 
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
+import nurbek.librarymanagementsystem.dto.Account;
 import nurbek.librarymanagementsystem.dto.Book;
 import nurbek.librarymanagementsystem.dto.BookStatus;
 import nurbek.librarymanagementsystem.property.ConfigurationProperty;
 import nurbek.librarymanagementsystem.service.LibraryService;
+import nurbek.librarymanagementsystem.service.UserService;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -16,6 +18,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 
+import java.security.Principal;
 import java.util.Arrays;
 import java.util.Optional;
 
@@ -25,17 +28,18 @@ import java.util.Optional;
 @RequestMapping("/library")
 public class LibraryController {
     private final LibraryService libraryService;
+    private final UserService userService;
     private final int pageSize;
 
-    public LibraryController(LibraryService libraryService, ConfigurationProperty props) {
+    public LibraryController(LibraryService libraryService, UserService userService, ConfigurationProperty props) {
         this.libraryService = libraryService;
+        this.userService = userService;
         pageSize = props.getPageSize();
     }
 
-    @Secured("ROLE_LIBRARIAN")
     @GetMapping(path = {"/books"})
     public String libraryBooks(Model model, @PageableDefault(sort = {"title"}, size = 5) Pageable pageable,
-                               @RequestParam(value = "keyword", required = false) String keyword) {
+                               @RequestParam(value = "keyword", required = false) String keyword, Principal principal) {
         Pageable pageProps = pageable;
         if (pageProps.getPageSize() <= 5) {
             pageProps = PageRequest.of(pageable.getPageNumber(), pageSize, pageable.getSort());
@@ -53,12 +57,18 @@ public class LibraryController {
         model.addAttribute("totalPages", bookList.getTotalPages());
         model.addAttribute("totalItems", bookList.getTotalElements());
 
+        // find the user by email
+        if (principal != null) {
+            Account account = userService.getAccountByEmail(principal.getName()).orElse(null);
+            model.addAttribute("user", account);
+        }
+
         return "books";
     }
 
     @Secured("ROLE_LIBRARIAN")
     @GetMapping("/books/{id}")
-    public String libraryBook(Model model, @PathVariable("id") long id) {
+    public String libraryBook(Model model, @PathVariable("id") long id, Principal principal) {
         Book book = libraryService.getBookById(id).orElse(null);
 
         if (book == null) {
@@ -68,6 +78,12 @@ public class LibraryController {
 
         model.addAttribute("book", book);
         model.addAttribute("statusList", Arrays.stream(BookStatus.values()).map(BookStatus::name).toList());
+
+        if (principal != null) {
+            Account account = userService.getAccountByEmail(principal.getName()).orElse(null);
+            model.addAttribute("user", account);
+        }
+
         return "book";
     }
 
@@ -78,6 +94,7 @@ public class LibraryController {
             model.addAttribute("error", "Invalid input");
         }
         libraryService.addBook(book);
+
         return "redirect:/library/books";
     }
 

@@ -16,9 +16,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.security.Principal;
 import java.util.List;
 import java.util.Optional;
 
+
+// TODO: test this controller
 @Slf4j
 @Controller
 @RequestMapping("/users")
@@ -35,7 +38,7 @@ public class UserController {
 
     @Secured("ROLE_LIBRARIAN")
     @GetMapping
-    public String allUsers(Model model, @PageableDefault(sort = {"email"}, size = 5) Pageable pageable) {
+    public String allUsers(Model model, @PageableDefault(sort = {"email"}, size = 5) Pageable pageable, Principal principal) {
         Pageable pageProps = pageable;
         if (pageProps.getPageSize() <= 5) {
             pageProps = PageRequest.of(pageable.getPageNumber(), pageSize, pageable.getSort());
@@ -48,12 +51,17 @@ public class UserController {
         model.addAttribute("totalPages", userList.getTotalPages());
         model.addAttribute("totalItems", userList.getTotalElements());
 
+        if (principal != null) {
+            Account account = userService.getAccountByEmail(principal.getName()).orElse(null);
+            model.addAttribute("user", account);
+        }
+
         return "users";
     }
 
     @Secured("ROLE_LIBRARIAN")
     @GetMapping("/{id}")
-    public String userDetail(Model model, @PathVariable("id") long id) {
+    public String userDetail(Model model, @PathVariable("id") long id, Principal principal) {
         Account user = userService.getAccountById(id).orElse(null);
         if (user == null) {
             return "redirect:/users";
@@ -63,6 +71,11 @@ public class UserController {
 
         model.addAttribute("user", user);
         model.addAttribute("reservations", reservations);
+
+        if (principal != null) {
+            Account account = userService.getAccountByEmail(principal.getName()).orElse(null);
+            model.addAttribute("user", account);
+        }
 
         return "user";
     }
@@ -96,6 +109,7 @@ public class UserController {
         return "error";
     }
 
+    @Secured("ROLE_LIBRARIAN")
     @PostMapping("/reservation/renew/{id}")
     public String renewReservation(@PathVariable("id") long reservation_id) {
         BookReservation reservation = reservationService.renewReservation(reservation_id).orElse(null);

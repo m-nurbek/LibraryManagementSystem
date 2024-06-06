@@ -168,6 +168,26 @@ public class LibraryService {
         return Optional.empty();
     }
 
+    public Optional<Book> reserveBook(long bookId) {
+        if (bookRepository.existsById(bookId)) {
+            BookEntity bookInDb = bookRepository.getReferenceById(bookId);
+            bookInDb.setNumberOfCopies(bookInDb.getNumberOfCopies() - 1);
+            bookRepository.save(bookInDb);
+            return Optional.of(bookInDb.toDto());
+        }
+        return Optional.empty();
+    }
+
+    public Optional<Book> returnBook(long bookId) {
+        if (bookRepository.existsById(bookId)) {
+            BookEntity bookInDb = bookRepository.getReferenceById(bookId);
+            bookInDb.setNumberOfCopies(bookInDb.getNumberOfCopies() + 1);
+            bookRepository.save(bookInDb);
+            return Optional.of(bookInDb.toDto());
+        }
+        return Optional.empty();
+    }
+
     @Transactional
     public void deleteBook(long id) {
         reservationRepository.deleteByBookId(id);

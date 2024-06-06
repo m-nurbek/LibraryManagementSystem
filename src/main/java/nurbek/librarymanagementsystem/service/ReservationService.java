@@ -9,8 +9,10 @@ import nurbek.librarymanagementsystem.entity.AccountEntity;
 import nurbek.librarymanagementsystem.entity.BookEntity;
 import nurbek.librarymanagementsystem.entity.BookReservationEntity;
 import nurbek.librarymanagementsystem.property.ConfigurationProperty;
+import nurbek.librarymanagementsystem.repository.BookRepository;
 import nurbek.librarymanagementsystem.repository.BookReservationRepository;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -20,6 +22,7 @@ import java.util.Optional;
 @Service
 @AllArgsConstructor
 public class ReservationService {
+    private final BookRepository bookRepository;
     private ConfigurationProperty props;
     private BookReservationRepository reservationRepository;
     private UserService userService;
@@ -32,16 +35,24 @@ public class ReservationService {
     }
 
     // TODO: Test this method
+    @Transactional
     public void deleteReservationByAccountId(long accountId) {
+        List<BookReservation> reservations = getReservationsByAccountId(accountId);
+        reservations.forEach(
+                reservation -> libraryService.returnBook(reservation.getBook().getId())
+        );
         reservationRepository.deleteByAccountId(accountId);
     }
 
     // TODO: Test this method
+    @Transactional
     public void deleteReservationByBookIdAndAccountId(long bookId, long accountId) {
+        libraryService.returnBook(bookId);
         reservationRepository.deleteByBookIdAndAccountId(bookId, accountId);
     }
 
     // TODO: Test this method
+    @Transactional
     public void reserveBook(long bookId, long accountId) {
         BookReservationEntity reservation = new BookReservationEntity();
 
@@ -55,7 +66,7 @@ public class ReservationService {
         calendar.add(Calendar.DATE, props.getMaxDaysToReturnBook());
         reservation.setDueDate(calendar.getTime());
 
-        Book book = libraryService.getBookById(bookId).orElse(null);
+        Book book = libraryService.reserveBook(bookId).orElse(null);
 
         if (book == null) {
             throw new IllegalArgumentException("Book not found");
@@ -74,12 +85,15 @@ public class ReservationService {
     }
 
     // TODO: Test this method
+    @Transactional
     public void returnBook(long bookId, long accountId) {
         BookReservationEntity reservation = reservationRepository.findByBookIdAndAccountId(bookId, accountId).orElse(null);
 
         if (reservation == null) {
             throw new IllegalArgumentException("Reservation not found");
         }
+
+        libraryService.returnBook(bookId);
 
         reservationRepository.deleteByBookIdAndAccountId(bookId, accountId);
     }
