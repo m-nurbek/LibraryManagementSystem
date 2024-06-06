@@ -10,6 +10,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
@@ -31,6 +32,7 @@ public class LibraryController {
         pageSize = props.getPageSize();
     }
 
+    @Secured("ROLE_LIBRARIAN")
     @GetMapping(path = {"/books"})
     public String libraryBooks(Model model, @PageableDefault(sort = {"title"}, size = 5) Pageable pageable,
                                @RequestParam(value = "keyword", required = false) String keyword) {
@@ -54,6 +56,7 @@ public class LibraryController {
         return "books";
     }
 
+    @Secured("ROLE_LIBRARIAN")
     @GetMapping("/books/{id}")
     public String libraryBook(Model model, @PathVariable("id") long id) {
         Book book = libraryService.getBookById(id).orElse(null);
@@ -68,6 +71,7 @@ public class LibraryController {
         return "book";
     }
 
+    @Secured("ROLE_LIBRARIAN")
     @PostMapping("/books")
     public String libraryBookAdd(Model model, @Valid @ModelAttribute Book book, Errors errors) {
         if (errors.hasErrors()) {
@@ -77,6 +81,7 @@ public class LibraryController {
         return "redirect:/library/books";
     }
 
+    @Secured("ROLE_LIBRARIAN")
     @PutMapping("/books/{id}")
     public String libraryBookUpdate(@PathVariable("id") long id, @Valid @ModelAttribute("book") Book book, Errors errors) {
         if (errors.hasErrors()) {
@@ -90,6 +95,7 @@ public class LibraryController {
     }
 
     // TODO: test libraryBookRestore controller
+    @Secured("ROLE_LIBRARIAN")
     @PutMapping("/books/restore/{id}")
     public String libraryBookRestore(@PathVariable("id") long id) {
         Optional<Book> book = libraryService.restoreBook(id);
@@ -100,6 +106,7 @@ public class LibraryController {
     }
 
     // TODO: test libraryBookArchive controller
+    @Secured("ROLE_LIBRARIAN")
     @DeleteMapping("/books/archive/{id}")
     public String libraryBookArchive(@PathVariable("id") long id) {
         Optional<Book> book = libraryService.archiveBook(id);

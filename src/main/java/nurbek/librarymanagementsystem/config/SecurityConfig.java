@@ -1,5 +1,6 @@
 package nurbek.librarymanagementsystem.config;
 
+import lombok.extern.slf4j.Slf4j;
 import nurbek.librarymanagementsystem.entity.AccountEntity;
 import nurbek.librarymanagementsystem.repository.AccountRepository;
 import org.springframework.context.annotation.Bean;
@@ -13,8 +14,9 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
+@Slf4j
 @Configuration
-@EnableMethodSecurity
+@EnableMethodSecurity(securedEnabled = true)
 public class SecurityConfig {
 
     @Bean
@@ -25,10 +27,14 @@ public class SecurityConfig {
     @Bean
     public UserDetailsService userDetailsService(AccountRepository accountRepository) {
         return email -> {
+            log.info("EMAIL: {}", email);
             AccountEntity account = accountRepository.findByEmail(email).orElse(null);
+
             if (account == null) {
+                log.info("ACCOUNT NOT FOUND");
                 throw new UsernameNotFoundException("User with email '" + email + "' not found");
             }
+            log.info("ACCOUNT: {}", account.getUsername());
             return account;
         };
     }
@@ -39,8 +45,11 @@ public class SecurityConfig {
                 .csrf(AbstractHttpConfigurer::disable)
                 .headers(headers -> headers.frameOptions().disable())
                 .authorizeHttpRequests(authorize -> authorize
-                        .requestMatchers("library/*").permitAll()
+                        .requestMatchers("library/**").authenticated()
+                        .requestMatchers("users/**").authenticated()
                         .anyRequest().permitAll())
+                .formLogin(form -> form.loginPage("/login").defaultSuccessUrl("/library/books", true))
+                .logout(logout -> logout.logoutSuccessUrl("/"))
                 .build();
     }
 }

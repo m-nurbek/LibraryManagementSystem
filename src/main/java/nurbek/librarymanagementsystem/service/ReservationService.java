@@ -133,7 +133,7 @@ public class ReservationService {
     public Optional<BookReservation> renewReservation(long reservationId) {
         BookReservationEntity reservation = reservationRepository.findById(reservationId).orElse(null);
 
-        if (reservation == null) {
+        if (reservation == null || reservation.getStatus().equals(ReservationStatus.RESERVED)) {
             return Optional.empty();
         }
 

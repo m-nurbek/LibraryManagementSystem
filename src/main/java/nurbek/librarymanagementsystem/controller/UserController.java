@@ -11,6 +11,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -32,14 +33,16 @@ public class UserController {
         pageSize = props.getPageSize();
     }
 
+    @Secured("ROLE_LIBRARIAN")
     @GetMapping
-    public String allUsers(Model model, @PageableDefault(sort = {"title"}, size = 5) Pageable pageable) {
+    public String allUsers(Model model, @PageableDefault(sort = {"email"}, size = 5) Pageable pageable) {
         Pageable pageProps = pageable;
         if (pageProps.getPageSize() <= 5) {
             pageProps = PageRequest.of(pageable.getPageNumber(), pageSize, pageable.getSort());
         }
 
         Page<Account> userList = userService.getAccountListByRole(Role.USER.name(), pageProps);
+        log.info(userList.getContent().toString());
         model.addAttribute("users", userList);
         model.addAttribute("currentPage", pageProps.getPageNumber());
         model.addAttribute("totalPages", userList.getTotalPages());
@@ -48,6 +51,7 @@ public class UserController {
         return "users";
     }
 
+    @Secured("ROLE_LIBRARIAN")
     @GetMapping("/{id}")
     public String userDetail(Model model, @PathVariable("id") long id) {
         Account user = userService.getAccountById(id).orElse(null);
@@ -63,6 +67,7 @@ public class UserController {
         return "user";
     }
 
+    @Secured("ROLE_LIBRARIAN")
     @PutMapping("/update/{id}")
     public String updateUser(@PathVariable("id") long id, Account user) {
         // Only allow updating users
@@ -76,6 +81,7 @@ public class UserController {
         return "error";
     }
 
+    @Secured("ROLE_LIBRARIAN")
     @PostMapping("/add")
     public String addUser(@ModelAttribute Account user) {
         // Only allow adding users
@@ -88,5 +94,14 @@ public class UserController {
             return "redirect:/users";
         }
         return "error";
+    }
+
+    @PostMapping("/reservation/renew/{id}")
+    public String renewReservation(@PathVariable("id") long reservation_id) {
+        BookReservation reservation = reservationService.renewReservation(reservation_id).orElse(null);
+        if (reservation == null) {
+            return "error";
+        }
+        return "redirect:/users/" + reservation.getAccount().getId();
     }
 }

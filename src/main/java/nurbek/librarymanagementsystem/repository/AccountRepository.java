@@ -17,6 +17,7 @@ public interface AccountRepository extends JpaRepository<AccountEntity, Long>, P
     @Query(value = "SELECT * FROM account WHERE role = :role", nativeQuery = true)
     Page<AccountEntity> getAccountsByRole(@Param("role") String role, PageRequest pageRequest);
 
+    @Query(value = "SELECT * FROM account WHERE email = :email", nativeQuery = true)
     Optional<AccountEntity> findByEmail(String email);
 
     boolean existsByEmail(String email);
