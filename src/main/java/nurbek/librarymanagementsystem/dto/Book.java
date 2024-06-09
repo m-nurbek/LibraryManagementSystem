@@ -7,8 +7,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import jakarta.validation.constraints.*;
-import lombok.Builder;
-import lombok.Data;
+import lombok.*;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.io.IOException;
@@ -17,31 +16,32 @@ import java.util.Date;
 
 @Data
 @Builder
+@NoArgsConstructor
 public class Book {
-    private final Long id;
+    private Long id;
     @NotBlank(message = "ISBN is required")
     @Size(min = 10, max = 20, message = "ISBN must be between 10 and 20 characters")
-    private final String ISBN;
+    private String ISBN;
     @NotBlank(message = "Title is required")
     @Size(min = 1, max = 100, message = "Title must be no longer than 100 characters")
-    private final String title;
+    private String title;
     @NotBlank(message = "Language is required")
     @Size(max = 2, message = "Language must be no longer than 2 characters")
-    private final String language;
+    private String language;
     @Min(value = 1, message = "Number of pages must be a number between 1 and 9999")
     @Max(value = 9999, message = "Number of pages must be a number between 1 and 9999")
     @Digits(integer = 4, fraction = 0, message = "Number of pages must be a number between 0 and 9999")
-    private final Integer numberOfPages;
-    private final BookStatus status;
+    private Integer numberOfPages;
+    private BookStatus status;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private final Date publishDate;
+    private Date publishDate;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private final Date archiveDate;
+    private Date archiveDate;
     @Min(value = 1, message = "Number of copies must be a number between 1 and 999")
     @Max(value = 999, message = "Number of copies must be a number between 1 and 999")
     @Digits(integer = 3, fraction = 0, message = "Number of copies must be a number between 0 and 999")
-    private final Integer numberOfCopies;
-    private final Author author;
+    private Integer numberOfCopies;
+    private Author author;
 
     @JsonCreator
     public Book(@JsonProperty("id") Long id,

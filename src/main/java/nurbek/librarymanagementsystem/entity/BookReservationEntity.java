@@ -16,11 +16,21 @@ import java.util.Date;
 @RequiredArgsConstructor
 public class BookReservationEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.TABLE, generator = "reservation_seq")
+    @TableGenerator(
+            name = "reservation_seq",
+            table = "id_gen_table",
+            pkColumnName = "gen_name",
+            valueColumnName = "gen_val",
+            initialValue = 1000,
+            allocationSize = 1)
+    @Column(name = "ID")
     private Long id;
 
+    @Temporal(TemporalType.DATE)
     @Column(name = "RESERVATION_DATE", nullable = false)
     private Date reservationDate = new Date();
+    @Temporal(TemporalType.DATE)
     @Column(name = "DUE_DATE", nullable = false)
     private Date dueDate;
     @Column(name = "STATUS")

@@ -16,12 +16,12 @@
             <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white logo-span">library</span>
         </a>
         <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-            <div th:if="${user != null}" th:text="${user.firstName} + ' ' + ${user.lastName}"
+            <div th:if="${principal != null}" th:text="${principal.firstName} + ' ' + ${principal.lastName}"
                  class="self-center whitespace-nowrap dark:text-white"
                  style="cursor:pointer; user-select: none"
                  onclick="toggleDropdown()"
             ></div>
-            <div th:if="${user != null}"
+            <div th:if="${principal != null}"
                  id="dropdown-menu"
                  style="position: fixed; top: 4.5rem; z-index: 1000; transform: translateX(-4rem); display: none;"
                  class="w-48 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white">
@@ -168,6 +168,9 @@
                                 class="px-4 py-2 text-white bg-red-500 rounded hover:bg-red-700">
                             Renew
                         </button>
+                        <form th:action="@{'/users/reservation/delete/' + ${r.id}}" th:method="delete">
+                            <button type="submit" class="btn btn-danger">Return Book</button>
+                        </form>
                     </td>
                 </tr>
                 </tbody>

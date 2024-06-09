@@ -6,6 +6,7 @@ import nurbek.librarymanagementsystem.dto.Account;
 import nurbek.librarymanagementsystem.dto.Book;
 import nurbek.librarymanagementsystem.dto.BookStatus;
 import nurbek.librarymanagementsystem.property.ConfigurationProperty;
+import nurbek.librarymanagementsystem.service.AuthorService;
 import nurbek.librarymanagementsystem.service.LibraryService;
 import nurbek.librarymanagementsystem.service.UserService;
 import org.springframework.data.domain.Page;
@@ -22,18 +23,19 @@ import java.security.Principal;
 import java.util.Arrays;
 import java.util.Optional;
 
-
 @Slf4j
 @Controller
 @RequestMapping("/library")
 public class LibraryController {
     private final LibraryService libraryService;
     private final UserService userService;
+    private final AuthorService authorService;
     private final int pageSize;
 
-    public LibraryController(LibraryService libraryService, UserService userService, ConfigurationProperty props) {
+    public LibraryController(LibraryService libraryService, UserService userService, AuthorService authorService, ConfigurationProperty props) {
         this.libraryService = libraryService;
         this.userService = userService;
+        this.authorService = authorService;
         pageSize = props.getPageSize();
     }
 
@@ -88,13 +90,27 @@ public class LibraryController {
     }
 
     @Secured("ROLE_LIBRARIAN")
-    @PostMapping("/books")
-    public String libraryBookAdd(Model model, @Valid @ModelAttribute Book book, Errors errors) {
-        if (errors.hasErrors()) {
-            model.addAttribute("error", "Invalid input");
+    @GetMapping("/books/add")
+    public String libraryBookAddView(Model model, Principal principal) {
+        if (principal != null) {
+            Account account = userService.getAccountByEmail(principal.getName()).orElse(null);
+            model.addAttribute("user", account);
         }
-        libraryService.addBook(book);
 
+        model.addAttribute("book", new Book());
+        model.addAttribute("authors", authorService.getAllAuthors());
+        return "bookAdd";
+    }
+
+    // TODO: test this controller
+    @Secured("ROLE_LIBRARIAN")
+    @PostMapping("/books/add")
+    public String libraryBookAdd(@Valid @ModelAttribute Book book, Errors errors) {
+        if (errors.hasErrors()) {
+            return "bookAdd";
+        }
+
+        libraryService.addBook(book);
         return "redirect:/library/books";
     }
 

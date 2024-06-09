@@ -15,7 +15,14 @@ import java.util.Date;
 @RequiredArgsConstructor
 public class BookEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.TABLE, generator = "book_seq")
+    @TableGenerator(
+            name = "book_seq",
+            table = "id_gen_table",
+            pkColumnName = "gen_name",
+            valueColumnName = "gen_val",
+            initialValue = 1000,
+            allocationSize = 1)
     @Column(name = "ID")
     private Long id;
     @Column(name = "ISBN", unique = true, nullable = false)
@@ -33,8 +40,10 @@ public class BookEntity {
     @Column(name = "STATUS")
     @Enumerated(EnumType.STRING)
     private BookStatus status = BookStatus.ACTIVE;
+    @Temporal(TemporalType.DATE)
     @Column(name = "PUBLISH_DATE")
     private Date publishDate = new Date();
+    @Temporal(TemporalType.DATE)
     @Column(name = "ARCHIVE_DATE")
     private Date archiveDate;
     @Column(name = "NUMBER_OF_COPIES", nullable = false)
@@ -54,7 +63,9 @@ public class BookEntity {
         if (book == null) {
             return null;
         }
-        return new BookEntity(book.getId(),
+
+        return new BookEntity(
+                book.getId(),
                 book.getISBN(),
                 book.getTitle(),
                 book.getLanguage(),

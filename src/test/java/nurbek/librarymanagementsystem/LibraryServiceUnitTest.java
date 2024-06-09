@@ -47,24 +47,30 @@ public class LibraryServiceUnitTest {
 
     @Test
     void shouldBeAbleToReturnListOfBooks() {
+        // given
         when(bookRepository.findAll(pageRequestWithSorting)).thenReturn(bookPage);
 
-        Page<Book> actual = libraryService.getBookList(pageRequestWithSorting);
-        assertThat(actual).isNotEmpty();
-        assertThat(actual.getTotalElements()).isEqualTo(4);
+        // when
+        Page<Book> result = libraryService.getBookList(pageRequestWithSorting);
 
+        // then
         verify(bookRepository, times(1)).findAll(pageRequestWithSorting);
+        assertThat(result).isNotEmpty();
+        assertThat(result.getTotalElements()).isEqualTo(4);
     }
 
     @Test
     void shouldNotBeAbleToReturnListOfBooks() {
+        // given
         when(bookRepository.findAll(pageRequestWithSorting)).thenReturn(new PageImpl<>(List.of(new BookEntity[] {})));
 
-        Page<Book> actual = libraryService.getBookList(pageRequestWithSorting);
-        assertThat(actual).isEmpty();
-        assertThat(actual.getTotalElements()).isEqualTo(0);
+        // when
+        Page<Book> result = libraryService.getBookList(pageRequestWithSorting);
 
+        // then
         verify(bookRepository, times(1)).findAll(pageRequestWithSorting);
+        assertThat(result).isEmpty();
+        assertThat(result.getTotalElements()).isEqualTo(0);
     }
 
 }

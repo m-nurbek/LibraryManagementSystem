@@ -1,5 +1,7 @@
 package nurbek.librarymanagementsystem.service;
 
+import lombok.extern.slf4j.Slf4j;
+import nurbek.librarymanagementsystem.aop.Loggable;
 import nurbek.librarymanagementsystem.dto.Book;
 import nurbek.librarymanagementsystem.dto.BookStatus;
 import nurbek.librarymanagementsystem.entity.BookEntity;
@@ -74,19 +76,26 @@ public class LibraryService {
         return bookEntities.map(BookEntity::toDto);
     }
 
-    public Optional<Book> addBook(Book book) {
-        if (bookRepository.existsById(book.getId())) {
-            BookEntity bookInDb = bookRepository.getReferenceById(book.getId());
-
+    /**
+     * If the book exists, then increase the number of copies of this book. Otherwise, save the new book
+     *
+     * @param book book to be added
+     * @return instance of the saved book
+     */
+    @Loggable
+    public Book addBook(Book book) {
+        Optional<BookEntity> optionalBookEntity = bookRepository.findByISBN(book.getISBN());
+        if (optionalBookEntity.isPresent()) {
+            var bookInDb = optionalBookEntity.get();
             int copies = bookInDb.getNumberOfCopies();
             copies += book.getNumberOfCopies();
             bookInDb.setNumberOfCopies(copies);
 
             bookRepository.save(bookInDb);
-            return Optional.of(bookInDb.toDto());
+            return bookInDb.toDto();
         }
-        bookRepository.save(BookEntity.fromDto(book));
-        return Optional.of(book);
+        BookEntity savedBookEntity = bookRepository.save(BookEntity.fromDto(book));
+        return savedBookEntity.toDto();
     }
 
     /**

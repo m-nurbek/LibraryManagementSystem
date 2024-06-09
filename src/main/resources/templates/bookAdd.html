@@ -12,7 +12,7 @@
 <nav class="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <a th:href="@{/}" class="flex items-center space-x-3 rtl:space-x-reverse">
-            <img th:src="@{EPAM-logo.svg}" class="h-8" alt="EPAM"/>
+            <img th:src="@{/EPAM-logo.svg}" class="h-8" alt="EPAM"/>
             <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white logo-span">library</span>
         </a>
         <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
@@ -58,9 +58,15 @@
         <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-cta">
             <ul class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
                 <li>
+                    <a th:href="@{/users?page=0}"
+                       class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                        Users
+                    </a>
+                </li>
+                <li>
                     <a th:href="@{/library/books?page=0}"
                        class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
-                        Search Books
+                        Books
                     </a>
                 </li>
             </ul>
@@ -70,36 +76,91 @@
 
 <div class="page">
     <main class="max-w-screen-xl mx-auto p-4">
-        <section class="bg-white dark:bg-gray-900">
-            <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16">
-                <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
-                    Empowering Libraries, Enriching Communities</h1>
-                <p class="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 lg:px-48 dark:text-gray-400">
-                    Unleashing the true potential of libraries through our
-                    Library Management System – a comprehensive web application designed to streamline operations,
-                    enhance user experience, and foster a love for literature.
-                </p>
-                <div class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0">
-                    <a href="#"
-                       class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">
-                        Get started
-                        <svg class="w-3.5 h-3.5 ms-2 rtl:rotate-180" aria-hidden="true"
-                             xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                  d="M1 5h12m0 0L9 1m4 4L9 9"/>
-                        </svg>
-                    </a>
-                    <a href="#"
-                       class="py-3 px-5 sm:ms-4 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-70">
-                        Learn more
-                    </a>
-                </div>
+        <h1>Add Book</h1>
+        <form th:action="@{/library/books/add}" th:object="${book}" method="post">
+            <div class="form-group">
+                <label for="title">Title</label>
+                <input type="text" th:field="*{title}" class="form-control" id="title" placeholder="Enter title">
+                <span class="validationError"
+                      th:if="${#fields.hasErrors('title')}"
+                      th:errors="*{title}"
+                >
+                    title Error
+                </span>
             </div>
-        </section>
+            <div class="form-group">
+                <label for="isbn">ISBN</label>
+                <input type="text" th:field="*{ISBN}" class="form-control" id="isbn" placeholder="Enter ISBN">
+                <span class="validationError"
+                      th:if="${#fields.hasErrors('ISBN')}"
+                      th:errors="*{ISBN}"
+                >
+                    ISBN Error
+                </span>
+            </div>
+            <div class="form-group">
+                <label for="language">Language</label>
+                <input type="text" th:field="*{language}" class="form-control" id="language"
+                       placeholder="Enter language">
+                <span class="validationError"
+                      th:if="${#fields.hasErrors('language')}"
+                      th:errors="*{language}"
+                >
+                    language Error
+                </span>
+            </div>
+            <div class="form-group">
+                <label for="numberOfPages">Number Of Pages</label>
+                <input type="number" th:field="*{numberOfPages}" class="form-control" id="numberOfPages"
+                       placeholder="Enter number of pages">
+                <span class="validationError"
+                      th:if="${#fields.hasErrors('numberOfPages')}"
+                      th:errors="*{numberOfPages}"
+                >
+                    numberOfPages Error
+                </span>
+            </div>
+            <div class="form-group">
+                <label for="publishDate">Publish Date</label>
+                <input type="date" th:field="*{publishDate}" class="form-control" id="publishDate"
+                       placeholder="Enter publish date">
+                <span class="validationError"
+                      th:if="${#fields.hasErrors('publishDate')}"
+                      th:errors="*{publishDate}"
+                >
+                    publishDate Error
+                </span>
+            </div>
+            <div class="form-group">
+                <label for="numberOfCopies">Number Of Copies</label>
+                <input type="number" th:field="*{numberOfCopies}" class="form-control" id="numberOfCopies"
+                       placeholder="Enter number of copies">
+                <span class="validationError"
+                      th:if="${#fields.hasErrors('numberOfCopies')}"
+                      th:errors="*{numberOfCopies}"
+                >
+                    numberOfCopies Error
+                </span>
+            </div>
+            <div class="form-group">
+                <label for="author">Author</label>
+                <select th:field="*{author}" class="form-control" id="author">
+                    <option value="">Select an author</option>
+                    <option th:each="author : ${authors}"
+                            th:value="${author.id}"
+                            th:text="${author.name}"></option>
+                </select>
+                <span class="validationError"
+                      th:if="${#fields.hasErrors('author')}"
+                      th:errors="*{author}"
+                >
+                    Author Error
+                </span>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
     </main>
 </div>
-
-
 <!-- Bootstrap CDN -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
 

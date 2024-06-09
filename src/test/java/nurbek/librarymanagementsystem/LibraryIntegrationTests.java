@@ -1,6 +1,5 @@
 package nurbek.librarymanagementsystem;
 
-import nurbek.librarymanagementsystem.controller.LibraryController;
 import nurbek.librarymanagementsystem.dto.Book;
 import nurbek.librarymanagementsystem.dto.BookStatus;
 import nurbek.librarymanagementsystem.entity.BookEntity;
@@ -15,7 +14,6 @@ import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.web.servlet.MockMvc;
 
-import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
@@ -57,6 +55,7 @@ public class LibraryIntegrationTests {
 
     @Test
     void shouldNotUpdateBook() throws Exception {
+        // given
         Book book = Book.builder()
                 .ISBN("108357909-6")
                 .title("Updated Book 1")
@@ -66,18 +65,22 @@ public class LibraryIntegrationTests {
                 .numberOfCopies(1)
                 .build();
 
+        // when
         // Book id 100 does not exist
         mockMvc.perform(put("/library/books/100")
                         .flashAttr("book", book))
                 .andExpect(view().name("error"));
 
         // Verify the number of books is still 7
-        List<Map<String, Object>> books = jdbcTemplate.queryForList("SELECT * FROM BOOK");
+        List<Map<String, Object>> books = jdbcTemplate.queryForList("SELECT * FROM BOOK"); // TODO: change this
+
+        // then
         assertThat(books.size()).isEqualTo(10);
     }
 
     @Test
     void shouldNotUpdateBookWithEmptyTitle() throws Exception {
+        // given
         Book book = Book.builder()
                 .ISBN("108357909-6")
                 .title("") // changed value from "Champagne for Caesar" to ""
@@ -87,13 +90,16 @@ public class LibraryIntegrationTests {
                 .numberOfCopies(1)
                 .build();
 
+        // when
         mockMvc.perform(put("/library/books/1")
                         .flashAttr("book", book))
                 .andDo(print())
                 .andExpect(view().name("error"));
 
         // Verify the title is not updated
-        Map<String, Object> updatedBook = jdbcTemplate.queryForMap("SELECT * FROM BOOK WHERE ID = 1");
+        Map<String, Object> updatedBook = jdbcTemplate.queryForMap("SELECT * FROM BOOK WHERE ID = 1"); // TODO: change this
+
+        // then
         assertThat(updatedBook.get("TITLE")).isEqualTo("Champagne for Caesar");
         assertThat(updatedBook.get("ISBN")).isEqualTo("108357909-6");
         assertThat(updatedBook.get("LANGUAGE")).isEqualTo("PH");

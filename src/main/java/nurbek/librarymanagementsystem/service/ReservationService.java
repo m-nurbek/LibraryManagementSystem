@@ -36,7 +36,7 @@ public class ReservationService {
 
     // TODO: Test this method
     @Transactional
-    public void deleteReservationByAccountId(long accountId) {
+    public void deleteReservationsByAccountId(long accountId) {
         List<BookReservation> reservations = getReservationsByAccountId(accountId);
         reservations.forEach(
                 reservation -> libraryService.returnBook(reservation.getBook().getId())
@@ -49,6 +49,19 @@ public class ReservationService {
     public void deleteReservationByBookIdAndAccountId(long bookId, long accountId) {
         libraryService.returnBook(bookId);
         reservationRepository.deleteByBookIdAndAccountId(bookId, accountId);
+    }
+
+    @Transactional
+    public boolean deleteReservationById(long reservationId) {
+        Optional<BookReservationEntity> reservation = reservationRepository.findById(reservationId);
+
+        if (reservation.isPresent()) {
+            libraryService.returnBook(reservation.get().getBook().getId());
+            reservationRepository.deleteById(reservationId);
+            return true;
+        }
+
+        return false;
     }
 
     // TODO: Test this method

@@ -10,12 +10,13 @@ import org.springframework.data.repository.query.Param;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 public interface BookRepository extends JpaRepository<BookEntity, Long>, PagingAndSortingRepository<BookEntity, Long> {
 
     @Query(value = """
             SELECT * FROM BOOK b
-                WHERE LOWER(b.TITLE) LIKE LOWER('%' || :keyword || '%') OR b.ISBN LIKE '%' || :keyword || '%'
+                WHERE LOWER(b.TITLE) LIKE LOWER('%' || :keyword || '%') OR b.ISBN LIKE '%' || :keyword || '%' 
             """, nativeQuery = true)
     Page<BookEntity> searchByKeyword(@Param("keyword") String keyword, PageRequest pageRequest);
 
@@ -30,4 +31,8 @@ public interface BookRepository extends JpaRepository<BookEntity, Long>, PagingA
                 WHERE LOWER(b.status) = LOWER(:status) AND b.ARCHIVE_DATE < :date
             """, nativeQuery = true)
     List<BookEntity> getBooksByStatusAndArchiveDateBefore(@Param("status") String status, @Param("date") Date date);
+
+    boolean existsByISBN(String ISBN);
+
+    Optional<BookEntity> findByISBN(String ISBN);
 }

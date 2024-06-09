@@ -53,7 +53,7 @@ public class UserController {
 
         if (principal != null) {
             Account account = userService.getAccountByEmail(principal.getName()).orElse(null);
-            model.addAttribute("user", account);
+            model.addAttribute("principal", account);
         }
 
         return "users";
@@ -74,7 +74,7 @@ public class UserController {
 
         if (principal != null) {
             Account account = userService.getAccountByEmail(principal.getName()).orElse(null);
-            model.addAttribute("user", account);
+            model.addAttribute("principal", account);
         }
 
         return "user";
@@ -87,10 +87,13 @@ public class UserController {
         if (!user.getRole().equals(Role.USER)) {
             return "error";
         }
+
         Optional<Account> updatedUser = userService.updateAccount(id, user);
+
         if (updatedUser.isPresent()) {
             return "redirect:/users";
         }
+
         return "error";
     }
 
@@ -106,6 +109,7 @@ public class UserController {
         if (savedUser.isPresent()) {
             return "redirect:/users";
         }
+
         return "error";
     }
 
@@ -113,9 +117,21 @@ public class UserController {
     @PostMapping("/reservation/renew/{id}")
     public String renewReservation(@PathVariable("id") long reservation_id) {
         BookReservation reservation = reservationService.renewReservation(reservation_id).orElse(null);
+
         if (reservation == null) {
             return "error";
         }
+
         return "redirect:/users/" + reservation.getAccount().getId();
+    }
+
+    @Secured("ROLE_LIBRARIAN")
+    @DeleteMapping("/reservation/delete/{id}")
+    public String deleteReservation(@PathVariable("id") long reservation_id) {
+        if (reservationService.deleteReservationById(reservation_id)) {
+            return "redirect:/users";
+        }
+
+        return "error";
     }
 }

@@ -13,7 +13,14 @@ import nurbek.librarymanagementsystem.dto.Author;
 @Table(name = "AUTHOR")
 public class AuthorEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.TABLE, generator = "author_seq")
+    @TableGenerator(
+            name = "author_seq",
+            table = "id_gen_table",
+            pkColumnName = "gen_name",
+            valueColumnName = "gen_val",
+            initialValue = 1000,
+            allocationSize = 1)
     @Column(name = "ID")
     private Long id;
     @Column(name = "NAME")
