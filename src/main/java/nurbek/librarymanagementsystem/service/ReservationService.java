@@ -66,7 +66,19 @@ public class ReservationService {
 
     // TODO: Test this method
     @Transactional
-    public void reserveBook(long bookId, long accountId) {
+    public boolean addReservation(long bookId, long accountId) {
+        if (reservationRepository.existsByAccount_IdAndBook_Id(accountId, bookId)) {
+            // Reservation already exists
+            return false;
+        }
+
+        Account account = userService.getAccountById(accountId).orElse(null);
+        Book book = libraryService.reserveBook(bookId).orElse(null);
+
+        if (account == null || book == null) {
+            return false;
+        }
+
         BookReservationEntity reservation = new BookReservationEntity();
 
         Calendar calendar = Calendar.getInstance();
@@ -79,22 +91,12 @@ public class ReservationService {
         calendar.add(Calendar.DATE, props.getMaxDaysToReturnBook());
         reservation.setDueDate(calendar.getTime());
 
-        Book book = libraryService.reserveBook(bookId).orElse(null);
-
-        if (book == null) {
-            throw new IllegalArgumentException("Book not found");
-        }
-
-        Account account = userService.getAccountById(accountId).orElse(null);
-
-        if (account == null) {
-            throw new IllegalArgumentException("Account not found");
-        }
-
         reservation.setBook(BookEntity.fromDto(book));
         reservation.setAccount(AccountEntity.fromDto(account));
 
         reservationRepository.save(reservation);
+
+        return true;
     }
 
     // TODO: Test this method

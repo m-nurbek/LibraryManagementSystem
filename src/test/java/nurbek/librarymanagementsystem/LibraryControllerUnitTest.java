@@ -90,7 +90,7 @@ public class LibraryControllerUnitTest {
     @Test
     void shouldUpdateBook() throws Exception {
         Book book = new Book(2L, "0000-0000-0000-0002", "Book 2", "KZ", 100, BookStatus.ACTIVE, new Date(2004, Calendar.JANUARY, 1), null, 23, null);
-        when(libraryService.updateBook(any(Long.class), any(Book.class))).thenReturn(Optional.of(book));
+        when(libraryService.updateBookInfo(any(Long.class), any(Book.class))).thenReturn(Optional.of(book));
 
         mockMvc.perform(put("/library/books/2")
                         .flashAttr("book", book))
@@ -102,7 +102,7 @@ public class LibraryControllerUnitTest {
     @Test
     void shouldNotUpdateBookBecauseDoesNotExist() throws Exception {
         Book book = new Book(2L, "0000-0000-0000-0002", "Book 2", "KZ", 100, BookStatus.ACTIVE, new Date(2004, Calendar.JANUARY, 1), null, 23, null);
-        when(libraryService.updateBook(any(Long.class), any(Book.class))).thenReturn(Optional.empty());
+        when(libraryService.updateBookInfo(any(Long.class), any(Book.class))).thenReturn(Optional.empty());
 
         mockMvc.perform(put("/library/books/1")
                         .flashAttr("book", book))

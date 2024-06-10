@@ -51,4 +51,6 @@ public interface BookReservationRepository extends JpaRepository<BookReservation
 
     @Query(value = "SELECT * FROM BOOK_RESERVATION br WHERE br.book_id = :bookId AND br.account_id = :accountId", nativeQuery = true)
     Optional<BookReservationEntity> findByBookIdAndAccountId(@Param("bookId") Long bookId, @Param("accountId") Long accountId);
+
+    boolean existsByAccount_IdAndBook_Id(Long accountId, Long bookId);
 }

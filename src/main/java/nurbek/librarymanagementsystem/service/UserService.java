@@ -4,11 +4,11 @@ import lombok.AllArgsConstructor;
 import nurbek.librarymanagementsystem.dto.Account;
 import nurbek.librarymanagementsystem.entity.AccountEntity;
 import nurbek.librarymanagementsystem.repository.AccountRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -16,7 +16,8 @@ import java.util.Optional;
 @Service
 @AllArgsConstructor
 public class UserService {
-    private AccountRepository accountRepository;
+    private final AccountRepository accountRepository;
+    private final PasswordEncoder passwordEncoder;
 
     // TODO: Test this method
     public Page<Account> getAccountList(Pageable pageable) {
@@ -26,6 +27,7 @@ public class UserService {
                         pageable.getPageSize(),
                         pageable.getSortOr(Sort.by(Sort.Direction.ASC, "email"))
                 ));
+
         return accountEntities.map(AccountEntity::toDto);
     }
 
@@ -38,6 +40,7 @@ public class UserService {
                         pageable.getPageSize(),
                         pageable.getSortOr(Sort.by(Sort.Direction.ASC, "email"))
                 ));
+
         return accountEntities.map(AccountEntity::toDto);
     }
 
@@ -47,6 +50,7 @@ public class UserService {
         if (account != null) {
             return Optional.of(account.toDto());
         }
+
         return Optional.empty();
     }
 
@@ -56,6 +60,7 @@ public class UserService {
         if (account != null) {
             return Optional.of(account.toDto());
         }
+
         return Optional.empty();
     }
 
@@ -65,19 +70,12 @@ public class UserService {
         if (accountRepository.existsByEmail(accountEntity.getEmail())) {
             return Optional.empty();
         }
+        
+        // Encode the password before saving
+        accountEntity.setPassword(passwordEncoder.encode(account.getPassword()));
+
         accountEntity = accountRepository.save(accountEntity);
         return Optional.of(accountEntity.toDto());
-    }
-
-    // TODO: Test this method
-    public Optional<Account> updateAccount(Long id, Account account) {
-        if (accountRepository.existsById(id)) {
-            AccountEntity accountEntity = AccountEntity.fromDto(account);
-            accountEntity.setId(id);
-            accountEntity = accountRepository.save(accountEntity);
-            return Optional.of(accountEntity.toDto());
-        }
-        return Optional.empty();
     }
 
     // TODO: Test this method
@@ -90,6 +88,7 @@ public class UserService {
             accountEntity = accountRepository.save(accountEntity);
             return Optional.of(accountEntity.toDto());
         }
+
         return Optional.empty();
     }
 

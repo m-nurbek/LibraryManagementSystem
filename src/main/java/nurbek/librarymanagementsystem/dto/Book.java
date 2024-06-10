@@ -32,15 +32,15 @@ public class Book {
     @Max(value = 9999, message = "Number of pages must be a number between 1 and 9999")
     @Digits(integer = 4, fraction = 0, message = "Number of pages must be a number between 0 and 9999")
     private Integer numberOfPages;
-    private BookStatus status;
+    private BookStatus status = BookStatus.ACTIVE;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private Date publishDate;
+    private Date publishDate = new Date();
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date archiveDate;
     @Min(value = 1, message = "Number of copies must be a number between 1 and 999")
     @Max(value = 999, message = "Number of copies must be a number between 1 and 999")
     @Digits(integer = 3, fraction = 0, message = "Number of copies must be a number between 0 and 999")
-    private Integer numberOfCopies;
+    private Integer numberOfCopies = 1;
     private Author author;
 
     @JsonCreator

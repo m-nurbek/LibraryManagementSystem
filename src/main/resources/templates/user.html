@@ -39,7 +39,7 @@
                     <input type="submit" value="Logout"/>
                 </form>
             </div>
-            <button th:if="${user == null}" onclick="document.location.href='/login'" type="button"
+            <button th:if="${principal == null}" onclick="document.location.href='/login'" type="button"
                     class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                 Login
             </button>
@@ -177,6 +177,27 @@
             </table>
         </div>
 
+        <br><hr><br>
+
+        <h1>Update User</h1>
+        <form th:action="@{'/users/' + ${user.id}}" th:object="${user}" th:method="patch">
+            <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input type="text" th:field="*{firstName}" class="form-control" id="firstName" placeholder="Enter first name">
+                <span class="validationError" th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}">First Name Error</span>
+            </div>
+            <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input type="text" th:field="*{lastName}" class="form-control" id="lastName" placeholder="Enter last name">
+                <span class="validationError" th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}">Last Name Error</span>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" th:field="*{email}" class="form-control" id="email" placeholder="Enter email">
+                <span class="validationError" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email Error</span>
+            </div>
+            <button type="submit" class="btn btn-primary">Update</button>
+        </form>
 
     </main>
 </div>

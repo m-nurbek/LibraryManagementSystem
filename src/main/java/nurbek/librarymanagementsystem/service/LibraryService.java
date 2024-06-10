@@ -99,23 +99,6 @@ public class LibraryService {
     }
 
     /**
-     * If the book exists, then returns Book with updated information. Otherwise, returns Optional.empty()
-     *
-     * @param id   of the book to be updated
-     * @param book with updated information
-     * @return an optional instance of a book that is updated, otherwise an empty optional instance
-     */
-    public Optional<Book> updateBook(Long id, Book book) {
-        if (bookRepository.existsById(id)) {
-            BookEntity bookEntity = BookEntity.fromDto(book);
-            bookEntity.setId(id);
-            bookRepository.save(bookEntity);
-            return Optional.of(bookEntity.toDto());
-        }
-        return Optional.empty();
-    }
-
-    /**
      * If the book exists, Then returns Book with updated information (ISBN, title, numberOfCopies, language)
      * Otherwise, returns Optional.empty()
      *
@@ -128,7 +111,9 @@ public class LibraryService {
             bookInDb.setISBN(book.getISBN());
             bookInDb.setTitle(book.getTitle());
             bookInDb.setNumberOfCopies(book.getNumberOfCopies());
+            bookInDb.setNumberOfPages(book.getNumberOfPages());
             bookInDb.setLanguage(book.getLanguage());
+            bookInDb.setPublishDate(book.getPublishDate());
             bookRepository.save(bookInDb);
             return Optional.of(bookInDb.toDto());
         }

@@ -68,7 +68,7 @@ public class LibraryController {
         return "books";
     }
 
-    @Secured("ROLE_LIBRARIAN")
+    @Secured({"ROLE_LIBRARIAN", "ROLE_USER"})
     @GetMapping("/books/{id}")
     public String libraryBook(Model model, @PathVariable("id") long id, Principal principal) {
         Book book = libraryService.getBookById(id).orElse(null);
@@ -105,7 +105,7 @@ public class LibraryController {
     // TODO: test this controller
     @Secured("ROLE_LIBRARIAN")
     @PostMapping("/books/add")
-    public String libraryBookAdd(@Valid @ModelAttribute Book book, Errors errors) {
+    public String libraryBookAdd(@Valid @ModelAttribute("book") Book book, Errors errors) {
         if (errors.hasErrors()) {
             return "bookAdd";
         }
@@ -115,15 +115,18 @@ public class LibraryController {
     }
 
     @Secured("ROLE_LIBRARIAN")
-    @PutMapping("/books/{id}")
+    @PatchMapping("/books/{id}")
     public String libraryBookUpdate(@PathVariable("id") long id, @Valid @ModelAttribute("book") Book book, Errors errors) {
         if (errors.hasErrors()) {
             return "error";
         }
-        Optional<Book> bookEntity = libraryService.updateBook(id, book);
+
+        Optional<Book> bookEntity = libraryService.updateBookInfo(id, book);
+
         if (bookEntity.isPresent()) {
-            return "redirect:/library/books";
+            return "redirect:/library/books/" + id;
         }
+
         return "error";
     }
 

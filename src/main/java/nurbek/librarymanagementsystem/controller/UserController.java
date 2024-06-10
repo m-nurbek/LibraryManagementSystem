@@ -1,5 +1,6 @@
 package nurbek.librarymanagementsystem.controller;
 
+import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import nurbek.librarymanagementsystem.dto.Account;
 import nurbek.librarymanagementsystem.dto.BookReservation;
@@ -81,54 +82,36 @@ public class UserController {
     }
 
     @Secured("ROLE_LIBRARIAN")
-    @PutMapping("/update/{id}")
-    public String updateUser(@PathVariable("id") long id, Account user) {
-        // Only allow updating users
-        if (!user.getRole().equals(Role.USER)) {
-            return "error";
-        }
-
-        Optional<Account> updatedUser = userService.updateAccount(id, user);
+    @PatchMapping("/{id}")
+    public String updateUser(@PathVariable("id") long id, @ModelAttribute("user") Account user) {
+        Optional<Account> updatedUser = userService.updateAccountInfo(id, user);
 
         if (updatedUser.isPresent()) {
-            return "redirect:/users";
+            return "redirect:/users/" + id;
         }
 
         return "error";
+    }
+
+    @Secured("ROLE_LIBRARIAN")
+    @GetMapping("/add")
+    public String addUserForm(Model model, Principal principal) {
+        model.addAttribute("user", new Account());
+        model.addAttribute("roles", Role.values());
+
+        if (principal != null) {
+            Account account = userService.getAccountByEmail(principal.getName()).orElse(null);
+            model.addAttribute("principal", account);
+        }
+
+        return "addUser";
     }
 
     @Secured("ROLE_LIBRARIAN")
     @PostMapping("/add")
-    public String addUser(@ModelAttribute Account user) {
-        // Only allow adding users
-        if (!user.getRole().equals(Role.USER)) {
-            return "error";
-        }
-
+    public String addUser(@ModelAttribute("user") @Valid Account user) {
         Optional<Account> savedUser = userService.saveAccount(user);
         if (savedUser.isPresent()) {
-            return "redirect:/users";
-        }
-
-        return "error";
-    }
-
-    @Secured("ROLE_LIBRARIAN")
-    @PostMapping("/reservation/renew/{id}")
-    public String renewReservation(@PathVariable("id") long reservation_id) {
-        BookReservation reservation = reservationService.renewReservation(reservation_id).orElse(null);
-
-        if (reservation == null) {
-            return "error";
-        }
-
-        return "redirect:/users/" + reservation.getAccount().getId();
-    }
-
-    @Secured("ROLE_LIBRARIAN")
-    @DeleteMapping("/reservation/delete/{id}")
-    public String deleteReservation(@PathVariable("id") long reservation_id) {
-        if (reservationService.deleteReservationById(reservation_id)) {
             return "redirect:/users";
         }
 

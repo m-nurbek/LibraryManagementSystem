@@ -3,6 +3,7 @@ package nurbek.librarymanagementsystem.controller;
 import lombok.AllArgsConstructor;
 import nurbek.librarymanagementsystem.dto.Account;
 import nurbek.librarymanagementsystem.service.UserService;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -32,5 +33,17 @@ public class HomeController {
             model.addAttribute("user", account);
         }
         return "login";
+    }
+
+    @Secured({"ROLE_LIBRARIAN", "ROLE_USER"})
+    @GetMapping("/profile")
+    public String userProfile(Model model, Principal principal) {
+        if (principal != null) {
+            Account account = userService.getAccountByEmail(principal.getName()).orElse(null);
+            model.addAttribute("principal", account);
+            return "profile";
+        }
+
+        return "error";
     }
 }

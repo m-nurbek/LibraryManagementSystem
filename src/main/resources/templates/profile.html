@@ -16,12 +16,12 @@
             <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white logo-span">library</span>
         </a>
         <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-            <div th:if="${user != null}" th:text="${user.firstName} + ' ' + ${user.lastName}"
+            <div th:if="${principal != null}" th:text="${principal.firstName} + ' ' + ${principal.lastName}"
                  class="self-center whitespace-nowrap dark:text-white"
                  style="cursor:pointer; user-select: none"
                  onclick="toggleDropdown()"
             ></div>
-            <div th:if="${user != null}"
+            <div th:if="${principal != null}"
                  id="dropdown-menu"
                  style="position: fixed; top: 4.5rem; z-index: 1000; transform: translateX(-4rem); display: none;"
                  class="w-48 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white">
@@ -39,7 +39,7 @@
                     <input type="submit" value="Logout"/>
                 </form>
             </div>
-            <button th:if="${user == null}" onclick="document.location.href='/login'" type="button"
+            <button th:if="${principal == null}" onclick="document.location.href='/login'" type="button"
                     class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                 Login
             </button>
@@ -76,94 +76,45 @@
 
 <div class="page">
     <main class="max-w-screen-xl mx-auto p-4">
-        <h1 th:text="${book.title}">Book Title</h1>
-        <p th:text="'ISBN: ' + ${book.ISBN}"></p>
-        <p th:text="'Language: ' + ${book.language}"></p>
-        <p th:text="'Number of pages: ' + ${book.numberOfPages}"></p>
-        <p th:text="'Status: ' + ${book.status}">status</p>
-        <p th:text="'Publish Date: ' + ${book.publishDate}"></p>
-        <p th:text="'Archive date: ' + ${book.archiveDate}">archive date</p>
-        <p th:text="'Number of copies: ' + ${book.numberOfCopies}"></p>
-
-        <br><hr><br>
-
-        <h1>Update Book</h1>
-        <form th:action="@{'/library/books/' + ${book.id}}" th:method="patch">
-            <div class="form-group">
-                <label for="title">Title</label>
-                <input type="text" id="title" name="title" th:value="${book.title}" required>
+        <section style="display:flex; margin: 0 0 4rem">
+            <div style="flex:1; padding: 0 2rem">
+                <label for="website-admin"
+                       class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Full Name</label>
+                <div class="flex">
+                    <span class="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 border rounded-e-0 border-gray-300 border-e-0 rounded-s-md dark:bg-gray-600 dark:text-gray-400 dark:border-gray-600">
+                        <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                             xmlns="http://www.w3.org/2000/svg"
+                             fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 0a10 10 0 1 0 10 10A10.011 10.011 0 0 0 10 0Zm0 5a3 3 0 1 1 0 6 3 3 0 0 1 0-6Zm0 13a8.949 8.949 0 0 1-4.951-1.488A3.987 3.987 0 0 1 9 13h2a3.987 3.987 0 0 1 3.951 3.512A8.949 8.949 0 0 1 10 18Z"/>
+                        </svg>
+                      </span>
+                    <input type="text" id="website-admin"
+                           class="rounded-none rounded-e-lg bg-gray-50 border text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm border-gray-300 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                           th:placeholder="${principal.firstName} + ' ' + ${principal.lastName}"
+                           disabled
+                    >
+                </div>
+                <br/>
+                <label for="input-group-1" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                    Email
+                </label>
+                <div class="relative mb-6">
+                    <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
+                        <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                             xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 16">
+                            <path d="m10.036 8.278 9.258-7.79A1.979 1.979 0 0 0 18 0H2A1.987 1.987 0 0 0 .641.541l9.395 7.737Z"/>
+                            <path d="M11.241 9.817c-.36.275-.801.425-1.255.427-.428 0-.845-.138-1.187-.395L0 2.6V14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V2.5l-8.759 7.317Z"/>
+                        </svg>
+                    </div>
+                    <input type="text" id="input-group-1"
+                           class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                           th:placeholder="${principal.email}"
+                           disabled
+                    >
+                </div>
             </div>
-            <div class="form-group">
-                <label for="isbn">ISBN</label>
-                <input type="text" id="isbn" name="ISBN" th:value="${book.ISBN}" required>
-            </div>
-            <div class="form-group">
-                <label for="language">Language</label>
-                <input type="text" id="language" name="language" th:value="${book.language}" required>
-            </div>
-            <div class="form-group">
-                <label for="numberOfPages">Number of Pages</label>
-                <input type="number" id="numberOfPages" name="numberOfPages" th:value="${book.numberOfPages}" required>
-            </div>
-            <input type="hidden" name="status" th:value="${book.status}">
-<!--            <div class="form-group">-->
-<!--                <label for="status">Status</label>-->
-<!--                <select id="status" name="status" required>-->
-<!--                    <option th:each="status : ${statusList}"-->
-<!--                            th:value="${status}" th:text="${status}" th:selected="${status == book.status}"></option>-->
-<!--                </select>-->
-<!--            </div>-->
-            <div class="form-group">
-                <label for="publishDate">Publish Date</label>
-                <input type="date" id="publishDate" name="publishDate"
-                       th:value="${#dates.format(book.publishDate, 'yyyy-MM-dd')}" required>
-            </div>
-            <input type="hidden" name="archiveDate" th:value="${#dates.format(book.archiveDate, 'yyyy-MM-dd')}"/>
-<!--            <div class="form-group">-->
-<!--                <label for="archiveDate">Archive Date</label>-->
-<!--                <input type="date" id="archiveDate" name="archiveDate"-->
-<!--                       th:value="${#dates.format(book.archiveDate, 'yyyy-MM-dd')}">-->
-<!--            </div>-->
-            <div class="form-group">
-                <label for="numberOfCopies">Number of Copies</label>
-                <input type="number" id="numberOfCopies" name="numberOfCopies" th:value="${book.numberOfCopies}"
-                       required>
-            </div>
-            <button type="submit"
-                    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-            >
-                Update Book
-            </button>
-        </form>
-
-        <hr/><br/>
-
-        <h1>Archive Book</h1>
-        <form th:action="@{'/library/books/archive/' + ${book.id}}" th:method="delete">
-            <button type="submit"
-                    class="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800"
-            >
-                Archive Book
-            </button>
-        </form>
-
-        <br><hr><br>
-
-        <h1>Restore Book</h1>
-        <form th:action="@{'/library/books/restore/' + ${book.id}}" th:method="put">
-            <button type="submit"
-                    class="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800"
-            >
-                Restore Book
-            </button>
-        </form>
-
-        <br><hr><br>
-
-        <h1>Reserve Book</h1>
-        <form th:action="@{'/reservations/' + ${book.id}}" th:method="post">
-            <button type="submit" class="btn btn-primary">Reserve</button>
-        </form>
+            <div style="flex:1"></div>
+        </section>
 
     </main>
 </div>

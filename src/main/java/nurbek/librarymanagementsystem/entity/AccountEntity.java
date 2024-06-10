@@ -41,7 +41,7 @@ public class AccountEntity implements UserDetails {
     private String password;
     @Column(name = "ROLE")
     @Enumerated(EnumType.STRING)
-    private Role role = null;
+    private Role role = Role.USER;
 
     public Account toDto() {
         return new Account(id, firstName, lastName, email, password, role);

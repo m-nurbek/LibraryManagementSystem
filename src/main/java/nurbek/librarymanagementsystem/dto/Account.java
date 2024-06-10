@@ -7,20 +7,33 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Pattern;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 import java.io.StringWriter;
 
 @Data
+@Component
+@NoArgsConstructor
 public class Account {
-    private final Long id;
-    private final String firstName;
-    private final String lastName;
+    private Long id;
+    @NotBlank(message = "First name is required")
+    private String firstName;
+    @NotBlank(message = "Last name is required")
+    private String lastName;
     @Email(message = "Email should be valid")
-    private final String email;
-    private final String password;
-    private final Role role;
+    private String email;
+    @NotBlank(message = "Password is required")
+    @Pattern(regexp = "(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{8,}",
+            message = "Password must be at least 8 characters long, contain at least one uppercase letter, one lowercase letter, one digit, and one special character")
+    private String password;
+    private Role role = Role.USER;
 
     @JsonCreator
     public Account(@JsonProperty("id") Long id,

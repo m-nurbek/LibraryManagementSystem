@@ -76,98 +76,40 @@
 
 <div class="page">
     <main class="max-w-screen-xl mx-auto p-4">
-        <h1 th:text="${book.title}">Book Title</h1>
-        <p th:text="'ISBN: ' + ${book.ISBN}"></p>
-        <p th:text="'Language: ' + ${book.language}"></p>
-        <p th:text="'Number of pages: ' + ${book.numberOfPages}"></p>
-        <p th:text="'Status: ' + ${book.status}">status</p>
-        <p th:text="'Publish Date: ' + ${book.publishDate}"></p>
-        <p th:text="'Archive date: ' + ${book.archiveDate}">archive date</p>
-        <p th:text="'Number of copies: ' + ${book.numberOfCopies}"></p>
-
-        <br><hr><br>
-
-        <h1>Update Book</h1>
-        <form th:action="@{'/library/books/' + ${book.id}}" th:method="patch">
+        <h1>Add User</h1>
+        <form th:action="@{/users/add}" th:object="${user}" method="post">
             <div class="form-group">
-                <label for="title">Title</label>
-                <input type="text" id="title" name="title" th:value="${book.title}" required>
+                <label for="firstName">First Name</label>
+                <input type="text" th:field="*{firstName}" class="form-control" id="firstName" placeholder="Enter first name">
+                <span class="validationError" th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}">First Name Error</span>
             </div>
             <div class="form-group">
-                <label for="isbn">ISBN</label>
-                <input type="text" id="isbn" name="ISBN" th:value="${book.ISBN}" required>
+                <label for="lastName">Last Name</label>
+                <input type="text" th:field="*{lastName}" class="form-control" id="lastName" placeholder="Enter last name">
+                <span class="validationError" th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}">Last Name Error</span>
             </div>
             <div class="form-group">
-                <label for="language">Language</label>
-                <input type="text" id="language" name="language" th:value="${book.language}" required>
+                <label for="email">Email</label>
+                <input type="email" th:field="*{email}" class="form-control" id="email" placeholder="Enter email">
+                <span class="validationError" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email Error</span>
             </div>
             <div class="form-group">
-                <label for="numberOfPages">Number of Pages</label>
-                <input type="number" id="numberOfPages" name="numberOfPages" th:value="${book.numberOfPages}" required>
+                <label for="password">Password</label>
+                <input type="password" th:field="*{password}" class="form-control" id="password" placeholder="Enter password">
+                <span class="validationError" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Password Error</span>
             </div>
-            <input type="hidden" name="status" th:value="${book.status}">
 <!--            <div class="form-group">-->
-<!--                <label for="status">Status</label>-->
-<!--                <select id="status" name="status" required>-->
-<!--                    <option th:each="status : ${statusList}"-->
-<!--                            th:value="${status}" th:text="${status}" th:selected="${status == book.status}"></option>-->
+<!--                <label for="role">Role</label>-->
+<!--                <select th:field="*{role}" class="form-control" id="role">-->
+<!--                    <option value="">Select a role</option>-->
+<!--                    <option th:each="role : ${roles}" th:value="${role}" th:text="${role}"></option>-->
 <!--                </select>-->
+<!--                <span class="validationError" th:if="${#fields.hasErrors('role')}" th:errors="*{role}">Role Error</span>-->
 <!--            </div>-->
-            <div class="form-group">
-                <label for="publishDate">Publish Date</label>
-                <input type="date" id="publishDate" name="publishDate"
-                       th:value="${#dates.format(book.publishDate, 'yyyy-MM-dd')}" required>
-            </div>
-            <input type="hidden" name="archiveDate" th:value="${#dates.format(book.archiveDate, 'yyyy-MM-dd')}"/>
-<!--            <div class="form-group">-->
-<!--                <label for="archiveDate">Archive Date</label>-->
-<!--                <input type="date" id="archiveDate" name="archiveDate"-->
-<!--                       th:value="${#dates.format(book.archiveDate, 'yyyy-MM-dd')}">-->
-<!--            </div>-->
-            <div class="form-group">
-                <label for="numberOfCopies">Number of Copies</label>
-                <input type="number" id="numberOfCopies" name="numberOfCopies" th:value="${book.numberOfCopies}"
-                       required>
-            </div>
-            <button type="submit"
-                    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-            >
-                Update Book
-            </button>
+            <button type="submit" class="btn btn-primary">Submit</button>
         </form>
-
-        <hr/><br/>
-
-        <h1>Archive Book</h1>
-        <form th:action="@{'/library/books/archive/' + ${book.id}}" th:method="delete">
-            <button type="submit"
-                    class="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800"
-            >
-                Archive Book
-            </button>
-        </form>
-
-        <br><hr><br>
-
-        <h1>Restore Book</h1>
-        <form th:action="@{'/library/books/restore/' + ${book.id}}" th:method="put">
-            <button type="submit"
-                    class="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800"
-            >
-                Restore Book
-            </button>
-        </form>
-
-        <br><hr><br>
-
-        <h1>Reserve Book</h1>
-        <form th:action="@{'/reservations/' + ${book.id}}" th:method="post">
-            <button type="submit" class="btn btn-primary">Reserve</button>
-        </form>
-
     </main>
 </div>
-
 <!-- Bootstrap CDN -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
 
