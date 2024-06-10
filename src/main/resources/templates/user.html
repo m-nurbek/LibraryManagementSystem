@@ -16,16 +16,16 @@
             <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white logo-span">library</span>
         </a>
         <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-            <div th:if="${principal != null}" th:text="${principal.firstName} + ' ' + ${principal.lastName}"
+            <div th:if="${account != null}" th:text="${account.firstName} + ' ' + ${account.lastName}"
                  class="self-center whitespace-nowrap dark:text-white"
                  style="cursor:pointer; user-select: none"
                  onclick="toggleDropdown()"
             ></div>
-            <div th:if="${principal != null}"
+            <div th:if="${account != null}"
                  id="dropdown-menu"
                  style="position: fixed; top: 4.5rem; z-index: 1000; transform: translateX(-4rem); display: none;"
                  class="w-48 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white">
-                <a href="#" aria-current="true"
+                <a th:href="@{/profile}" aria-current="true"
                    class="block w-full px-4 py-2 text-white bg-blue-700 border-b border-gray-200 rounded-t-lg cursor-pointer dark:bg-gray-800 dark:border-gray-600">
                     Profile
                 </a>
@@ -39,7 +39,7 @@
                     <input type="submit" value="Logout"/>
                 </form>
             </div>
-            <button th:if="${principal == null}" onclick="document.location.href='/login'" type="button"
+            <button th:if="${account == null}" onclick="document.location.href='/login'" type="button"
                     class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                 Login
             </button>
@@ -58,7 +58,7 @@
         <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-cta">
             <ul class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
                 <li>
-                    <a th:href="@{/users?page=0}"
+                    <a th:if="${account.role.name().equals('LIBRARIAN')}" th:href="@{/users?page=0}"
                        class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
                         Users
                     </a>
@@ -163,12 +163,12 @@
                         <span th:text="${r.status}"></span>
                     </td>
                     <td>
-                        <button th:if="${r.status.name()} == 'OVERDUE'"
-                                th:onclick="'location.href=\'/users/reservation/renew/' + ${r.id} + '\''"
+                        <button th:if="${r.status.name().equals('OVERDUE')}"
+                                th:onclick="'location.href=\'/reservations/renew/' + ${r.id} + '\''"
                                 class="px-4 py-2 text-white bg-red-500 rounded hover:bg-red-700">
                             Renew
                         </button>
-                        <form th:action="@{'/users/reservation/delete/' + ${r.id}}" th:method="delete">
+                        <form th:action="@{'/reservations/delete/' + ${r.id}}" th:method="delete">
                             <button type="submit" class="btn btn-danger">Return Book</button>
                         </form>
                     </td>

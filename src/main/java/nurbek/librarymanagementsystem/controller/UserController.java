@@ -54,7 +54,7 @@ public class UserController {
 
         if (principal != null) {
             Account account = userService.getAccountByEmail(principal.getName()).orElse(null);
-            model.addAttribute("principal", account);
+            model.addAttribute("account", account);
         }
 
         return "users";
@@ -75,7 +75,7 @@ public class UserController {
 
         if (principal != null) {
             Account account = userService.getAccountByEmail(principal.getName()).orElse(null);
-            model.addAttribute("principal", account);
+            model.addAttribute("account", account);
         }
 
         return "user";

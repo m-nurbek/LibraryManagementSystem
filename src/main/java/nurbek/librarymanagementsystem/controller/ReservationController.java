@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.security.Principal;
+import java.util.Optional;
 
 @Controller
 @RequestMapping("/reservations")
@@ -54,10 +55,9 @@ public class ReservationController {
     @Secured("ROLE_LIBRARIAN")
     @DeleteMapping("/delete/{id}")
     public String deleteReservation(@PathVariable("id") long reservationId) {
-        if (reservationService.deleteReservationById(reservationId)) {
-            return "redirect:/users";
-        }
-
-        return "error";
+        Optional<BookReservation> reservation = reservationService.deleteReservationById(reservationId);
+        return reservation.map(bookReservation ->
+                "redirect:/users/" + bookReservation.getAccount().getId())
+                .orElse("error");
     }
 }

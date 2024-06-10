@@ -52,16 +52,15 @@ public class ReservationService {
     }
 
     @Transactional
-    public boolean deleteReservationById(long reservationId) {
+    public Optional<BookReservation> deleteReservationById(long reservationId) {
         Optional<BookReservationEntity> reservation = reservationRepository.findById(reservationId);
 
         if (reservation.isPresent()) {
             libraryService.returnBook(reservation.get().getBook().getId());
             reservationRepository.deleteById(reservationId);
-            return true;
+            return Optional.of(reservation.get().toDto());
         }
-
-        return false;
+        return Optional.empty();
     }
 
     // TODO: Test this method
