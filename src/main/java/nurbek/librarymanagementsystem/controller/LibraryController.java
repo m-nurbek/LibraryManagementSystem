@@ -94,7 +94,7 @@ public class LibraryController {
     public String libraryBookAddView(Model model, Principal principal) {
         if (principal != null) {
             Account account = userService.getAccountByEmail(principal.getName()).orElse(null);
-            model.addAttribute("user", account);
+            model.addAttribute("account", account);
         }
 
         model.addAttribute("book", new Book());
@@ -105,7 +105,12 @@ public class LibraryController {
     // TODO: test this controller
     @Secured("ROLE_LIBRARIAN")
     @PostMapping("/books/add")
-    public String libraryBookAdd(@Valid @ModelAttribute("book") Book book, Errors errors) {
+    public String libraryBookAdd(@Valid @ModelAttribute("book") Book book, Errors errors, Principal principal, Model model) {
+        if (principal != null) {
+            Account account = userService.getAccountByEmail(principal.getName()).orElse(null);
+            model.addAttribute("account", account);
+        }
+
         if (errors.hasErrors()) {
             return "bookAdd";
         }
@@ -138,7 +143,7 @@ public class LibraryController {
         if (book.isEmpty()) {
             return "error";
         }
-        return "redirect:/library/books";
+        return "redirect:/library/books/" + id;
     }
 
     // TODO: test libraryBookArchive controller
@@ -149,6 +154,6 @@ public class LibraryController {
         if (book.isEmpty()) {
             return "error";
         }
-        return "redirect:/library/books";
+        return "redirect:/library/books/" + id;
     }
 }

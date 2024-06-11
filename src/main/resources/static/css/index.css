@@ -45,7 +45,30 @@ main {
     width: 100%;
     display: flex;
     border: #e8e8e8 solid 1px;
-    box-shadow: 1px 1px;
+    box-shadow: 4px 4px 4px #9a9a9a;
     border-radius: 20px;
+}
 
+.book-details {
+    display: flex;
+    flex-wrap:wrap-reverse;
+    justify-content: space-between;
+    width: 100%;
+
+    .book-details__description {
+        flex: 70%;
+        min-width: 400px;
+    }
+
+    .book-details__image {
+        flex: 30%;
+        min-width: 200px;
+    }
+
+    div > img {
+        display: block;
+        margin: 0 auto;
+        width: 60%;
+        object-fit: contain;
+    }
 }

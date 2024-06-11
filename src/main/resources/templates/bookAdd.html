@@ -16,12 +16,12 @@
             <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white logo-span">library</span>
         </a>
         <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-            <div th:if="${user != null}" th:text="${user.firstName} + ' ' + ${user.lastName}"
+            <div th:if="${account != null}" th:text="${account.firstName} + ' ' + ${account.lastName}"
                  class="self-center whitespace-nowrap dark:text-white"
                  style="cursor:pointer; user-select: none"
                  onclick="toggleDropdown()"
             ></div>
-            <div th:if="${user != null}"
+            <div th:if="${account != null}"
                  id="dropdown-menu"
                  style="position: fixed; top: 4.5rem; z-index: 1000; transform: translateX(-4rem); display: none;"
                  class="w-48 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white">
@@ -39,7 +39,7 @@
                     <input type="submit" value="Logout"/>
                 </form>
             </div>
-            <button th:if="${user == null}" onclick="document.location.href='/login'" type="button"
+            <button th:if="${account == null}" onclick="document.location.href='/login'" type="button"
                     class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                 Login
             </button>
@@ -58,7 +58,7 @@
         <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-cta">
             <ul class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
                 <li>
-                    <a th:if="${user.role.name().equals('LIBRARIAN')}" th:href="@{/users?page=0}"
+                    <a th:if="${account.role.name().equals('LIBRARIAN')}" th:href="@{/users?page=0}"
                        class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
                         Users
                     </a>
@@ -76,89 +76,106 @@
 
 <div class="page">
     <main class="max-w-screen-xl mx-auto p-4">
-        <h1>Add Book</h1>
-        <form th:action="@{/library/books/add}" th:object="${book}" method="post">
-            <div class="form-group">
-                <label for="title">Title</label>
-                <input type="text" th:field="*{title}" class="form-control" id="title" placeholder="Enter title">
-                <span class="validationError"
+        <h1 style="font-weight: 500; font-size: 1.6rem; text-align: center; margin: 1rem 0">Add Book</h1>
+        <form th:action="@{/library/books/add}" th:object="${book}" method="post" class="max-w-md mx-auto">
+            <div class="form-group relative z-0 w-full mb-5 group">
+                <label for="title" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+                    Title
+                </label>
+                <input type="text" th:field="*{title}" id="title" placeholder="Enter title" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer">
+                <span class="mt-2 text-sm text-red-600 dark:text-red-500"
                       th:if="${#fields.hasErrors('title')}"
                       th:errors="*{title}"
                 >
                     title Error
                 </span>
             </div>
-            <div class="form-group">
-                <label for="isbn">ISBN</label>
-                <input type="text" th:field="*{ISBN}" class="form-control" id="isbn" placeholder="Enter ISBN">
-                <span class="validationError"
+            <div class="form-group relative z-0 w-full mb-5 group">
+                <label for="ISBN" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+                    ISBN
+                </label>
+                <input type="text" th:field="*{ISBN}" id="ISBN" placeholder="Enter ISBN" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer">
+                <span class="mt-2 text-sm text-red-600 dark:text-red-500"
                       th:if="${#fields.hasErrors('ISBN')}"
                       th:errors="*{ISBN}"
                 >
                     ISBN Error
                 </span>
             </div>
-            <div class="form-group">
-                <label for="language">Language</label>
-                <input type="text" th:field="*{language}" class="form-control" id="language"
-                       placeholder="Enter language">
-                <span class="validationError"
+            <div class="form-group relative z-0 w-full mb-5 group">
+                <label for="language" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+                    Language
+                </label>
+                <input type="text" th:field="*{language}" id="language"
+                       placeholder="Enter language" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer">
+                <span class="mt-2 text-sm text-red-600 dark:text-red-500"
                       th:if="${#fields.hasErrors('language')}"
                       th:errors="*{language}"
                 >
                     language Error
                 </span>
             </div>
-            <div class="form-group">
-                <label for="numberOfPages">Number Of Pages</label>
-                <input type="number" th:field="*{numberOfPages}" class="form-control" id="numberOfPages"
-                       placeholder="Enter number of pages">
-                <span class="validationError"
+            <div class="form-group relative z-0 w-full mb-5 group">
+                <label for="numberOfPages" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+                    Number Of Pages
+                </label>
+                <input type="number" th:field="*{numberOfPages}" id="numberOfPages"
+                       placeholder="Enter number of pages" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer">
+                <span class="mt-2 text-sm text-red-600 dark:text-red-500"
                       th:if="${#fields.hasErrors('numberOfPages')}"
                       th:errors="*{numberOfPages}"
                 >
                     numberOfPages Error
                 </span>
             </div>
-            <div class="form-group">
-                <label for="publishDate">Publish Date</label>
-                <input type="date" th:field="*{publishDate}" class="form-control" id="publishDate"
-                       placeholder="Enter publish date">
-                <span class="validationError"
+            <div class="form-group relative z-0 w-full mb-5 group">
+                <label for="publishDate" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+                    Publish Date
+                </label>
+                <input type="date" th:field="*{publishDate}" id="publishDate"
+                       placeholder="Enter publish date" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer">
+                <span class="mt-2 text-sm text-red-600 dark:text-red-500"
                       th:if="${#fields.hasErrors('publishDate')}"
                       th:errors="*{publishDate}"
                 >
                     publishDate Error
                 </span>
             </div>
-            <div class="form-group">
-                <label for="numberOfCopies">Number Of Copies</label>
-                <input type="number" th:field="*{numberOfCopies}" class="form-control" id="numberOfCopies"
-                       placeholder="Enter number of copies">
-                <span class="validationError"
+            <div class="form-group relative z-0 w-full mb-5 group">
+                <label for="numberOfCopies" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+                    Number Of Copies
+                </label>
+                <input type="number" th:field="*{numberOfCopies}" id="numberOfCopies"
+                       placeholder="Enter number of copies" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer">
+                <span class="mt-2 text-sm text-red-600 dark:text-red-500"
                       th:if="${#fields.hasErrors('numberOfCopies')}"
                       th:errors="*{numberOfCopies}"
                 >
                     numberOfCopies Error
                 </span>
             </div>
-            <div class="form-group">
-                <label for="author">Author</label>
-                <select th:field="*{author}" class="form-control" id="author">
-                    <option value="">Select an author</option>
+            <div class="form-group relative z-0 w-full mb-5 group">
+                <label for="author" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+                    Author
+                </label>
+                <select th:field="*{author}" id="author" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer">
                     <option th:each="author : ${authors}"
                             th:value="${author.id}"
                             th:text="${author.name}"></option>
                 </select>
-                <span class="validationError"
+                <span class="mt-2 text-sm text-red-600 dark:text-red-500"
                       th:if="${#fields.hasErrors('author')}"
                       th:errors="*{author}"
                 >
                     Author Error
                 </span>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit"
+                    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                Submit
+            </button>
         </form>
+
     </main>
 </div>
 <!-- Bootstrap CDN -->

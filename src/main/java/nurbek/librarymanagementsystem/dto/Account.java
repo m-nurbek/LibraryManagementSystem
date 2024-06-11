@@ -9,10 +9,9 @@ import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.Size;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
@@ -24,8 +23,10 @@ import java.io.StringWriter;
 public class Account {
     private Long id;
     @NotBlank(message = "First name is required")
+    @Size(min = 1, max = 50, message = "First name must be no longer than 50 characters")
     private String firstName;
     @NotBlank(message = "Last name is required")
+    @Size(min = 1, max = 50, message = "Last name must be no longer than 50 characters")
     private String lastName;
     @Email(message = "Email should be valid")
     private String email;

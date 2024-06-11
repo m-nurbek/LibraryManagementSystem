@@ -15,6 +15,7 @@ import org.springframework.data.web.PageableDefault;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 
 import java.security.Principal;
@@ -96,21 +97,30 @@ public class UserController {
     @Secured("ROLE_LIBRARIAN")
     @GetMapping("/add")
     public String addUserForm(Model model, Principal principal) {
-        model.addAttribute("user", new Account());
-        model.addAttribute("roles", Role.values());
-
         if (principal != null) {
             Account account = userService.getAccountByEmail(principal.getName()).orElse(null);
-            model.addAttribute("principal", account);
+            model.addAttribute("account", account);
         }
+
+        model.addAttribute("newUser", new Account());
+        model.addAttribute("roles", Role.values());
 
         return "addUser";
     }
 
     @Secured("ROLE_LIBRARIAN")
     @PostMapping("/add")
-    public String addUser(@ModelAttribute("user") @Valid Account user) {
-        Optional<Account> savedUser = userService.saveAccount(user);
+    public String addUser(@Valid @ModelAttribute("newUser") Account newUser, Errors errors, Model model, Principal principal) {
+        if (principal != null) {
+            Account account = userService.getAccountByEmail(principal.getName()).orElse(null);
+            model.addAttribute("account", account);
+        }
+
+        if (errors.hasErrors()) {
+            return "addUser";
+        }
+
+        Optional<Account> savedUser = userService.saveAccount(newUser);
         if (savedUser.isPresent()) {
             return "redirect:/users";
         }

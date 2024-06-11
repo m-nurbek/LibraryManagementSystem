@@ -10,9 +10,9 @@
 - [x] Write tests for the delete books functionality
 - [ ] Add sort books functionality (Optional)
 - [x] Add crud for books
-- [ ] Add user lists view for the librarian
-- [ ] Add user detail view for the librarian
-- [ ] Add reserve book functionality to the user
+- [x] Add user lists view for the librarian
+- [x] Add user detail view for the librarian
+- [x] Add reserve book functionality to the user
 - [ ] Test reserve book functionality
 - [ ] Write tests for this views
-- [ ] Fix user authentication and authorization (User, Librarian)
+- [x] Fix user authentication and authorization (User, Librarian)
