@@ -16,12 +16,12 @@
             <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white logo-span">library</span>
         </a>
         <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-            <div th:if="${user != null}" th:text="${user.firstName} + ' ' + ${user.lastName}"
+            <div th:if="${account != null}" th:text="${account.firstName} + ' ' + ${account.lastName}"
                  class="self-center whitespace-nowrap dark:text-white"
                  style="cursor:pointer; user-select: none"
                  onclick="toggleDropdown()"
             ></div>
-            <div th:if="${user != null}"
+            <div th:if="${account != null}"
                  id="dropdown-menu"
                  style="position: fixed; top: 4.5rem; z-index: 1000; transform: translateX(-4rem); display: none;"
                  class="w-48 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white">
@@ -33,13 +33,12 @@
                    class="block w-full px-4 py-2 border-b border-gray-200 cursor-pointer hover:bg-gray-100 hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:border-gray-600 dark:hover:bg-gray-600 dark:hover:text-white dark:focus:ring-gray-500 dark:focus:text-white">
                     Notifications
                 </a>
-                <form method="POST" th:action="@{/logout}"
-                      class="block w-full px-4 py-2 border-b border-gray-200 cursor-pointer hover:bg-gray-100 hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:border-gray-600 dark:hover:bg-gray-600 dark:hover:text-white dark:focus:ring-gray-500 dark:focus:text-white"
-                >
-                    <input type="submit" value="Logout"/>
-                </form>
+                <a th:href="@{/logout}"
+                   class="block w-full px-4 py-2 border-b border-gray-200 cursor-pointer hover:bg-gray-100 hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:border-gray-600 dark:hover:bg-gray-600 dark:hover:text-white dark:focus:ring-gray-500 dark:focus:text-white">
+                    Logout
+                </a>
             </div>
-            <button th:if="${user == null}" onclick="document.location.href='/login'" type="button"
+            <button th:if="${account == null}" onclick="document.location.href='/login'" type="button"
                     class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                 Login
             </button>
@@ -58,7 +57,7 @@
         <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-cta">
             <ul class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
                 <li>
-                    <a th:if="${user.role.name().equals('LIBRARIAN')}" th:href="@{/users?page=0}"
+                    <a th:if="${account.role.name().equals('LIBRARIAN')}" th:href="@{/users?page=0}"
                        class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
                         Users
                     </a>
@@ -76,7 +75,7 @@
 
 <div class="page">
     <main class="max-w-screen-xl mx-auto p-4">
-        <!-- drawer component -->
+        <!-- ===============DRAWER===================== -->
         <div id="drawer-form"
              class="fixed top-0 left-0 z-40 h-screen p-4 overflow-y-auto transition-transform -translate-x-full bg-white w-80 dark:bg-gray-800"
              tabindex="-1" aria-labelledby="drawer-form-label">
@@ -128,33 +127,64 @@
                 </svg>
                 <span class="sr-only">Close menu</span>
             </button>
-            <form th:action="@{'/library/books/' + ${book.id}}" th:method="patch" class="mb-6">
+            <form th:action="@{'/library/books/' + ${updatedBook.id}}" th:object="${updatedBook}" th:method="patch" class="mb-6">
                 <div class="form-group mb-6">
                     <label for="title"
-                           class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Title</label>
-                    <input type="text" id="title" name="title" th:value="${book.title}" required
+                           class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                        Title
+                    </label>
+                    <input type="text" id="title" name="title" th:field="*{title}" required
                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    <span class="mt-2 text-sm text-red-600 dark:text-red-500"
+                          th:if="${#fields.hasErrors('title')}"
+                          th:errors="*{title}"
+                    >
+                        title Error
+                    </span>
                 </div>
                 <div class="form-group mb-6">
-                    <label for="isbn" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">ISBN</label>
-                    <input type="text" id="isbn" name="ISBN" th:value="${book.ISBN}" required
+                    <label for="isbn" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                        ISBN
+                    </label>
+                    <input type="text" id="isbn" name="ISBN" th:field="*{ISBN}" required
                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    <span class="mt-2 text-sm text-red-600 dark:text-red-500"
+                          th:if="${#fields.hasErrors('ISBN')}"
+                          th:errors="*{ISBN}"
+                    >
+                        ISBN Error
+                    </span>
                 </div>
                 <div class="form-group mb-6">
                     <label for="language"
-                           class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Language</label>
-                    <input type="text" id="language" name="language" th:value="${book.language}" required
+                           class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                        Language
+                    </label>
+                    <input type="text" id="language" name="language" th:field="*{language}" required
                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    <span class="mt-2 text-sm text-red-600 dark:text-red-500"
+                          th:if="${#fields.hasErrors('language')}"
+                          th:errors="*{language}"
+                    >
+                        language Error
+                    </span>
                 </div>
                 <div class="form-group mb-6">
                     <label for="numberOfPages" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                        Number of Pages</label>
-                    <input type="number" id="numberOfPages" name="numberOfPages" th:value="${book.numberOfPages}"
+                        Number of Pages
+                    </label>
+                    <input type="number" id="numberOfPages" name="numberOfPages" th:field="*{numberOfPages}"
                            required
                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"/>
+                    <span class="mt-2 text-sm text-red-600 dark:text-red-500"
+                          th:if="${#fields.hasErrors('numberOfPages')}"
+                          th:errors="*{numberOfPages}"
+                    >
+                        numberOfPages Error
+                    </span>
                 </div>
                 <div class="form-group mb-6">
-                    <input type="hidden" name="status" th:value="${book.status}">
+                    <input type="hidden" name="status" th:field="*{status}" th:value="${libraryBook.status}">
                 </div>
                 <!--            <div class="form-group">-->
                 <!--                <label for="status">Status</label>-->
@@ -165,12 +195,19 @@
                 <!--            </div>-->
                 <div class="form-group mb-6">
                     <label for="publishDate" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                        Publish Date</label>
+                        Publish Date
+                    </label>
                     <input type="date" id="publishDate" name="publishDate"
-                           th:value="${#dates.format(book.publishDate, 'yyyy-MM-dd')}" required
+                           th:field="*{publishDate}" th:value="${#dates.format(libraryBook.publishDate, 'yyyy-MM-dd')}" required
                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    <span class="mt-2 text-sm text-red-600 dark:text-red-500"
+                          th:if="${#fields.hasErrors('publishDate')}"
+                          th:errors="*{publishDate}"
+                    >
+                        publishDate Error
+                    </span>
                 </div>
-                <input type="hidden" name="archiveDate" th:value="${#dates.format(book.archiveDate, 'yyyy-MM-dd')}"
+                <input type="hidden" name="archiveDate" th:field="*{archiveDate}" th:value="${#dates.format(libraryBook.archiveDate, 'yyyy-MM-dd')}"
                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"/>
                 <!--            <div class="form-group">-->
                 <!--                <label for="archiveDate">Archive Date</label>-->
@@ -179,10 +216,17 @@
                 <!--            </div>-->
                 <div class="form-group mb-6">
                     <label for="numberOfCopies" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                        Number of Copies</label>
-                    <input type="number" id="numberOfCopies" name="numberOfCopies" th:value="${book.numberOfCopies}"
+                        Number of Copies
+                    </label>
+                    <input type="number" id="numberOfCopies" name="numberOfCopies" th:field="*{numberOfCopies}"
                            required
                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    <span class="mt-2 text-sm text-red-600 dark:text-red-500"
+                          th:if="${#fields.hasErrors('numberOfCopies')}"
+                          th:errors="*{numberOfCopies}"
+                    >
+                        numberOfCopies Error
+                    </span>
                 </div>
                 <button type="submit"
                         class="text-white bg-blue-700 hover:bg-blue-800 w-full focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 block">
@@ -190,15 +234,15 @@
                 </button>
             </form>
             <hr><br>
-            <div th:if="${user.role.name().equals('LIBRARIAN')}" class="block mb-6">
-                <form th:if="${book.status.name().equals('ACTIVE')}" th:action="@{'/library/books/archive/' + ${book.id}}"
+            <div th:if="${account.role.name().equals('LIBRARIAN')}" class="block mb-6">
+                <form th:if="${libraryBook.status.name().equals('ACTIVE')}" th:action="@{'/library/books/archive/' + ${libraryBook.id}}"
                       th:method="delete" class="mb-6">
                     <button type="submit" style="width:100%"
                             class="text-white bg-red-700 hover:bg-red-800 w-full focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">
                         Archive Book
                     </button>
                 </form>
-                <form th:if="${book.status.name().equals('ARCHIVED')}" th:action="@{'/library/books/restore/' + ${book.id}}"
+                <form th:if="${libraryBook.status.name().equals('ARCHIVED')}" th:action="@{'/library/books/restore/' + ${libraryBook.id}}"
                       th:method="put" class="mb-6">
                     <button type="submit" style="width:100%"
                             class="text-white bg-red-700 hover:bg-red-800 w-full focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">
@@ -207,28 +251,29 @@
                 </form>
             </div>
         </div>
+        <!-- ===============/DRAWER===================== -->
 
         <section class="book-details">
             <div class="book-details__description block p-6 bg-white rounded-lg dark:bg-gray-800">
-                <h6 th:text="${book.title}"
+                <h6 th:text="${libraryBook.title}"
                     class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                     Book Title
                 </h6>
-                <p th:text="${book.author.name}" style="margin: 0.6rem 0"
+                <p th:text="${libraryBook.author.name}" style="margin: 0.6rem 0"
                    class="font-bold text-gray-700 dark:text-gray-400"></p>
-                <p th:text="'ISBN: ' + ${book.ISBN}" style="margin: 0.6rem 0"
+                <p th:text="'ISBN: ' + ${libraryBook.ISBN}" style="margin: 0.6rem 0"
                    class="font-bold text-gray-700 dark:text-gray-400"></p>
-                <p th:text="'Books left: ' + ${book.numberOfCopies}" style="margin: 0.6rem 0"
+                <p th:text="'Books left: ' + ${libraryBook.numberOfCopies}" style="margin: 0.6rem 0"
                    class="font-bold text-gray-700 dark:text-gray-400"></p>
                 <!-- drawer init and show -->
-                <div th:if="${user.role.name().equals('LIBRARIAN')}">
+                <div th:if="${account.role.name().equals('LIBRARIAN')}">
                     <button class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
                             type="button" data-drawer-target="drawer-form" data-drawer-show="drawer-form"
                             aria-controls="drawer-form">
                         Manage Book
                     </button>
                 </div>
-                <form th:if="${user.role.name().equals('USER')}" th:action="@{'/reservations/' + ${book.id}}" th:method="post">
+                <form th:if="${account.role.name().equals('USER')}" th:action="@{'/reservations/' + ${libraryBook.id}}" th:method="post">
                     <button type="submit"
                             class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
                         Reserve Book
@@ -243,8 +288,10 @@
         <br>
         <hr>
         <br>
+
         <h1 style="font-weight: 500" class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-            Details</h1>
+            Details
+        </h1>
         <div class="relative overflow-x-auto">
             <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                 <tbody>
@@ -253,7 +300,7 @@
                         Language
                     </th>
                     <td class="px-6 py-4">
-                        [[${book.language}]]
+                        [[${libraryBook.language}]]
                     </td>
                 </tr>
                 <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
@@ -261,7 +308,7 @@
                         Number of Pages
                     </th>
                     <td class="px-6 py-4">
-                        [[${book.numberOfPages}]]
+                        [[${libraryBook.numberOfPages}]]
                     </td>
                 </tr>
                 <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
@@ -269,7 +316,7 @@
                         Status
                     </th>
                     <td class="px-6 py-4">
-                        [[${book.status}]]
+                        [[${libraryBook.status}]]
                     </td>
                 </tr>
                 <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
@@ -277,15 +324,15 @@
                         Publish Date
                     </th>
                     <td class="px-6 py-4">
-                        [[${book.publishDate}]]
+                        [[${libraryBook.publishDate}]]
                     </td>
                 </tr>
-                <tr th:if="${book.archiveDate != null}" class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                <tr th:if="${libraryBook.archiveDate != null}" class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                     <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                         Archive Date
                     </th>
                     <td class="px-6 py-4">
-                        [[${book.archiveDate}]]
+                        [[${libraryBook.archiveDate}]]
                     </td>
                 </tr>
                 </tbody>

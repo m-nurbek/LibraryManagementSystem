@@ -14,6 +14,9 @@ public interface UserService {
     Page<Account> getAccountListByRole(String role, Pageable pageable);
 
     // TODO: Test this method
+    Page<Account> getAccountListByRole(String keyword, String role, Pageable pageable);
+
+    // TODO: Test this method
     Optional<Account> getAccountById(long id);
 
     // TODO: Test this method

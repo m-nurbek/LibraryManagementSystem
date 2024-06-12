@@ -1,7 +1,6 @@
 package nurbek.librarymanagementsystem.controller;
 
 import jakarta.validation.Valid;
-import lombok.extern.slf4j.Slf4j;
 import nurbek.librarymanagementsystem.dto.Account;
 import nurbek.librarymanagementsystem.dto.BookReservation;
 import nurbek.librarymanagementsystem.dto.Role;
@@ -24,7 +23,6 @@ import java.util.Optional;
 
 
 // TODO: test this controller
-@Slf4j
 @Controller
 @RequestMapping("/users")
 public class UserController {
@@ -40,14 +38,22 @@ public class UserController {
 
     @Secured("ROLE_LIBRARIAN")
     @GetMapping
-    public String allUsers(Model model, @PageableDefault(sort = {"email"}, size = 5) Pageable pageable, Principal principal) {
+    public String allUsers(Model model, @PageableDefault(sort = {"email"}, size = 5) Pageable pageable,
+            @RequestParam(value = "keyword", required = false) String keyword, Principal principal) {
         Pageable pageProps = pageable;
+
         if (pageProps.getPageSize() <= 5) {
             pageProps = PageRequest.of(pageable.getPageNumber(), pageSize, pageable.getSort());
         }
 
-        Page<Account> userList = userService.getAccountListByRole(Role.USER.name(), pageProps);
-        log.info(userList.getContent().toString());
+        Page<Account> userList;
+
+        if (keyword == null || keyword.isEmpty()) {
+            userList = userService.getAccountListByRole(Role.USER.name(), pageProps);
+        } else {
+            userList = userService.getAccountListByRole(keyword, Role.USER.name(), pageProps);
+        }
+
         model.addAttribute("users", userList);
         model.addAttribute("currentPage", pageProps.getPageNumber());
         model.addAttribute("totalPages", userList.getTotalPages());
@@ -71,7 +77,8 @@ public class UserController {
 
         List<BookReservation> reservations = reservationService.getReservationsByAccountId(id);
 
-        model.addAttribute("user", user);
+        model.addAttribute("updatedUser", user); // updatedUser is used for updating user info (first name, last name, email, password, role)
+        model.addAttribute("libraryUser", user);
         model.addAttribute("reservations", reservations);
 
         if (principal != null) {
@@ -84,10 +91,24 @@ public class UserController {
 
     @Secured("ROLE_LIBRARIAN")
     @PatchMapping("/{id}")
-    public String updateUser(@PathVariable("id") long id, @ModelAttribute("user") Account user) {
-        Optional<Account> updatedUser = userService.updateAccountInfo(id, user);
+    public String updateUser(@PathVariable("id") long id, @Valid @ModelAttribute("updatedUser") Account updatedUser, Errors errors, Principal principal, Model model) {
+        if (principal != null) {
+            Account account = userService.getAccountByEmail(principal.getName()).orElse(null);
+            model.addAttribute("account", account);
+        }
 
-        if (updatedUser.isPresent()) {
+        if (errors.hasErrors()) {
+            List<BookReservation> reservations = reservationService.getReservationsByAccountId(id);
+            Account user = userService.getAccountById(id).orElse(null);
+
+            model.addAttribute("libraryUser", user);
+            model.addAttribute("reservations", reservations);
+            return "user";
+        }
+
+        Optional<Account> updatedAccount = userService.updateAccountInfo(id, updatedUser);
+
+        if (updatedAccount.isPresent()) {
             return "redirect:/users/" + id;
         }
 

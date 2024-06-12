@@ -46,6 +46,20 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public Page<Account> getAccountListByRole(String keyword, String role, Pageable pageable) {
+        Page<AccountEntity> accountEntities = accountRepository.getAccountsByRoleAndKeyword(
+                keyword,
+                role,
+                PageRequest.of(
+                        pageable.getPageNumber(),
+                        pageable.getPageSize(),
+                        pageable.getSortOr(Sort.by(Sort.Direction.ASC, "email"))
+                ));
+
+        return accountEntities.map(AccountEntity::toDto);
+    }
+
+    @Override
     public Optional<Account> getAccountById(long id) {
         AccountEntity account = accountRepository.findById(id).orElse(null);
         if (account != null) {

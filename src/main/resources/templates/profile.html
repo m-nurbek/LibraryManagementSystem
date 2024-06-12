@@ -33,11 +33,10 @@
                    class="block w-full px-4 py-2 border-b border-gray-200 cursor-pointer hover:bg-gray-100 hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:border-gray-600 dark:hover:bg-gray-600 dark:hover:text-white dark:focus:ring-gray-500 dark:focus:text-white">
                     Notifications
                 </a>
-                <form method="POST" th:action="@{/logout}"
-                      class="block w-full px-4 py-2 border-b border-gray-200 cursor-pointer hover:bg-gray-100 hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:border-gray-600 dark:hover:bg-gray-600 dark:hover:text-white dark:focus:ring-gray-500 dark:focus:text-white"
-                >
-                    <input type="submit" value="Logout"/>
-                </form>
+                <a th:href="@{/logout}"
+                   class="block w-full px-4 py-2 border-b border-gray-200 cursor-pointer hover:bg-gray-100 hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:border-gray-600 dark:hover:bg-gray-600 dark:hover:text-white dark:focus:ring-gray-500 dark:focus:text-white">
+                    Logout
+                </a>
             </div>
             <button th:if="${account == null}" onclick="document.location.href='/login'" type="button"
                     class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
@@ -116,6 +115,56 @@
             <div style="flex:1"></div>
         </section>
 
+        <!-- Reservations -->
+        <div th:if="${account.role.name().equals('USER')}" class="relative overflow-x-auto" style="margin:2rem 0">
+            <h1 style="font-weight: 500" class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                Reservations
+            </h1>
+            <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                <tr>
+                    <th scope="col" class="px-6 py-3">
+                        Book Title
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        ISBN
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Reservation Date
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Due Date
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Reservation status
+                    </th>
+                </tr>
+                </thead>
+                <tbody th:each="r: ${reservations}">
+                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                        th:classappend="${r.status.name()} == 'RESERVED' ? 'text-green-500' : 'text-red-500'"
+                    >
+                        <a th:href="'/library/books/' + ${r.book.id}">
+                            <span th:text="${r.book.title}"></span>
+                        </a>
+                    </th>
+                    <td class="px-6 py-4">
+                        <span th:text="${r.book.ISBN}"></span>
+                    </td>
+                    <td class="px-6 py-4">
+                        <span th:text="${r.reservationDate}"></span>
+                    </td>
+                    <td class="px-6 py-4">
+                        <span th:text="${r.dueDate}"></span>
+                    </td>
+                    <td class="px-6 py-4">
+                        <span th:text="${r.status}"></span>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
     </main>
 </div>
 

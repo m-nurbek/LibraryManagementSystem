@@ -1,7 +1,6 @@
 package nurbek.librarymanagementsystem.controller;
 
 import jakarta.validation.Valid;
-import lombok.extern.slf4j.Slf4j;
 import nurbek.librarymanagementsystem.dto.Account;
 import nurbek.librarymanagementsystem.dto.Book;
 import nurbek.librarymanagementsystem.dto.BookStatus;
@@ -23,7 +22,6 @@ import java.security.Principal;
 import java.util.Arrays;
 import java.util.Optional;
 
-@Slf4j
 @Controller
 @RequestMapping("/library")
 public class LibraryController {
@@ -43,18 +41,20 @@ public class LibraryController {
     public String libraryBooks(Model model, @PageableDefault(sort = {"title"}, size = 5) Pageable pageable,
                                @RequestParam(value = "keyword", required = false) String keyword, Principal principal) {
         Pageable pageProps = pageable;
+
         if (pageProps.getPageSize() <= 5) {
             pageProps = PageRequest.of(pageable.getPageNumber(), pageSize, pageable.getSort());
         }
 
         Page<Book> bookList;
-        if (keyword != null && !keyword.isEmpty()) {
-            bookList = libraryService.searchBooksByKeyword(keyword, pageProps);
-            model.addAttribute("books", bookList);
-        } else {
+
+        if (keyword == null || keyword.isEmpty()) {
             bookList = libraryService.getBookList(pageProps);
-            model.addAttribute("books", bookList);
+        } else {
+            bookList = libraryService.searchBooksByKeyword(keyword, pageProps);
         }
+
+        model.addAttribute("books", bookList);
         model.addAttribute("currentPage", pageProps.getPageNumber());
         model.addAttribute("totalPages", bookList.getTotalPages());
         model.addAttribute("totalItems", bookList.getTotalElements());
@@ -62,7 +62,7 @@ public class LibraryController {
         // find the user by email
         if (principal != null) {
             Account account = userService.getAccountByEmail(principal.getName()).orElse(null);
-            model.addAttribute("user", account);
+            model.addAttribute("account", account);
         }
 
         return "books";
@@ -74,19 +74,44 @@ public class LibraryController {
         Book book = libraryService.getBookById(id).orElse(null);
 
         if (book == null) {
-            model.addAttribute("error", "Book not found");
             return "redirect:/library/books";
         }
 
-        model.addAttribute("book", book);
+        model.addAttribute("updatedBook", book); // updatedBook is used for updating book info
+        model.addAttribute("libraryBook", book);
         model.addAttribute("statusList", Arrays.stream(BookStatus.values()).map(BookStatus::name).toList());
 
         if (principal != null) {
             Account account = userService.getAccountByEmail(principal.getName()).orElse(null);
-            model.addAttribute("user", account);
+            model.addAttribute("account", account);
         }
 
         return "book";
+    }
+
+    @Secured("ROLE_LIBRARIAN")
+    @PatchMapping("/books/{id}")
+    public String libraryBookUpdate(@PathVariable("id") long id, @Valid @ModelAttribute("updatedBook") Book updatedBook, Errors errors, Principal principal, Model model) {
+        if (principal != null) {
+            Account account = userService.getAccountByEmail(principal.getName()).orElse(null);
+            model.addAttribute("account", account);
+        }
+
+        if (errors.hasErrors()) {
+            Book book = libraryService.getBookById(id).orElse(null);
+            model.addAttribute("libraryBook", book);
+            model.addAttribute("statusList", Arrays.stream(BookStatus.values()).map(BookStatus::name).toList());
+
+            return "book";
+        }
+
+        Optional<Book> bookEntity = libraryService.updateBookInfo(id, updatedBook);
+
+        if (bookEntity.isPresent()) {
+            return "redirect:/library/books/" + id;
+        }
+
+        return "error";
     }
 
     @Secured("ROLE_LIBRARIAN")
@@ -117,22 +142,6 @@ public class LibraryController {
 
         libraryService.addBook(book);
         return "redirect:/library/books";
-    }
-
-    @Secured("ROLE_LIBRARIAN")
-    @PatchMapping("/books/{id}")
-    public String libraryBookUpdate(@PathVariable("id") long id, @Valid @ModelAttribute("book") Book book, Errors errors) {
-        if (errors.hasErrors()) {
-            return "error";
-        }
-
-        Optional<Book> bookEntity = libraryService.updateBookInfo(id, book);
-
-        if (bookEntity.isPresent()) {
-            return "redirect:/library/books/" + id;
-        }
-
-        return "error";
     }
 
     // TODO: test libraryBookRestore controller
