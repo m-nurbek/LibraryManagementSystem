@@ -34,7 +34,7 @@ public class LibraryController {
         this.libraryService = libraryService;
         this.userService = userService;
         this.authorService = authorService;
-        pageSize = props.getPageSize();
+        pageSize = props.getBooksPageSize();
     }
 
     @GetMapping(path = {"/books"})

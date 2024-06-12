@@ -33,7 +33,7 @@ public class UserController {
     public UserController(UserService userService, ReservationService reservationService, ConfigurationProperty props) {
         this.userService = userService;
         this.reservationService = reservationService;
-        pageSize = props.getPageSize();
+        pageSize = props.getUsersPageSize();
     }
 
     @Secured("ROLE_LIBRARIAN")
