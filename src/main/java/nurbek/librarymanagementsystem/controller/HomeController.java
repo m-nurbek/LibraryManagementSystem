@@ -28,6 +28,7 @@ public class HomeController {
             Account account = userService.getAccountByEmail(principal.getName()).orElse(null);
             model.addAttribute("user", account);
         }
+
         return "home";
     }
 
@@ -37,6 +38,7 @@ public class HomeController {
             Account account = userService.getAccountByEmail(principal.getName()).orElse(null);
             model.addAttribute("user", account);
         }
+
         return "login";
     }
 
