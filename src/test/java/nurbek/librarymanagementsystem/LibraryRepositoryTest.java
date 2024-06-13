@@ -1,6 +1,5 @@
 package nurbek.librarymanagementsystem;
 
-import lombok.extern.slf4j.Slf4j;
 import nurbek.librarymanagementsystem.dto.BookStatus;
 import nurbek.librarymanagementsystem.entity.BookEntity;
 import nurbek.librarymanagementsystem.repository.BookRepository;

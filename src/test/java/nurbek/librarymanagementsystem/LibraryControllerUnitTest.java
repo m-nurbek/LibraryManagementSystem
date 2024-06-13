@@ -30,10 +30,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class LibraryControllerUnitTest {
     @Autowired
     private MockMvc mockMvc;
-
     @MockBean
     private LibraryService libraryService;
-
     private Page<Book> bookPage;
 
     @BeforeEach

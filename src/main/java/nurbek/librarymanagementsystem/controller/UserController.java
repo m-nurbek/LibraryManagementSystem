@@ -21,8 +21,6 @@ import java.security.Principal;
 import java.util.List;
 import java.util.Optional;
 
-
-// TODO: test this controller
 @Controller
 @RequestMapping("/users")
 public class UserController {
@@ -39,7 +37,7 @@ public class UserController {
     @Secured("ROLE_LIBRARIAN")
     @GetMapping
     public String allUsers(Model model, @PageableDefault(sort = {"email"}, size = 5) Pageable pageable,
-            @RequestParam(value = "keyword", required = false) String keyword, Principal principal) {
+                           @RequestParam(value = "keyword", required = false) String keyword, Principal principal) {
         Pageable pageProps = pageable;
 
         if (pageProps.getPageSize() <= 5) {
@@ -71,6 +69,7 @@ public class UserController {
     @GetMapping("/{id}")
     public String userDetail(Model model, @PathVariable("id") long id, Principal principal) {
         Account user = userService.getAccountById(id).orElse(null);
+
         if (user == null) {
             return "redirect:/users";
         }
@@ -142,6 +141,7 @@ public class UserController {
         }
 
         Optional<Account> savedUser = userService.saveAccount(newUser);
+
         if (savedUser.isPresent()) {
             return "redirect:/users";
         }
