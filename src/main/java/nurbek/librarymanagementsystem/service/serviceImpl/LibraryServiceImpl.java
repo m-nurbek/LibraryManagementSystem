@@ -1,7 +1,6 @@
 package nurbek.librarymanagementsystem.service.serviceImpl;
 
 import lombok.AllArgsConstructor;
-import nurbek.librarymanagementsystem.aop.Loggable;
 import nurbek.librarymanagementsystem.dto.Book;
 import nurbek.librarymanagementsystem.dto.BookStatus;
 import nurbek.librarymanagementsystem.entity.AuthorEntity;
@@ -9,7 +8,6 @@ import nurbek.librarymanagementsystem.entity.BookEntity;
 import nurbek.librarymanagementsystem.repository.BookRepository;
 import nurbek.librarymanagementsystem.repository.BookReservationRepository;
 import nurbek.librarymanagementsystem.service.LibraryService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -170,9 +168,13 @@ public class LibraryServiceImpl implements LibraryService {
     public Optional<Book> reserveBook(long bookId) {
         if (bookRepository.existsById(bookId)) {
             BookEntity bookInDb = bookRepository.getReferenceById(bookId);
-            bookInDb.setNumberOfCopies(bookInDb.getNumberOfCopies() - 1);
-            bookRepository.save(bookInDb);
-            return Optional.of(bookInDb.toDto());
+            if (bookInDb.getNumberOfCopies() > 0) {
+                bookInDb.setNumberOfCopies(bookInDb.getNumberOfCopies() - 1);
+                bookRepository.save(bookInDb);
+                return Optional.of(bookInDb.toDto());
+            } else {
+                return Optional.empty();
+            }
         }
 
         return Optional.empty();

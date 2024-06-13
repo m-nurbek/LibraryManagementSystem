@@ -37,7 +37,8 @@ public class ReservationController {
             return "redirect:/library/books/" + bookId;
         }
 
-        return "error";
+        String error = "Book is already reserved";
+        return "redirect:/library/books/" + bookId + "?error=" + error;
     }
 
     @Secured("ROLE_LIBRARIAN")

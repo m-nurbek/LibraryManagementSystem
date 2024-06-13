@@ -18138,3 +18138,575 @@ Database is already closed (to disable automatic closing at VM shutdown, add ";D
 Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-224]
 2024-06-13T16:00:41.137+05:00  INFO 3088 --- [LibraryManagementSystem] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : library - Shutdown initiated...
 2024-06-13T16:00:41.137+05:00  INFO 3088 --- [LibraryManagementSystem] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : library - Shutdown completed.
+2024-06-13T16:10:50.254+05:00  INFO 11048 --- [LibraryManagementSystem] [restartedMain] n.l.LibraryManagementSystemApplication   : Starting LibraryManagementSystemApplication using Java 21.0.1 with PID 11048 (D:\EpamLearning\LibraryManagementSystem\target\classes started by Nurbek in D:\EpamLearning\LibraryManagementSystem)
+2024-06-13T16:10:50.257+05:00  INFO 11048 --- [LibraryManagementSystem] [restartedMain] n.l.LibraryManagementSystemApplication   : The following 1 profile is active: "dev"
+2024-06-13T16:10:50.312+05:00  INFO 11048 --- [LibraryManagementSystem] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-06-13T16:10:50.312+05:00  INFO 11048 --- [LibraryManagementSystem] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-06-13T16:10:51.046+05:00  INFO 11048 --- [LibraryManagementSystem] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-13T16:10:51.124+05:00  INFO 11048 --- [LibraryManagementSystem] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 69 ms. Found 5 JPA repository interfaces.
+2024-06-13T16:10:52.012+05:00  INFO 11048 --- [LibraryManagementSystem] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8001 (http)
+2024-06-13T16:10:52.024+05:00  INFO 11048 --- [LibraryManagementSystem] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-13T16:10:52.024+05:00  INFO 11048 --- [LibraryManagementSystem] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-06-13T16:10:52.066+05:00  INFO 11048 --- [LibraryManagementSystem] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-13T16:10:52.066+05:00  INFO 11048 --- [LibraryManagementSystem] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1753 ms
+2024-06-13T16:10:52.116+05:00  INFO 11048 --- [LibraryManagementSystem] [restartedMain] com.zaxxer.hikari.HikariDataSource       : library - Starting...
+2024-06-13T16:10:52.276+05:00  INFO 11048 --- [LibraryManagementSystem] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : library - Added connection conn0: url=jdbc:h2:mem:library user=ADMIN
+2024-06-13T16:10:52.277+05:00  INFO 11048 --- [LibraryManagementSystem] [restartedMain] com.zaxxer.hikari.HikariDataSource       : library - Start completed.
+2024-06-13T16:10:52.287+05:00  INFO 11048 --- [LibraryManagementSystem] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2'. Database available at 'jdbc:h2:mem:library'
+2024-06-13T16:10:52.480+05:00  INFO 11048 --- [LibraryManagementSystem] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-13T16:10:52.529+05:00  INFO 11048 --- [LibraryManagementSystem] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-06-13T16:10:52.559+05:00  INFO 11048 --- [LibraryManagementSystem] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-06-13T16:10:52.758+05:00  INFO 11048 --- [LibraryManagementSystem] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-13T16:10:52.814+05:00  WARN 11048 --- [LibraryManagementSystem] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-13T16:10:53.077+05:00  INFO 11048 --- [LibraryManagementSystem] [restartedMain] o.hibernate.id.enhanced.TableGenerator   : HHH000398: Explicit segment value for id generator [id_gen_table.gen_name] suggested; using default [account]
+2024-06-13T16:10:53.082+05:00  INFO 11048 --- [LibraryManagementSystem] [restartedMain] o.hibernate.id.enhanced.TableGenerator   : HHH000398: Explicit segment value for id generator [id_gen_table.gen_name] suggested; using default [book]
+2024-06-13T16:10:53.082+05:00  INFO 11048 --- [LibraryManagementSystem] [restartedMain] o.hibernate.id.enhanced.TableGenerator   : HHH000398: Explicit segment value for id generator [id_gen_table.gen_name] suggested; using default [notification]
+2024-06-13T16:10:53.082+05:00  INFO 11048 --- [LibraryManagementSystem] [restartedMain] o.hibernate.id.enhanced.TableGenerator   : HHH000398: Explicit segment value for id generator [id_gen_table.gen_name] suggested; using default [author]
+2024-06-13T16:10:53.083+05:00  INFO 11048 --- [LibraryManagementSystem] [restartedMain] o.hibernate.id.enhanced.TableGenerator   : HHH000398: Explicit segment value for id generator [id_gen_table.gen_name] suggested; using default [book_reservation]
+2024-06-13T16:10:53.774+05:00  INFO 11048 --- [LibraryManagementSystem] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-13T16:10:53.832+05:00  INFO 11048 --- [LibraryManagementSystem] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-13T16:10:54.321+05:00  INFO 11048 --- [LibraryManagementSystem] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-06-13T16:10:54.907+05:00  INFO 11048 --- [LibraryManagementSystem] [restartedMain] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2024-06-13T16:10:54.916+05:00  INFO 11048 --- [LibraryManagementSystem] [restartedMain] org.quartz.simpl.SimpleThreadPool        : Job execution threads will use class loader of thread: restartedMain
+2024-06-13T16:10:54.924+05:00  INFO 11048 --- [LibraryManagementSystem] [restartedMain] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2024-06-13T16:10:54.925+05:00  INFO 11048 --- [LibraryManagementSystem] [restartedMain] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.3.2 created.
+2024-06-13T16:10:54.927+05:00  INFO 11048 --- [LibraryManagementSystem] [restartedMain] o.s.s.quartz.LocalDataSourceJobStore     : Using db table-based data access locking (synchronization).
+2024-06-13T16:10:54.929+05:00  INFO 11048 --- [LibraryManagementSystem] [restartedMain] o.s.s.quartz.LocalDataSourceJobStore     : JobStoreCMT initialized.
+2024-06-13T16:10:54.930+05:00  INFO 11048 --- [LibraryManagementSystem] [restartedMain] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'quartzScheduler' with instanceId 'NURBEK-HuaweiMatebookD151718277054911'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 5 threads.
+  Using job-store 'org.springframework.scheduling.quartz.LocalDataSourceJobStore' - which supports persistence. and is clustered.
+
+2024-06-13T16:10:54.930+05:00  INFO 11048 --- [LibraryManagementSystem] [restartedMain] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2024-06-13T16:10:54.930+05:00  INFO 11048 --- [LibraryManagementSystem] [restartedMain] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.3.2
+2024-06-13T16:10:54.930+05:00  INFO 11048 --- [LibraryManagementSystem] [restartedMain] org.quartz.core.QuartzScheduler          : JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@23faa666
+2024-06-13T16:10:54.999+05:00  INFO 11048 --- [LibraryManagementSystem] [restartedMain] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NURBEK-HuaweiMatebookD151718277054911 started.
+2024-06-13T16:10:55.068+05:00  WARN 11048 --- [LibraryManagementSystem] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-13T16:10:55.594+05:00  INFO 11048 --- [LibraryManagementSystem] [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@3ab7515, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@30630818, org.springframework.security.web.context.SecurityContextHolderFilter@388b5773, org.springframework.security.web.header.HeaderWriterFilter@3474a2cd, org.springframework.web.filter.CorsFilter@24d4b23c, org.springframework.security.web.authentication.logout.LogoutFilter@56a60b86, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@206c3528, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6b64eb1, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@77fda8a8, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5460b12c, org.springframework.security.web.access.ExceptionTranslationFilter@2297290b, org.springframework.security.web.access.intercept.AuthorizationFilter@3e257cdc]
+2024-06-13T16:10:56.088+05:00  INFO 11048 --- [LibraryManagementSystem] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-06-13T16:10:56.128+05:00  INFO 11048 --- [LibraryManagementSystem] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8001 (http) with context path ''
+2024-06-13T16:10:56.137+05:00  INFO 11048 --- [LibraryManagementSystem] [restartedMain] n.l.LibraryManagementSystemApplication   : Started LibraryManagementSystemApplication in 6.299 seconds (process running for 6.918)
+2024-06-13T16:10:56.140+05:00  INFO 11048 --- [LibraryManagementSystem] [restartedMain] n.l.service.common.GreetingServiceImpl   : DEV PROFILE: Welcome to Library Management System
+2024-06-13T16:11:01.028+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-13T16:11:01.029+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-06-13T16:11:01.030+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-06-13T16:11:01.068+05:00 DEBUG 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-1] n.l.aop.LoggingAspect                    : >> CALLED METHOD: login() with args: [{}, null]
+2024-06-13T16:11:01.069+05:00 DEBUG 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-1] n.l.aop.LoggingAspect                    : << METHOD RETURNED: login() result: login
+2024-06-13T16:11:12.495+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-3] n.l.config.SecurityConfig                : EMAIL: ucoshamz@free.fr
+2024-06-13T16:11:12.627+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-3] n.l.config.SecurityConfig                : ACCOUNT: ucoshamz@free.fr
+2024-06-13T16:11:12.730+05:00 DEBUG 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-4] n.l.aop.LoggingAspect                    : >> CALLED METHOD: libraryBooks() with args: [{}, Page request [number: 0, size 5, sort: title: ASC], null, UsernamePasswordAuthenticationToken [Principal=AccountEntity(id=36, firstName=Urson, lastName=Cosham, email=ucoshamz@free.fr, password=$2a$10$2Uz4lxxlJG9/iM2fpjmP5OWBAPPMD7X0zb.zcfMQV9HSzuwIX5h0u, role=USER), Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=null], Granted Authorities=[ROLE_USER]]]
+2024-06-13T16:11:12.809+05:00 DEBUG 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-4] n.l.aop.LoggingAspect                    : << METHOD RETURNED: libraryBooks() result: books
+2024-06-13T16:11:14.149+05:00 DEBUG 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.aop.LoggingAspect                    : >> CALLED METHOD: libraryBook() with args: [{}, 9, UsernamePasswordAuthenticationToken [Principal=AccountEntity(id=36, firstName=Urson, lastName=Cosham, email=ucoshamz@free.fr, password=$2a$10$2Uz4lxxlJG9/iM2fpjmP5OWBAPPMD7X0zb.zcfMQV9HSzuwIX5h0u, role=USER), Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=null], Granted Authorities=[ROLE_USER]], null]
+2024-06-13T16:11:14.172+05:00 DEBUG 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.aop.LoggingAspect                    : << METHOD RETURNED: libraryBook() result: book
+2024-06-13T16:11:14.228+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 9
+2024-06-13T16:11:14.228+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 1
+2024-06-13T16:11:14.228+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 2
+2024-06-13T16:11:14.228+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 3
+2024-06-13T16:11:14.228+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 4
+2024-06-13T16:11:14.228+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 5
+2024-06-13T16:11:14.228+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 6
+2024-06-13T16:11:14.228+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 7
+2024-06-13T16:11:14.228+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 8
+2024-06-13T16:11:14.228+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 9
+2024-06-13T16:11:14.228+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 10
+2024-06-13T16:11:14.244+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 11
+2024-06-13T16:11:14.244+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 12
+2024-06-13T16:11:14.244+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 13
+2024-06-13T16:11:14.244+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 14
+2024-06-13T16:11:14.244+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 15
+2024-06-13T16:11:14.244+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 16
+2024-06-13T16:11:14.244+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 17
+2024-06-13T16:11:14.244+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 18
+2024-06-13T16:11:14.244+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 19
+2024-06-13T16:11:14.244+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 20
+2024-06-13T16:11:14.244+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 21
+2024-06-13T16:11:14.244+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 22
+2024-06-13T16:11:14.256+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 23
+2024-06-13T16:11:14.257+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 24
+2024-06-13T16:11:14.259+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 25
+2024-06-13T16:11:14.260+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 26
+2024-06-13T16:11:14.260+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 27
+2024-06-13T16:11:14.260+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 28
+2024-06-13T16:11:14.260+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 29
+2024-06-13T16:11:14.260+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 30
+2024-06-13T16:11:14.260+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 31
+2024-06-13T16:11:14.260+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 32
+2024-06-13T16:11:14.260+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 33
+2024-06-13T16:11:14.260+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 34
+2024-06-13T16:11:14.260+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 35
+2024-06-13T16:11:14.260+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 36
+2024-06-13T16:11:14.260+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 37
+2024-06-13T16:11:14.260+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 38
+2024-06-13T16:11:14.260+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 39
+2024-06-13T16:11:14.260+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 40
+2024-06-13T16:11:14.260+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 41
+2024-06-13T16:11:14.260+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 42
+2024-06-13T16:11:14.276+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 43
+2024-06-13T16:11:14.276+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 44
+2024-06-13T16:11:14.276+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 45
+2024-06-13T16:11:14.276+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 46
+2024-06-13T16:11:14.276+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 47
+2024-06-13T16:11:14.276+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 48
+2024-06-13T16:11:14.276+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 49
+2024-06-13T16:11:14.276+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 50
+2024-06-13T16:11:15.506+05:00 DEBUG 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-3] n.l.aop.LoggingAspect                    : >> CALLED METHOD: reserveBook() with args: [9, UsernamePasswordAuthenticationToken [Principal=AccountEntity(id=36, firstName=Urson, lastName=Cosham, email=ucoshamz@free.fr, password=$2a$10$2Uz4lxxlJG9/iM2fpjmP5OWBAPPMD7X0zb.zcfMQV9HSzuwIX5h0u, role=USER), Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=null], Granted Authorities=[ROLE_USER]]]
+2024-06-13T16:11:15.930+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-3] n.l.a.listeners.NotificationListener     : Notification sent to ucoshamz@free.fr
+2024-06-13T16:11:15.930+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-3] n.l.a.listeners.NotificationListener     : Subject: Book reservation successful
+2024-06-13T16:11:15.930+05:00 DEBUG 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-3] n.l.aop.LoggingAspect                    : << METHOD RETURNED: reserveBook() result: redirect:/library/books/9
+2024-06-13T16:11:15.946+05:00 DEBUG 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-4] n.l.aop.LoggingAspect                    : >> CALLED METHOD: libraryBook() with args: [{}, 9, UsernamePasswordAuthenticationToken [Principal=AccountEntity(id=36, firstName=Urson, lastName=Cosham, email=ucoshamz@free.fr, password=$2a$10$2Uz4lxxlJG9/iM2fpjmP5OWBAPPMD7X0zb.zcfMQV9HSzuwIX5h0u, role=USER), Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=null], Granted Authorities=[ROLE_USER]], null]
+2024-06-13T16:11:15.970+05:00 DEBUG 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-4] n.l.aop.LoggingAspect                    : << METHOD RETURNED: libraryBook() result: book
+2024-06-13T16:11:15.979+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-4] n.l.util.AuthorByIdConverter             : Converting author id: 9
+2024-06-13T16:11:15.979+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-4] n.l.util.AuthorByIdConverter             : Converting author id: 1
+2024-06-13T16:11:15.979+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-4] n.l.util.AuthorByIdConverter             : Converting author id: 2
+2024-06-13T16:11:15.990+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-4] n.l.util.AuthorByIdConverter             : Converting author id: 3
+2024-06-13T16:11:15.990+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-4] n.l.util.AuthorByIdConverter             : Converting author id: 4
+2024-06-13T16:11:15.990+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-4] n.l.util.AuthorByIdConverter             : Converting author id: 5
+2024-06-13T16:11:15.990+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-4] n.l.util.AuthorByIdConverter             : Converting author id: 6
+2024-06-13T16:11:15.994+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-4] n.l.util.AuthorByIdConverter             : Converting author id: 7
+2024-06-13T16:11:15.994+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-4] n.l.util.AuthorByIdConverter             : Converting author id: 8
+2024-06-13T16:11:15.994+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-4] n.l.util.AuthorByIdConverter             : Converting author id: 9
+2024-06-13T16:11:15.994+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-4] n.l.util.AuthorByIdConverter             : Converting author id: 10
+2024-06-13T16:11:15.994+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-4] n.l.util.AuthorByIdConverter             : Converting author id: 11
+2024-06-13T16:11:15.994+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-4] n.l.util.AuthorByIdConverter             : Converting author id: 12
+2024-06-13T16:11:15.994+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-4] n.l.util.AuthorByIdConverter             : Converting author id: 13
+2024-06-13T16:11:15.994+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-4] n.l.util.AuthorByIdConverter             : Converting author id: 14
+2024-06-13T16:11:15.994+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-4] n.l.util.AuthorByIdConverter             : Converting author id: 15
+2024-06-13T16:11:15.994+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-4] n.l.util.AuthorByIdConverter             : Converting author id: 16
+2024-06-13T16:11:15.994+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-4] n.l.util.AuthorByIdConverter             : Converting author id: 17
+2024-06-13T16:11:15.994+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-4] n.l.util.AuthorByIdConverter             : Converting author id: 18
+2024-06-13T16:11:15.994+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-4] n.l.util.AuthorByIdConverter             : Converting author id: 19
+2024-06-13T16:11:15.994+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-4] n.l.util.AuthorByIdConverter             : Converting author id: 20
+2024-06-13T16:11:15.994+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-4] n.l.util.AuthorByIdConverter             : Converting author id: 21
+2024-06-13T16:11:15.994+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-4] n.l.util.AuthorByIdConverter             : Converting author id: 22
+2024-06-13T16:11:15.994+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-4] n.l.util.AuthorByIdConverter             : Converting author id: 23
+2024-06-13T16:11:15.994+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-4] n.l.util.AuthorByIdConverter             : Converting author id: 24
+2024-06-13T16:11:15.994+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-4] n.l.util.AuthorByIdConverter             : Converting author id: 25
+2024-06-13T16:11:15.994+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-4] n.l.util.AuthorByIdConverter             : Converting author id: 26
+2024-06-13T16:11:15.994+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-4] n.l.util.AuthorByIdConverter             : Converting author id: 27
+2024-06-13T16:11:15.994+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-4] n.l.util.AuthorByIdConverter             : Converting author id: 28
+2024-06-13T16:11:16.010+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-4] n.l.util.AuthorByIdConverter             : Converting author id: 29
+2024-06-13T16:11:16.010+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-4] n.l.util.AuthorByIdConverter             : Converting author id: 30
+2024-06-13T16:11:16.010+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-4] n.l.util.AuthorByIdConverter             : Converting author id: 31
+2024-06-13T16:11:16.013+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-4] n.l.util.AuthorByIdConverter             : Converting author id: 32
+2024-06-13T16:11:16.013+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-4] n.l.util.AuthorByIdConverter             : Converting author id: 33
+2024-06-13T16:11:16.013+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-4] n.l.util.AuthorByIdConverter             : Converting author id: 34
+2024-06-13T16:11:16.013+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-4] n.l.util.AuthorByIdConverter             : Converting author id: 35
+2024-06-13T16:11:16.013+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-4] n.l.util.AuthorByIdConverter             : Converting author id: 36
+2024-06-13T16:11:16.013+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-4] n.l.util.AuthorByIdConverter             : Converting author id: 37
+2024-06-13T16:11:16.013+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-4] n.l.util.AuthorByIdConverter             : Converting author id: 38
+2024-06-13T16:11:16.013+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-4] n.l.util.AuthorByIdConverter             : Converting author id: 39
+2024-06-13T16:11:16.013+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-4] n.l.util.AuthorByIdConverter             : Converting author id: 40
+2024-06-13T16:11:16.013+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-4] n.l.util.AuthorByIdConverter             : Converting author id: 41
+2024-06-13T16:11:16.013+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-4] n.l.util.AuthorByIdConverter             : Converting author id: 42
+2024-06-13T16:11:16.013+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-4] n.l.util.AuthorByIdConverter             : Converting author id: 43
+2024-06-13T16:11:16.022+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-4] n.l.util.AuthorByIdConverter             : Converting author id: 44
+2024-06-13T16:11:16.023+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-4] n.l.util.AuthorByIdConverter             : Converting author id: 45
+2024-06-13T16:11:16.023+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-4] n.l.util.AuthorByIdConverter             : Converting author id: 46
+2024-06-13T16:11:16.026+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-4] n.l.util.AuthorByIdConverter             : Converting author id: 47
+2024-06-13T16:11:16.026+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-4] n.l.util.AuthorByIdConverter             : Converting author id: 48
+2024-06-13T16:11:16.026+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-4] n.l.util.AuthorByIdConverter             : Converting author id: 49
+2024-06-13T16:11:16.026+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-4] n.l.util.AuthorByIdConverter             : Converting author id: 50
+2024-06-13T16:11:17.787+05:00 DEBUG 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-8] n.l.aop.LoggingAspect                    : >> CALLED METHOD: reserveBook() with args: [9, UsernamePasswordAuthenticationToken [Principal=AccountEntity(id=36, firstName=Urson, lastName=Cosham, email=ucoshamz@free.fr, password=$2a$10$2Uz4lxxlJG9/iM2fpjmP5OWBAPPMD7X0zb.zcfMQV9HSzuwIX5h0u, role=USER), Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=null], Granted Authorities=[ROLE_USER]]]
+2024-06-13T16:11:17.791+05:00 DEBUG 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-8] n.l.aop.LoggingAspect                    : << METHOD RETURNED: reserveBook() result: redirect:/library/books/9?error=Book is already reserved
+2024-06-13T16:11:17.791+05:00 DEBUG 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.aop.LoggingAspect                    : >> CALLED METHOD: libraryBook() with args: [{}, 9, UsernamePasswordAuthenticationToken [Principal=AccountEntity(id=36, firstName=Urson, lastName=Cosham, email=ucoshamz@free.fr, password=$2a$10$2Uz4lxxlJG9/iM2fpjmP5OWBAPPMD7X0zb.zcfMQV9HSzuwIX5h0u, role=USER), Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=null], Granted Authorities=[ROLE_USER]], Book is already reserved]
+2024-06-13T16:11:17.808+05:00 DEBUG 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.aop.LoggingAspect                    : << METHOD RETURNED: libraryBook() result: book
+2024-06-13T16:11:17.808+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 9
+2024-06-13T16:11:17.823+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 1
+2024-06-13T16:11:17.823+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 2
+2024-06-13T16:11:17.823+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 3
+2024-06-13T16:11:17.823+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 4
+2024-06-13T16:11:17.823+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 5
+2024-06-13T16:11:17.823+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 6
+2024-06-13T16:11:17.823+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 7
+2024-06-13T16:11:17.823+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 8
+2024-06-13T16:11:17.823+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 9
+2024-06-13T16:11:17.823+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 10
+2024-06-13T16:11:17.823+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 11
+2024-06-13T16:11:17.823+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 12
+2024-06-13T16:11:17.823+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 13
+2024-06-13T16:11:17.823+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 14
+2024-06-13T16:11:17.823+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 15
+2024-06-13T16:11:17.823+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 16
+2024-06-13T16:11:17.823+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 17
+2024-06-13T16:11:17.823+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 18
+2024-06-13T16:11:17.839+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 19
+2024-06-13T16:11:17.839+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 20
+2024-06-13T16:11:17.839+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 21
+2024-06-13T16:11:17.839+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 22
+2024-06-13T16:11:17.839+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 23
+2024-06-13T16:11:17.839+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 24
+2024-06-13T16:11:17.839+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 25
+2024-06-13T16:11:17.839+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 26
+2024-06-13T16:11:17.839+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 27
+2024-06-13T16:11:17.839+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 28
+2024-06-13T16:11:17.839+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 29
+2024-06-13T16:11:17.839+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 30
+2024-06-13T16:11:17.839+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 31
+2024-06-13T16:11:17.839+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 32
+2024-06-13T16:11:17.839+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 33
+2024-06-13T16:11:17.839+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 34
+2024-06-13T16:11:17.839+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 35
+2024-06-13T16:11:17.839+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 36
+2024-06-13T16:11:17.839+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 37
+2024-06-13T16:11:17.839+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 38
+2024-06-13T16:11:17.839+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 39
+2024-06-13T16:11:17.839+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 40
+2024-06-13T16:11:17.839+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 41
+2024-06-13T16:11:17.839+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 42
+2024-06-13T16:11:17.839+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 43
+2024-06-13T16:11:17.839+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 44
+2024-06-13T16:11:17.839+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 45
+2024-06-13T16:11:17.839+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 46
+2024-06-13T16:11:17.839+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 47
+2024-06-13T16:11:17.839+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 48
+2024-06-13T16:11:17.839+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 49
+2024-06-13T16:11:17.839+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 50
+2024-06-13T16:11:19.636+05:00 DEBUG 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-4] n.l.aop.LoggingAspect                    : >> CALLED METHOD: reserveBook() with args: [9, UsernamePasswordAuthenticationToken [Principal=AccountEntity(id=36, firstName=Urson, lastName=Cosham, email=ucoshamz@free.fr, password=$2a$10$2Uz4lxxlJG9/iM2fpjmP5OWBAPPMD7X0zb.zcfMQV9HSzuwIX5h0u, role=USER), Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=null], Granted Authorities=[ROLE_USER]]]
+2024-06-13T16:11:19.636+05:00 DEBUG 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-4] n.l.aop.LoggingAspect                    : << METHOD RETURNED: reserveBook() result: redirect:/library/books/9?error=Book is already reserved
+2024-06-13T16:11:19.636+05:00 DEBUG 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.aop.LoggingAspect                    : >> CALLED METHOD: libraryBook() with args: [{}, 9, UsernamePasswordAuthenticationToken [Principal=AccountEntity(id=36, firstName=Urson, lastName=Cosham, email=ucoshamz@free.fr, password=$2a$10$2Uz4lxxlJG9/iM2fpjmP5OWBAPPMD7X0zb.zcfMQV9HSzuwIX5h0u, role=USER), Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=null], Granted Authorities=[ROLE_USER]], Book is already reserved]
+2024-06-13T16:11:19.653+05:00 DEBUG 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.aop.LoggingAspect                    : << METHOD RETURNED: libraryBook() result: book
+2024-06-13T16:11:19.653+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 9
+2024-06-13T16:11:19.653+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 1
+2024-06-13T16:11:19.653+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 2
+2024-06-13T16:11:19.653+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 3
+2024-06-13T16:11:19.667+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 4
+2024-06-13T16:11:19.667+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 5
+2024-06-13T16:11:19.667+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 6
+2024-06-13T16:11:19.667+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 7
+2024-06-13T16:11:19.667+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 8
+2024-06-13T16:11:19.667+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 9
+2024-06-13T16:11:19.667+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 10
+2024-06-13T16:11:19.670+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 11
+2024-06-13T16:11:19.670+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 12
+2024-06-13T16:11:19.670+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 13
+2024-06-13T16:11:19.670+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 14
+2024-06-13T16:11:19.670+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 15
+2024-06-13T16:11:19.670+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 16
+2024-06-13T16:11:19.670+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 17
+2024-06-13T16:11:19.670+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 18
+2024-06-13T16:11:19.670+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 19
+2024-06-13T16:11:19.670+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 20
+2024-06-13T16:11:19.670+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 21
+2024-06-13T16:11:19.670+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 22
+2024-06-13T16:11:19.670+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 23
+2024-06-13T16:11:19.670+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 24
+2024-06-13T16:11:19.670+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 25
+2024-06-13T16:11:19.670+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 26
+2024-06-13T16:11:19.670+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 27
+2024-06-13T16:11:19.670+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 28
+2024-06-13T16:11:19.670+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 29
+2024-06-13T16:11:19.670+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 30
+2024-06-13T16:11:19.670+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 31
+2024-06-13T16:11:19.670+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 32
+2024-06-13T16:11:19.670+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 33
+2024-06-13T16:11:19.682+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 34
+2024-06-13T16:11:19.683+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 35
+2024-06-13T16:11:19.683+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 36
+2024-06-13T16:11:19.683+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 37
+2024-06-13T16:11:19.683+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 38
+2024-06-13T16:11:19.683+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 39
+2024-06-13T16:11:19.688+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 40
+2024-06-13T16:11:19.688+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 41
+2024-06-13T16:11:19.689+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 42
+2024-06-13T16:11:19.690+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 43
+2024-06-13T16:11:19.691+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 44
+2024-06-13T16:11:19.691+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 45
+2024-06-13T16:11:19.691+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 46
+2024-06-13T16:11:19.691+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 47
+2024-06-13T16:11:19.691+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 48
+2024-06-13T16:11:19.691+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 49
+2024-06-13T16:11:19.691+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 50
+2024-06-13T16:11:21.037+05:00 DEBUG 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-5] n.l.aop.LoggingAspect                    : >> CALLED METHOD: reserveBook() with args: [9, UsernamePasswordAuthenticationToken [Principal=AccountEntity(id=36, firstName=Urson, lastName=Cosham, email=ucoshamz@free.fr, password=$2a$10$2Uz4lxxlJG9/iM2fpjmP5OWBAPPMD7X0zb.zcfMQV9HSzuwIX5h0u, role=USER), Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=null], Granted Authorities=[ROLE_USER]]]
+2024-06-13T16:11:21.037+05:00 DEBUG 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-5] n.l.aop.LoggingAspect                    : << METHOD RETURNED: reserveBook() result: redirect:/library/books/9?error=Book is already reserved
+2024-06-13T16:11:21.052+05:00 DEBUG 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-3] n.l.aop.LoggingAspect                    : >> CALLED METHOD: libraryBook() with args: [{}, 9, UsernamePasswordAuthenticationToken [Principal=AccountEntity(id=36, firstName=Urson, lastName=Cosham, email=ucoshamz@free.fr, password=$2a$10$2Uz4lxxlJG9/iM2fpjmP5OWBAPPMD7X0zb.zcfMQV9HSzuwIX5h0u, role=USER), Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=null], Granted Authorities=[ROLE_USER]], Book is already reserved]
+2024-06-13T16:11:21.052+05:00 DEBUG 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-3] n.l.aop.LoggingAspect                    : << METHOD RETURNED: libraryBook() result: book
+2024-06-13T16:11:21.073+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-3] n.l.util.AuthorByIdConverter             : Converting author id: 9
+2024-06-13T16:11:21.082+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-3] n.l.util.AuthorByIdConverter             : Converting author id: 1
+2024-06-13T16:11:21.083+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-3] n.l.util.AuthorByIdConverter             : Converting author id: 2
+2024-06-13T16:11:21.084+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-3] n.l.util.AuthorByIdConverter             : Converting author id: 3
+2024-06-13T16:11:21.085+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-3] n.l.util.AuthorByIdConverter             : Converting author id: 4
+2024-06-13T16:11:21.085+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-3] n.l.util.AuthorByIdConverter             : Converting author id: 5
+2024-06-13T16:11:21.085+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-3] n.l.util.AuthorByIdConverter             : Converting author id: 6
+2024-06-13T16:11:21.085+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-3] n.l.util.AuthorByIdConverter             : Converting author id: 7
+2024-06-13T16:11:21.085+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-3] n.l.util.AuthorByIdConverter             : Converting author id: 8
+2024-06-13T16:11:21.085+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-3] n.l.util.AuthorByIdConverter             : Converting author id: 9
+2024-06-13T16:11:21.085+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-3] n.l.util.AuthorByIdConverter             : Converting author id: 10
+2024-06-13T16:11:21.085+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-3] n.l.util.AuthorByIdConverter             : Converting author id: 11
+2024-06-13T16:11:21.085+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-3] n.l.util.AuthorByIdConverter             : Converting author id: 12
+2024-06-13T16:11:21.085+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-3] n.l.util.AuthorByIdConverter             : Converting author id: 13
+2024-06-13T16:11:21.085+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-3] n.l.util.AuthorByIdConverter             : Converting author id: 14
+2024-06-13T16:11:21.085+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-3] n.l.util.AuthorByIdConverter             : Converting author id: 15
+2024-06-13T16:11:21.085+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-3] n.l.util.AuthorByIdConverter             : Converting author id: 16
+2024-06-13T16:11:21.085+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-3] n.l.util.AuthorByIdConverter             : Converting author id: 17
+2024-06-13T16:11:21.085+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-3] n.l.util.AuthorByIdConverter             : Converting author id: 18
+2024-06-13T16:11:21.085+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-3] n.l.util.AuthorByIdConverter             : Converting author id: 19
+2024-06-13T16:11:21.085+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-3] n.l.util.AuthorByIdConverter             : Converting author id: 20
+2024-06-13T16:11:21.085+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-3] n.l.util.AuthorByIdConverter             : Converting author id: 21
+2024-06-13T16:11:21.085+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-3] n.l.util.AuthorByIdConverter             : Converting author id: 22
+2024-06-13T16:11:21.085+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-3] n.l.util.AuthorByIdConverter             : Converting author id: 23
+2024-06-13T16:11:21.085+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-3] n.l.util.AuthorByIdConverter             : Converting author id: 24
+2024-06-13T16:11:21.085+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-3] n.l.util.AuthorByIdConverter             : Converting author id: 25
+2024-06-13T16:11:21.085+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-3] n.l.util.AuthorByIdConverter             : Converting author id: 26
+2024-06-13T16:11:21.085+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-3] n.l.util.AuthorByIdConverter             : Converting author id: 27
+2024-06-13T16:11:21.085+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-3] n.l.util.AuthorByIdConverter             : Converting author id: 28
+2024-06-13T16:11:21.085+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-3] n.l.util.AuthorByIdConverter             : Converting author id: 29
+2024-06-13T16:11:21.085+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-3] n.l.util.AuthorByIdConverter             : Converting author id: 30
+2024-06-13T16:11:21.085+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-3] n.l.util.AuthorByIdConverter             : Converting author id: 31
+2024-06-13T16:11:21.085+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-3] n.l.util.AuthorByIdConverter             : Converting author id: 32
+2024-06-13T16:11:21.085+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-3] n.l.util.AuthorByIdConverter             : Converting author id: 33
+2024-06-13T16:11:21.085+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-3] n.l.util.AuthorByIdConverter             : Converting author id: 34
+2024-06-13T16:11:21.085+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-3] n.l.util.AuthorByIdConverter             : Converting author id: 35
+2024-06-13T16:11:21.085+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-3] n.l.util.AuthorByIdConverter             : Converting author id: 36
+2024-06-13T16:11:21.085+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-3] n.l.util.AuthorByIdConverter             : Converting author id: 37
+2024-06-13T16:11:21.085+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-3] n.l.util.AuthorByIdConverter             : Converting author id: 38
+2024-06-13T16:11:21.085+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-3] n.l.util.AuthorByIdConverter             : Converting author id: 39
+2024-06-13T16:11:21.085+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-3] n.l.util.AuthorByIdConverter             : Converting author id: 40
+2024-06-13T16:11:21.085+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-3] n.l.util.AuthorByIdConverter             : Converting author id: 41
+2024-06-13T16:11:21.085+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-3] n.l.util.AuthorByIdConverter             : Converting author id: 42
+2024-06-13T16:11:21.085+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-3] n.l.util.AuthorByIdConverter             : Converting author id: 43
+2024-06-13T16:11:21.085+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-3] n.l.util.AuthorByIdConverter             : Converting author id: 44
+2024-06-13T16:11:21.085+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-3] n.l.util.AuthorByIdConverter             : Converting author id: 45
+2024-06-13T16:11:21.085+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-3] n.l.util.AuthorByIdConverter             : Converting author id: 46
+2024-06-13T16:11:21.085+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-3] n.l.util.AuthorByIdConverter             : Converting author id: 47
+2024-06-13T16:11:21.085+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-3] n.l.util.AuthorByIdConverter             : Converting author id: 48
+2024-06-13T16:11:21.085+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-3] n.l.util.AuthorByIdConverter             : Converting author id: 49
+2024-06-13T16:11:21.100+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-3] n.l.util.AuthorByIdConverter             : Converting author id: 50
+2024-06-13T16:11:22.600+05:00 DEBUG 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-8] n.l.aop.LoggingAspect                    : >> CALLED METHOD: reserveBook() with args: [9, UsernamePasswordAuthenticationToken [Principal=AccountEntity(id=36, firstName=Urson, lastName=Cosham, email=ucoshamz@free.fr, password=$2a$10$2Uz4lxxlJG9/iM2fpjmP5OWBAPPMD7X0zb.zcfMQV9HSzuwIX5h0u, role=USER), Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=null], Granted Authorities=[ROLE_USER]]]
+2024-06-13T16:11:22.600+05:00 DEBUG 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-8] n.l.aop.LoggingAspect                    : << METHOD RETURNED: reserveBook() result: redirect:/library/books/9?error=Book is already reserved
+2024-06-13T16:11:22.600+05:00 DEBUG 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.aop.LoggingAspect                    : >> CALLED METHOD: libraryBook() with args: [{}, 9, UsernamePasswordAuthenticationToken [Principal=AccountEntity(id=36, firstName=Urson, lastName=Cosham, email=ucoshamz@free.fr, password=$2a$10$2Uz4lxxlJG9/iM2fpjmP5OWBAPPMD7X0zb.zcfMQV9HSzuwIX5h0u, role=USER), Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=null], Granted Authorities=[ROLE_USER]], Book is already reserved]
+2024-06-13T16:11:22.615+05:00 DEBUG 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.aop.LoggingAspect                    : << METHOD RETURNED: libraryBook() result: book
+2024-06-13T16:11:22.630+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 9
+2024-06-13T16:11:22.630+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 1
+2024-06-13T16:11:22.630+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 2
+2024-06-13T16:11:22.630+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 3
+2024-06-13T16:11:22.630+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 4
+2024-06-13T16:11:22.630+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 5
+2024-06-13T16:11:22.630+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 6
+2024-06-13T16:11:22.630+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 7
+2024-06-13T16:11:22.630+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 8
+2024-06-13T16:11:22.630+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 9
+2024-06-13T16:11:22.637+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 10
+2024-06-13T16:11:22.637+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 11
+2024-06-13T16:11:22.637+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 12
+2024-06-13T16:11:22.637+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 13
+2024-06-13T16:11:22.637+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 14
+2024-06-13T16:11:22.637+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 15
+2024-06-13T16:11:22.637+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 16
+2024-06-13T16:11:22.637+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 17
+2024-06-13T16:11:22.637+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 18
+2024-06-13T16:11:22.637+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 19
+2024-06-13T16:11:22.637+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 20
+2024-06-13T16:11:22.637+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 21
+2024-06-13T16:11:22.637+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 22
+2024-06-13T16:11:22.637+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 23
+2024-06-13T16:11:22.637+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 24
+2024-06-13T16:11:22.637+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 25
+2024-06-13T16:11:22.637+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 26
+2024-06-13T16:11:22.637+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 27
+2024-06-13T16:11:22.637+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 28
+2024-06-13T16:11:22.637+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 29
+2024-06-13T16:11:22.637+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 30
+2024-06-13T16:11:22.637+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 31
+2024-06-13T16:11:22.637+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 32
+2024-06-13T16:11:22.637+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 33
+2024-06-13T16:11:22.637+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 34
+2024-06-13T16:11:22.637+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 35
+2024-06-13T16:11:22.637+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 36
+2024-06-13T16:11:22.637+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 37
+2024-06-13T16:11:22.637+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 38
+2024-06-13T16:11:22.637+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 39
+2024-06-13T16:11:22.637+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 40
+2024-06-13T16:11:22.637+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 41
+2024-06-13T16:11:22.637+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 42
+2024-06-13T16:11:22.637+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 43
+2024-06-13T16:11:22.646+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 44
+2024-06-13T16:11:22.646+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 45
+2024-06-13T16:11:22.646+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 46
+2024-06-13T16:11:22.646+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 47
+2024-06-13T16:11:22.646+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 48
+2024-06-13T16:11:22.646+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 49
+2024-06-13T16:11:22.646+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-7] n.l.util.AuthorByIdConverter             : Converting author id: 50
+2024-06-13T16:11:37.939+05:00 DEBUG 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-3] n.l.aop.LoggingAspect                    : >> CALLED METHOD: libraryBooks() with args: [{}, Page request [number: 0, size 5, sort: title: ASC], null, UsernamePasswordAuthenticationToken [Principal=AccountEntity(id=36, firstName=Urson, lastName=Cosham, email=ucoshamz@free.fr, password=$2a$10$2Uz4lxxlJG9/iM2fpjmP5OWBAPPMD7X0zb.zcfMQV9HSzuwIX5h0u, role=USER), Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=null], Granted Authorities=[ROLE_USER]]]
+2024-06-13T16:11:37.955+05:00 DEBUG 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-3] n.l.aop.LoggingAspect                    : << METHOD RETURNED: libraryBooks() result: books
+2024-06-13T16:11:39.861+05:00 DEBUG 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-2] n.l.aop.LoggingAspect                    : >> CALLED METHOD: libraryBook() with args: [{}, 25, UsernamePasswordAuthenticationToken [Principal=AccountEntity(id=36, firstName=Urson, lastName=Cosham, email=ucoshamz@free.fr, password=$2a$10$2Uz4lxxlJG9/iM2fpjmP5OWBAPPMD7X0zb.zcfMQV9HSzuwIX5h0u, role=USER), Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=null], Granted Authorities=[ROLE_USER]], null]
+2024-06-13T16:11:39.862+05:00 DEBUG 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-2] n.l.aop.LoggingAspect                    : << METHOD RETURNED: libraryBook() result: book
+2024-06-13T16:11:39.877+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-2] n.l.util.AuthorByIdConverter             : Converting author id: 25
+2024-06-13T16:11:39.877+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-2] n.l.util.AuthorByIdConverter             : Converting author id: 1
+2024-06-13T16:11:39.877+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-2] n.l.util.AuthorByIdConverter             : Converting author id: 2
+2024-06-13T16:11:39.877+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-2] n.l.util.AuthorByIdConverter             : Converting author id: 3
+2024-06-13T16:11:39.877+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-2] n.l.util.AuthorByIdConverter             : Converting author id: 4
+2024-06-13T16:11:39.877+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-2] n.l.util.AuthorByIdConverter             : Converting author id: 5
+2024-06-13T16:11:39.877+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-2] n.l.util.AuthorByIdConverter             : Converting author id: 6
+2024-06-13T16:11:39.877+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-2] n.l.util.AuthorByIdConverter             : Converting author id: 7
+2024-06-13T16:11:39.877+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-2] n.l.util.AuthorByIdConverter             : Converting author id: 8
+2024-06-13T16:11:39.877+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-2] n.l.util.AuthorByIdConverter             : Converting author id: 9
+2024-06-13T16:11:39.877+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-2] n.l.util.AuthorByIdConverter             : Converting author id: 10
+2024-06-13T16:11:39.877+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-2] n.l.util.AuthorByIdConverter             : Converting author id: 11
+2024-06-13T16:11:39.877+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-2] n.l.util.AuthorByIdConverter             : Converting author id: 12
+2024-06-13T16:11:39.877+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-2] n.l.util.AuthorByIdConverter             : Converting author id: 13
+2024-06-13T16:11:39.877+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-2] n.l.util.AuthorByIdConverter             : Converting author id: 14
+2024-06-13T16:11:39.877+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-2] n.l.util.AuthorByIdConverter             : Converting author id: 15
+2024-06-13T16:11:39.877+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-2] n.l.util.AuthorByIdConverter             : Converting author id: 16
+2024-06-13T16:11:39.877+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-2] n.l.util.AuthorByIdConverter             : Converting author id: 17
+2024-06-13T16:11:39.877+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-2] n.l.util.AuthorByIdConverter             : Converting author id: 18
+2024-06-13T16:11:39.877+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-2] n.l.util.AuthorByIdConverter             : Converting author id: 19
+2024-06-13T16:11:39.877+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-2] n.l.util.AuthorByIdConverter             : Converting author id: 20
+2024-06-13T16:11:39.877+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-2] n.l.util.AuthorByIdConverter             : Converting author id: 21
+2024-06-13T16:11:39.892+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-2] n.l.util.AuthorByIdConverter             : Converting author id: 22
+2024-06-13T16:11:39.892+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-2] n.l.util.AuthorByIdConverter             : Converting author id: 23
+2024-06-13T16:11:39.892+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-2] n.l.util.AuthorByIdConverter             : Converting author id: 24
+2024-06-13T16:11:39.892+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-2] n.l.util.AuthorByIdConverter             : Converting author id: 25
+2024-06-13T16:11:39.894+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-2] n.l.util.AuthorByIdConverter             : Converting author id: 26
+2024-06-13T16:11:39.894+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-2] n.l.util.AuthorByIdConverter             : Converting author id: 27
+2024-06-13T16:11:39.894+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-2] n.l.util.AuthorByIdConverter             : Converting author id: 28
+2024-06-13T16:11:39.894+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-2] n.l.util.AuthorByIdConverter             : Converting author id: 29
+2024-06-13T16:11:39.894+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-2] n.l.util.AuthorByIdConverter             : Converting author id: 30
+2024-06-13T16:11:39.894+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-2] n.l.util.AuthorByIdConverter             : Converting author id: 31
+2024-06-13T16:11:39.894+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-2] n.l.util.AuthorByIdConverter             : Converting author id: 32
+2024-06-13T16:11:39.894+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-2] n.l.util.AuthorByIdConverter             : Converting author id: 33
+2024-06-13T16:11:39.894+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-2] n.l.util.AuthorByIdConverter             : Converting author id: 34
+2024-06-13T16:11:39.894+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-2] n.l.util.AuthorByIdConverter             : Converting author id: 35
+2024-06-13T16:11:39.894+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-2] n.l.util.AuthorByIdConverter             : Converting author id: 36
+2024-06-13T16:11:39.894+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-2] n.l.util.AuthorByIdConverter             : Converting author id: 37
+2024-06-13T16:11:39.894+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-2] n.l.util.AuthorByIdConverter             : Converting author id: 38
+2024-06-13T16:11:39.894+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-2] n.l.util.AuthorByIdConverter             : Converting author id: 39
+2024-06-13T16:11:39.894+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-2] n.l.util.AuthorByIdConverter             : Converting author id: 40
+2024-06-13T16:11:39.894+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-2] n.l.util.AuthorByIdConverter             : Converting author id: 41
+2024-06-13T16:11:39.894+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-2] n.l.util.AuthorByIdConverter             : Converting author id: 42
+2024-06-13T16:11:39.894+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-2] n.l.util.AuthorByIdConverter             : Converting author id: 43
+2024-06-13T16:11:39.894+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-2] n.l.util.AuthorByIdConverter             : Converting author id: 44
+2024-06-13T16:11:39.894+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-2] n.l.util.AuthorByIdConverter             : Converting author id: 45
+2024-06-13T16:11:39.894+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-2] n.l.util.AuthorByIdConverter             : Converting author id: 46
+2024-06-13T16:11:39.894+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-2] n.l.util.AuthorByIdConverter             : Converting author id: 47
+2024-06-13T16:11:39.894+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-2] n.l.util.AuthorByIdConverter             : Converting author id: 48
+2024-06-13T16:11:39.894+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-2] n.l.util.AuthorByIdConverter             : Converting author id: 49
+2024-06-13T16:11:39.894+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-2] n.l.util.AuthorByIdConverter             : Converting author id: 50
+2024-06-13T16:11:40.964+05:00 DEBUG 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-3] n.l.aop.LoggingAspect                    : >> CALLED METHOD: reserveBook() with args: [25, UsernamePasswordAuthenticationToken [Principal=AccountEntity(id=36, firstName=Urson, lastName=Cosham, email=ucoshamz@free.fr, password=$2a$10$2Uz4lxxlJG9/iM2fpjmP5OWBAPPMD7X0zb.zcfMQV9HSzuwIX5h0u, role=USER), Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=null], Granted Authorities=[ROLE_USER]]]
+2024-06-13T16:11:40.980+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-3] n.l.a.listeners.NotificationListener     : Notification sent to ucoshamz@free.fr
+2024-06-13T16:11:40.980+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-3] n.l.a.listeners.NotificationListener     : Subject: Book reservation successful
+2024-06-13T16:11:40.980+05:00 DEBUG 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-3] n.l.aop.LoggingAspect                    : << METHOD RETURNED: reserveBook() result: redirect:/library/books/25
+2024-06-13T16:11:40.996+05:00 DEBUG 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-9] n.l.aop.LoggingAspect                    : >> CALLED METHOD: libraryBook() with args: [{}, 25, UsernamePasswordAuthenticationToken [Principal=AccountEntity(id=36, firstName=Urson, lastName=Cosham, email=ucoshamz@free.fr, password=$2a$10$2Uz4lxxlJG9/iM2fpjmP5OWBAPPMD7X0zb.zcfMQV9HSzuwIX5h0u, role=USER), Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=null], Granted Authorities=[ROLE_USER]], null]
+2024-06-13T16:11:40.996+05:00 DEBUG 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-9] n.l.aop.LoggingAspect                    : << METHOD RETURNED: libraryBook() result: book
+2024-06-13T16:11:41.012+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-9] n.l.util.AuthorByIdConverter             : Converting author id: 25
+2024-06-13T16:11:41.012+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-9] n.l.util.AuthorByIdConverter             : Converting author id: 1
+2024-06-13T16:11:41.012+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-9] n.l.util.AuthorByIdConverter             : Converting author id: 2
+2024-06-13T16:11:41.013+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-9] n.l.util.AuthorByIdConverter             : Converting author id: 3
+2024-06-13T16:11:41.013+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-9] n.l.util.AuthorByIdConverter             : Converting author id: 4
+2024-06-13T16:11:41.014+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-9] n.l.util.AuthorByIdConverter             : Converting author id: 5
+2024-06-13T16:11:41.015+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-9] n.l.util.AuthorByIdConverter             : Converting author id: 6
+2024-06-13T16:11:41.016+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-9] n.l.util.AuthorByIdConverter             : Converting author id: 7
+2024-06-13T16:11:41.016+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-9] n.l.util.AuthorByIdConverter             : Converting author id: 8
+2024-06-13T16:11:41.016+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-9] n.l.util.AuthorByIdConverter             : Converting author id: 9
+2024-06-13T16:11:41.016+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-9] n.l.util.AuthorByIdConverter             : Converting author id: 10
+2024-06-13T16:11:41.016+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-9] n.l.util.AuthorByIdConverter             : Converting author id: 11
+2024-06-13T16:11:41.016+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-9] n.l.util.AuthorByIdConverter             : Converting author id: 12
+2024-06-13T16:11:41.016+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-9] n.l.util.AuthorByIdConverter             : Converting author id: 13
+2024-06-13T16:11:41.016+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-9] n.l.util.AuthorByIdConverter             : Converting author id: 14
+2024-06-13T16:11:41.016+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-9] n.l.util.AuthorByIdConverter             : Converting author id: 15
+2024-06-13T16:11:41.016+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-9] n.l.util.AuthorByIdConverter             : Converting author id: 16
+2024-06-13T16:11:41.016+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-9] n.l.util.AuthorByIdConverter             : Converting author id: 17
+2024-06-13T16:11:41.016+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-9] n.l.util.AuthorByIdConverter             : Converting author id: 18
+2024-06-13T16:11:41.019+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-9] n.l.util.AuthorByIdConverter             : Converting author id: 19
+2024-06-13T16:11:41.019+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-9] n.l.util.AuthorByIdConverter             : Converting author id: 20
+2024-06-13T16:11:41.019+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-9] n.l.util.AuthorByIdConverter             : Converting author id: 21
+2024-06-13T16:11:41.019+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-9] n.l.util.AuthorByIdConverter             : Converting author id: 22
+2024-06-13T16:11:41.019+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-9] n.l.util.AuthorByIdConverter             : Converting author id: 23
+2024-06-13T16:11:41.019+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-9] n.l.util.AuthorByIdConverter             : Converting author id: 24
+2024-06-13T16:11:41.019+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-9] n.l.util.AuthorByIdConverter             : Converting author id: 25
+2024-06-13T16:11:41.019+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-9] n.l.util.AuthorByIdConverter             : Converting author id: 26
+2024-06-13T16:11:41.019+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-9] n.l.util.AuthorByIdConverter             : Converting author id: 27
+2024-06-13T16:11:41.019+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-9] n.l.util.AuthorByIdConverter             : Converting author id: 28
+2024-06-13T16:11:41.019+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-9] n.l.util.AuthorByIdConverter             : Converting author id: 29
+2024-06-13T16:11:41.019+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-9] n.l.util.AuthorByIdConverter             : Converting author id: 30
+2024-06-13T16:11:41.019+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-9] n.l.util.AuthorByIdConverter             : Converting author id: 31
+2024-06-13T16:11:41.019+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-9] n.l.util.AuthorByIdConverter             : Converting author id: 32
+2024-06-13T16:11:41.019+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-9] n.l.util.AuthorByIdConverter             : Converting author id: 33
+2024-06-13T16:11:41.019+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-9] n.l.util.AuthorByIdConverter             : Converting author id: 34
+2024-06-13T16:11:41.019+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-9] n.l.util.AuthorByIdConverter             : Converting author id: 35
+2024-06-13T16:11:41.019+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-9] n.l.util.AuthorByIdConverter             : Converting author id: 36
+2024-06-13T16:11:41.019+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-9] n.l.util.AuthorByIdConverter             : Converting author id: 37
+2024-06-13T16:11:41.019+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-9] n.l.util.AuthorByIdConverter             : Converting author id: 38
+2024-06-13T16:11:41.019+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-9] n.l.util.AuthorByIdConverter             : Converting author id: 39
+2024-06-13T16:11:41.019+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-9] n.l.util.AuthorByIdConverter             : Converting author id: 40
+2024-06-13T16:11:41.019+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-9] n.l.util.AuthorByIdConverter             : Converting author id: 41
+2024-06-13T16:11:41.019+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-9] n.l.util.AuthorByIdConverter             : Converting author id: 42
+2024-06-13T16:11:41.019+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-9] n.l.util.AuthorByIdConverter             : Converting author id: 43
+2024-06-13T16:11:41.019+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-9] n.l.util.AuthorByIdConverter             : Converting author id: 44
+2024-06-13T16:11:41.019+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-9] n.l.util.AuthorByIdConverter             : Converting author id: 45
+2024-06-13T16:11:41.019+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-9] n.l.util.AuthorByIdConverter             : Converting author id: 46
+2024-06-13T16:11:41.019+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-9] n.l.util.AuthorByIdConverter             : Converting author id: 47
+2024-06-13T16:11:41.019+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-9] n.l.util.AuthorByIdConverter             : Converting author id: 48
+2024-06-13T16:11:41.019+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-9] n.l.util.AuthorByIdConverter             : Converting author id: 49
+2024-06-13T16:11:41.019+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-9] n.l.util.AuthorByIdConverter             : Converting author id: 50
+2024-06-13T16:11:42.242+05:00 DEBUG 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-2] n.l.aop.LoggingAspect                    : >> CALLED METHOD: reserveBook() with args: [25, UsernamePasswordAuthenticationToken [Principal=AccountEntity(id=36, firstName=Urson, lastName=Cosham, email=ucoshamz@free.fr, password=$2a$10$2Uz4lxxlJG9/iM2fpjmP5OWBAPPMD7X0zb.zcfMQV9HSzuwIX5h0u, role=USER), Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=null], Granted Authorities=[ROLE_USER]]]
+2024-06-13T16:11:42.257+05:00 DEBUG 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-2] n.l.aop.LoggingAspect                    : << METHOD RETURNED: reserveBook() result: redirect:/library/books/25?error=Book is already reserved
+2024-06-13T16:11:42.257+05:00 DEBUG 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.aop.LoggingAspect                    : >> CALLED METHOD: libraryBook() with args: [{}, 25, UsernamePasswordAuthenticationToken [Principal=AccountEntity(id=36, firstName=Urson, lastName=Cosham, email=ucoshamz@free.fr, password=$2a$10$2Uz4lxxlJG9/iM2fpjmP5OWBAPPMD7X0zb.zcfMQV9HSzuwIX5h0u, role=USER), Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=null], Granted Authorities=[ROLE_USER]], Book is already reserved]
+2024-06-13T16:11:42.273+05:00 DEBUG 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.aop.LoggingAspect                    : << METHOD RETURNED: libraryBook() result: book
+2024-06-13T16:11:42.273+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 25
+2024-06-13T16:11:42.273+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 1
+2024-06-13T16:11:42.273+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 2
+2024-06-13T16:11:42.273+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 3
+2024-06-13T16:11:42.273+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 4
+2024-06-13T16:11:42.273+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 5
+2024-06-13T16:11:42.273+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 6
+2024-06-13T16:11:42.286+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 7
+2024-06-13T16:11:42.286+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 8
+2024-06-13T16:11:42.286+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 9
+2024-06-13T16:11:42.286+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 10
+2024-06-13T16:11:42.286+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 11
+2024-06-13T16:11:42.286+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 12
+2024-06-13T16:11:42.286+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 13
+2024-06-13T16:11:42.286+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 14
+2024-06-13T16:11:42.286+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 15
+2024-06-13T16:11:42.286+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 16
+2024-06-13T16:11:42.286+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 17
+2024-06-13T16:11:42.286+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 18
+2024-06-13T16:11:42.288+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 19
+2024-06-13T16:11:42.288+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 20
+2024-06-13T16:11:42.288+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 21
+2024-06-13T16:11:42.288+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 22
+2024-06-13T16:11:42.288+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 23
+2024-06-13T16:11:42.288+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 24
+2024-06-13T16:11:42.288+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 25
+2024-06-13T16:11:42.288+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 26
+2024-06-13T16:11:42.288+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 27
+2024-06-13T16:11:42.288+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 28
+2024-06-13T16:11:42.288+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 29
+2024-06-13T16:11:42.288+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 30
+2024-06-13T16:11:42.288+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 31
+2024-06-13T16:11:42.288+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 32
+2024-06-13T16:11:42.288+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 33
+2024-06-13T16:11:42.288+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 34
+2024-06-13T16:11:42.288+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 35
+2024-06-13T16:11:42.288+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 36
+2024-06-13T16:11:42.288+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 37
+2024-06-13T16:11:42.288+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 38
+2024-06-13T16:11:42.288+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 39
+2024-06-13T16:11:42.288+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 40
+2024-06-13T16:11:42.288+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 41
+2024-06-13T16:11:42.288+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 42
+2024-06-13T16:11:42.288+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 43
+2024-06-13T16:11:42.288+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 44
+2024-06-13T16:11:42.288+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 45
+2024-06-13T16:11:42.288+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 46
+2024-06-13T16:11:42.288+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 47
+2024-06-13T16:11:42.288+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 48
+2024-06-13T16:11:42.288+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 49
+2024-06-13T16:11:42.288+05:00  INFO 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.util.AuthorByIdConverter             : Converting author id: 50
+2024-06-13T16:11:45.169+05:00 DEBUG 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-9] n.l.aop.LoggingAspect                    : >> CALLED METHOD: getNotifications() with args: [{}, UsernamePasswordAuthenticationToken [Principal=AccountEntity(id=36, firstName=Urson, lastName=Cosham, email=ucoshamz@free.fr, password=$2a$10$2Uz4lxxlJG9/iM2fpjmP5OWBAPPMD7X0zb.zcfMQV9HSzuwIX5h0u, role=USER), Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=null], Granted Authorities=[ROLE_USER]]]
+2024-06-13T16:11:45.169+05:00 DEBUG 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-9] n.l.aop.LoggingAspect                    : << METHOD RETURNED: getNotifications() result: notifications
+2024-06-13T16:11:49.106+05:00 DEBUG 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.aop.LoggingAspect                    : >> CALLED METHOD: home() with args: [{}, null]
+2024-06-13T16:11:49.106+05:00 DEBUG 11048 --- [LibraryManagementSystem] [http-nio-8001-exec-10] n.l.aop.LoggingAspect                    : << METHOD RETURNED: home() result: home
+2024-06-13T16:11:53.165+05:00  INFO 11048 --- [LibraryManagementSystem] [SpringApplicationShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NURBEK-HuaweiMatebookD151718277054911 paused.
+2024-06-13T16:11:53.171+05:00  INFO 11048 --- [LibraryManagementSystem] [SpringApplicationShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NURBEK-HuaweiMatebookD151718277054911 shutting down.
+2024-06-13T16:11:53.171+05:00  INFO 11048 --- [LibraryManagementSystem] [SpringApplicationShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NURBEK-HuaweiMatebookD151718277054911 paused.
+2024-06-13T16:11:53.171+05:00  INFO 11048 --- [LibraryManagementSystem] [SpringApplicationShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NURBEK-HuaweiMatebookD151718277054911 shutdown complete.
+2024-06-13T16:11:53.171+05:00  INFO 11048 --- [LibraryManagementSystem] [SpringApplicationShutdownHook] o.s.s.quartz.SchedulerFactoryBean        : Shutting down Quartz Scheduler
+2024-06-13T16:11:53.171+05:00  INFO 11048 --- [LibraryManagementSystem] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-13T16:11:53.171+05:00  WARN 11048 --- [LibraryManagementSystem] [SpringApplicationShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: База данных уже закрыта (чтобы отключить автоматическое закрытие базы данных при останове JVM, добавьте ";DB_CLOSE_ON_EXIT=FALSE" в URL)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-224]
+2024-06-13T16:11:53.171+05:00  INFO 11048 --- [LibraryManagementSystem] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : library - Shutdown initiated...
+2024-06-13T16:11:53.171+05:00  INFO 11048 --- [LibraryManagementSystem] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : library - Shutdown completed.

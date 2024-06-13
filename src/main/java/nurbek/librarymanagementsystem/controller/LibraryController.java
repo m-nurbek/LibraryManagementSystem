@@ -70,11 +70,15 @@ public class LibraryController {
     }
 
     @GetMapping("/books/{id}")
-    public String libraryBook(Model model, @PathVariable("id") long id, Principal principal) {
+    public String libraryBook(Model model, @PathVariable("id") long id, Principal principal, @RequestParam(value = "error", required = false) String error) {
         Book book = libraryService.getBookById(id).orElse(null);
 
         if (book == null) {
             return "error";
+        }
+
+        if (error != null) {
+            model.addAttribute("bookIsReservedError", error);
         }
 
         model.addAttribute("updatedBook", book); // updatedBook is used for updating book info
