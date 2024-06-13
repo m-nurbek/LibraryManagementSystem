@@ -18710,3 +18710,196 @@ Database is already closed (to disable automatic closing at VM shutdown, add ";D
 Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-224]
 2024-06-13T16:11:53.171+05:00  INFO 11048 --- [LibraryManagementSystem] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : library - Shutdown initiated...
 2024-06-13T16:11:53.171+05:00  INFO 11048 --- [LibraryManagementSystem] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : library - Shutdown completed.
+2024-06-13T16:16:33.366+05:00  INFO 16752 --- [LibraryManagementSystem] [restartedMain] n.l.LibraryManagementSystemApplication   : Starting LibraryManagementSystemApplication using Java 21.0.1 with PID 16752 (D:\EpamLearning\LibraryManagementSystem\target\classes started by Nurbek in D:\EpamLearning\LibraryManagementSystem)
+2024-06-13T16:16:33.368+05:00  INFO 16752 --- [LibraryManagementSystem] [restartedMain] n.l.LibraryManagementSystemApplication   : The following 1 profile is active: "dev"
+2024-06-13T16:16:33.410+05:00  INFO 16752 --- [LibraryManagementSystem] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-06-13T16:16:33.410+05:00  INFO 16752 --- [LibraryManagementSystem] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-06-13T16:16:34.207+05:00  INFO 16752 --- [LibraryManagementSystem] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-13T16:16:34.287+05:00  INFO 16752 --- [LibraryManagementSystem] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 72 ms. Found 5 JPA repository interfaces.
+2024-06-13T16:16:35.223+05:00  INFO 16752 --- [LibraryManagementSystem] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8001 (http)
+2024-06-13T16:16:35.235+05:00  INFO 16752 --- [LibraryManagementSystem] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-13T16:16:35.236+05:00  INFO 16752 --- [LibraryManagementSystem] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-06-13T16:16:35.278+05:00  INFO 16752 --- [LibraryManagementSystem] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-13T16:16:35.279+05:00  INFO 16752 --- [LibraryManagementSystem] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1868 ms
+2024-06-13T16:16:35.327+05:00  INFO 16752 --- [LibraryManagementSystem] [restartedMain] com.zaxxer.hikari.HikariDataSource       : library - Starting...
+2024-06-13T16:16:35.517+05:00  INFO 16752 --- [LibraryManagementSystem] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : library - Added connection conn0: url=jdbc:h2:mem:library user=ADMIN
+2024-06-13T16:16:35.518+05:00  INFO 16752 --- [LibraryManagementSystem] [restartedMain] com.zaxxer.hikari.HikariDataSource       : library - Start completed.
+2024-06-13T16:16:35.527+05:00  INFO 16752 --- [LibraryManagementSystem] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2'. Database available at 'jdbc:h2:mem:library'
+2024-06-13T16:16:35.687+05:00  INFO 16752 --- [LibraryManagementSystem] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-13T16:16:35.767+05:00  INFO 16752 --- [LibraryManagementSystem] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-06-13T16:16:35.810+05:00  INFO 16752 --- [LibraryManagementSystem] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-06-13T16:16:36.066+05:00  INFO 16752 --- [LibraryManagementSystem] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-13T16:16:36.121+05:00  WARN 16752 --- [LibraryManagementSystem] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-13T16:16:36.337+05:00  INFO 16752 --- [LibraryManagementSystem] [restartedMain] o.hibernate.id.enhanced.TableGenerator   : HHH000398: Explicit segment value for id generator [id_gen_table.gen_name] suggested; using default [account]
+2024-06-13T16:16:36.341+05:00  INFO 16752 --- [LibraryManagementSystem] [restartedMain] o.hibernate.id.enhanced.TableGenerator   : HHH000398: Explicit segment value for id generator [id_gen_table.gen_name] suggested; using default [book]
+2024-06-13T16:16:36.341+05:00  INFO 16752 --- [LibraryManagementSystem] [restartedMain] o.hibernate.id.enhanced.TableGenerator   : HHH000398: Explicit segment value for id generator [id_gen_table.gen_name] suggested; using default [notification]
+2024-06-13T16:16:36.341+05:00  INFO 16752 --- [LibraryManagementSystem] [restartedMain] o.hibernate.id.enhanced.TableGenerator   : HHH000398: Explicit segment value for id generator [id_gen_table.gen_name] suggested; using default [author]
+2024-06-13T16:16:36.342+05:00  INFO 16752 --- [LibraryManagementSystem] [restartedMain] o.hibernate.id.enhanced.TableGenerator   : HHH000398: Explicit segment value for id generator [id_gen_table.gen_name] suggested; using default [book_reservation]
+2024-06-13T16:16:37.090+05:00  INFO 16752 --- [LibraryManagementSystem] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-13T16:16:37.149+05:00  INFO 16752 --- [LibraryManagementSystem] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-13T16:16:37.649+05:00  INFO 16752 --- [LibraryManagementSystem] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-06-13T16:16:38.241+05:00  INFO 16752 --- [LibraryManagementSystem] [restartedMain] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2024-06-13T16:16:38.245+05:00  INFO 16752 --- [LibraryManagementSystem] [restartedMain] org.quartz.simpl.SimpleThreadPool        : Job execution threads will use class loader of thread: restartedMain
+2024-06-13T16:16:38.255+05:00  INFO 16752 --- [LibraryManagementSystem] [restartedMain] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2024-06-13T16:16:38.255+05:00  INFO 16752 --- [LibraryManagementSystem] [restartedMain] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.3.2 created.
+2024-06-13T16:16:38.260+05:00  INFO 16752 --- [LibraryManagementSystem] [restartedMain] o.s.s.quartz.LocalDataSourceJobStore     : Using db table-based data access locking (synchronization).
+2024-06-13T16:16:38.262+05:00  INFO 16752 --- [LibraryManagementSystem] [restartedMain] o.s.s.quartz.LocalDataSourceJobStore     : JobStoreCMT initialized.
+2024-06-13T16:16:38.262+05:00  INFO 16752 --- [LibraryManagementSystem] [restartedMain] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'quartzScheduler' with instanceId 'NURBEK-HuaweiMatebookD151718277398244'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 5 threads.
+  Using job-store 'org.springframework.scheduling.quartz.LocalDataSourceJobStore' - which supports persistence. and is clustered.
+
+2024-06-13T16:16:38.262+05:00  INFO 16752 --- [LibraryManagementSystem] [restartedMain] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2024-06-13T16:16:38.262+05:00  INFO 16752 --- [LibraryManagementSystem] [restartedMain] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.3.2
+2024-06-13T16:16:38.262+05:00  INFO 16752 --- [LibraryManagementSystem] [restartedMain] org.quartz.core.QuartzScheduler          : JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@2d0878fe
+2024-06-13T16:16:38.338+05:00  INFO 16752 --- [LibraryManagementSystem] [restartedMain] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NURBEK-HuaweiMatebookD151718277398244 started.
+2024-06-13T16:16:38.387+05:00  WARN 16752 --- [LibraryManagementSystem] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-13T16:16:38.937+05:00  INFO 16752 --- [LibraryManagementSystem] [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@32a23c17, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4bb5706f, org.springframework.security.web.context.SecurityContextHolderFilter@2927febd, org.springframework.security.web.header.HeaderWriterFilter@3425ed37, org.springframework.web.filter.CorsFilter@3e88a9d1, org.springframework.security.web.authentication.logout.LogoutFilter@ef2de8b, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@6edf2d06, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1f5cdfab, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2944c6c4, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5976518c, org.springframework.security.web.access.ExceptionTranslationFilter@3f04cd0a, org.springframework.security.web.access.intercept.AuthorizationFilter@769b2e17]
+2024-06-13T16:16:39.462+05:00  INFO 16752 --- [LibraryManagementSystem] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-06-13T16:16:39.500+05:00  INFO 16752 --- [LibraryManagementSystem] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8001 (http) with context path ''
+2024-06-13T16:16:39.507+05:00  INFO 16752 --- [LibraryManagementSystem] [restartedMain] n.l.LibraryManagementSystemApplication   : Started LibraryManagementSystemApplication in 6.552 seconds (process running for 7.309)
+2024-06-13T16:16:39.510+05:00  INFO 16752 --- [LibraryManagementSystem] [restartedMain] n.l.service.common.GreetingServiceImpl   : DEV PROFILE: Welcome to Library Management System
+2024-06-13T16:16:49.117+05:00  INFO 16752 --- [LibraryManagementSystem] [http-nio-8001-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-13T16:16:49.117+05:00  INFO 16752 --- [LibraryManagementSystem] [http-nio-8001-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-06-13T16:16:49.118+05:00  INFO 16752 --- [LibraryManagementSystem] [http-nio-8001-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-06-13T16:16:49.157+05:00 DEBUG 16752 --- [LibraryManagementSystem] [http-nio-8001-exec-1] n.l.aop.LoggingAspect                    : >> CALLED METHOD: home() with args: [{}, null]
+2024-06-13T16:16:49.158+05:00 DEBUG 16752 --- [LibraryManagementSystem] [http-nio-8001-exec-1] n.l.aop.LoggingAspect                    : << METHOD RETURNED: home() result: home
+2024-06-13T16:16:50.735+05:00 DEBUG 16752 --- [LibraryManagementSystem] [http-nio-8001-exec-3] n.l.aop.LoggingAspect                    : >> CALLED METHOD: libraryBooks() with args: [{}, Page request [number: 0, size 5, sort: title: ASC], null, null]
+2024-06-13T16:16:50.975+05:00 DEBUG 16752 --- [LibraryManagementSystem] [http-nio-8001-exec-3] n.l.aop.LoggingAspect                    : << METHOD RETURNED: libraryBooks() result: books
+2024-06-13T16:16:52.364+05:00 DEBUG 16752 --- [LibraryManagementSystem] [http-nio-8001-exec-8] n.l.aop.LoggingAspect                    : >> CALLED METHOD: libraryBook() with args: [{}, 9, null, null]
+2024-06-13T16:16:52.385+05:00 DEBUG 16752 --- [LibraryManagementSystem] [http-nio-8001-exec-8] n.l.aop.LoggingAspect                    : << METHOD RETURNED: libraryBook() result: book
+2024-06-13T16:16:52.444+05:00  INFO 16752 --- [LibraryManagementSystem] [http-nio-8001-exec-8] n.l.util.AuthorByIdConverter             : Converting author id: 9
+2024-06-13T16:16:52.449+05:00  INFO 16752 --- [LibraryManagementSystem] [http-nio-8001-exec-8] n.l.util.AuthorByIdConverter             : Converting author id: 1
+2024-06-13T16:16:52.451+05:00  INFO 16752 --- [LibraryManagementSystem] [http-nio-8001-exec-8] n.l.util.AuthorByIdConverter             : Converting author id: 2
+2024-06-13T16:16:52.453+05:00  INFO 16752 --- [LibraryManagementSystem] [http-nio-8001-exec-8] n.l.util.AuthorByIdConverter             : Converting author id: 3
+2024-06-13T16:16:52.454+05:00  INFO 16752 --- [LibraryManagementSystem] [http-nio-8001-exec-8] n.l.util.AuthorByIdConverter             : Converting author id: 4
+2024-06-13T16:16:52.455+05:00  INFO 16752 --- [LibraryManagementSystem] [http-nio-8001-exec-8] n.l.util.AuthorByIdConverter             : Converting author id: 5
+2024-06-13T16:16:52.456+05:00  INFO 16752 --- [LibraryManagementSystem] [http-nio-8001-exec-8] n.l.util.AuthorByIdConverter             : Converting author id: 6
+2024-06-13T16:16:52.457+05:00  INFO 16752 --- [LibraryManagementSystem] [http-nio-8001-exec-8] n.l.util.AuthorByIdConverter             : Converting author id: 7
+2024-06-13T16:16:52.458+05:00  INFO 16752 --- [LibraryManagementSystem] [http-nio-8001-exec-8] n.l.util.AuthorByIdConverter             : Converting author id: 8
+2024-06-13T16:16:52.458+05:00  INFO 16752 --- [LibraryManagementSystem] [http-nio-8001-exec-8] n.l.util.AuthorByIdConverter             : Converting author id: 9
+2024-06-13T16:16:52.459+05:00  INFO 16752 --- [LibraryManagementSystem] [http-nio-8001-exec-8] n.l.util.AuthorByIdConverter             : Converting author id: 10
+2024-06-13T16:16:52.459+05:00  INFO 16752 --- [LibraryManagementSystem] [http-nio-8001-exec-8] n.l.util.AuthorByIdConverter             : Converting author id: 11
+2024-06-13T16:16:52.460+05:00  INFO 16752 --- [LibraryManagementSystem] [http-nio-8001-exec-8] n.l.util.AuthorByIdConverter             : Converting author id: 12
+2024-06-13T16:16:52.461+05:00  INFO 16752 --- [LibraryManagementSystem] [http-nio-8001-exec-8] n.l.util.AuthorByIdConverter             : Converting author id: 13
+2024-06-13T16:16:52.461+05:00  INFO 16752 --- [LibraryManagementSystem] [http-nio-8001-exec-8] n.l.util.AuthorByIdConverter             : Converting author id: 14
+2024-06-13T16:16:52.462+05:00  INFO 16752 --- [LibraryManagementSystem] [http-nio-8001-exec-8] n.l.util.AuthorByIdConverter             : Converting author id: 15
+2024-06-13T16:16:52.463+05:00  INFO 16752 --- [LibraryManagementSystem] [http-nio-8001-exec-8] n.l.util.AuthorByIdConverter             : Converting author id: 16
+2024-06-13T16:16:52.464+05:00  INFO 16752 --- [LibraryManagementSystem] [http-nio-8001-exec-8] n.l.util.AuthorByIdConverter             : Converting author id: 17
+2024-06-13T16:16:52.464+05:00  INFO 16752 --- [LibraryManagementSystem] [http-nio-8001-exec-8] n.l.util.AuthorByIdConverter             : Converting author id: 18
+2024-06-13T16:16:52.465+05:00  INFO 16752 --- [LibraryManagementSystem] [http-nio-8001-exec-8] n.l.util.AuthorByIdConverter             : Converting author id: 19
+2024-06-13T16:16:52.466+05:00  INFO 16752 --- [LibraryManagementSystem] [http-nio-8001-exec-8] n.l.util.AuthorByIdConverter             : Converting author id: 20
+2024-06-13T16:16:52.467+05:00  INFO 16752 --- [LibraryManagementSystem] [http-nio-8001-exec-8] n.l.util.AuthorByIdConverter             : Converting author id: 21
+2024-06-13T16:16:52.468+05:00  INFO 16752 --- [LibraryManagementSystem] [http-nio-8001-exec-8] n.l.util.AuthorByIdConverter             : Converting author id: 22
+2024-06-13T16:16:52.469+05:00  INFO 16752 --- [LibraryManagementSystem] [http-nio-8001-exec-8] n.l.util.AuthorByIdConverter             : Converting author id: 23
+2024-06-13T16:16:52.470+05:00  INFO 16752 --- [LibraryManagementSystem] [http-nio-8001-exec-8] n.l.util.AuthorByIdConverter             : Converting author id: 24
+2024-06-13T16:16:52.472+05:00  INFO 16752 --- [LibraryManagementSystem] [http-nio-8001-exec-8] n.l.util.AuthorByIdConverter             : Converting author id: 25
+2024-06-13T16:16:52.473+05:00  INFO 16752 --- [LibraryManagementSystem] [http-nio-8001-exec-8] n.l.util.AuthorByIdConverter             : Converting author id: 26
+2024-06-13T16:16:52.474+05:00  INFO 16752 --- [LibraryManagementSystem] [http-nio-8001-exec-8] n.l.util.AuthorByIdConverter             : Converting author id: 27
+2024-06-13T16:16:52.476+05:00  INFO 16752 --- [LibraryManagementSystem] [http-nio-8001-exec-8] n.l.util.AuthorByIdConverter             : Converting author id: 28
+2024-06-13T16:16:52.477+05:00  INFO 16752 --- [LibraryManagementSystem] [http-nio-8001-exec-8] n.l.util.AuthorByIdConverter             : Converting author id: 29
+2024-06-13T16:16:52.478+05:00  INFO 16752 --- [LibraryManagementSystem] [http-nio-8001-exec-8] n.l.util.AuthorByIdConverter             : Converting author id: 30
+2024-06-13T16:16:52.480+05:00  INFO 16752 --- [LibraryManagementSystem] [http-nio-8001-exec-8] n.l.util.AuthorByIdConverter             : Converting author id: 31
+2024-06-13T16:16:52.481+05:00  INFO 16752 --- [LibraryManagementSystem] [http-nio-8001-exec-8] n.l.util.AuthorByIdConverter             : Converting author id: 32
+2024-06-13T16:16:52.482+05:00  INFO 16752 --- [LibraryManagementSystem] [http-nio-8001-exec-8] n.l.util.AuthorByIdConverter             : Converting author id: 33
+2024-06-13T16:16:52.483+05:00  INFO 16752 --- [LibraryManagementSystem] [http-nio-8001-exec-8] n.l.util.AuthorByIdConverter             : Converting author id: 34
+2024-06-13T16:16:52.483+05:00  INFO 16752 --- [LibraryManagementSystem] [http-nio-8001-exec-8] n.l.util.AuthorByIdConverter             : Converting author id: 35
+2024-06-13T16:16:52.484+05:00  INFO 16752 --- [LibraryManagementSystem] [http-nio-8001-exec-8] n.l.util.AuthorByIdConverter             : Converting author id: 36
+2024-06-13T16:16:52.485+05:00  INFO 16752 --- [LibraryManagementSystem] [http-nio-8001-exec-8] n.l.util.AuthorByIdConverter             : Converting author id: 37
+2024-06-13T16:16:52.487+05:00  INFO 16752 --- [LibraryManagementSystem] [http-nio-8001-exec-8] n.l.util.AuthorByIdConverter             : Converting author id: 38
+2024-06-13T16:16:52.488+05:00  INFO 16752 --- [LibraryManagementSystem] [http-nio-8001-exec-8] n.l.util.AuthorByIdConverter             : Converting author id: 39
+2024-06-13T16:16:52.490+05:00  INFO 16752 --- [LibraryManagementSystem] [http-nio-8001-exec-8] n.l.util.AuthorByIdConverter             : Converting author id: 40
+2024-06-13T16:16:52.491+05:00  INFO 16752 --- [LibraryManagementSystem] [http-nio-8001-exec-8] n.l.util.AuthorByIdConverter             : Converting author id: 41
+2024-06-13T16:16:52.492+05:00  INFO 16752 --- [LibraryManagementSystem] [http-nio-8001-exec-8] n.l.util.AuthorByIdConverter             : Converting author id: 42
+2024-06-13T16:16:52.493+05:00  INFO 16752 --- [LibraryManagementSystem] [http-nio-8001-exec-8] n.l.util.AuthorByIdConverter             : Converting author id: 43
+2024-06-13T16:16:52.493+05:00  INFO 16752 --- [LibraryManagementSystem] [http-nio-8001-exec-8] n.l.util.AuthorByIdConverter             : Converting author id: 44
+2024-06-13T16:16:52.494+05:00  INFO 16752 --- [LibraryManagementSystem] [http-nio-8001-exec-8] n.l.util.AuthorByIdConverter             : Converting author id: 45
+2024-06-13T16:16:52.495+05:00  INFO 16752 --- [LibraryManagementSystem] [http-nio-8001-exec-8] n.l.util.AuthorByIdConverter             : Converting author id: 46
+2024-06-13T16:16:52.495+05:00  INFO 16752 --- [LibraryManagementSystem] [http-nio-8001-exec-8] n.l.util.AuthorByIdConverter             : Converting author id: 47
+2024-06-13T16:16:52.496+05:00  INFO 16752 --- [LibraryManagementSystem] [http-nio-8001-exec-8] n.l.util.AuthorByIdConverter             : Converting author id: 48
+2024-06-13T16:16:52.497+05:00  INFO 16752 --- [LibraryManagementSystem] [http-nio-8001-exec-8] n.l.util.AuthorByIdConverter             : Converting author id: 49
+2024-06-13T16:16:52.497+05:00  INFO 16752 --- [LibraryManagementSystem] [http-nio-8001-exec-8] n.l.util.AuthorByIdConverter             : Converting author id: 50
+2024-06-13T16:16:57.244+05:00 DEBUG 16752 --- [LibraryManagementSystem] [http-nio-8001-exec-3] n.l.aop.LoggingAspect                    : >> CALLED METHOD: libraryBooks() with args: [{}, Page request [number: 0, size 5, sort: title: ASC], null, null]
+2024-06-13T16:16:57.256+05:00 DEBUG 16752 --- [LibraryManagementSystem] [http-nio-8001-exec-3] n.l.aop.LoggingAspect                    : << METHOD RETURNED: libraryBooks() result: books
+2024-06-13T16:17:17.602+05:00  INFO 16752 --- [LibraryManagementSystem] [SpringApplicationShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NURBEK-HuaweiMatebookD151718277398244 paused.
+2024-06-13T16:17:17.608+05:00  INFO 16752 --- [LibraryManagementSystem] [SpringApplicationShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NURBEK-HuaweiMatebookD151718277398244 shutting down.
+2024-06-13T16:17:17.608+05:00  INFO 16752 --- [LibraryManagementSystem] [SpringApplicationShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NURBEK-HuaweiMatebookD151718277398244 paused.
+2024-06-13T16:17:17.609+05:00  INFO 16752 --- [LibraryManagementSystem] [SpringApplicationShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NURBEK-HuaweiMatebookD151718277398244 shutdown complete.
+2024-06-13T16:17:17.609+05:00  INFO 16752 --- [LibraryManagementSystem] [SpringApplicationShutdownHook] o.s.s.quartz.SchedulerFactoryBean        : Shutting down Quartz Scheduler
+2024-06-13T16:17:17.610+05:00  INFO 16752 --- [LibraryManagementSystem] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-13T16:17:17.614+05:00  WARN 16752 --- [LibraryManagementSystem] [SpringApplicationShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: База данных уже закрыта (чтобы отключить автоматическое закрытие базы данных при останове JVM, добавьте ";DB_CLOSE_ON_EXIT=FALSE" в URL)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-224]
+2024-06-13T16:17:17.614+05:00  INFO 16752 --- [LibraryManagementSystem] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : library - Shutdown initiated...
+2024-06-13T16:17:17.615+05:00  INFO 16752 --- [LibraryManagementSystem] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : library - Shutdown completed.
+2024-06-13T16:17:20.602+05:00  INFO 616 --- [LibraryManagementSystem] [restartedMain] n.l.LibraryManagementSystemApplication   : Starting LibraryManagementSystemApplication using Java 21.0.1 with PID 616 (D:\EpamLearning\LibraryManagementSystem\target\classes started by Nurbek in D:\EpamLearning\LibraryManagementSystem)
+2024-06-13T16:17:20.604+05:00  INFO 616 --- [LibraryManagementSystem] [restartedMain] n.l.LibraryManagementSystemApplication   : The following 1 profile is active: "dev"
+2024-06-13T16:17:20.648+05:00  INFO 616 --- [LibraryManagementSystem] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-06-13T16:17:20.649+05:00  INFO 616 --- [LibraryManagementSystem] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-06-13T16:17:21.395+05:00  INFO 616 --- [LibraryManagementSystem] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-13T16:17:21.475+05:00  INFO 616 --- [LibraryManagementSystem] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 73 ms. Found 5 JPA repository interfaces.
+2024-06-13T16:17:22.485+05:00  INFO 616 --- [LibraryManagementSystem] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8001 (http)
+2024-06-13T16:17:22.498+05:00  INFO 616 --- [LibraryManagementSystem] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-13T16:17:22.498+05:00  INFO 616 --- [LibraryManagementSystem] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-06-13T16:17:22.542+05:00  INFO 616 --- [LibraryManagementSystem] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-13T16:17:22.543+05:00  INFO 616 --- [LibraryManagementSystem] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1894 ms
+2024-06-13T16:17:22.598+05:00  INFO 616 --- [LibraryManagementSystem] [restartedMain] com.zaxxer.hikari.HikariDataSource       : library - Starting...
+2024-06-13T16:17:22.780+05:00  INFO 616 --- [LibraryManagementSystem] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : library - Added connection conn0: url=jdbc:h2:mem:library user=ADMIN
+2024-06-13T16:17:22.781+05:00  INFO 616 --- [LibraryManagementSystem] [restartedMain] com.zaxxer.hikari.HikariDataSource       : library - Start completed.
+2024-06-13T16:17:22.791+05:00  INFO 616 --- [LibraryManagementSystem] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2'. Database available at 'jdbc:h2:mem:library'
+2024-06-13T16:17:22.974+05:00  INFO 616 --- [LibraryManagementSystem] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-13T16:17:23.030+05:00  INFO 616 --- [LibraryManagementSystem] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-06-13T16:17:23.066+05:00  INFO 616 --- [LibraryManagementSystem] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-06-13T16:17:23.282+05:00  INFO 616 --- [LibraryManagementSystem] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-13T16:17:23.329+05:00  WARN 616 --- [LibraryManagementSystem] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-13T16:17:23.544+05:00  INFO 616 --- [LibraryManagementSystem] [restartedMain] o.hibernate.id.enhanced.TableGenerator   : HHH000398: Explicit segment value for id generator [id_gen_table.gen_name] suggested; using default [account]
+2024-06-13T16:17:23.548+05:00  INFO 616 --- [LibraryManagementSystem] [restartedMain] o.hibernate.id.enhanced.TableGenerator   : HHH000398: Explicit segment value for id generator [id_gen_table.gen_name] suggested; using default [book]
+2024-06-13T16:17:23.549+05:00  INFO 616 --- [LibraryManagementSystem] [restartedMain] o.hibernate.id.enhanced.TableGenerator   : HHH000398: Explicit segment value for id generator [id_gen_table.gen_name] suggested; using default [notification]
+2024-06-13T16:17:23.549+05:00  INFO 616 --- [LibraryManagementSystem] [restartedMain] o.hibernate.id.enhanced.TableGenerator   : HHH000398: Explicit segment value for id generator [id_gen_table.gen_name] suggested; using default [author]
+2024-06-13T16:17:23.549+05:00  INFO 616 --- [LibraryManagementSystem] [restartedMain] o.hibernate.id.enhanced.TableGenerator   : HHH000398: Explicit segment value for id generator [id_gen_table.gen_name] suggested; using default [book_reservation]
+2024-06-13T16:17:24.281+05:00  INFO 616 --- [LibraryManagementSystem] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-13T16:17:24.339+05:00  INFO 616 --- [LibraryManagementSystem] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-13T16:17:24.861+05:00  INFO 616 --- [LibraryManagementSystem] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-06-13T16:17:25.474+05:00  INFO 616 --- [LibraryManagementSystem] [restartedMain] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2024-06-13T16:17:25.477+05:00  INFO 616 --- [LibraryManagementSystem] [restartedMain] org.quartz.simpl.SimpleThreadPool        : Job execution threads will use class loader of thread: restartedMain
+2024-06-13T16:17:25.484+05:00  INFO 616 --- [LibraryManagementSystem] [restartedMain] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2024-06-13T16:17:25.484+05:00  INFO 616 --- [LibraryManagementSystem] [restartedMain] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.3.2 created.
+2024-06-13T16:17:25.489+05:00  INFO 616 --- [LibraryManagementSystem] [restartedMain] o.s.s.quartz.LocalDataSourceJobStore     : Using db table-based data access locking (synchronization).
+2024-06-13T16:17:25.491+05:00  INFO 616 --- [LibraryManagementSystem] [restartedMain] o.s.s.quartz.LocalDataSourceJobStore     : JobStoreCMT initialized.
+2024-06-13T16:17:25.491+05:00  INFO 616 --- [LibraryManagementSystem] [restartedMain] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'quartzScheduler' with instanceId 'NURBEK-HuaweiMatebookD151718277445476'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 5 threads.
+  Using job-store 'org.springframework.scheduling.quartz.LocalDataSourceJobStore' - which supports persistence. and is clustered.
+
+2024-06-13T16:17:25.491+05:00  INFO 616 --- [LibraryManagementSystem] [restartedMain] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2024-06-13T16:17:25.492+05:00  INFO 616 --- [LibraryManagementSystem] [restartedMain] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.3.2
+2024-06-13T16:17:25.492+05:00  INFO 616 --- [LibraryManagementSystem] [restartedMain] org.quartz.core.QuartzScheduler          : JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@4a7992ed
+2024-06-13T16:17:25.569+05:00  INFO 616 --- [LibraryManagementSystem] [restartedMain] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NURBEK-HuaweiMatebookD151718277445476 started.
+2024-06-13T16:17:25.632+05:00  WARN 616 --- [LibraryManagementSystem] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-13T16:17:26.298+05:00  INFO 616 --- [LibraryManagementSystem] [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6acc29cb, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@418bef32, org.springframework.security.web.context.SecurityContextHolderFilter@3dbd76fc, org.springframework.security.web.header.HeaderWriterFilter@5e3d1ffa, org.springframework.web.filter.CorsFilter@488e12e2, org.springframework.security.web.authentication.logout.LogoutFilter@22cf4e4d, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@28c43918, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1eb5653d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3d5011ff, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6237a3a0, org.springframework.security.web.access.ExceptionTranslationFilter@55207d03, org.springframework.security.web.access.intercept.AuthorizationFilter@2f908f97]
+2024-06-13T16:17:26.960+05:00  INFO 616 --- [LibraryManagementSystem] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-06-13T16:17:27.008+05:00  INFO 616 --- [LibraryManagementSystem] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8001 (http) with context path ''
+2024-06-13T16:17:27.017+05:00  INFO 616 --- [LibraryManagementSystem] [restartedMain] n.l.LibraryManagementSystemApplication   : Started LibraryManagementSystemApplication in 6.857 seconds (process running for 7.655)
+2024-06-13T16:17:27.023+05:00  INFO 616 --- [LibraryManagementSystem] [restartedMain] n.l.service.common.GreetingServiceImpl   : DEV PROFILE: Welcome to Library Management System
+2024-06-13T16:17:27.217+05:00  INFO 616 --- [LibraryManagementSystem] [http-nio-8001-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-13T16:17:27.217+05:00  INFO 616 --- [LibraryManagementSystem] [http-nio-8001-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-06-13T16:17:27.218+05:00  INFO 616 --- [LibraryManagementSystem] [http-nio-8001-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-06-13T16:17:27.279+05:00 DEBUG 616 --- [LibraryManagementSystem] [http-nio-8001-exec-1] n.l.aop.LoggingAspect                    : >> CALLED METHOD: libraryBooks() with args: [{}, Page request [number: 0, size 5, sort: title: ASC], null, null]
+2024-06-13T16:17:27.416+05:00 DEBUG 616 --- [LibraryManagementSystem] [http-nio-8001-exec-5] n.l.aop.LoggingAspect                    : >> CALLED METHOD: libraryBooks() with args: [{}, Page request [number: 0, size 5, sort: title: ASC], null, null]
+2024-06-13T16:17:27.440+05:00 DEBUG 616 --- [LibraryManagementSystem] [http-nio-8001-exec-1] n.l.aop.LoggingAspect                    : << METHOD RETURNED: libraryBooks() result: books
+2024-06-13T16:17:27.440+05:00 DEBUG 616 --- [LibraryManagementSystem] [http-nio-8001-exec-5] n.l.aop.LoggingAspect                    : << METHOD RETURNED: libraryBooks() result: books
+2024-06-13T16:17:36.517+05:00  INFO 616 --- [LibraryManagementSystem] [SpringApplicationShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NURBEK-HuaweiMatebookD151718277445476 paused.
+2024-06-13T16:17:36.529+05:00  INFO 616 --- [LibraryManagementSystem] [SpringApplicationShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NURBEK-HuaweiMatebookD151718277445476 shutting down.
+2024-06-13T16:17:36.530+05:00  INFO 616 --- [LibraryManagementSystem] [SpringApplicationShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NURBEK-HuaweiMatebookD151718277445476 paused.
+2024-06-13T16:17:36.530+05:00  INFO 616 --- [LibraryManagementSystem] [SpringApplicationShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NURBEK-HuaweiMatebookD151718277445476 shutdown complete.
+2024-06-13T16:17:36.530+05:00  INFO 616 --- [LibraryManagementSystem] [SpringApplicationShutdownHook] o.s.s.quartz.SchedulerFactoryBean        : Shutting down Quartz Scheduler
+2024-06-13T16:17:36.531+05:00  INFO 616 --- [LibraryManagementSystem] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-13T16:17:36.537+05:00  WARN 616 --- [LibraryManagementSystem] [SpringApplicationShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: База данных уже закрыта (чтобы отключить автоматическое закрытие базы данных при останове JVM, добавьте ";DB_CLOSE_ON_EXIT=FALSE" в URL)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-224]
+2024-06-13T16:17:36.538+05:00  INFO 616 --- [LibraryManagementSystem] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : library - Shutdown initiated...
+2024-06-13T16:17:36.541+05:00  INFO 616 --- [LibraryManagementSystem] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : library - Shutdown completed.
