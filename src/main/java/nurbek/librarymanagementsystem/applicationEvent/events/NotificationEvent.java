@@ -7,7 +7,7 @@ import nurbek.librarymanagementsystem.dto.Account;
 // publisher.publishEvent(new NotificationSendEvent(account));
 
 @Data
-public class ReservationEvent {
+public class NotificationEvent {
     private final Account account;
     private final String subject;
     private final String content;

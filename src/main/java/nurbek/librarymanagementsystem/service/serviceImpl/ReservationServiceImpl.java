@@ -1,6 +1,7 @@
 package nurbek.librarymanagementsystem.service.serviceImpl;
 
 import lombok.AllArgsConstructor;
+import nurbek.librarymanagementsystem.applicationEvent.events.NotificationEvent;
 import nurbek.librarymanagementsystem.dto.Account;
 import nurbek.librarymanagementsystem.dto.Book;
 import nurbek.librarymanagementsystem.dto.BookReservation;
@@ -9,11 +10,11 @@ import nurbek.librarymanagementsystem.entity.AccountEntity;
 import nurbek.librarymanagementsystem.entity.BookEntity;
 import nurbek.librarymanagementsystem.entity.BookReservationEntity;
 import nurbek.librarymanagementsystem.property.ConfigurationProperty;
-import nurbek.librarymanagementsystem.repository.BookRepository;
 import nurbek.librarymanagementsystem.repository.BookReservationRepository;
 import nurbek.librarymanagementsystem.service.LibraryService;
 import nurbek.librarymanagementsystem.service.ReservationService;
 import nurbek.librarymanagementsystem.service.UserService;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -25,11 +26,11 @@ import java.util.Optional;
 @Service
 @AllArgsConstructor
 public class ReservationServiceImpl implements ReservationService {
-    private final BookRepository bookRepository;
     private ConfigurationProperty props;
     private BookReservationRepository reservationRepository;
     private UserService userService;
     private LibraryService libraryService;
+    private ApplicationEventPublisher publisher;
 
     @Override
     public List<BookReservation> getReservationsByAccountId(long accountId) {
@@ -62,8 +63,16 @@ public class ReservationServiceImpl implements ReservationService {
         if (reservation.isPresent()) {
             libraryService.returnBook(reservation.get().getBook().getId());
             reservationRepository.deleteById(reservationId);
+
+            // Send notification
+            sendNotification(
+                    "Book reservation cancelled",
+                    "You have successfully cancelled the reservation for the book " + reservation.get().getBook().getTitle(),
+                    reservation.get().getAccount().toDto());
+
             return Optional.of(reservation.get().toDto());
         }
+
         return Optional.empty();
     }
 
@@ -99,6 +108,12 @@ public class ReservationServiceImpl implements ReservationService {
 
         reservationRepository.save(reservation);
 
+        // Send notification
+        sendNotification(
+                "Book reservation successful",
+                "You have successfully reserved the book " + book.getTitle(),
+                account);
+
         return true;
     }
 
@@ -114,6 +129,12 @@ public class ReservationServiceImpl implements ReservationService {
         libraryService.returnBook(bookId);
 
         reservationRepository.deleteByBookIdAndAccountId(bookId, accountId);
+
+        // Send notification
+        sendNotification(
+                "Book returned",
+                "You have successfully returned the book " + reservation.getBook().getTitle(),
+                reservation.getAccount().toDto());
     }
 
     @Override
@@ -176,6 +197,16 @@ public class ReservationServiceImpl implements ReservationService {
 
         reservationRepository.save(reservation);
 
+        // Send notification
+        sendNotification(
+                "Book renewal successful",
+                "You have successfully renewed the book " + reservation.getBook().getTitle(),
+                reservation.getAccount().toDto());
+
         return Optional.of(reservation.toDto());
+    }
+
+    private void sendNotification(String subject, String content, Account account) {
+        publisher.publishEvent(new NotificationEvent(account, subject, content));
     }
 }

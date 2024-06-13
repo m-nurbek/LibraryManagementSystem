@@ -8,6 +8,7 @@ import nurbek.librarymanagementsystem.property.ConfigurationProperty;
 import nurbek.librarymanagementsystem.service.AuthorService;
 import nurbek.librarymanagementsystem.service.LibraryService;
 import nurbek.librarymanagementsystem.service.UserService;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -125,6 +126,7 @@ public class LibraryController {
 
         model.addAttribute("book", new Book());
         model.addAttribute("authors", authorService.getAllAuthors());
+
         return "bookAdd";
     }
 
