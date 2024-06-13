@@ -29,6 +29,7 @@ public class NotificationEntity {
     private String subject;
     @Column(name = "CONTENT", nullable = false)
     private String content;
+    @Temporal(TemporalType.DATE)
     @Column(name = "PUBLISH_DATE", nullable = false)
     private Date publishDate = new Date();
 
