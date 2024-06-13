@@ -18,7 +18,6 @@ import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@Slf4j
 @DataJpaTest
 @TestPropertySource(locations = "classpath:application-test.properties")
 @DirtiesContext
@@ -124,7 +123,6 @@ public class LibraryRepositoryTest {
 
         Page<BookEntity> searchResults = bookRepository.getBookEntitiesByStatusIgnoreCase(BookStatus.ARCHIVED.name(), pageRequest);
 
-        log.info("searchResults: {}", searchResults.getContent());
         assertThat(searchResults.getContent()).isNotEmpty();
         assertThat(searchResults.getContent().size()).isEqualTo(2);
 
@@ -155,7 +153,6 @@ public class LibraryRepositoryTest {
 
         List<BookEntity> searchResults = bookRepository.getBooksByStatusAndArchiveDateBefore(BookStatus.ARCHIVED.name(), currentDate);
 
-        log.info("searchResults: {}", searchResults);
         assertThat(searchResults).isNotEmpty();
         assertThat(searchResults.size()).isEqualTo(2);
 
@@ -167,6 +164,7 @@ public class LibraryRepositoryTest {
         for (BookEntity book : searchResults) {
             if (book.getStatus().equals(status)) {
                 foundByStatus = true;
+                break;
             }
         }
         assertThat(foundByStatus).isTrue();

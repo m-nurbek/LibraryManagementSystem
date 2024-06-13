@@ -68,18 +68,19 @@ public class LibraryController {
         return "books";
     }
 
-    @Secured({"ROLE_LIBRARIAN", "ROLE_USER"})
     @GetMapping("/books/{id}")
     public String libraryBook(Model model, @PathVariable("id") long id, Principal principal) {
         Book book = libraryService.getBookById(id).orElse(null);
 
         if (book == null) {
-            return "redirect:/library/books";
+            return "error";
         }
 
         model.addAttribute("updatedBook", book); // updatedBook is used for updating book info
         model.addAttribute("libraryBook", book);
         model.addAttribute("statusList", Arrays.stream(BookStatus.values()).map(BookStatus::name).toList());
+
+        model.addAttribute("authors", authorService.getAllAuthors());
 
         if (principal != null) {
             Account account = userService.getAccountByEmail(principal.getName()).orElse(null);
@@ -127,7 +128,6 @@ public class LibraryController {
         return "bookAdd";
     }
 
-    // TODO: test this controller
     @Secured("ROLE_LIBRARIAN")
     @PostMapping("/books/add")
     public String libraryBookAdd(@Valid @ModelAttribute("book") Book book, Errors errors, Principal principal, Model model) {
@@ -144,7 +144,6 @@ public class LibraryController {
         return "redirect:/library/books";
     }
 
-    // TODO: test libraryBookRestore controller
     @Secured("ROLE_LIBRARIAN")
     @PutMapping("/books/restore/{id}")
     public String libraryBookRestore(@PathVariable("id") long id) {
@@ -155,7 +154,6 @@ public class LibraryController {
         return "redirect:/library/books/" + id;
     }
 
-    // TODO: test libraryBookArchive controller
     @Secured("ROLE_LIBRARIAN")
     @DeleteMapping("/books/archive/{id}")
     public String libraryBookArchive(@PathVariable("id") long id) {

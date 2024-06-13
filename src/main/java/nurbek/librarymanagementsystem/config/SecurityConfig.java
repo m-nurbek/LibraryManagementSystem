@@ -45,7 +45,6 @@ public class SecurityConfig {
                 .csrf(AbstractHttpConfigurer::disable)
                 .headers(headers -> headers.frameOptions().disable())
                 .authorizeHttpRequests(authorize -> authorize
-                        .requestMatchers("library/**").authenticated()
                         .requestMatchers("users/**").authenticated()
                         .anyRequest().permitAll())
                 .formLogin(form -> form.loginPage("/login").defaultSuccessUrl("/library/books", true))

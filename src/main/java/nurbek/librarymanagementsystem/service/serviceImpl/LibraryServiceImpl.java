@@ -1,8 +1,10 @@
 package nurbek.librarymanagementsystem.service.serviceImpl;
 
+import lombok.AllArgsConstructor;
 import nurbek.librarymanagementsystem.aop.Loggable;
 import nurbek.librarymanagementsystem.dto.Book;
 import nurbek.librarymanagementsystem.dto.BookStatus;
+import nurbek.librarymanagementsystem.entity.AuthorEntity;
 import nurbek.librarymanagementsystem.entity.BookEntity;
 import nurbek.librarymanagementsystem.repository.BookRepository;
 import nurbek.librarymanagementsystem.repository.BookReservationRepository;
@@ -21,10 +23,9 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
+@AllArgsConstructor
 public class LibraryServiceImpl implements LibraryService {
-    @Autowired
     private BookRepository bookRepository;
-    @Autowired
     private BookReservationRepository reservationRepository;
 
     @Override
@@ -34,6 +35,7 @@ public class LibraryServiceImpl implements LibraryService {
                 pageable.getPageSize(),
                 pageable.getSortOr(Sort.by(Sort.Direction.ASC, "title"))
         ));
+
         return bookEntities.map(BookEntity::toDto);
     }
 
@@ -54,6 +56,7 @@ public class LibraryServiceImpl implements LibraryService {
                 pageable.getPageSize(),
                 pageable.getSortOr(Sort.by(Sort.Direction.ASC, "title"))
         ));
+
         return bookEntities.map(BookEntity::toDto);
     }
 
@@ -61,6 +64,7 @@ public class LibraryServiceImpl implements LibraryService {
     public List<Book> getBookList() {
         List<BookEntity> bookEntities = bookRepository.findAll();
         return bookEntities.stream().map(BookEntity::toDto).toList();
+
     }
 
     @Override
@@ -69,6 +73,7 @@ public class LibraryServiceImpl implements LibraryService {
         if (book != null) {
             return Optional.of(book.toDto());
         }
+
         return Optional.empty();
     }
 
@@ -79,13 +84,14 @@ public class LibraryServiceImpl implements LibraryService {
                 pageable.getPageSize(),
                 pageable.getSortOr(Sort.by(Sort.Direction.ASC, "title"))
         ));
+
         return bookEntities.map(BookEntity::toDto);
     }
 
     @Override
-    @Loggable
     public Book addBook(Book book) {
         Optional<BookEntity> optionalBookEntity = bookRepository.findByISBN(book.getISBN());
+
         if (optionalBookEntity.isPresent()) {
             var bookInDb = optionalBookEntity.get();
             int copies = bookInDb.getNumberOfCopies();
@@ -95,6 +101,7 @@ public class LibraryServiceImpl implements LibraryService {
             bookRepository.save(bookInDb);
             return bookInDb.toDto();
         }
+
         BookEntity savedBookEntity = bookRepository.save(BookEntity.fromDto(book));
         return savedBookEntity.toDto();
     }
@@ -109,9 +116,12 @@ public class LibraryServiceImpl implements LibraryService {
             bookInDb.setNumberOfPages(book.getNumberOfPages());
             bookInDb.setLanguage(book.getLanguage());
             bookInDb.setPublishDate(book.getPublishDate());
+            bookInDb.setAuthor(AuthorEntity.fromDto(book.getAuthor()));
+
             bookRepository.save(bookInDb);
             return Optional.of(bookInDb.toDto());
         }
+
         return Optional.empty();
     }
 
@@ -120,9 +130,11 @@ public class LibraryServiceImpl implements LibraryService {
         if (bookRepository.existsById(bookId)) {
             BookEntity bookInDb = bookRepository.getReferenceById(bookId);
             bookInDb.setStatus(status);
+
             bookRepository.save(bookInDb);
             return Optional.of(bookInDb.toDto());
         }
+
         return Optional.empty();
     }
 
@@ -136,6 +148,7 @@ public class LibraryServiceImpl implements LibraryService {
             bookRepository.save(bookInDb);
             return Optional.of(bookInDb.toDto());
         }
+
         return Optional.empty();
     }
 
@@ -149,6 +162,7 @@ public class LibraryServiceImpl implements LibraryService {
             bookRepository.save(bookInDb);
             return Optional.of(bookInDb.toDto());
         }
+
         return Optional.empty();
     }
 
@@ -160,6 +174,7 @@ public class LibraryServiceImpl implements LibraryService {
             bookRepository.save(bookInDb);
             return Optional.of(bookInDb.toDto());
         }
+
         return Optional.empty();
     }
 
@@ -171,6 +186,7 @@ public class LibraryServiceImpl implements LibraryService {
             bookRepository.save(bookInDb);
             return Optional.of(bookInDb.toDto());
         }
+
         return Optional.empty();
     }
 
