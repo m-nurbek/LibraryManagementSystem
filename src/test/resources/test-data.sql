@@ -49,3 +49,9 @@ insert into BOOK_RESERVATION (ID, RESERVATION_DATE, DUE_DATE, STATUS, BOOK_ID, A
 insert into BOOK_RESERVATION (ID, RESERVATION_DATE, DUE_DATE, STATUS, BOOK_ID, ACCOUNT_ID) values (8, '2024-04-09', '2024-03-14', 'RESERVED', 8, 8);
 insert into BOOK_RESERVATION (ID, RESERVATION_DATE, DUE_DATE, STATUS, BOOK_ID, ACCOUNT_ID) values (9, '2024-01-21', '2024-04-03', 'RESERVED', 9, 9);
 insert into BOOK_RESERVATION (ID, RESERVATION_DATE, DUE_DATE, STATUS, BOOK_ID, ACCOUNT_ID) values (10, '2024-06-02', '2024-06-01', 'RESERVED', 10, 10);
+
+insert into NOTIFICATION (ID, SUBJECT, CONTENT, PUBLISH_DATE, RECIPIENT_ID) values (1, 'Book Reservation Reminder', 'Your book reservation is due soon. Please return the book to the library.', '2024-01-24', 1);
+insert into NOTIFICATION (ID, SUBJECT, CONTENT, PUBLISH_DATE, RECIPIENT_ID) values (2, 'Book Reservation Reminder', 'Your book reservation is due soon. Please return the book to the library.', '2023-12-21', 2);
+insert into NOTIFICATION (ID, SUBJECT, CONTENT, PUBLISH_DATE, RECIPIENT_ID) values (3, 'Book Reservation Reminder', 'Your book reservation is due soon. Please return the book to the library.', '2024-05-15', 3);
+insert into NOTIFICATION (ID, SUBJECT, CONTENT, PUBLISH_DATE, RECIPIENT_ID) values (4, 'Book Reservation Reminder', 'Your book reservation is due soon. Please return the book to the library.', '2024-01-17', 4);
+insert into NOTIFICATION (ID, SUBJECT, CONTENT, PUBLISH_DATE, RECIPIENT_ID) values (5, 'Book Reservation Reminder', 'Your book reservation is due soon. Please return the book to the library.', '2024-05-06', 5);

@@ -13208,3 +13208,693 @@ Database is already closed (to disable automatic closing at VM shutdown, add ";D
 2024-06-13T14:28:49.242+05:00 DEBUG 21316 --- [LibraryManagementSystem] [http-nio-8001-exec-1] n.l.aop.LoggingAspect                    : << METHOD RETURNED: getNotifications() result: notifications
 2024-06-13T14:29:06.806+05:00 DEBUG 21316 --- [LibraryManagementSystem] [http-nio-8001-exec-9] n.l.aop.LoggingAspect                    : >> CALLED METHOD: getNotifications() with args: [{}, UsernamePasswordAuthenticationToken [Principal=AccountEntity(id=1, firstName=Vera, lastName=Trahear, email=vtrahear0@flavors.me, password=$2a$10$2Uz4lxxlJG9/iM2fpjmP5OWBAPPMD7X0zb.zcfMQV9HSzuwIX5h0u, role=USER), Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_USER]]]
 2024-06-13T14:29:06.819+05:00 DEBUG 21316 --- [LibraryManagementSystem] [http-nio-8001-exec-9] n.l.aop.LoggingAspect                    : << METHOD RETURNED: getNotifications() result: notifications
+2024-06-13T14:30:28.015+05:00  INFO 21316 --- [LibraryManagementSystem] [SpringApplicationShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NURBEK-HuaweiMatebookD151718270928430 paused.
+2024-06-13T14:30:28.019+05:00  INFO 21316 --- [LibraryManagementSystem] [SpringApplicationShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NURBEK-HuaweiMatebookD151718270928430 shutting down.
+2024-06-13T14:30:28.019+05:00  INFO 21316 --- [LibraryManagementSystem] [SpringApplicationShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NURBEK-HuaweiMatebookD151718270928430 paused.
+2024-06-13T14:30:28.019+05:00  INFO 21316 --- [LibraryManagementSystem] [SpringApplicationShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NURBEK-HuaweiMatebookD151718270928430 shutdown complete.
+2024-06-13T14:30:28.019+05:00  INFO 21316 --- [LibraryManagementSystem] [SpringApplicationShutdownHook] o.s.s.quartz.SchedulerFactoryBean        : Shutting down Quartz Scheduler
+2024-06-13T14:30:28.020+05:00  INFO 21316 --- [LibraryManagementSystem] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-13T14:30:28.020+05:00  WARN 21316 --- [LibraryManagementSystem] [SpringApplicationShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: База данных уже закрыта (чтобы отключить автоматическое закрытие базы данных при останове JVM, добавьте ";DB_CLOSE_ON_EXIT=FALSE" в URL)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-224]
+2024-06-13T14:30:28.020+05:00  INFO 21316 --- [LibraryManagementSystem] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : library - Shutdown initiated...
+2024-06-13T14:30:28.021+05:00  INFO 21316 --- [LibraryManagementSystem] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : library - Shutdown completed.
+2024-06-13T14:44:49.027+05:00  INFO 6736 --- [LibraryManagementSystem] [main] n.l.NotificationIntegrationTest          : Starting NotificationIntegrationTest using Java 21.0.1 with PID 6736 (started by Nurbek in D:\EpamLearning\LibraryManagementSystem)
+2024-06-13T14:44:49.042+05:00  INFO 6736 --- [LibraryManagementSystem] [main] n.l.NotificationIntegrationTest          : No active profile set, falling back to 1 default profile: "default"
+2024-06-13T14:44:49.966+05:00  INFO 6736 --- [LibraryManagementSystem] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-13T14:44:50.059+05:00  INFO 6736 --- [LibraryManagementSystem] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 73 ms. Found 5 JPA repository interfaces.
+2024-06-13T14:44:51.151+05:00  INFO 6736 --- [LibraryManagementSystem] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-13T14:44:51.245+05:00  INFO 6736 --- [LibraryManagementSystem] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-06-13T14:44:51.292+05:00  INFO 6736 --- [LibraryManagementSystem] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-06-13T14:44:51.619+05:00  INFO 6736 --- [LibraryManagementSystem] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-13T14:44:51.664+05:00  INFO 6736 --- [LibraryManagementSystem] [main] com.zaxxer.hikari.HikariDataSource       : library - Starting...
+2024-06-13T14:44:51.901+05:00  INFO 6736 --- [LibraryManagementSystem] [main] com.zaxxer.hikari.pool.HikariPool        : library - Added connection conn0: url=jdbc:h2:mem:test user=SA
+2024-06-13T14:44:51.901+05:00  INFO 6736 --- [LibraryManagementSystem] [main] com.zaxxer.hikari.HikariDataSource       : library - Start completed.
+2024-06-13T14:44:51.933+05:00  WARN 6736 --- [LibraryManagementSystem] [main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-13T14:44:52.223+05:00  INFO 6736 --- [LibraryManagementSystem] [main] o.hibernate.id.enhanced.TableGenerator   : HHH000398: Explicit segment value for id generator [id_gen_table.gen_name] suggested; using default [account]
+2024-06-13T14:44:52.223+05:00  INFO 6736 --- [LibraryManagementSystem] [main] o.hibernate.id.enhanced.TableGenerator   : HHH000398: Explicit segment value for id generator [id_gen_table.gen_name] suggested; using default [book]
+2024-06-13T14:44:52.223+05:00  INFO 6736 --- [LibraryManagementSystem] [main] o.hibernate.id.enhanced.TableGenerator   : HHH000398: Explicit segment value for id generator [id_gen_table.gen_name] suggested; using default [notification]
+2024-06-13T14:44:52.223+05:00  INFO 6736 --- [LibraryManagementSystem] [main] o.hibernate.id.enhanced.TableGenerator   : HHH000398: Explicit segment value for id generator [id_gen_table.gen_name] suggested; using default [author]
+2024-06-13T14:44:52.223+05:00  INFO 6736 --- [LibraryManagementSystem] [main] o.hibernate.id.enhanced.TableGenerator   : HHH000398: Explicit segment value for id generator [id_gen_table.gen_name] suggested; using default [book_reservation]
+2024-06-13T14:44:53.009+05:00  INFO 6736 --- [LibraryManagementSystem] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-13T14:44:53.072+05:00  INFO 6736 --- [LibraryManagementSystem] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-13T14:44:53.639+05:00  INFO 6736 --- [LibraryManagementSystem] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-06-13T14:44:54.409+05:00  INFO 6736 --- [LibraryManagementSystem] [main] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2024-06-13T14:44:54.425+05:00  INFO 6736 --- [LibraryManagementSystem] [main] org.quartz.simpl.SimpleThreadPool        : Job execution threads will use class loader of thread: main
+2024-06-13T14:44:54.441+05:00  INFO 6736 --- [LibraryManagementSystem] [main] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2024-06-13T14:44:54.441+05:00  INFO 6736 --- [LibraryManagementSystem] [main] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.3.2 created.
+2024-06-13T14:44:54.441+05:00  INFO 6736 --- [LibraryManagementSystem] [main] o.s.s.quartz.LocalDataSourceJobStore     : Using db table-based data access locking (synchronization).
+2024-06-13T14:44:54.441+05:00  INFO 6736 --- [LibraryManagementSystem] [main] o.s.s.quartz.LocalDataSourceJobStore     : JobStoreCMT initialized.
+2024-06-13T14:44:54.441+05:00  INFO 6736 --- [LibraryManagementSystem] [main] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'quartzScheduler' with instanceId 'NURBEK-HuaweiMatebookD151718271894425'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 5 threads.
+  Using job-store 'org.springframework.scheduling.quartz.LocalDataSourceJobStore' - which supports persistence. and is clustered.
+
+2024-06-13T14:44:54.441+05:00  INFO 6736 --- [LibraryManagementSystem] [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2024-06-13T14:44:54.441+05:00  INFO 6736 --- [LibraryManagementSystem] [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.3.2
+2024-06-13T14:44:54.441+05:00  INFO 6736 --- [LibraryManagementSystem] [main] org.quartz.core.QuartzScheduler          : JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@16422f27
+2024-06-13T14:44:54.521+05:00  INFO 6736 --- [LibraryManagementSystem] [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NURBEK-HuaweiMatebookD151718271894425 started.
+2024-06-13T14:44:54.611+05:00  WARN 6736 --- [LibraryManagementSystem] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-13T14:44:54.762+05:00  INFO 6736 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 1
+2024-06-13T14:44:54.819+05:00  INFO 6736 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 2
+2024-06-13T14:44:54.824+05:00  INFO 6736 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 3
+2024-06-13T14:44:54.830+05:00  INFO 6736 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 4
+2024-06-13T14:44:54.835+05:00  INFO 6736 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 5
+2024-06-13T14:44:54.840+05:00  INFO 6736 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 6
+2024-06-13T14:44:54.853+05:00  INFO 6736 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 7
+2024-06-13T14:44:54.873+05:00  INFO 6736 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 8
+2024-06-13T14:44:54.887+05:00  INFO 6736 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 9
+2024-06-13T14:44:54.896+05:00  INFO 6736 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 10
+2024-06-13T14:44:55.370+05:00  INFO 6736 --- [LibraryManagementSystem] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@66e5441e, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1df77353, org.springframework.security.web.context.SecurityContextHolderFilter@6d4b09c7, org.springframework.security.web.header.HeaderWriterFilter@7b9b244e, org.springframework.web.filter.CorsFilter@535b016, org.springframework.security.web.authentication.logout.LogoutFilter@47fb30ca, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@2f271ae2, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@76ecbfbf, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6223dbed, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@359b4846, org.springframework.security.web.access.ExceptionTranslationFilter@5eb4b746, org.springframework.security.web.access.intercept.AuthorizationFilter@31fc1b6e]
+2024-06-13T14:44:56.144+05:00  INFO 6736 --- [LibraryManagementSystem] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2024-06-13T14:44:56.145+05:00  INFO 6736 --- [LibraryManagementSystem] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2024-06-13T14:44:56.147+05:00  INFO 6736 --- [LibraryManagementSystem] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2024-06-13T14:44:56.183+05:00  INFO 6736 --- [LibraryManagementSystem] [main] n.l.NotificationIntegrationTest          : Started NotificationIntegrationTest in 7.511 seconds (process running for 8.509)
+2024-06-13T14:44:56.215+05:00  INFO 6736 --- [LibraryManagementSystem] [main] n.l.config.SecurityConfig                : EMAIL: ltownes5@google.pl
+2024-06-13T14:44:56.219+05:00  INFO 6736 --- [LibraryManagementSystem] [main] n.l.config.SecurityConfig                : ACCOUNT: ltownes5@google.pl
+2024-06-13T14:44:56.796+05:00  INFO 6736 --- [LibraryManagementSystem] [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NURBEK-HuaweiMatebookD151718271894425 paused.
+2024-06-13T14:44:56.799+05:00  INFO 6736 --- [LibraryManagementSystem] [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NURBEK-HuaweiMatebookD151718271894425 shutting down.
+2024-06-13T14:44:56.799+05:00  INFO 6736 --- [LibraryManagementSystem] [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NURBEK-HuaweiMatebookD151718271894425 paused.
+2024-06-13T14:44:56.800+05:00  INFO 6736 --- [LibraryManagementSystem] [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NURBEK-HuaweiMatebookD151718271894425 shutdown complete.
+2024-06-13T14:44:56.800+05:00  INFO 6736 --- [LibraryManagementSystem] [main] o.s.s.quartz.SchedulerFactoryBean        : Shutting down Quartz Scheduler
+2024-06-13T14:44:56.800+05:00  INFO 6736 --- [LibraryManagementSystem] [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-13T14:44:56.800+05:00  INFO 6736 --- [LibraryManagementSystem] [main] com.zaxxer.hikari.HikariDataSource       : library - Shutdown initiated...
+2024-06-13T14:44:56.800+05:00  INFO 6736 --- [LibraryManagementSystem] [main] com.zaxxer.hikari.HikariDataSource       : library - Shutdown completed.
+2024-06-13T14:46:05.312+05:00  INFO 3376 --- [LibraryManagementSystem] [main] n.l.NotificationIntegrationTest          : Starting NotificationIntegrationTest using Java 21.0.1 with PID 3376 (started by Nurbek in D:\EpamLearning\LibraryManagementSystem)
+2024-06-13T14:46:05.312+05:00  INFO 3376 --- [LibraryManagementSystem] [main] n.l.NotificationIntegrationTest          : No active profile set, falling back to 1 default profile: "default"
+2024-06-13T14:46:06.250+05:00  INFO 3376 --- [LibraryManagementSystem] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-13T14:46:06.328+05:00  INFO 3376 --- [LibraryManagementSystem] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 78 ms. Found 5 JPA repository interfaces.
+2024-06-13T14:46:07.177+05:00  INFO 3376 --- [LibraryManagementSystem] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-13T14:46:07.240+05:00  INFO 3376 --- [LibraryManagementSystem] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-06-13T14:46:07.271+05:00  INFO 3376 --- [LibraryManagementSystem] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-06-13T14:46:07.538+05:00  INFO 3376 --- [LibraryManagementSystem] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-13T14:46:07.572+05:00  INFO 3376 --- [LibraryManagementSystem] [main] com.zaxxer.hikari.HikariDataSource       : library - Starting...
+2024-06-13T14:46:07.758+05:00  INFO 3376 --- [LibraryManagementSystem] [main] com.zaxxer.hikari.pool.HikariPool        : library - Added connection conn0: url=jdbc:h2:mem:test user=SA
+2024-06-13T14:46:07.758+05:00  INFO 3376 --- [LibraryManagementSystem] [main] com.zaxxer.hikari.HikariDataSource       : library - Start completed.
+2024-06-13T14:46:07.790+05:00  WARN 3376 --- [LibraryManagementSystem] [main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-13T14:46:08.012+05:00  INFO 3376 --- [LibraryManagementSystem] [main] o.hibernate.id.enhanced.TableGenerator   : HHH000398: Explicit segment value for id generator [id_gen_table.gen_name] suggested; using default [account]
+2024-06-13T14:46:08.012+05:00  INFO 3376 --- [LibraryManagementSystem] [main] o.hibernate.id.enhanced.TableGenerator   : HHH000398: Explicit segment value for id generator [id_gen_table.gen_name] suggested; using default [book]
+2024-06-13T14:46:08.012+05:00  INFO 3376 --- [LibraryManagementSystem] [main] o.hibernate.id.enhanced.TableGenerator   : HHH000398: Explicit segment value for id generator [id_gen_table.gen_name] suggested; using default [notification]
+2024-06-13T14:46:08.012+05:00  INFO 3376 --- [LibraryManagementSystem] [main] o.hibernate.id.enhanced.TableGenerator   : HHH000398: Explicit segment value for id generator [id_gen_table.gen_name] suggested; using default [author]
+2024-06-13T14:46:08.012+05:00  INFO 3376 --- [LibraryManagementSystem] [main] o.hibernate.id.enhanced.TableGenerator   : HHH000398: Explicit segment value for id generator [id_gen_table.gen_name] suggested; using default [book_reservation]
+2024-06-13T14:46:08.783+05:00  INFO 3376 --- [LibraryManagementSystem] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-13T14:46:08.845+05:00  INFO 3376 --- [LibraryManagementSystem] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-13T14:46:09.318+05:00  INFO 3376 --- [LibraryManagementSystem] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-06-13T14:46:10.239+05:00  INFO 3376 --- [LibraryManagementSystem] [main] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2024-06-13T14:46:10.254+05:00  INFO 3376 --- [LibraryManagementSystem] [main] org.quartz.simpl.SimpleThreadPool        : Job execution threads will use class loader of thread: main
+2024-06-13T14:46:10.254+05:00  INFO 3376 --- [LibraryManagementSystem] [main] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2024-06-13T14:46:10.254+05:00  INFO 3376 --- [LibraryManagementSystem] [main] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.3.2 created.
+2024-06-13T14:46:10.254+05:00  INFO 3376 --- [LibraryManagementSystem] [main] o.s.s.quartz.LocalDataSourceJobStore     : Using db table-based data access locking (synchronization).
+2024-06-13T14:46:10.254+05:00  INFO 3376 --- [LibraryManagementSystem] [main] o.s.s.quartz.LocalDataSourceJobStore     : JobStoreCMT initialized.
+2024-06-13T14:46:10.254+05:00  INFO 3376 --- [LibraryManagementSystem] [main] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'quartzScheduler' with instanceId 'NURBEK-HuaweiMatebookD151718271970254'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 5 threads.
+  Using job-store 'org.springframework.scheduling.quartz.LocalDataSourceJobStore' - which supports persistence. and is clustered.
+
+2024-06-13T14:46:10.254+05:00  INFO 3376 --- [LibraryManagementSystem] [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2024-06-13T14:46:10.254+05:00  INFO 3376 --- [LibraryManagementSystem] [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.3.2
+2024-06-13T14:46:10.254+05:00  INFO 3376 --- [LibraryManagementSystem] [main] org.quartz.core.QuartzScheduler          : JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@7053a864
+2024-06-13T14:46:10.349+05:00  INFO 3376 --- [LibraryManagementSystem] [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NURBEK-HuaweiMatebookD151718271970254 started.
+2024-06-13T14:46:10.417+05:00  WARN 3376 --- [LibraryManagementSystem] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-13T14:46:11.003+05:00  INFO 3376 --- [LibraryManagementSystem] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@4163f505, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@19cad9f0, org.springframework.security.web.context.SecurityContextHolderFilter@77217c17, org.springframework.security.web.header.HeaderWriterFilter@39a8c08f, org.springframework.web.filter.CorsFilter@4cce421e, org.springframework.security.web.authentication.logout.LogoutFilter@2f271ae2, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@70720b78, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@38f4a641, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1902ad0f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3681c285, org.springframework.security.web.access.ExceptionTranslationFilter@76ecbfbf, org.springframework.security.web.access.intercept.AuthorizationFilter@1872a7fe]
+2024-06-13T14:46:11.602+05:00  INFO 3376 --- [LibraryManagementSystem] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2024-06-13T14:46:11.602+05:00  INFO 3376 --- [LibraryManagementSystem] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2024-06-13T14:46:11.604+05:00  INFO 3376 --- [LibraryManagementSystem] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2024-06-13T14:46:11.636+05:00  INFO 3376 --- [LibraryManagementSystem] [main] n.l.NotificationIntegrationTest          : Started NotificationIntegrationTest in 6.709 seconds (process running for 7.656)
+2024-06-13T14:46:11.665+05:00  INFO 3376 --- [LibraryManagementSystem] [main] n.l.config.SecurityConfig                : EMAIL: ltownes5@google.pl
+2024-06-13T14:46:11.799+05:00  INFO 3376 --- [LibraryManagementSystem] [main] n.l.config.SecurityConfig                : ACCOUNT: ltownes5@google.pl
+2024-06-13T14:46:12.072+05:00  INFO 3376 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 1
+2024-06-13T14:46:12.138+05:00  INFO 3376 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 2
+2024-06-13T14:46:12.143+05:00  INFO 3376 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 3
+2024-06-13T14:46:12.149+05:00  INFO 3376 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 4
+2024-06-13T14:46:12.156+05:00  INFO 3376 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 5
+2024-06-13T14:46:12.161+05:00  INFO 3376 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 6
+2024-06-13T14:46:12.165+05:00  INFO 3376 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 7
+2024-06-13T14:46:12.171+05:00  INFO 3376 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 8
+2024-06-13T14:46:12.175+05:00  INFO 3376 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 9
+2024-06-13T14:46:12.180+05:00  INFO 3376 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 10
+2024-06-13T14:46:12.329+05:00  INFO 3376 --- [LibraryManagementSystem] [main] n.l.NotificationIntegrationTest          : notificationList: []
+2024-06-13T14:46:12.398+05:00  INFO 3376 --- [LibraryManagementSystem] [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NURBEK-HuaweiMatebookD151718271970254 paused.
+2024-06-13T14:46:12.401+05:00  INFO 3376 --- [LibraryManagementSystem] [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NURBEK-HuaweiMatebookD151718271970254 shutting down.
+2024-06-13T14:46:12.401+05:00  INFO 3376 --- [LibraryManagementSystem] [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NURBEK-HuaweiMatebookD151718271970254 paused.
+2024-06-13T14:46:12.402+05:00  INFO 3376 --- [LibraryManagementSystem] [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NURBEK-HuaweiMatebookD151718271970254 shutdown complete.
+2024-06-13T14:46:12.402+05:00  INFO 3376 --- [LibraryManagementSystem] [main] o.s.s.quartz.SchedulerFactoryBean        : Shutting down Quartz Scheduler
+2024-06-13T14:46:12.402+05:00  INFO 3376 --- [LibraryManagementSystem] [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-13T14:46:12.402+05:00  INFO 3376 --- [LibraryManagementSystem] [main] com.zaxxer.hikari.HikariDataSource       : library - Shutdown initiated...
+2024-06-13T14:46:12.402+05:00  INFO 3376 --- [LibraryManagementSystem] [main] com.zaxxer.hikari.HikariDataSource       : library - Shutdown completed.
+2024-06-13T14:49:14.476+05:00  INFO 10224 --- [LibraryManagementSystem] [main] n.l.NotificationIntegrationTest          : Starting NotificationIntegrationTest using Java 21.0.1 with PID 10224 (started by Nurbek in D:\EpamLearning\LibraryManagementSystem)
+2024-06-13T14:49:14.476+05:00  INFO 10224 --- [LibraryManagementSystem] [main] n.l.NotificationIntegrationTest          : No active profile set, falling back to 1 default profile: "default"
+2024-06-13T14:49:15.355+05:00  INFO 10224 --- [LibraryManagementSystem] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-13T14:49:15.418+05:00  INFO 10224 --- [LibraryManagementSystem] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 66 ms. Found 5 JPA repository interfaces.
+2024-06-13T14:49:16.315+05:00  INFO 10224 --- [LibraryManagementSystem] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-13T14:49:16.378+05:00  INFO 10224 --- [LibraryManagementSystem] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-06-13T14:49:16.409+05:00  INFO 10224 --- [LibraryManagementSystem] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-06-13T14:49:16.687+05:00  INFO 10224 --- [LibraryManagementSystem] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-13T14:49:16.714+05:00  INFO 10224 --- [LibraryManagementSystem] [main] com.zaxxer.hikari.HikariDataSource       : library - Starting...
+2024-06-13T14:49:16.934+05:00  INFO 10224 --- [LibraryManagementSystem] [main] com.zaxxer.hikari.pool.HikariPool        : library - Added connection conn0: url=jdbc:h2:mem:test user=SA
+2024-06-13T14:49:16.934+05:00  INFO 10224 --- [LibraryManagementSystem] [main] com.zaxxer.hikari.HikariDataSource       : library - Start completed.
+2024-06-13T14:49:16.966+05:00  WARN 10224 --- [LibraryManagementSystem] [main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-13T14:49:17.202+05:00  INFO 10224 --- [LibraryManagementSystem] [main] o.hibernate.id.enhanced.TableGenerator   : HHH000398: Explicit segment value for id generator [id_gen_table.gen_name] suggested; using default [account]
+2024-06-13T14:49:17.202+05:00  INFO 10224 --- [LibraryManagementSystem] [main] o.hibernate.id.enhanced.TableGenerator   : HHH000398: Explicit segment value for id generator [id_gen_table.gen_name] suggested; using default [book]
+2024-06-13T14:49:17.202+05:00  INFO 10224 --- [LibraryManagementSystem] [main] o.hibernate.id.enhanced.TableGenerator   : HHH000398: Explicit segment value for id generator [id_gen_table.gen_name] suggested; using default [notification]
+2024-06-13T14:49:17.202+05:00  INFO 10224 --- [LibraryManagementSystem] [main] o.hibernate.id.enhanced.TableGenerator   : HHH000398: Explicit segment value for id generator [id_gen_table.gen_name] suggested; using default [author]
+2024-06-13T14:49:17.202+05:00  INFO 10224 --- [LibraryManagementSystem] [main] o.hibernate.id.enhanced.TableGenerator   : HHH000398: Explicit segment value for id generator [id_gen_table.gen_name] suggested; using default [book_reservation]
+2024-06-13T14:49:17.917+05:00  INFO 10224 --- [LibraryManagementSystem] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-13T14:49:17.968+05:00  INFO 10224 --- [LibraryManagementSystem] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-13T14:49:18.500+05:00  INFO 10224 --- [LibraryManagementSystem] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-06-13T14:49:19.223+05:00  INFO 10224 --- [LibraryManagementSystem] [main] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2024-06-13T14:49:19.239+05:00  INFO 10224 --- [LibraryManagementSystem] [main] org.quartz.simpl.SimpleThreadPool        : Job execution threads will use class loader of thread: main
+2024-06-13T14:49:19.239+05:00  INFO 10224 --- [LibraryManagementSystem] [main] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2024-06-13T14:49:19.239+05:00  INFO 10224 --- [LibraryManagementSystem] [main] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.3.2 created.
+2024-06-13T14:49:19.239+05:00  INFO 10224 --- [LibraryManagementSystem] [main] o.s.s.quartz.LocalDataSourceJobStore     : Using db table-based data access locking (synchronization).
+2024-06-13T14:49:19.254+05:00  INFO 10224 --- [LibraryManagementSystem] [main] o.s.s.quartz.LocalDataSourceJobStore     : JobStoreCMT initialized.
+2024-06-13T14:49:19.254+05:00  INFO 10224 --- [LibraryManagementSystem] [main] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'quartzScheduler' with instanceId 'NURBEK-HuaweiMatebookD151718272159239'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 5 threads.
+  Using job-store 'org.springframework.scheduling.quartz.LocalDataSourceJobStore' - which supports persistence. and is clustered.
+
+2024-06-13T14:49:19.254+05:00  INFO 10224 --- [LibraryManagementSystem] [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2024-06-13T14:49:19.254+05:00  INFO 10224 --- [LibraryManagementSystem] [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.3.2
+2024-06-13T14:49:19.254+05:00  INFO 10224 --- [LibraryManagementSystem] [main] org.quartz.core.QuartzScheduler          : JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@4f466207
+2024-06-13T14:49:19.317+05:00  INFO 10224 --- [LibraryManagementSystem] [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NURBEK-HuaweiMatebookD151718272159239 started.
+2024-06-13T14:49:19.387+05:00  WARN 10224 --- [LibraryManagementSystem] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-13T14:49:19.950+05:00  INFO 10224 --- [LibraryManagementSystem] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5f59b6c5, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@77c41838, org.springframework.security.web.context.SecurityContextHolderFilter@1f40bb80, org.springframework.security.web.header.HeaderWriterFilter@76ecbfbf, org.springframework.web.filter.CorsFilter@1872a7fe, org.springframework.security.web.authentication.logout.LogoutFilter@258ff54a, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@66e5441e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@70c2a046, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3803bc1a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@70720b78, org.springframework.security.web.access.ExceptionTranslationFilter@c4fc610, org.springframework.security.web.access.intercept.AuthorizationFilter@632a7680]
+2024-06-13T14:49:20.569+05:00  INFO 10224 --- [LibraryManagementSystem] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2024-06-13T14:49:20.569+05:00  INFO 10224 --- [LibraryManagementSystem] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2024-06-13T14:49:20.571+05:00  INFO 10224 --- [LibraryManagementSystem] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2024-06-13T14:49:20.606+05:00  INFO 10224 --- [LibraryManagementSystem] [main] n.l.NotificationIntegrationTest          : Started NotificationIntegrationTest in 6.459 seconds (process running for 7.441)
+2024-06-13T14:49:20.639+05:00  INFO 10224 --- [LibraryManagementSystem] [main] n.l.config.SecurityConfig                : EMAIL: ltownes5@google.pl
+2024-06-13T14:49:20.805+05:00  INFO 10224 --- [LibraryManagementSystem] [main] n.l.config.SecurityConfig                : ACCOUNT: ltownes5@google.pl
+2024-06-13T14:49:21.073+05:00  INFO 10224 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 1
+2024-06-13T14:49:21.145+05:00  INFO 10224 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 2
+2024-06-13T14:49:21.151+05:00  INFO 10224 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 3
+2024-06-13T14:49:21.157+05:00  INFO 10224 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 4
+2024-06-13T14:49:21.163+05:00  INFO 10224 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 5
+2024-06-13T14:49:21.169+05:00  INFO 10224 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 6
+2024-06-13T14:49:21.174+05:00  INFO 10224 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 7
+2024-06-13T14:49:21.179+05:00  INFO 10224 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 8
+2024-06-13T14:49:21.186+05:00  INFO 10224 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 9
+2024-06-13T14:49:21.191+05:00  INFO 10224 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 10
+2024-06-13T14:49:21.489+05:00  INFO 10224 --- [LibraryManagementSystem] [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NURBEK-HuaweiMatebookD151718272159239 paused.
+2024-06-13T14:49:21.491+05:00  INFO 10224 --- [LibraryManagementSystem] [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NURBEK-HuaweiMatebookD151718272159239 shutting down.
+2024-06-13T14:49:21.491+05:00  INFO 10224 --- [LibraryManagementSystem] [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NURBEK-HuaweiMatebookD151718272159239 paused.
+2024-06-13T14:49:21.492+05:00  INFO 10224 --- [LibraryManagementSystem] [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NURBEK-HuaweiMatebookD151718272159239 shutdown complete.
+2024-06-13T14:49:21.492+05:00  INFO 10224 --- [LibraryManagementSystem] [main] o.s.s.quartz.SchedulerFactoryBean        : Shutting down Quartz Scheduler
+2024-06-13T14:49:21.492+05:00  INFO 10224 --- [LibraryManagementSystem] [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-13T14:49:21.492+05:00  INFO 10224 --- [LibraryManagementSystem] [main] com.zaxxer.hikari.HikariDataSource       : library - Shutdown initiated...
+2024-06-13T14:49:21.492+05:00  INFO 10224 --- [LibraryManagementSystem] [main] com.zaxxer.hikari.HikariDataSource       : library - Shutdown completed.
+2024-06-13T14:49:43.833+05:00  INFO 18224 --- [LibraryManagementSystem] [main] n.l.NotificationIntegrationTest          : Starting NotificationIntegrationTest using Java 21.0.1 with PID 18224 (started by Nurbek in D:\EpamLearning\LibraryManagementSystem)
+2024-06-13T14:49:43.833+05:00  INFO 18224 --- [LibraryManagementSystem] [main] n.l.NotificationIntegrationTest          : No active profile set, falling back to 1 default profile: "default"
+2024-06-13T14:49:44.705+05:00  INFO 18224 --- [LibraryManagementSystem] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-13T14:49:44.783+05:00  INFO 18224 --- [LibraryManagementSystem] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 65 ms. Found 5 JPA repository interfaces.
+2024-06-13T14:49:45.707+05:00  INFO 18224 --- [LibraryManagementSystem] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-13T14:49:45.776+05:00  INFO 18224 --- [LibraryManagementSystem] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-06-13T14:49:45.823+05:00  INFO 18224 --- [LibraryManagementSystem] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-06-13T14:49:46.168+05:00  INFO 18224 --- [LibraryManagementSystem] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-13T14:49:46.208+05:00  INFO 18224 --- [LibraryManagementSystem] [main] com.zaxxer.hikari.HikariDataSource       : library - Starting...
+2024-06-13T14:49:46.472+05:00  INFO 18224 --- [LibraryManagementSystem] [main] com.zaxxer.hikari.pool.HikariPool        : library - Added connection conn0: url=jdbc:h2:mem:test user=SA
+2024-06-13T14:49:46.472+05:00  INFO 18224 --- [LibraryManagementSystem] [main] com.zaxxer.hikari.HikariDataSource       : library - Start completed.
+2024-06-13T14:49:46.516+05:00  WARN 18224 --- [LibraryManagementSystem] [main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-13T14:49:46.768+05:00  INFO 18224 --- [LibraryManagementSystem] [main] o.hibernate.id.enhanced.TableGenerator   : HHH000398: Explicit segment value for id generator [id_gen_table.gen_name] suggested; using default [account]
+2024-06-13T14:49:46.768+05:00  INFO 18224 --- [LibraryManagementSystem] [main] o.hibernate.id.enhanced.TableGenerator   : HHH000398: Explicit segment value for id generator [id_gen_table.gen_name] suggested; using default [book]
+2024-06-13T14:49:46.768+05:00  INFO 18224 --- [LibraryManagementSystem] [main] o.hibernate.id.enhanced.TableGenerator   : HHH000398: Explicit segment value for id generator [id_gen_table.gen_name] suggested; using default [notification]
+2024-06-13T14:49:46.768+05:00  INFO 18224 --- [LibraryManagementSystem] [main] o.hibernate.id.enhanced.TableGenerator   : HHH000398: Explicit segment value for id generator [id_gen_table.gen_name] suggested; using default [author]
+2024-06-13T14:49:46.768+05:00  INFO 18224 --- [LibraryManagementSystem] [main] o.hibernate.id.enhanced.TableGenerator   : HHH000398: Explicit segment value for id generator [id_gen_table.gen_name] suggested; using default [book_reservation]
+2024-06-13T14:49:47.561+05:00  INFO 18224 --- [LibraryManagementSystem] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-13T14:49:47.640+05:00  INFO 18224 --- [LibraryManagementSystem] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-13T14:49:48.134+05:00  INFO 18224 --- [LibraryManagementSystem] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-06-13T14:49:48.909+05:00  INFO 18224 --- [LibraryManagementSystem] [main] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2024-06-13T14:49:48.922+05:00  INFO 18224 --- [LibraryManagementSystem] [main] org.quartz.simpl.SimpleThreadPool        : Job execution threads will use class loader of thread: main
+2024-06-13T14:49:48.922+05:00  INFO 18224 --- [LibraryManagementSystem] [main] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2024-06-13T14:49:48.922+05:00  INFO 18224 --- [LibraryManagementSystem] [main] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.3.2 created.
+2024-06-13T14:49:48.922+05:00  INFO 18224 --- [LibraryManagementSystem] [main] o.s.s.quartz.LocalDataSourceJobStore     : Using db table-based data access locking (synchronization).
+2024-06-13T14:49:48.922+05:00  INFO 18224 --- [LibraryManagementSystem] [main] o.s.s.quartz.LocalDataSourceJobStore     : JobStoreCMT initialized.
+2024-06-13T14:49:48.922+05:00  INFO 18224 --- [LibraryManagementSystem] [main] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'quartzScheduler' with instanceId 'NURBEK-HuaweiMatebookD151718272188922'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 5 threads.
+  Using job-store 'org.springframework.scheduling.quartz.LocalDataSourceJobStore' - which supports persistence. and is clustered.
+
+2024-06-13T14:49:48.922+05:00  INFO 18224 --- [LibraryManagementSystem] [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2024-06-13T14:49:48.922+05:00  INFO 18224 --- [LibraryManagementSystem] [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.3.2
+2024-06-13T14:49:48.922+05:00  INFO 18224 --- [LibraryManagementSystem] [main] org.quartz.core.QuartzScheduler          : JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@713c8cbb
+2024-06-13T14:49:49.017+05:00  INFO 18224 --- [LibraryManagementSystem] [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NURBEK-HuaweiMatebookD151718272188922 started.
+2024-06-13T14:49:49.117+05:00  WARN 18224 --- [LibraryManagementSystem] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-13T14:49:49.315+05:00  INFO 18224 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 1
+2024-06-13T14:49:49.378+05:00  INFO 18224 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 2
+2024-06-13T14:49:49.383+05:00  INFO 18224 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 3
+2024-06-13T14:49:49.391+05:00  INFO 18224 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 4
+2024-06-13T14:49:49.397+05:00  INFO 18224 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 5
+2024-06-13T14:49:49.408+05:00  INFO 18224 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 6
+2024-06-13T14:49:49.413+05:00  INFO 18224 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 7
+2024-06-13T14:49:49.418+05:00  INFO 18224 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 8
+2024-06-13T14:49:49.425+05:00  INFO 18224 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 9
+2024-06-13T14:49:49.430+05:00  INFO 18224 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 10
+2024-06-13T14:49:49.835+05:00  INFO 18224 --- [LibraryManagementSystem] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@381db99e, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@58545c2e, org.springframework.security.web.context.SecurityContextHolderFilter@5c0d876c, org.springframework.security.web.header.HeaderWriterFilter@3803bc1a, org.springframework.web.filter.CorsFilter@4163f505, org.springframework.security.web.authentication.logout.LogoutFilter@92fa950, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@77c41838, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@77217c17, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@87276c4, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@19cad9f0, org.springframework.security.web.access.ExceptionTranslationFilter@6d4b09c7, org.springframework.security.web.access.intercept.AuthorizationFilter@5f59b6c5]
+2024-06-13T14:49:50.455+05:00  INFO 18224 --- [LibraryManagementSystem] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2024-06-13T14:49:50.455+05:00  INFO 18224 --- [LibraryManagementSystem] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2024-06-13T14:49:50.457+05:00  INFO 18224 --- [LibraryManagementSystem] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2024-06-13T14:49:50.492+05:00  INFO 18224 --- [LibraryManagementSystem] [main] n.l.NotificationIntegrationTest          : Started NotificationIntegrationTest in 7.003 seconds (process running for 7.985)
+2024-06-13T14:49:50.519+05:00  INFO 18224 --- [LibraryManagementSystem] [main] n.l.config.SecurityConfig                : EMAIL: ltownes5@google.pl
+2024-06-13T14:49:50.523+05:00  INFO 18224 --- [LibraryManagementSystem] [main] n.l.config.SecurityConfig                : ACCOUNT: ltownes5@google.pl
+2024-06-13T14:49:51.100+05:00  INFO 18224 --- [LibraryManagementSystem] [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NURBEK-HuaweiMatebookD151718272188922 paused.
+2024-06-13T14:49:51.100+05:00  INFO 18224 --- [LibraryManagementSystem] [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NURBEK-HuaweiMatebookD151718272188922 shutting down.
+2024-06-13T14:49:51.100+05:00  INFO 18224 --- [LibraryManagementSystem] [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NURBEK-HuaweiMatebookD151718272188922 paused.
+2024-06-13T14:49:51.100+05:00  INFO 18224 --- [LibraryManagementSystem] [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NURBEK-HuaweiMatebookD151718272188922 shutdown complete.
+2024-06-13T14:49:51.100+05:00  INFO 18224 --- [LibraryManagementSystem] [main] o.s.s.quartz.SchedulerFactoryBean        : Shutting down Quartz Scheduler
+2024-06-13T14:49:51.100+05:00  INFO 18224 --- [LibraryManagementSystem] [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-13T14:49:51.100+05:00  INFO 18224 --- [LibraryManagementSystem] [main] com.zaxxer.hikari.HikariDataSource       : library - Shutdown initiated...
+2024-06-13T14:49:51.109+05:00  INFO 18224 --- [LibraryManagementSystem] [main] com.zaxxer.hikari.HikariDataSource       : library - Shutdown completed.
+2024-06-13T14:51:11.471+05:00  INFO 6600 --- [LibraryManagementSystem] [main] n.l.NotificationIntegrationTest          : Starting NotificationIntegrationTest using Java 21.0.1 with PID 6600 (started by Nurbek in D:\EpamLearning\LibraryManagementSystem)
+2024-06-13T14:51:11.471+05:00  INFO 6600 --- [LibraryManagementSystem] [main] n.l.NotificationIntegrationTest          : No active profile set, falling back to 1 default profile: "default"
+2024-06-13T14:51:12.452+05:00  INFO 6600 --- [LibraryManagementSystem] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-13T14:51:12.531+05:00  INFO 6600 --- [LibraryManagementSystem] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 76 ms. Found 5 JPA repository interfaces.
+2024-06-13T14:51:13.547+05:00  INFO 6600 --- [LibraryManagementSystem] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-13T14:51:13.626+05:00  INFO 6600 --- [LibraryManagementSystem] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-06-13T14:51:13.658+05:00  INFO 6600 --- [LibraryManagementSystem] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-06-13T14:51:13.945+05:00  INFO 6600 --- [LibraryManagementSystem] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-13T14:51:13.984+05:00  INFO 6600 --- [LibraryManagementSystem] [main] com.zaxxer.hikari.HikariDataSource       : library - Starting...
+2024-06-13T14:51:14.165+05:00  INFO 6600 --- [LibraryManagementSystem] [main] com.zaxxer.hikari.pool.HikariPool        : library - Added connection conn0: url=jdbc:h2:mem:test user=SA
+2024-06-13T14:51:14.165+05:00  INFO 6600 --- [LibraryManagementSystem] [main] com.zaxxer.hikari.HikariDataSource       : library - Start completed.
+2024-06-13T14:51:14.197+05:00  WARN 6600 --- [LibraryManagementSystem] [main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-13T14:51:14.433+05:00  INFO 6600 --- [LibraryManagementSystem] [main] o.hibernate.id.enhanced.TableGenerator   : HHH000398: Explicit segment value for id generator [id_gen_table.gen_name] suggested; using default [account]
+2024-06-13T14:51:14.433+05:00  INFO 6600 --- [LibraryManagementSystem] [main] o.hibernate.id.enhanced.TableGenerator   : HHH000398: Explicit segment value for id generator [id_gen_table.gen_name] suggested; using default [book]
+2024-06-13T14:51:14.433+05:00  INFO 6600 --- [LibraryManagementSystem] [main] o.hibernate.id.enhanced.TableGenerator   : HHH000398: Explicit segment value for id generator [id_gen_table.gen_name] suggested; using default [notification]
+2024-06-13T14:51:14.433+05:00  INFO 6600 --- [LibraryManagementSystem] [main] o.hibernate.id.enhanced.TableGenerator   : HHH000398: Explicit segment value for id generator [id_gen_table.gen_name] suggested; using default [author]
+2024-06-13T14:51:14.433+05:00  INFO 6600 --- [LibraryManagementSystem] [main] o.hibernate.id.enhanced.TableGenerator   : HHH000398: Explicit segment value for id generator [id_gen_table.gen_name] suggested; using default [book_reservation]
+2024-06-13T14:51:15.155+05:00  INFO 6600 --- [LibraryManagementSystem] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-13T14:51:15.203+05:00  INFO 6600 --- [LibraryManagementSystem] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-13T14:51:15.674+05:00  INFO 6600 --- [LibraryManagementSystem] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-06-13T14:51:16.428+05:00  INFO 6600 --- [LibraryManagementSystem] [main] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2024-06-13T14:51:16.443+05:00  INFO 6600 --- [LibraryManagementSystem] [main] org.quartz.simpl.SimpleThreadPool        : Job execution threads will use class loader of thread: main
+2024-06-13T14:51:16.459+05:00  INFO 6600 --- [LibraryManagementSystem] [main] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2024-06-13T14:51:16.459+05:00  INFO 6600 --- [LibraryManagementSystem] [main] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.3.2 created.
+2024-06-13T14:51:16.459+05:00  INFO 6600 --- [LibraryManagementSystem] [main] o.s.s.quartz.LocalDataSourceJobStore     : Using db table-based data access locking (synchronization).
+2024-06-13T14:51:16.459+05:00  INFO 6600 --- [LibraryManagementSystem] [main] o.s.s.quartz.LocalDataSourceJobStore     : JobStoreCMT initialized.
+2024-06-13T14:51:16.459+05:00  INFO 6600 --- [LibraryManagementSystem] [main] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'quartzScheduler' with instanceId 'NURBEK-HuaweiMatebookD151718272276443'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 5 threads.
+  Using job-store 'org.springframework.scheduling.quartz.LocalDataSourceJobStore' - which supports persistence. and is clustered.
+
+2024-06-13T14:51:16.459+05:00  INFO 6600 --- [LibraryManagementSystem] [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2024-06-13T14:51:16.459+05:00  INFO 6600 --- [LibraryManagementSystem] [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.3.2
+2024-06-13T14:51:16.459+05:00  INFO 6600 --- [LibraryManagementSystem] [main] org.quartz.core.QuartzScheduler          : JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@4a5eb613
+2024-06-13T14:51:16.538+05:00  INFO 6600 --- [LibraryManagementSystem] [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NURBEK-HuaweiMatebookD151718272276443 started.
+2024-06-13T14:51:16.609+05:00  WARN 6600 --- [LibraryManagementSystem] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-13T14:51:17.201+05:00  INFO 6600 --- [LibraryManagementSystem] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@74cd82f1, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@632a7680, org.springframework.security.web.context.SecurityContextHolderFilter@996126b, org.springframework.security.web.header.HeaderWriterFilter@2c8469fe, org.springframework.web.filter.CorsFilter@66e5441e, org.springframework.security.web.authentication.logout.LogoutFilter@31d64d0f, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@92fa950, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6d4b09c7, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4f50e974, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1df77353, org.springframework.security.web.access.ExceptionTranslationFilter@33ed6546, org.springframework.security.web.access.intercept.AuthorizationFilter@7fb02869]
+2024-06-13T14:51:17.841+05:00  INFO 6600 --- [LibraryManagementSystem] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2024-06-13T14:51:17.842+05:00  INFO 6600 --- [LibraryManagementSystem] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2024-06-13T14:51:17.844+05:00  INFO 6600 --- [LibraryManagementSystem] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2024-06-13T14:51:17.879+05:00  INFO 6600 --- [LibraryManagementSystem] [main] n.l.NotificationIntegrationTest          : Started NotificationIntegrationTest in 6.779 seconds (process running for 7.775)
+2024-06-13T14:51:17.910+05:00  INFO 6600 --- [LibraryManagementSystem] [main] n.l.config.SecurityConfig                : EMAIL: ltownes5@google.pl
+2024-06-13T14:51:18.059+05:00  INFO 6600 --- [LibraryManagementSystem] [main] n.l.config.SecurityConfig                : ACCOUNT: ltownes5@google.pl
+2024-06-13T14:51:18.084+05:00  INFO 6600 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 1
+2024-06-13T14:51:18.152+05:00  INFO 6600 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 2
+2024-06-13T14:51:18.160+05:00  INFO 6600 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 3
+2024-06-13T14:51:18.166+05:00  INFO 6600 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 4
+2024-06-13T14:51:18.172+05:00  INFO 6600 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 5
+2024-06-13T14:51:18.178+05:00  INFO 6600 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 6
+2024-06-13T14:51:18.185+05:00  INFO 6600 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 7
+2024-06-13T14:51:18.193+05:00  INFO 6600 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 8
+2024-06-13T14:51:18.201+05:00  INFO 6600 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 9
+2024-06-13T14:51:18.209+05:00  INFO 6600 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 10
+2024-06-13T14:51:18.617+05:00  INFO 6600 --- [LibraryManagementSystem] [main] n.l.s.s.NotificationServiceImpl          : Notification sent to jcumbes8@tamu.edu
+2024-06-13T14:51:18.694+05:00  INFO 6600 --- [LibraryManagementSystem] [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NURBEK-HuaweiMatebookD151718272276443 paused.
+2024-06-13T14:51:18.695+05:00  INFO 6600 --- [LibraryManagementSystem] [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NURBEK-HuaweiMatebookD151718272276443 shutting down.
+2024-06-13T14:51:18.695+05:00  INFO 6600 --- [LibraryManagementSystem] [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NURBEK-HuaweiMatebookD151718272276443 paused.
+2024-06-13T14:51:18.695+05:00  INFO 6600 --- [LibraryManagementSystem] [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NURBEK-HuaweiMatebookD151718272276443 shutdown complete.
+2024-06-13T14:51:18.695+05:00  INFO 6600 --- [LibraryManagementSystem] [main] o.s.s.quartz.SchedulerFactoryBean        : Shutting down Quartz Scheduler
+2024-06-13T14:51:18.695+05:00  INFO 6600 --- [LibraryManagementSystem] [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-13T14:51:18.695+05:00  INFO 6600 --- [LibraryManagementSystem] [main] com.zaxxer.hikari.HikariDataSource       : library - Shutdown initiated...
+2024-06-13T14:51:18.695+05:00  INFO 6600 --- [LibraryManagementSystem] [main] com.zaxxer.hikari.HikariDataSource       : library - Shutdown completed.
+2024-06-13T14:52:31.466+05:00  INFO 4804 --- [LibraryManagementSystem] [main] n.l.NotificationIntegrationTest          : Starting NotificationIntegrationTest using Java 21.0.1 with PID 4804 (started by Nurbek in D:\EpamLearning\LibraryManagementSystem)
+2024-06-13T14:52:31.469+05:00  INFO 4804 --- [LibraryManagementSystem] [main] n.l.NotificationIntegrationTest          : No active profile set, falling back to 1 default profile: "default"
+2024-06-13T14:52:32.299+05:00  INFO 4804 --- [LibraryManagementSystem] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-13T14:52:32.362+05:00  INFO 4804 --- [LibraryManagementSystem] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 59 ms. Found 5 JPA repository interfaces.
+2024-06-13T14:52:33.375+05:00  INFO 4804 --- [LibraryManagementSystem] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-13T14:52:33.453+05:00  INFO 4804 --- [LibraryManagementSystem] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-06-13T14:52:33.500+05:00  INFO 4804 --- [LibraryManagementSystem] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-06-13T14:52:33.832+05:00  INFO 4804 --- [LibraryManagementSystem] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-13T14:52:33.879+05:00  INFO 4804 --- [LibraryManagementSystem] [main] com.zaxxer.hikari.HikariDataSource       : library - Starting...
+2024-06-13T14:52:34.099+05:00  INFO 4804 --- [LibraryManagementSystem] [main] com.zaxxer.hikari.pool.HikariPool        : library - Added connection conn0: url=jdbc:h2:mem:test user=SA
+2024-06-13T14:52:34.114+05:00  INFO 4804 --- [LibraryManagementSystem] [main] com.zaxxer.hikari.HikariDataSource       : library - Start completed.
+2024-06-13T14:52:34.131+05:00  WARN 4804 --- [LibraryManagementSystem] [main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-13T14:52:34.367+05:00  INFO 4804 --- [LibraryManagementSystem] [main] o.hibernate.id.enhanced.TableGenerator   : HHH000398: Explicit segment value for id generator [id_gen_table.gen_name] suggested; using default [account]
+2024-06-13T14:52:34.367+05:00  INFO 4804 --- [LibraryManagementSystem] [main] o.hibernate.id.enhanced.TableGenerator   : HHH000398: Explicit segment value for id generator [id_gen_table.gen_name] suggested; using default [book]
+2024-06-13T14:52:34.367+05:00  INFO 4804 --- [LibraryManagementSystem] [main] o.hibernate.id.enhanced.TableGenerator   : HHH000398: Explicit segment value for id generator [id_gen_table.gen_name] suggested; using default [notification]
+2024-06-13T14:52:34.367+05:00  INFO 4804 --- [LibraryManagementSystem] [main] o.hibernate.id.enhanced.TableGenerator   : HHH000398: Explicit segment value for id generator [id_gen_table.gen_name] suggested; using default [author]
+2024-06-13T14:52:34.367+05:00  INFO 4804 --- [LibraryManagementSystem] [main] o.hibernate.id.enhanced.TableGenerator   : HHH000398: Explicit segment value for id generator [id_gen_table.gen_name] suggested; using default [book_reservation]
+2024-06-13T14:52:35.154+05:00  INFO 4804 --- [LibraryManagementSystem] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-13T14:52:35.216+05:00  INFO 4804 --- [LibraryManagementSystem] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-13T14:52:35.721+05:00  INFO 4804 --- [LibraryManagementSystem] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-06-13T14:52:36.478+05:00  INFO 4804 --- [LibraryManagementSystem] [main] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2024-06-13T14:52:36.494+05:00  INFO 4804 --- [LibraryManagementSystem] [main] org.quartz.simpl.SimpleThreadPool        : Job execution threads will use class loader of thread: main
+2024-06-13T14:52:36.510+05:00  INFO 4804 --- [LibraryManagementSystem] [main] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2024-06-13T14:52:36.510+05:00  INFO 4804 --- [LibraryManagementSystem] [main] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.3.2 created.
+2024-06-13T14:52:36.510+05:00  INFO 4804 --- [LibraryManagementSystem] [main] o.s.s.quartz.LocalDataSourceJobStore     : Using db table-based data access locking (synchronization).
+2024-06-13T14:52:36.510+05:00  INFO 4804 --- [LibraryManagementSystem] [main] o.s.s.quartz.LocalDataSourceJobStore     : JobStoreCMT initialized.
+2024-06-13T14:52:36.510+05:00  INFO 4804 --- [LibraryManagementSystem] [main] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'quartzScheduler' with instanceId 'NURBEK-HuaweiMatebookD151718272356494'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 5 threads.
+  Using job-store 'org.springframework.scheduling.quartz.LocalDataSourceJobStore' - which supports persistence. and is clustered.
+
+2024-06-13T14:52:36.510+05:00  INFO 4804 --- [LibraryManagementSystem] [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2024-06-13T14:52:36.510+05:00  INFO 4804 --- [LibraryManagementSystem] [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.3.2
+2024-06-13T14:52:36.510+05:00  INFO 4804 --- [LibraryManagementSystem] [main] org.quartz.core.QuartzScheduler          : JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@531ed68e
+2024-06-13T14:52:36.594+05:00  INFO 4804 --- [LibraryManagementSystem] [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NURBEK-HuaweiMatebookD151718272356494 started.
+2024-06-13T14:52:36.686+05:00  WARN 4804 --- [LibraryManagementSystem] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-13T14:52:36.825+05:00  INFO 4804 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 1
+2024-06-13T14:52:36.879+05:00  INFO 4804 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 2
+2024-06-13T14:52:36.883+05:00  INFO 4804 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 3
+2024-06-13T14:52:36.887+05:00  INFO 4804 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 4
+2024-06-13T14:52:36.893+05:00  INFO 4804 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 5
+2024-06-13T14:52:36.900+05:00  INFO 4804 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 6
+2024-06-13T14:52:36.904+05:00  INFO 4804 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 7
+2024-06-13T14:52:36.909+05:00  INFO 4804 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 8
+2024-06-13T14:52:36.914+05:00  INFO 4804 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 9
+2024-06-13T14:52:36.919+05:00  INFO 4804 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 10
+2024-06-13T14:52:37.325+05:00  INFO 4804 --- [LibraryManagementSystem] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@797dd7ef, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@ece7204, org.springframework.security.web.context.SecurityContextHolderFilter@19beeb61, org.springframework.security.web.header.HeaderWriterFilter@3681c285, org.springframework.web.filter.CorsFilter@22c4151b, org.springframework.security.web.authentication.logout.LogoutFilter@13e12ab6, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@2f318251, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6f5d292c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3c4940d2, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2c3df478, org.springframework.security.web.access.ExceptionTranslationFilter@70720b78, org.springframework.security.web.access.intercept.AuthorizationFilter@b89cbf9]
+2024-06-13T14:52:38.134+05:00  INFO 4804 --- [LibraryManagementSystem] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2024-06-13T14:52:38.134+05:00  INFO 4804 --- [LibraryManagementSystem] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2024-06-13T14:52:38.135+05:00  INFO 4804 --- [LibraryManagementSystem] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2024-06-13T14:52:38.171+05:00  INFO 4804 --- [LibraryManagementSystem] [main] n.l.NotificationIntegrationTest          : Started NotificationIntegrationTest in 7.052 seconds (process running for 8.069)
+2024-06-13T14:52:38.205+05:00  INFO 4804 --- [LibraryManagementSystem] [main] n.l.config.SecurityConfig                : EMAIL: ltownes5@google.pl
+2024-06-13T14:52:38.208+05:00  INFO 4804 --- [LibraryManagementSystem] [main] n.l.config.SecurityConfig                : ACCOUNT: ltownes5@google.pl
+2024-06-13T14:52:39.051+05:00  INFO 4804 --- [LibraryManagementSystem] [main] n.l.NotificationIntegrationTest          : [NotificationEntity(id=1, subject=Book Reservation Reminder, content=Your book reservation is due soon. Please return the book to the library., publishDate=2024-01-24, account=AccountEntity(id=1, firstName=Vera, lastName=Trahear, email=vtrahear0@flavors.me, password=$2a$10$2Uz4lxxlJG9/iM2fpjmP5OWBAPPMD7X0zb.zcfMQV9HSzuwIX5h0u, role=USER)), NotificationEntity(id=2, subject=Book Reservation Reminder, content=Your book reservation is due soon. Please return the book to the library., publishDate=2023-12-21, account=AccountEntity(id=2, firstName=Claudette, lastName=McKirton, email=cmckirton1@tinyurl.com, password=$2a$10$2Uz4lxxlJG9/iM2fpjmP5OWBAPPMD7X0zb.zcfMQV9HSzuwIX5h0u, role=USER)), NotificationEntity(id=3, subject=Book Reservation Reminder, content=Your book reservation is due soon. Please return the book to the library., publishDate=2024-05-15, account=AccountEntity(id=3, firstName=Nappie, lastName=Somes, email=nsomes2@sohu.com, password=$2a$10$2Uz4lxxlJG9/iM2fpjmP5OWBAPPMD7X0zb.zcfMQV9HSzuwIX5h0u, role=USER)), NotificationEntity(id=4, subject=Book Reservation Reminder, content=Your book reservation is due soon. Please return the book to the library., publishDate=2024-01-17, account=AccountEntity(id=4, firstName=Farah, lastName=Raine, email=fraine3@flickr.com, password=$2a$10$2Uz4lxxlJG9/iM2fpjmP5OWBAPPMD7X0zb.zcfMQV9HSzuwIX5h0u, role=USER)), NotificationEntity(id=5, subject=Book Reservation Reminder, content=Your book reservation is due soon. Please return the book to the library., publishDate=2024-05-06, account=AccountEntity(id=5, firstName=Adelle, lastName=Cheal, email=acheal4@bizjournals.com, password=$2a$10$2Uz4lxxlJG9/iM2fpjmP5OWBAPPMD7X0zb.zcfMQV9HSzuwIX5h0u, role=USER)), NotificationEntity(id=1001, subject=Subject, content=Content..., publishDate=2024-06-13, account=AccountEntity(id=9, firstName=Jeffy, lastName=Cumbes, email=jcumbes8@tamu.edu, password=$2a$10$2Uz4lxxlJG9/iM2fpjmP5OWBAPPMD7X0zb.zcfMQV9HSzuwIX5h0u, role=LIBRARIAN))]
+2024-06-13T14:52:39.142+05:00  INFO 4804 --- [LibraryManagementSystem] [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NURBEK-HuaweiMatebookD151718272356494 paused.
+2024-06-13T14:52:39.145+05:00  INFO 4804 --- [LibraryManagementSystem] [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NURBEK-HuaweiMatebookD151718272356494 shutting down.
+2024-06-13T14:52:39.146+05:00  INFO 4804 --- [LibraryManagementSystem] [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NURBEK-HuaweiMatebookD151718272356494 paused.
+2024-06-13T14:52:39.147+05:00  INFO 4804 --- [LibraryManagementSystem] [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NURBEK-HuaweiMatebookD151718272356494 shutdown complete.
+2024-06-13T14:52:39.147+05:00  INFO 4804 --- [LibraryManagementSystem] [main] o.s.s.quartz.SchedulerFactoryBean        : Shutting down Quartz Scheduler
+2024-06-13T14:52:39.147+05:00  INFO 4804 --- [LibraryManagementSystem] [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-13T14:52:39.147+05:00  INFO 4804 --- [LibraryManagementSystem] [main] com.zaxxer.hikari.HikariDataSource       : library - Shutdown initiated...
+2024-06-13T14:52:39.147+05:00  INFO 4804 --- [LibraryManagementSystem] [main] com.zaxxer.hikari.HikariDataSource       : library - Shutdown completed.
+2024-06-13T14:52:52.205+05:00  INFO 18292 --- [LibraryManagementSystem] [main] n.l.NotificationIntegrationTest          : Starting NotificationIntegrationTest using Java 21.0.1 with PID 18292 (started by Nurbek in D:\EpamLearning\LibraryManagementSystem)
+2024-06-13T14:52:52.205+05:00  INFO 18292 --- [LibraryManagementSystem] [main] n.l.NotificationIntegrationTest          : No active profile set, falling back to 1 default profile: "default"
+2024-06-13T14:52:53.113+05:00  INFO 18292 --- [LibraryManagementSystem] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-13T14:52:53.204+05:00  INFO 18292 --- [LibraryManagementSystem] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 88 ms. Found 5 JPA repository interfaces.
+2024-06-13T14:52:54.372+05:00  INFO 18292 --- [LibraryManagementSystem] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-13T14:52:54.475+05:00  INFO 18292 --- [LibraryManagementSystem] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-06-13T14:52:54.523+05:00  INFO 18292 --- [LibraryManagementSystem] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-06-13T14:52:54.821+05:00  INFO 18292 --- [LibraryManagementSystem] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-13T14:52:54.860+05:00  INFO 18292 --- [LibraryManagementSystem] [main] com.zaxxer.hikari.HikariDataSource       : library - Starting...
+2024-06-13T14:52:55.042+05:00  INFO 18292 --- [LibraryManagementSystem] [main] com.zaxxer.hikari.pool.HikariPool        : library - Added connection conn0: url=jdbc:h2:mem:test user=SA
+2024-06-13T14:52:55.042+05:00  INFO 18292 --- [LibraryManagementSystem] [main] com.zaxxer.hikari.HikariDataSource       : library - Start completed.
+2024-06-13T14:52:55.060+05:00  WARN 18292 --- [LibraryManagementSystem] [main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-13T14:52:55.310+05:00  INFO 18292 --- [LibraryManagementSystem] [main] o.hibernate.id.enhanced.TableGenerator   : HHH000398: Explicit segment value for id generator [id_gen_table.gen_name] suggested; using default [account]
+2024-06-13T14:52:55.310+05:00  INFO 18292 --- [LibraryManagementSystem] [main] o.hibernate.id.enhanced.TableGenerator   : HHH000398: Explicit segment value for id generator [id_gen_table.gen_name] suggested; using default [book]
+2024-06-13T14:52:55.310+05:00  INFO 18292 --- [LibraryManagementSystem] [main] o.hibernate.id.enhanced.TableGenerator   : HHH000398: Explicit segment value for id generator [id_gen_table.gen_name] suggested; using default [notification]
+2024-06-13T14:52:55.310+05:00  INFO 18292 --- [LibraryManagementSystem] [main] o.hibernate.id.enhanced.TableGenerator   : HHH000398: Explicit segment value for id generator [id_gen_table.gen_name] suggested; using default [author]
+2024-06-13T14:52:55.310+05:00  INFO 18292 --- [LibraryManagementSystem] [main] o.hibernate.id.enhanced.TableGenerator   : HHH000398: Explicit segment value for id generator [id_gen_table.gen_name] suggested; using default [book_reservation]
+2024-06-13T14:52:56.162+05:00  INFO 18292 --- [LibraryManagementSystem] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-13T14:52:56.227+05:00  INFO 18292 --- [LibraryManagementSystem] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-13T14:52:56.710+05:00  INFO 18292 --- [LibraryManagementSystem] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-06-13T14:52:57.460+05:00  INFO 18292 --- [LibraryManagementSystem] [main] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2024-06-13T14:52:57.465+05:00  INFO 18292 --- [LibraryManagementSystem] [main] org.quartz.simpl.SimpleThreadPool        : Job execution threads will use class loader of thread: main
+2024-06-13T14:52:57.476+05:00  INFO 18292 --- [LibraryManagementSystem] [main] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2024-06-13T14:52:57.476+05:00  INFO 18292 --- [LibraryManagementSystem] [main] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.3.2 created.
+2024-06-13T14:52:57.476+05:00  INFO 18292 --- [LibraryManagementSystem] [main] o.s.s.quartz.LocalDataSourceJobStore     : Using db table-based data access locking (synchronization).
+2024-06-13T14:52:57.476+05:00  INFO 18292 --- [LibraryManagementSystem] [main] o.s.s.quartz.LocalDataSourceJobStore     : JobStoreCMT initialized.
+2024-06-13T14:52:57.476+05:00  INFO 18292 --- [LibraryManagementSystem] [main] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'quartzScheduler' with instanceId 'NURBEK-HuaweiMatebookD151718272377465'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 5 threads.
+  Using job-store 'org.springframework.scheduling.quartz.LocalDataSourceJobStore' - which supports persistence. and is clustered.
+
+2024-06-13T14:52:57.476+05:00  INFO 18292 --- [LibraryManagementSystem] [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2024-06-13T14:52:57.476+05:00  INFO 18292 --- [LibraryManagementSystem] [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.3.2
+2024-06-13T14:52:57.476+05:00  INFO 18292 --- [LibraryManagementSystem] [main] org.quartz.core.QuartzScheduler          : JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@4dfe56dc
+2024-06-13T14:52:57.578+05:00  INFO 18292 --- [LibraryManagementSystem] [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NURBEK-HuaweiMatebookD151718272377465 started.
+2024-06-13T14:52:57.653+05:00  WARN 18292 --- [LibraryManagementSystem] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-13T14:52:57.798+05:00  INFO 18292 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 1
+2024-06-13T14:52:57.862+05:00  INFO 18292 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 2
+2024-06-13T14:52:57.868+05:00  INFO 18292 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 3
+2024-06-13T14:52:57.874+05:00  INFO 18292 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 4
+2024-06-13T14:52:57.879+05:00  INFO 18292 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 5
+2024-06-13T14:52:57.884+05:00  INFO 18292 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 6
+2024-06-13T14:52:57.889+05:00  INFO 18292 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 7
+2024-06-13T14:52:57.895+05:00  INFO 18292 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 8
+2024-06-13T14:52:57.899+05:00  INFO 18292 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 9
+2024-06-13T14:52:57.905+05:00  INFO 18292 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 10
+2024-06-13T14:52:58.428+05:00  INFO 18292 --- [LibraryManagementSystem] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@31d64d0f, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6c165921, org.springframework.security.web.context.SecurityContextHolderFilter@6f744b4e, org.springframework.security.web.header.HeaderWriterFilter@3fb5809a, org.springframework.web.filter.CorsFilter@47fb30ca, org.springframework.security.web.authentication.logout.LogoutFilter@c42ee90, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@63bb52ea, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2165b170, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@9677f54, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7cecd959, org.springframework.security.web.access.ExceptionTranslationFilter@1147ab09, org.springframework.security.web.access.intercept.AuthorizationFilter@7e6025c9]
+2024-06-13T14:52:59.075+05:00  INFO 18292 --- [LibraryManagementSystem] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2024-06-13T14:52:59.075+05:00  INFO 18292 --- [LibraryManagementSystem] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2024-06-13T14:52:59.076+05:00  INFO 18292 --- [LibraryManagementSystem] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2024-06-13T14:52:59.106+05:00  INFO 18292 --- [LibraryManagementSystem] [main] n.l.NotificationIntegrationTest          : Started NotificationIntegrationTest in 7.24 seconds (process running for 8.25)
+2024-06-13T14:52:59.132+05:00  INFO 18292 --- [LibraryManagementSystem] [main] n.l.config.SecurityConfig                : EMAIL: ltownes5@google.pl
+2024-06-13T14:52:59.136+05:00  INFO 18292 --- [LibraryManagementSystem] [main] n.l.config.SecurityConfig                : ACCOUNT: ltownes5@google.pl
+2024-06-13T14:52:59.734+05:00  INFO 18292 --- [LibraryManagementSystem] [main] n.l.NotificationIntegrationTest          : Notifications: [NotificationEntity(id=1, subject=Book Reservation Reminder, content=Your book reservation is due soon. Please return the book to the library., publishDate=2024-01-24, account=AccountEntity(id=1, firstName=Vera, lastName=Trahear, email=vtrahear0@flavors.me, password=$2a$10$2Uz4lxxlJG9/iM2fpjmP5OWBAPPMD7X0zb.zcfMQV9HSzuwIX5h0u, role=USER)), NotificationEntity(id=2, subject=Book Reservation Reminder, content=Your book reservation is due soon. Please return the book to the library., publishDate=2023-12-21, account=AccountEntity(id=2, firstName=Claudette, lastName=McKirton, email=cmckirton1@tinyurl.com, password=$2a$10$2Uz4lxxlJG9/iM2fpjmP5OWBAPPMD7X0zb.zcfMQV9HSzuwIX5h0u, role=USER)), NotificationEntity(id=3, subject=Book Reservation Reminder, content=Your book reservation is due soon. Please return the book to the library., publishDate=2024-05-15, account=AccountEntity(id=3, firstName=Nappie, lastName=Somes, email=nsomes2@sohu.com, password=$2a$10$2Uz4lxxlJG9/iM2fpjmP5OWBAPPMD7X0zb.zcfMQV9HSzuwIX5h0u, role=USER)), NotificationEntity(id=4, subject=Book Reservation Reminder, content=Your book reservation is due soon. Please return the book to the library., publishDate=2024-01-17, account=AccountEntity(id=4, firstName=Farah, lastName=Raine, email=fraine3@flickr.com, password=$2a$10$2Uz4lxxlJG9/iM2fpjmP5OWBAPPMD7X0zb.zcfMQV9HSzuwIX5h0u, role=USER)), NotificationEntity(id=5, subject=Book Reservation Reminder, content=Your book reservation is due soon. Please return the book to the library., publishDate=2024-05-06, account=AccountEntity(id=5, firstName=Adelle, lastName=Cheal, email=acheal4@bizjournals.com, password=$2a$10$2Uz4lxxlJG9/iM2fpjmP5OWBAPPMD7X0zb.zcfMQV9HSzuwIX5h0u, role=USER)), NotificationEntity(id=1001, subject=Subject, content=Content..., publishDate=2024-06-13, account=AccountEntity(id=9, firstName=Jeffy, lastName=Cumbes, email=jcumbes8@tamu.edu, password=$2a$10$2Uz4lxxlJG9/iM2fpjmP5OWBAPPMD7X0zb.zcfMQV9HSzuwIX5h0u, role=LIBRARIAN))]
+2024-06-13T14:52:59.845+05:00  INFO 18292 --- [LibraryManagementSystem] [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NURBEK-HuaweiMatebookD151718272377465 paused.
+2024-06-13T14:52:59.847+05:00  INFO 18292 --- [LibraryManagementSystem] [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NURBEK-HuaweiMatebookD151718272377465 shutting down.
+2024-06-13T14:52:59.848+05:00  INFO 18292 --- [LibraryManagementSystem] [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NURBEK-HuaweiMatebookD151718272377465 paused.
+2024-06-13T14:52:59.849+05:00  INFO 18292 --- [LibraryManagementSystem] [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NURBEK-HuaweiMatebookD151718272377465 shutdown complete.
+2024-06-13T14:52:59.849+05:00  INFO 18292 --- [LibraryManagementSystem] [main] o.s.s.quartz.SchedulerFactoryBean        : Shutting down Quartz Scheduler
+2024-06-13T14:52:59.849+05:00  INFO 18292 --- [LibraryManagementSystem] [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-13T14:52:59.849+05:00  INFO 18292 --- [LibraryManagementSystem] [main] com.zaxxer.hikari.HikariDataSource       : library - Shutdown initiated...
+2024-06-13T14:52:59.849+05:00  INFO 18292 --- [LibraryManagementSystem] [main] com.zaxxer.hikari.HikariDataSource       : library - Shutdown completed.
+2024-06-13T14:56:52.754+05:00  INFO 16432 --- [LibraryManagementSystem] [main] n.l.NotificationIntegrationTest          : Starting NotificationIntegrationTest using Java 21.0.1 with PID 16432 (started by Nurbek in D:\EpamLearning\LibraryManagementSystem)
+2024-06-13T14:56:52.770+05:00  INFO 16432 --- [LibraryManagementSystem] [main] n.l.NotificationIntegrationTest          : No active profile set, falling back to 1 default profile: "default"
+2024-06-13T14:56:53.649+05:00  INFO 16432 --- [LibraryManagementSystem] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-13T14:56:53.727+05:00  INFO 16432 --- [LibraryManagementSystem] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 73 ms. Found 5 JPA repository interfaces.
+2024-06-13T14:56:54.696+05:00  INFO 16432 --- [LibraryManagementSystem] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-13T14:56:54.773+05:00  INFO 16432 --- [LibraryManagementSystem] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-06-13T14:56:54.819+05:00  INFO 16432 --- [LibraryManagementSystem] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-06-13T14:56:55.073+05:00  INFO 16432 --- [LibraryManagementSystem] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-13T14:56:55.102+05:00  INFO 16432 --- [LibraryManagementSystem] [main] com.zaxxer.hikari.HikariDataSource       : library - Starting...
+2024-06-13T14:56:55.291+05:00  INFO 16432 --- [LibraryManagementSystem] [main] com.zaxxer.hikari.pool.HikariPool        : library - Added connection conn0: url=jdbc:h2:mem:test user=SA
+2024-06-13T14:56:55.291+05:00  INFO 16432 --- [LibraryManagementSystem] [main] com.zaxxer.hikari.HikariDataSource       : library - Start completed.
+2024-06-13T14:56:55.306+05:00  WARN 16432 --- [LibraryManagementSystem] [main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-13T14:56:55.512+05:00  INFO 16432 --- [LibraryManagementSystem] [main] o.hibernate.id.enhanced.TableGenerator   : HHH000398: Explicit segment value for id generator [id_gen_table.gen_name] suggested; using default [account]
+2024-06-13T14:56:55.512+05:00  INFO 16432 --- [LibraryManagementSystem] [main] o.hibernate.id.enhanced.TableGenerator   : HHH000398: Explicit segment value for id generator [id_gen_table.gen_name] suggested; using default [book]
+2024-06-13T14:56:55.512+05:00  INFO 16432 --- [LibraryManagementSystem] [main] o.hibernate.id.enhanced.TableGenerator   : HHH000398: Explicit segment value for id generator [id_gen_table.gen_name] suggested; using default [notification]
+2024-06-13T14:56:55.527+05:00  INFO 16432 --- [LibraryManagementSystem] [main] o.hibernate.id.enhanced.TableGenerator   : HHH000398: Explicit segment value for id generator [id_gen_table.gen_name] suggested; using default [author]
+2024-06-13T14:56:55.527+05:00  INFO 16432 --- [LibraryManagementSystem] [main] o.hibernate.id.enhanced.TableGenerator   : HHH000398: Explicit segment value for id generator [id_gen_table.gen_name] suggested; using default [book_reservation]
+2024-06-13T14:56:56.284+05:00  INFO 16432 --- [LibraryManagementSystem] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-13T14:56:56.330+05:00  INFO 16432 --- [LibraryManagementSystem] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-13T14:56:56.838+05:00  INFO 16432 --- [LibraryManagementSystem] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-06-13T14:56:57.665+05:00  INFO 16432 --- [LibraryManagementSystem] [main] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2024-06-13T14:56:57.676+05:00  INFO 16432 --- [LibraryManagementSystem] [main] org.quartz.simpl.SimpleThreadPool        : Job execution threads will use class loader of thread: main
+2024-06-13T14:56:57.681+05:00  INFO 16432 --- [LibraryManagementSystem] [main] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2024-06-13T14:56:57.681+05:00  INFO 16432 --- [LibraryManagementSystem] [main] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.3.2 created.
+2024-06-13T14:56:57.681+05:00  INFO 16432 --- [LibraryManagementSystem] [main] o.s.s.quartz.LocalDataSourceJobStore     : Using db table-based data access locking (synchronization).
+2024-06-13T14:56:57.681+05:00  INFO 16432 --- [LibraryManagementSystem] [main] o.s.s.quartz.LocalDataSourceJobStore     : JobStoreCMT initialized.
+2024-06-13T14:56:57.681+05:00  INFO 16432 --- [LibraryManagementSystem] [main] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'quartzScheduler' with instanceId 'NURBEK-HuaweiMatebookD151718272617676'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 5 threads.
+  Using job-store 'org.springframework.scheduling.quartz.LocalDataSourceJobStore' - which supports persistence. and is clustered.
+
+2024-06-13T14:56:57.681+05:00  INFO 16432 --- [LibraryManagementSystem] [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2024-06-13T14:56:57.681+05:00  INFO 16432 --- [LibraryManagementSystem] [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.3.2
+2024-06-13T14:56:57.681+05:00  INFO 16432 --- [LibraryManagementSystem] [main] org.quartz.core.QuartzScheduler          : JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@3ed2a30c
+2024-06-13T14:56:57.777+05:00  INFO 16432 --- [LibraryManagementSystem] [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NURBEK-HuaweiMatebookD151718272617676 started.
+2024-06-13T14:56:57.850+05:00  WARN 16432 --- [LibraryManagementSystem] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-13T14:56:58.012+05:00  INFO 16432 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 1
+2024-06-13T14:56:58.068+05:00  INFO 16432 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 2
+2024-06-13T14:56:58.074+05:00  INFO 16432 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 3
+2024-06-13T14:56:58.081+05:00  INFO 16432 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 4
+2024-06-13T14:56:58.088+05:00  INFO 16432 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 5
+2024-06-13T14:56:58.094+05:00  INFO 16432 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 6
+2024-06-13T14:56:58.099+05:00  INFO 16432 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 7
+2024-06-13T14:56:58.104+05:00  INFO 16432 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 8
+2024-06-13T14:56:58.109+05:00  INFO 16432 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 9
+2024-06-13T14:56:58.114+05:00  INFO 16432 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 10
+2024-06-13T14:56:58.475+05:00  INFO 16432 --- [LibraryManagementSystem] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@64657b13, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@686ee555, org.springframework.security.web.context.SecurityContextHolderFilter@62672ad5, org.springframework.security.web.header.HeaderWriterFilter@44252e9b, org.springframework.web.filter.CorsFilter@4fc00158, org.springframework.security.web.authentication.logout.LogoutFilter@17fbbf0a, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@35c95587, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4c020e58, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@67887bf2, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@47483211, org.springframework.security.web.access.ExceptionTranslationFilter@1b26f006, org.springframework.security.web.access.intercept.AuthorizationFilter@791dcda7]
+2024-06-13T14:56:59.207+05:00  INFO 16432 --- [LibraryManagementSystem] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2024-06-13T14:56:59.207+05:00  INFO 16432 --- [LibraryManagementSystem] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2024-06-13T14:56:59.209+05:00  INFO 16432 --- [LibraryManagementSystem] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2024-06-13T14:56:59.252+05:00  INFO 16432 --- [LibraryManagementSystem] [main] n.l.NotificationIntegrationTest          : Started NotificationIntegrationTest in 6.841 seconds (process running for 7.852)
+2024-06-13T14:56:59.282+05:00  INFO 16432 --- [LibraryManagementSystem] [main] n.l.config.SecurityConfig                : EMAIL: ltownes5@google.pl
+2024-06-13T14:56:59.285+05:00  INFO 16432 --- [LibraryManagementSystem] [main] n.l.config.SecurityConfig                : ACCOUNT: ltownes5@google.pl
+2024-06-13T14:56:59.872+05:00  INFO 16432 --- [LibraryManagementSystem] [main] n.l.NotificationIntegrationTest          : Notifications: [NotificationEntity(id=1, subject=Book Reservation Reminder, content=Your book reservation is due soon. Please return the book to the library., publishDate=2024-01-24, account=AccountEntity(id=1, firstName=Vera, lastName=Trahear, email=vtrahear0@flavors.me, password=$2a$10$2Uz4lxxlJG9/iM2fpjmP5OWBAPPMD7X0zb.zcfMQV9HSzuwIX5h0u, role=USER)), NotificationEntity(id=2, subject=Book Reservation Reminder, content=Your book reservation is due soon. Please return the book to the library., publishDate=2023-12-21, account=AccountEntity(id=2, firstName=Claudette, lastName=McKirton, email=cmckirton1@tinyurl.com, password=$2a$10$2Uz4lxxlJG9/iM2fpjmP5OWBAPPMD7X0zb.zcfMQV9HSzuwIX5h0u, role=USER)), NotificationEntity(id=3, subject=Book Reservation Reminder, content=Your book reservation is due soon. Please return the book to the library., publishDate=2024-05-15, account=AccountEntity(id=3, firstName=Nappie, lastName=Somes, email=nsomes2@sohu.com, password=$2a$10$2Uz4lxxlJG9/iM2fpjmP5OWBAPPMD7X0zb.zcfMQV9HSzuwIX5h0u, role=USER)), NotificationEntity(id=4, subject=Book Reservation Reminder, content=Your book reservation is due soon. Please return the book to the library., publishDate=2024-01-17, account=AccountEntity(id=4, firstName=Farah, lastName=Raine, email=fraine3@flickr.com, password=$2a$10$2Uz4lxxlJG9/iM2fpjmP5OWBAPPMD7X0zb.zcfMQV9HSzuwIX5h0u, role=USER)), NotificationEntity(id=5, subject=Book Reservation Reminder, content=Your book reservation is due soon. Please return the book to the library., publishDate=2024-05-06, account=AccountEntity(id=5, firstName=Adelle, lastName=Cheal, email=acheal4@bizjournals.com, password=$2a$10$2Uz4lxxlJG9/iM2fpjmP5OWBAPPMD7X0zb.zcfMQV9HSzuwIX5h0u, role=USER)), NotificationEntity(id=1001, subject=Subject, content=Content..., publishDate=2024-06-13, account=AccountEntity(id=9, firstName=Jeffy, lastName=Cumbes, email=jcumbes8@tamu.edu, password=$2a$10$2Uz4lxxlJG9/iM2fpjmP5OWBAPPMD7X0zb.zcfMQV9HSzuwIX5h0u, role=LIBRARIAN))]
+2024-06-13T14:57:00.000+05:00  INFO 16432 --- [LibraryManagementSystem] [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NURBEK-HuaweiMatebookD151718272617676 paused.
+2024-06-13T14:57:00.002+05:00  INFO 16432 --- [LibraryManagementSystem] [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NURBEK-HuaweiMatebookD151718272617676 shutting down.
+2024-06-13T14:57:00.002+05:00  INFO 16432 --- [LibraryManagementSystem] [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NURBEK-HuaweiMatebookD151718272617676 paused.
+2024-06-13T14:57:00.003+05:00  INFO 16432 --- [LibraryManagementSystem] [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NURBEK-HuaweiMatebookD151718272617676 shutdown complete.
+2024-06-13T14:57:00.003+05:00  INFO 16432 --- [LibraryManagementSystem] [main] o.s.s.quartz.SchedulerFactoryBean        : Shutting down Quartz Scheduler
+2024-06-13T14:57:00.010+05:00  INFO 16432 --- [LibraryManagementSystem] [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-13T14:57:00.011+05:00  INFO 16432 --- [LibraryManagementSystem] [main] com.zaxxer.hikari.HikariDataSource       : library - Shutdown initiated...
+2024-06-13T14:57:00.006+05:00 ERROR 16432 --- [LibraryManagementSystem] [quartzScheduler_QuartzSchedulerThread] org.quartz.core.ErrorLogger              : An error occured instantiating job to be executed. job= 'DEFAULT.deleteBookJob'
+
+org.quartz.SchedulerException: Job instantiation failed
+	at org.springframework.scheduling.quartz.AdaptableJobFactory.newJob(AdaptableJobFactory.java:47) ~[spring-context-support-6.1.6.jar:6.1.6]
+	at org.quartz.core.JobRunShell.initialize(JobRunShell.java:127) ~[quartz-2.3.2.jar:na]
+	at org.quartz.core.QuartzSchedulerThread.run(QuartzSchedulerThread.java:392) ~[quartz-2.3.2.jar:na]
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'nurbek.librarymanagementsystem.job.DeleteBookJob': Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'libraryServiceImpl': Singleton bean creation not allowed while singletons of this factory are in destruction (Do not request a bean from a BeanFactory in a destroy method implementation!)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:795) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:237) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1355) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1192) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:321) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.scheduling.quartz.SpringBeanJobFactory.createJobInstance(SpringBeanJobFactory.java:89) ~[spring-context-support-6.1.6.jar:6.1.6]
+	at org.springframework.scheduling.quartz.AdaptableJobFactory.newJob(AdaptableJobFactory.java:43) ~[spring-context-support-6.1.6.jar:6.1.6]
+	... 2 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationNotAllowedException: Error creating bean with name 'libraryServiceImpl': Singleton bean creation not allowed while singletons of this factory are in destruction (Do not request a bean from a BeanFactory in a destroy method implementation!)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:220) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1443) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:904) ~[spring-beans-6.1.6.jar:6.1.6]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:782) ~[spring-beans-6.1.6.jar:6.1.6]
+	... 10 common frames omitted
+
+2024-06-13T14:57:00.011+05:00 ERROR 16432 --- [LibraryManagementSystem] [quartzScheduler_QuartzSchedulerThread] org.quartz.core.QuartzSchedulerThread    : Runtime error occurred in main trigger firing loop.
+
+java.lang.IllegalStateException: JobStore is shutdown - aborting retry
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport.retryExecuteInNonManagedTXLock(JobStoreSupport.java:3833) ~[quartz-2.3.2.jar:na]
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport.triggeredJobComplete(JobStoreSupport.java:3116) ~[quartz-2.3.2.jar:na]
+	at org.quartz.core.QuartzSchedulerThread.run(QuartzSchedulerThread.java:394) ~[quartz-2.3.2.jar:na]
+
+2024-06-13T14:57:00.011+05:00  INFO 16432 --- [LibraryManagementSystem] [main] com.zaxxer.hikari.HikariDataSource       : library - Shutdown completed.
+2024-06-13T14:59:41.129+05:00  INFO 19500 --- [LibraryManagementSystem] [main] n.l.NotificationIntegrationTest          : Starting NotificationIntegrationTest using Java 21.0.1 with PID 19500 (started by Nurbek in D:\EpamLearning\LibraryManagementSystem)
+2024-06-13T14:59:41.133+05:00  INFO 19500 --- [LibraryManagementSystem] [main] n.l.NotificationIntegrationTest          : No active profile set, falling back to 1 default profile: "default"
+2024-06-13T14:59:41.964+05:00  INFO 19500 --- [LibraryManagementSystem] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-13T14:59:42.042+05:00  INFO 19500 --- [LibraryManagementSystem] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 72 ms. Found 5 JPA repository interfaces.
+2024-06-13T14:59:43.036+05:00  INFO 19500 --- [LibraryManagementSystem] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-13T14:59:43.131+05:00  INFO 19500 --- [LibraryManagementSystem] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-06-13T14:59:43.178+05:00  INFO 19500 --- [LibraryManagementSystem] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-06-13T14:59:43.540+05:00  INFO 19500 --- [LibraryManagementSystem] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-13T14:59:43.571+05:00  INFO 19500 --- [LibraryManagementSystem] [main] com.zaxxer.hikari.HikariDataSource       : library - Starting...
+2024-06-13T14:59:43.824+05:00  INFO 19500 --- [LibraryManagementSystem] [main] com.zaxxer.hikari.pool.HikariPool        : library - Added connection conn0: url=jdbc:h2:mem:test user=SA
+2024-06-13T14:59:43.824+05:00  INFO 19500 --- [LibraryManagementSystem] [main] com.zaxxer.hikari.HikariDataSource       : library - Start completed.
+2024-06-13T14:59:43.855+05:00  WARN 19500 --- [LibraryManagementSystem] [main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-13T14:59:44.106+05:00  INFO 19500 --- [LibraryManagementSystem] [main] o.hibernate.id.enhanced.TableGenerator   : HHH000398: Explicit segment value for id generator [id_gen_table.gen_name] suggested; using default [account]
+2024-06-13T14:59:44.106+05:00  INFO 19500 --- [LibraryManagementSystem] [main] o.hibernate.id.enhanced.TableGenerator   : HHH000398: Explicit segment value for id generator [id_gen_table.gen_name] suggested; using default [book]
+2024-06-13T14:59:44.106+05:00  INFO 19500 --- [LibraryManagementSystem] [main] o.hibernate.id.enhanced.TableGenerator   : HHH000398: Explicit segment value for id generator [id_gen_table.gen_name] suggested; using default [notification]
+2024-06-13T14:59:44.106+05:00  INFO 19500 --- [LibraryManagementSystem] [main] o.hibernate.id.enhanced.TableGenerator   : HHH000398: Explicit segment value for id generator [id_gen_table.gen_name] suggested; using default [author]
+2024-06-13T14:59:44.106+05:00  INFO 19500 --- [LibraryManagementSystem] [main] o.hibernate.id.enhanced.TableGenerator   : HHH000398: Explicit segment value for id generator [id_gen_table.gen_name] suggested; using default [book_reservation]
+2024-06-13T14:59:44.846+05:00  INFO 19500 --- [LibraryManagementSystem] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-13T14:59:44.908+05:00  INFO 19500 --- [LibraryManagementSystem] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-13T14:59:45.428+05:00  INFO 19500 --- [LibraryManagementSystem] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-06-13T14:59:46.245+05:00  INFO 19500 --- [LibraryManagementSystem] [main] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2024-06-13T14:59:46.265+05:00  INFO 19500 --- [LibraryManagementSystem] [main] org.quartz.simpl.SimpleThreadPool        : Job execution threads will use class loader of thread: main
+2024-06-13T14:59:46.265+05:00  INFO 19500 --- [LibraryManagementSystem] [main] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2024-06-13T14:59:46.265+05:00  INFO 19500 --- [LibraryManagementSystem] [main] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.3.2 created.
+2024-06-13T14:59:46.277+05:00  INFO 19500 --- [LibraryManagementSystem] [main] o.s.s.quartz.LocalDataSourceJobStore     : Using db table-based data access locking (synchronization).
+2024-06-13T14:59:46.277+05:00  INFO 19500 --- [LibraryManagementSystem] [main] o.s.s.quartz.LocalDataSourceJobStore     : JobStoreCMT initialized.
+2024-06-13T14:59:46.277+05:00  INFO 19500 --- [LibraryManagementSystem] [main] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'quartzScheduler' with instanceId 'NURBEK-HuaweiMatebookD151718272786265'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 5 threads.
+  Using job-store 'org.springframework.scheduling.quartz.LocalDataSourceJobStore' - which supports persistence. and is clustered.
+
+2024-06-13T14:59:46.277+05:00  INFO 19500 --- [LibraryManagementSystem] [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2024-06-13T14:59:46.277+05:00  INFO 19500 --- [LibraryManagementSystem] [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.3.2
+2024-06-13T14:59:46.277+05:00  INFO 19500 --- [LibraryManagementSystem] [main] org.quartz.core.QuartzScheduler          : JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@d60aa4
+2024-06-13T14:59:46.355+05:00  INFO 19500 --- [LibraryManagementSystem] [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NURBEK-HuaweiMatebookD151718272786265 started.
+2024-06-13T14:59:46.426+05:00  WARN 19500 --- [LibraryManagementSystem] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-13T14:59:47.057+05:00  INFO 19500 --- [LibraryManagementSystem] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1d9295e2, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4b708c16, org.springframework.security.web.context.SecurityContextHolderFilter@7f514dfe, org.springframework.security.web.header.HeaderWriterFilter@6c165921, org.springframework.web.filter.CorsFilter@2700f556, org.springframework.security.web.authentication.logout.LogoutFilter@355da59c, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@524241d9, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3f33c5e4, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@258ff54a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6def1699, org.springframework.security.web.access.ExceptionTranslationFilter@653fbbfc, org.springframework.security.web.access.intercept.AuthorizationFilter@3c4940d2]
+2024-06-13T14:59:47.699+05:00  INFO 19500 --- [LibraryManagementSystem] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2024-06-13T14:59:47.699+05:00  INFO 19500 --- [LibraryManagementSystem] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2024-06-13T14:59:47.702+05:00  INFO 19500 --- [LibraryManagementSystem] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2024-06-13T14:59:47.734+05:00  INFO 19500 --- [LibraryManagementSystem] [main] n.l.NotificationIntegrationTest          : Started NotificationIntegrationTest in 6.943 seconds (process running for 7.952)
+2024-06-13T14:59:47.763+05:00  INFO 19500 --- [LibraryManagementSystem] [main] n.l.config.SecurityConfig                : EMAIL: ltownes5@google.pl
+2024-06-13T14:59:47.921+05:00  INFO 19500 --- [LibraryManagementSystem] [main] n.l.config.SecurityConfig                : ACCOUNT: ltownes5@google.pl
+2024-06-13T14:59:48.072+05:00  INFO 19500 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 1
+2024-06-13T14:59:48.138+05:00  INFO 19500 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 2
+2024-06-13T14:59:48.143+05:00  INFO 19500 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 3
+2024-06-13T14:59:48.149+05:00  INFO 19500 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 4
+2024-06-13T14:59:48.157+05:00  INFO 19500 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 5
+2024-06-13T14:59:48.164+05:00  INFO 19500 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 6
+2024-06-13T14:59:48.172+05:00  INFO 19500 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 7
+2024-06-13T14:59:48.178+05:00  INFO 19500 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 8
+2024-06-13T14:59:48.183+05:00  INFO 19500 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 9
+2024-06-13T14:59:48.187+05:00  INFO 19500 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 10
+2024-06-13T14:59:48.652+05:00  INFO 19500 --- [LibraryManagementSystem] [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NURBEK-HuaweiMatebookD151718272786265 paused.
+2024-06-13T14:59:48.652+05:00  INFO 19500 --- [LibraryManagementSystem] [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NURBEK-HuaweiMatebookD151718272786265 shutting down.
+2024-06-13T14:59:48.652+05:00  INFO 19500 --- [LibraryManagementSystem] [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NURBEK-HuaweiMatebookD151718272786265 paused.
+2024-06-13T14:59:48.652+05:00  INFO 19500 --- [LibraryManagementSystem] [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NURBEK-HuaweiMatebookD151718272786265 shutdown complete.
+2024-06-13T14:59:48.652+05:00  INFO 19500 --- [LibraryManagementSystem] [main] o.s.s.quartz.SchedulerFactoryBean        : Shutting down Quartz Scheduler
+2024-06-13T14:59:48.652+05:00  INFO 19500 --- [LibraryManagementSystem] [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-13T14:59:48.652+05:00  INFO 19500 --- [LibraryManagementSystem] [main] com.zaxxer.hikari.HikariDataSource       : library - Shutdown initiated...
+2024-06-13T14:59:48.652+05:00  INFO 19500 --- [LibraryManagementSystem] [main] com.zaxxer.hikari.HikariDataSource       : library - Shutdown completed.
+2024-06-13T15:01:53.480+05:00  INFO 20380 --- [LibraryManagementSystem] [main] n.l.NotificationIntegrationTest          : Starting NotificationIntegrationTest using Java 21.0.1 with PID 20380 (started by Nurbek in D:\EpamLearning\LibraryManagementSystem)
+2024-06-13T15:01:53.481+05:00  INFO 20380 --- [LibraryManagementSystem] [main] n.l.NotificationIntegrationTest          : No active profile set, falling back to 1 default profile: "default"
+2024-06-13T15:01:54.281+05:00  INFO 20380 --- [LibraryManagementSystem] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-13T15:01:54.358+05:00  INFO 20380 --- [LibraryManagementSystem] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 66 ms. Found 5 JPA repository interfaces.
+2024-06-13T15:01:55.381+05:00  INFO 20380 --- [LibraryManagementSystem] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-13T15:01:55.458+05:00  INFO 20380 --- [LibraryManagementSystem] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-06-13T15:01:55.521+05:00  INFO 20380 --- [LibraryManagementSystem] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-06-13T15:01:55.867+05:00  INFO 20380 --- [LibraryManagementSystem] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-13T15:01:55.898+05:00  INFO 20380 --- [LibraryManagementSystem] [main] com.zaxxer.hikari.HikariDataSource       : library - Starting...
+2024-06-13T15:01:56.134+05:00  INFO 20380 --- [LibraryManagementSystem] [main] com.zaxxer.hikari.pool.HikariPool        : library - Added connection conn0: url=jdbc:h2:mem:test user=SA
+2024-06-13T15:01:56.149+05:00  INFO 20380 --- [LibraryManagementSystem] [main] com.zaxxer.hikari.HikariDataSource       : library - Start completed.
+2024-06-13T15:01:56.183+05:00  WARN 20380 --- [LibraryManagementSystem] [main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-13T15:01:56.417+05:00  INFO 20380 --- [LibraryManagementSystem] [main] o.hibernate.id.enhanced.TableGenerator   : HHH000398: Explicit segment value for id generator [id_gen_table.gen_name] suggested; using default [account]
+2024-06-13T15:01:56.417+05:00  INFO 20380 --- [LibraryManagementSystem] [main] o.hibernate.id.enhanced.TableGenerator   : HHH000398: Explicit segment value for id generator [id_gen_table.gen_name] suggested; using default [book]
+2024-06-13T15:01:56.417+05:00  INFO 20380 --- [LibraryManagementSystem] [main] o.hibernate.id.enhanced.TableGenerator   : HHH000398: Explicit segment value for id generator [id_gen_table.gen_name] suggested; using default [notification]
+2024-06-13T15:01:56.417+05:00  INFO 20380 --- [LibraryManagementSystem] [main] o.hibernate.id.enhanced.TableGenerator   : HHH000398: Explicit segment value for id generator [id_gen_table.gen_name] suggested; using default [author]
+2024-06-13T15:01:56.417+05:00  INFO 20380 --- [LibraryManagementSystem] [main] o.hibernate.id.enhanced.TableGenerator   : HHH000398: Explicit segment value for id generator [id_gen_table.gen_name] suggested; using default [book_reservation]
+2024-06-13T15:01:57.155+05:00  INFO 20380 --- [LibraryManagementSystem] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-13T15:01:57.203+05:00  INFO 20380 --- [LibraryManagementSystem] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-13T15:01:57.706+05:00  INFO 20380 --- [LibraryManagementSystem] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-06-13T15:01:58.557+05:00  INFO 20380 --- [LibraryManagementSystem] [main] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2024-06-13T15:01:58.573+05:00  INFO 20380 --- [LibraryManagementSystem] [main] org.quartz.simpl.SimpleThreadPool        : Job execution threads will use class loader of thread: main
+2024-06-13T15:01:58.589+05:00  INFO 20380 --- [LibraryManagementSystem] [main] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2024-06-13T15:01:58.589+05:00  INFO 20380 --- [LibraryManagementSystem] [main] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.3.2 created.
+2024-06-13T15:01:58.589+05:00  INFO 20380 --- [LibraryManagementSystem] [main] o.s.s.quartz.LocalDataSourceJobStore     : Using db table-based data access locking (synchronization).
+2024-06-13T15:01:58.589+05:00  INFO 20380 --- [LibraryManagementSystem] [main] o.s.s.quartz.LocalDataSourceJobStore     : JobStoreCMT initialized.
+2024-06-13T15:01:58.589+05:00  INFO 20380 --- [LibraryManagementSystem] [main] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'quartzScheduler' with instanceId 'NURBEK-HuaweiMatebookD151718272918573'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 5 threads.
+  Using job-store 'org.springframework.scheduling.quartz.LocalDataSourceJobStore' - which supports persistence. and is clustered.
+
+2024-06-13T15:01:58.589+05:00  INFO 20380 --- [LibraryManagementSystem] [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2024-06-13T15:01:58.589+05:00  INFO 20380 --- [LibraryManagementSystem] [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.3.2
+2024-06-13T15:01:58.589+05:00  INFO 20380 --- [LibraryManagementSystem] [main] org.quartz.core.QuartzScheduler          : JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@4f2a0909
+2024-06-13T15:01:58.667+05:00  INFO 20380 --- [LibraryManagementSystem] [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NURBEK-HuaweiMatebookD151718272918573 started.
+2024-06-13T15:01:58.750+05:00  WARN 20380 --- [LibraryManagementSystem] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-13T15:01:59.460+05:00  INFO 20380 --- [LibraryManagementSystem] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@b8e6981, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1e40edb7, org.springframework.security.web.context.SecurityContextHolderFilter@566dc0c3, org.springframework.security.web.header.HeaderWriterFilter@258ff54a, org.springframework.web.filter.CorsFilter@27381497, org.springframework.security.web.authentication.logout.LogoutFilter@3681c285, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@4b708c16, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7fb02869, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@92fa950, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@282c0891, org.springframework.security.web.access.ExceptionTranslationFilter@318155b1, org.springframework.security.web.access.intercept.AuthorizationFilter@1d9295e2]
+2024-06-13T15:02:00.081+05:00  INFO 20380 --- [LibraryManagementSystem] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2024-06-13T15:02:00.082+05:00  INFO 20380 --- [LibraryManagementSystem] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2024-06-13T15:02:00.084+05:00  INFO 20380 --- [LibraryManagementSystem] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2024-06-13T15:02:00.120+05:00  INFO 20380 --- [LibraryManagementSystem] [main] n.l.NotificationIntegrationTest          : Started NotificationIntegrationTest in 6.989 seconds (process running for 7.933)
+2024-06-13T15:02:00.155+05:00  INFO 20380 --- [LibraryManagementSystem] [main] n.l.config.SecurityConfig                : EMAIL: ltownes5@google.pl
+2024-06-13T15:02:00.199+05:00  INFO 20380 --- [LibraryManagementSystem] [main] n.l.config.SecurityConfig                : ACCOUNT: ltownes5@google.pl
+2024-06-13T15:02:00.220+05:00  INFO 20380 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 1
+2024-06-13T15:02:00.287+05:00  INFO 20380 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 2
+2024-06-13T15:02:00.292+05:00  INFO 20380 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 3
+2024-06-13T15:02:00.300+05:00  INFO 20380 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 4
+2024-06-13T15:02:00.305+05:00  INFO 20380 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 5
+2024-06-13T15:02:00.309+05:00  INFO 20380 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 6
+2024-06-13T15:02:00.314+05:00  INFO 20380 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 7
+2024-06-13T15:02:00.320+05:00  INFO 20380 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 8
+2024-06-13T15:02:00.325+05:00  INFO 20380 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 9
+2024-06-13T15:02:00.334+05:00  INFO 20380 --- [LibraryManagementSystem] [quartzScheduler_Worker-2] n.l.job.OverdueReservationJob            : Reservation is overdue: 10
+2024-06-13T15:02:00.926+05:00  INFO 20380 --- [LibraryManagementSystem] [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NURBEK-HuaweiMatebookD151718272918573 paused.
+2024-06-13T15:02:00.929+05:00  INFO 20380 --- [LibraryManagementSystem] [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NURBEK-HuaweiMatebookD151718272918573 shutting down.
+2024-06-13T15:02:00.930+05:00  INFO 20380 --- [LibraryManagementSystem] [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NURBEK-HuaweiMatebookD151718272918573 paused.
+2024-06-13T15:02:00.930+05:00  INFO 20380 --- [LibraryManagementSystem] [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NURBEK-HuaweiMatebookD151718272918573 shutdown complete.
+2024-06-13T15:02:00.930+05:00  INFO 20380 --- [LibraryManagementSystem] [main] o.s.s.quartz.SchedulerFactoryBean        : Shutting down Quartz Scheduler
+2024-06-13T15:02:00.930+05:00  INFO 20380 --- [LibraryManagementSystem] [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-13T15:02:00.930+05:00  INFO 20380 --- [LibraryManagementSystem] [main] com.zaxxer.hikari.HikariDataSource       : library - Shutdown initiated...
+2024-06-13T15:02:00.930+05:00  INFO 20380 --- [LibraryManagementSystem] [main] com.zaxxer.hikari.HikariDataSource       : library - Shutdown completed.

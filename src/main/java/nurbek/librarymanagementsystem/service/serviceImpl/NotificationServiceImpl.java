@@ -19,7 +19,7 @@ public class NotificationServiceImpl implements NotificationService {
     private final UserService userService;
 
     @Override
-    public boolean sendNotification(String accountEmail, String subject, String content) {
+    public void sendNotification(String accountEmail, String subject, String content) {
         var notification = new NotificationEntity(
                 null,
                 subject,
@@ -29,17 +29,18 @@ public class NotificationServiceImpl implements NotificationService {
         );
 
         notificationRepository.save(notification);
-
-        return false;
     }
 
     @Override
     public List<Notification> getNotifications(String accountEmail) {
         var account = userService.getAccountByEmail(accountEmail).orElse(null);
+
         if (account != null) {
-            return notificationRepository.findByRecipientId(account.getId()).stream()
-                    .map(NotificationEntity::toDto).toList();
+            return notificationRepository
+                    .findByAccount_Email(account.getEmail())
+                    .stream().map(NotificationEntity::toDto).toList();
         }
+
         return List.of();
     }
 }
