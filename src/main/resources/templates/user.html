@@ -228,11 +228,11 @@
                         <span th:text="${r.status}"></span>
                     </td>
                     <td>
-                        <button th:if="${r.status.name().equals('OVERDUE')}"
-                                th:onclick="'location.href=\'/reservations/renew/' + ${r.id} + '\''"
-                                class="px-4 py-2 text-white bg-red-500 rounded hover:bg-red-700">
-                            Renew
-                        </button>
+                        <form th:if="${r.status.name().equals('OVERDUE')}" method="post" th:action="@{'/reservations/renew/' + ${r.id}}">
+                            <button class="px-4 py-2 text-white bg-red-500 rounded hover:bg-red-700">
+                                Renew
+                            </button>
+                        </form>
                         <form th:action="@{'/reservations/delete/' + ${r.id}}" th:method="delete">
                             <button type="submit" class="btn btn-danger">Return Book</button>
                         </form>

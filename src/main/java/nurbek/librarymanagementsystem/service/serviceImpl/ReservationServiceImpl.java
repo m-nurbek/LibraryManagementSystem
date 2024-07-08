@@ -195,6 +195,8 @@ public class ReservationServiceImpl implements ReservationService {
         calendar.add(Calendar.DATE, props.getMaxDaysToReturnBook());
         reservation.setDueDate(calendar.getTime());
 
+        reservation.setStatus(ReservationStatus.RESERVED);
+
         reservationRepository.save(reservation);
 
         // Send notification
